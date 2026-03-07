@@ -88,7 +88,7 @@
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let particles = [];
-    const PARTICLE_COUNT = 120;
+    const PARTICLE_COUNT = 150;
 
     function resizeCanvas() {
         const rect = card.getBoundingClientRect();
@@ -105,7 +105,7 @@
         particles.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            size: Math.random() * 1.5 + 0.5,
+            size: Math.random() * 2 + 0.5,
             speedX: (Math.random() - 0.5) * 0.3,
             speedY: (Math.random() - 0.5) * 0.3,
             phase: Math.random() * Math.PI * 2,
@@ -116,13 +116,14 @@
     }
 
     let glitterTime = 0;
-    let mouseXNorm = 0.5, mouseYNorm = 0.5;
+    let lightX = 0.5, lightY = 0.5;
 
-    document.addEventListener('mousemove', (e) => {
+    // Track mouse only when hovering the card
+    wrapper.addEventListener('mousemove', (e) => {
         if (!cardRect) updateRect();
-        if (cardRect) {
-            mouseXNorm = (e.clientX - cardRect.left) / cardRect.width;
-            mouseYNorm = (e.clientY - cardRect.top) / cardRect.height;
+        if (cardRect && isHovering) {
+            lightX = (e.clientX - cardRect.left) / cardRect.width;
+            lightY = (e.clientY - cardRect.top) / cardRect.height;
         }
     });
 
@@ -131,11 +132,17 @@
         glitterTime += 0.02;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Light reflection gradient based on mouse/tilt
-        const gradX = mouseXNorm * canvas.width;
-        const gradY = mouseYNorm * canvas.height;
+        // Ambient light sweep when not hovering — slow figure-8 pattern
+        if (!isHovering) {
+            lightX = 0.5 + Math.sin(glitterTime * 0.4) * 0.4;
+            lightY = 0.5 + Math.sin(glitterTime * 0.6) * 0.35;
+        }
+
+        // Light reflection gradient
+        const gradX = lightX * canvas.width;
+        const gradY = lightY * canvas.height;
         const grad = ctx.createRadialGradient(gradX, gradY, 0, gradX, gradY, canvas.width * 0.6);
-        grad.addColorStop(0, 'rgba(255,255,255,0.03)');
+        grad.addColorStop(0, 'rgba(255,255,255,0.05)');
         grad.addColorStop(1, 'rgba(255,255,255,0)');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -143,7 +150,7 @@
         particles.forEach(p => {
             // Twinkle
             const twinkle = Math.sin(glitterTime * p.twinkleSpeed + p.phase);
-            const alpha = Math.max(0, twinkle * 0.6 + 0.1);
+            const alpha = Math.max(0, twinkle * 0.7 + 0.15);
 
             if (alpha > 0.05) {
                 // Brighter near the light reflection point
@@ -151,7 +158,7 @@
                 const dy = p.y - gradY;
                 const dist = Math.sqrt(dx * dx + dy * dy);
                 const proximity = Math.max(0, 1 - dist / (canvas.width * 0.5));
-                const finalAlpha = alpha * (0.3 + proximity * 0.7);
+                const finalAlpha = alpha * (0.4 + proximity * 0.6);
 
                 ctx.fillStyle = p.color + finalAlpha.toFixed(2) + ')';
                 ctx.beginPath();
@@ -166,8 +173,8 @@
                 ctx.fill();
 
                 // Tiny star burst for brightest particles
-                if (finalAlpha > 0.4 && proximity > 0.3) {
-                    ctx.strokeStyle = p.color + (finalAlpha * 0.4).toFixed(2) + ')';
+                if (finalAlpha > 0.35 && proximity > 0.2) {
+                    ctx.strokeStyle = p.color + (finalAlpha * 0.5).toFixed(2) + ')';
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
                     ctx.moveTo(p.x - s * 2, p.y);

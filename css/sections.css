@@ -234,7 +234,7 @@
 /* KnexPay Card */
 .knexpay-card-wrapper {
     perspective: 800px;
-    width: clamp(280px, 70vw, 420px);
+    width: clamp(240px, 45vw, 340px);
 }
 
 .knexpay-card {
