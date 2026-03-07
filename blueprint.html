@@ -1845,14 +1845,14 @@
     <span class="function">created_at</span>: <span class="type">u64</span>,              <span class="comment">// Session start time</span>
 }
 
-<span class="comment">// Precision: 1.0000000 = 10,000,000 RAW (7 decimal places)</span>
+<span class="comment">// Precision: 1.00000000 = 100,000,000 RAW (8 decimal places)</span>
 <span class="comment">// Example: Payroll stream of 400 UMX/month</span>
-<span class="comment">//   <span class="redacted">rate = (400 × 10,000,000) / (30 × 86,400) = 1,543 RAW/second</span></span>
-<span class="comment">//   max_total = 400 × 10,000,000 = 4,000,000,000 RAW</span>
+<span class="comment">//   <span class="redacted">rate = (400 × 100,000,000) / (30 × 86,400) = 15,432 RAW/second</span></span>
+<span class="comment">//   max_total = 400 × 100,000,000 = 40,000,000,000 RAW</span>
 
 <span class="comment">// Rounding: all RAW calculations truncate toward zero (floor division)</span>
 <span class="comment">// No fractional RAW exists. Remainder stays with sender on StreamClose</span>
-<span class="comment">// Min settlement amount: 1,000 RAW (0.0001000 tokens) — prevents dust</span>
+<span class="comment">// Min settlement amount: 1,000 RAW (0.00001000 tokens) — prevents dust</span>
 <span class="comment">// Min settle interval: 60 seconds per session (anti-spam)</span>
 </pre>
             </div>
@@ -1909,7 +1909,7 @@
                     <li><strong>Payroll Drip:</strong> Employer streams UMX to employees per-second. <code>rate = monthly_salary / (30 &times; 86,400)</code>. Settles hourly on-chain. Employee can spend accrued UMX in real-time</li>
                     <li><strong>Bandwidth Metering:</strong> Node streams UMX to bandwidth provider proportional to bytes transferred. Settlement on threshold (e.g., every 100MB). Creates direct bandwidth economy</li>
                     <li><strong>Service Metering:</strong> SaaS/API billing in UMX per-request or per-second of compute usage. Pay-as-you-go without subscription friction</li>
-                    <li><strong>Micro-Commerce:</strong> Pay-per-minute for coworking spaces, parking, EV charging, or content access. Sub-cent precision via 7-decimal RAW units</li>
+                    <li><strong>Micro-Commerce:</strong> Pay-per-minute for coworking spaces, parking, EV charging, or content access. Sub-cent precision via 8-decimal RAW units</li>
                 </ul>
             </div>
 
