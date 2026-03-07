@@ -179,9 +179,9 @@
     right: 20px;
     font-family: var(--font-display);
     font-size: 3rem;
-    color: #ff69b4;
+    color: #4b0082;
     font-weight: 900;
-    text-shadow: 0 0 10px rgba(255,105,180,0.5), 0 0 20px rgba(255,105,180,0.3);
+    text-shadow: 0 0 10px rgba(75,0,130,0.5), 0 0 20px rgba(75,0,130,0.3);
     opacity: 0.9;
 }
 
