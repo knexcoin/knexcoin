@@ -137,12 +137,14 @@
     }
     .feature-card:hover { transform: translateY(-4px); }
     .feature-icon {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
         margin-bottom: 16px;
-        border-radius: 10px;
+        border-radius: 14px;
+        overflow: hidden;
+        flex-shrink: 0;
     }
-    .feature-icon img { width: 30px; height: 30px; }
+    .feature-icon img { width: 40px; height: 40px; object-fit: contain; }
     .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
     .feature-card p { font-size: 0.85rem; }
     .feature-number {
