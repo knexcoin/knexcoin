@@ -145,22 +145,32 @@
 }
 
 .feature-icon {
-    width: 56px;
-    height: 56px;
-    background: rgba(0,255,0,0.1);
-    border: 1px solid rgba(0,255,0,0.3);
+    width: 72px;
+    height: 72px;
+    background: rgba(0,255,0,0.05);
+    border: 1px solid rgba(0,255,0,0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 50%;
+    position: relative;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,255,0,0.1);
+    pointer-events: none;
 }
 
 .feature-icon svg {
-    width: 28px;
-    height: 28px;
-    color: var(--neon);
-    filter: drop-shadow(0 0 10px rgba(0,255,0,0.5));
+    width: 44px;
+    height: 44px;
+    color: #00ff00;
+    filter: drop-shadow(0 0 6px rgba(0,255,0,0.4));
 }
 
 .feature-card h3 {
