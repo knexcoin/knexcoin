@@ -277,16 +277,16 @@
         <header class="header">
             <span class="bsod-face">:(</span>
             <h1>KNEXCOIN BLUEPRINT</h1>
-            <div class="version">v5.1 // UBX + KNEX Dual-Layer Architecture</div>
+            <div class="version">v5.1 // UMX + KNEX Dual-Layer Architecture</div>
             <div class="bsod-error">STOP CODE: CLASSIFIED_DOCUMENT_ACCESS // REF: 0xKNEX005100BA</div>
-            <p>Technical specification for a dual-layer monetary system: <strong>UBX</strong> (elastic transactional layer, COP-reference band) and <strong>KNEX</strong> (fixed-supply reserve + settlement layer). Built on a <span class="redacted">Nano-inspired</span> <strong>block-lattice DAG</strong> with <strong>Proof-of-Bandwidth (PoB)</strong> consensus and <strong>Open Representative Voting (ORV)</strong> finality.</p>
-            <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Bootstrap:</strong> Assets are currently issued on <strong>Stellar</strong> for distribution + liquidity rails. <strong>Target:</strong> Migration to a native L1 DAG where UBX and KNEX are <span class="redacted">first-class protocol assets</span>.</p>
+            <p>Technical specification for a dual-layer monetary system: <strong>UMX</strong> (elastic transactional layer, VES-reference band) and <strong>KNEX</strong> (fixed-supply reserve + settlement layer). Built on a <span class="redacted">Nano-inspired</span> <strong>block-lattice DAG</strong> with <strong>Proof-of-Bandwidth (PoB)</strong> consensus and <strong>Open Representative Voting (ORV)</strong> finality.</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Bootstrap:</strong> Assets are currently issued on <strong>Stellar</strong> for distribution + liquidity rails. <strong>Target:</strong> Migration to a native L1 DAG where UMX and KNEX are <span class="redacted">first-class protocol assets</span>.</p>
         </header>
 
         <div class="highlight" style="margin-bottom: 2rem;">
             <h4>Token Roles at a Glance</h4>
             <ul>
-                <li><strong>UBX:</strong> Feeless daily payments, payroll, merchant settlement, streaming retail flows</li>
+                <li><strong>UMX:</strong> Feeless daily payments, payroll, merchant settlement, streaming retail flows</li>
                 <li><strong>KNEX:</strong> Validator bond + slashing collateral, reserve/settlement, protocol rewards, infrastructure incentives</li>
                 <li><strong>Stellar:</strong> Bootstrap-only distribution layer; sunset after <span class="redacted">L1 migration window</span> completes</li>
             </ul>
@@ -321,35 +321,35 @@
             <div class="card">
                 <h3>Core Design Principles</h3>
                 <ul>
-                    <li><strong>Dual-Layer Monetary System:</strong> UBX (elastic, bearer-like transactional layer) + KNEX (fixed-supply reserve and settlement layer)</li>
+                    <li><strong>Dual-Layer Monetary System:</strong> UMX (elastic, bearer-like transactional layer) + KNEX (fixed-supply reserve and settlement layer)</li>
                     <li><strong>Instant Finality Target:</strong> <span class="redacted">Sub-second confirmation</span> on native L1. During Stellar bootstrap, typical settlement is ~3&ndash;5 seconds.</li>
-                    <li><strong>Feeless Transfers:</strong> UBX transfers are fee-less. Anti-spam uses <span class="redacted">client-side PoW per block</span> (Nano model); no value is paid, burned, or collected.</li>
+                    <li><strong>Feeless Transfers:</strong> UMX transfers are fee-less. Anti-spam uses <span class="redacted">client-side PoW per block</span> (Nano model); no value is paid, burned, or collected.</li>
                     <li><strong>Bandwidth-Primary Consensus:</strong> Voting weight is determined by PoB infrastructure contribution. Stake is <strong>bond/eligibility only</strong>, not power.</li>
                     <li><strong>Asynchronous DAG:</strong> Each account maintains its own chain in a block-lattice. Parallel transaction processing enables horizontal scaling.</li>
-                    <li><strong>Commerce-Driven Stability:</strong> UBX stability emerges from real usage (<span class="redacted">merchant pricing + payroll demand</span> + controlled distribution + treasury ops), not CEX-driven speculation.</li>
-                    <li><strong>Directional Value Flow:</strong> Value flows structurally from UBX (velocity) toward KNEX (reserve/settlement) through <span class="redacted">conversion + long-term holding</span>.</li>
+                    <li><strong>Commerce-Driven Stability:</strong> UMX stability emerges from real usage (<span class="redacted">merchant pricing + payroll demand</span> + controlled distribution + treasury ops), not CEX-driven speculation.</li>
+                    <li><strong>Directional Value Flow:</strong> Value flows structurally from UMX (velocity) toward KNEX (reserve/settlement) through <span class="redacted">conversion + long-term holding</span>.</li>
                     <li><strong>Stellar Bootstrap:</strong> Stellar is used for <span class="redacted">early distribution and liquidity only</span>; it is not the permanent settlement layer.</li>
                 </ul>
             </div>
 
             <div class="highlight">
                 <h4>Dual-Layer Monetary System</h4>
-                <p><strong>UBX</strong> is the elastic, bearer-like circulation unit for everyday payments. Merchants price goods in UBX using a COP reference (~1 UBX &asymp; 1,000 COP, &plusmn;20% tolerance). <strong>KNEX</strong> is the fixed-supply (100,000,000) reserve asset for settlement, validator bonding, and long-term value accumulation. Neither token works alone: UBX provides velocity, KNEX provides scarcity. Economic gravity flows directionally from UBX (circulation) to KNEX (accumulation).</p>
+                <p><strong>UMX</strong> is the elastic, bearer-like circulation unit for everyday payments. Merchants price goods in UMX using a VES reference (~1 UMX &asymp; 1,000 VES, &plusmn;20% tolerance). <strong>KNEX</strong> is the fixed-supply (100,000,000) reserve asset for settlement, validator bonding, and long-term value accumulation. Neither token works alone: UMX provides velocity, KNEX provides scarcity. Economic gravity flows directionally from UMX (circulation) to KNEX (accumulation).</p>
             </div>
 
             <div class="highlight warning">
                 <h4>Stellar-to-L1 Migration Path</h4>
-                <p><strong>Phase 1 (Current):</strong> Both UBX and KNEX are issued on Stellar. DEX trading provides liquidity. Wallets use Stellar SDK. Settlement is 3-5 seconds. <strong>Phase 2 (Target):</strong> Native block-lattice DAG with Proof-of-Bandwidth consensus, sub-second finality, feeless UBX transactions, and full validator economics. Migration via balance snapshot and 1:1 address mapping.</p>
+                <p><strong>Phase 1 (Current):</strong> Both UMX and KNEX are issued on Stellar. DEX trading provides liquidity. Wallets use Stellar SDK. Settlement is 3-5 seconds. <strong>Phase 2 (Target):</strong> Native block-lattice DAG with Proof-of-Bandwidth consensus, sub-second finality, feeless UMX transactions, and full validator economics. Migration via balance snapshot and 1:1 address mapping.</p>
             </div>
 
             <div class="highlight">
                 <h4>Stellar DEX: Bootstrap Infrastructure, Not Economic Source of Truth</h4>
-                <p>UBX does not require centralized exchanges to function. Stellar DEX is used as a bootstrap liquidity layer (on/off ramps, early market depth, and conversion rails) while the &ldquo;true&rdquo; price discovery model is merchant-driven: goods and services priced directly in UBX using a COP reference band. Over time, as UBX velocity and merchant density grow, reliance on speculative venues decreases and stability emerges from real economic usage.</p>
+                <p>UMX does not require centralized exchanges to function. Stellar DEX is used as a bootstrap liquidity layer (on/off ramps, early market depth, and conversion rails) while the &ldquo;true&rdquo; price discovery model is merchant-driven: goods and services priced directly in UMX using a VES reference band. Over time, as UMX velocity and merchant density grow, reliance on speculative venues decreases and stability emerges from real economic usage.</p>
             </div>
 
             <div class="highlight">
                 <h4>Why DAG over Traditional Blockchain?</h4>
-                <p>Traditional blockchains serialize all transactions into sequential blocks, creating bottlenecks. A DAG allows parallel transaction processing &mdash; each account maintains its own chain, enabling unlimited horizontal scaling. For a dual-token system processing both UBX micropayments and KNEX settlement, this parallelism is essential.</p>
+                <p>Traditional blockchains serialize all transactions into sequential blocks, creating bottlenecks. A DAG allows parallel transaction processing &mdash; each account maintains its own chain, enabling unlimited horizontal scaling. For a dual-token system processing both UMX micropayments and KNEX settlement, this parallelism is essential.</p>
             </div>
 
             <div class="diagram">
@@ -390,7 +390,7 @@
                             │
     ┌───────────────────────┼──────────────────────────┐
     │              TOKEN LAYER                          │
-    │  UBX (elastic, COP-reference band, merchant payments)  │
+    │  UMX (elastic, VES-reference band, merchant payments)  │
     │  KNEX (fixed 100M, settlement, validator bonds)  │
     └──────────────────────────────────────────────────┘
 </pre>
@@ -408,32 +408,32 @@
 
             <div class="card">
                 <h3>Dual-Layer Token Architecture</h3>
-                <p>The KNEX/UBX system implements a dual-layer monetary design. Each layer serves a distinct economic function. Neither token works in isolation &mdash; UBX provides velocity, KNEX provides scarcity. Value flows directionally from the circulation layer to the reserve layer over time.</p>
+                <p>The KNEX/UMX system implements a dual-layer monetary design. Each layer serves a distinct economic function. Neither token works in isolation &mdash; UMX provides velocity, KNEX provides scarcity. Value flows directionally from the circulation layer to the reserve layer over time.</p>
             </div>
 
-            <!-- UBX Card -->
+            <!-- UMX Card -->
             <div class="card">
-                <h3>UBX &mdash; Transactional Layer</h3>
-                <p>UBX is the primary user-facing currency for everyday payments. It is designed to behave like <strong>digital cash</strong> for Colombia: fast, fee-less, bearer-like, and anchored by real commerce.</p>
+                <h3>UMX &mdash; Transactional Layer</h3>
+                <p>UMX is the primary user-facing currency for everyday payments. It is designed to behave like <strong>digital cash</strong> for Venezuela: fast, fee-less, bearer-like, and anchored by real commerce.</p>
                 <table class="data-table">
                     <thead><tr><th>Property</th><th>Value</th><th>Notes</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Role</strong></td><td>Elastic circulation currency</td><td>Daily payments, merchant settlement, payroll, NFC SmartBills</td></tr>
                         <tr><td><strong>Supply Model</strong></td><td>Elastic / policy-driven</td><td>No permanent hard cap. Supply expands/contracts via distribution throttling + treasury ops + conversion gravity.</td></tr>
-                        <tr><td><strong>Initial Authorized Distribution Program</strong></td><td><span class="redacted">10,000,000,000</span> UBX</td><td>&ldquo;Program ceiling&rdquo; for early bootstrapping releases. Future authorization requires <span class="redacted">governance + health metrics</span>.</td></tr>
-                        <tr><td><strong>COP Reference</strong></td><td>1 UBX &asymp; 1,000 COP</td><td>Informational reference only &mdash; not a peg or guarantee</td></tr>
-                        <tr><td><strong>Tolerance Band</strong></td><td><span class="redacted">&plusmn;20% (&epsilon; = 0.20)</span></td><td><span class="redacted">800 &le; P<sub>UBX</sub> &le; 1,200 COP</span> operational band</td></tr>
+                        <tr><td><strong>Initial Authorized Distribution Program</strong></td><td><span class="redacted">10,000,000,000</span> UMX</td><td>&ldquo;Program ceiling&rdquo; for early bootstrapping releases. Future authorization requires <span class="redacted">governance + health metrics</span>.</td></tr>
+                        <tr><td><strong>VES Reference</strong></td><td>1 UMX &asymp; 1,000 VES</td><td>Informational reference only &mdash; not a peg or guarantee</td></tr>
+                        <tr><td><strong>Tolerance Band</strong></td><td><span class="redacted">&plusmn;20% (&epsilon; = 0.20)</span></td><td><span class="redacted">800 &le; P<sub>UMX</sub> &le; 1,200 VES</span> operational band</td></tr>
                         <tr><td><strong>Distribution Model</strong></td><td>&phi;-decay &times; stability multiplier</td><td>Smooth release curve; automatically throttled by price deviation</td></tr>
                         <tr><td><strong>DEX Liquidity</strong></td><td>Bootstrap-only rails</td><td>Stellar DEX provides early liquidity rails; long-term anchoring comes from merchant pricing + payroll demand</td></tr>
                         <tr><td><strong>Supply Control</strong></td><td>Treasury ops + throttling + conversion sink</td><td>No per-transaction burns required</td></tr>
-                        <tr><td><strong>Design Goal</strong></td><td>Circulation, not accumulation</td><td>UBX is designed to move; surplus is structurally converted into KNEX</td></tr>
+                        <tr><td><strong>Design Goal</strong></td><td>Circulation, not accumulation</td><td>UMX is designed to move; surplus is structurally converted into KNEX</td></tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="highlight">
                 <h4>Bearer-Like Properties</h4>
-                <p>UBX functions as a <strong>digital bearer instrument</strong>. Possession equals ownership. <span class="redacted">No KYC required</span> for peer-to-peer transfers. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable physical-to-digital value transfer without internet connectivity at point of sale. The combination of feeless transfers, COP-denominated pricing, and bearer-like portability makes UBX function like digital cash for the <span class="redacted">Colombian economy</span>.</p>
+                <p>UMX functions as a <strong>digital bearer instrument</strong>. Possession equals ownership. <span class="redacted">No KYC required</span> for peer-to-peer transfers. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable physical-to-digital value transfer without internet connectivity at point of sale. The combination of feeless transfers, VES-denominated pricing, and bearer-like portability makes UMX function like digital cash for the <span class="redacted">Venezuelan economy</span>.</p>
             </div>
 
             <!-- KNEX Card -->
@@ -444,7 +444,7 @@
                     <tbody>
                         <tr><td><strong>Role</strong></td><td>Fixed-supply reserve asset</td><td>Settlement, validator bonding, long-term accumulation</td></tr>
                         <tr><td><strong>Maximum Supply</strong></td><td><span class="redacted">100,000,000</span> KNEX</td><td>Absolute hard cap &mdash; no inflation possible</td></tr>
-                        <tr><td><strong>Deflation</strong></td><td><span class="redacted">Staking locks + conversion absorption</span></td><td>Validator bonds and UBX&rarr;KNEX conversion continuously remove KNEX from active circulation</td></tr>
+                        <tr><td><strong>Deflation</strong></td><td><span class="redacted">Staking locks + conversion absorption</span></td><td>Validator bonds and UMX&rarr;KNEX conversion continuously remove KNEX from active circulation</td></tr>
                         <tr><td><strong>Settlement Finality</strong></td><td>Irreversible, on-chain</td><td>KNEX transactions represent final settlement</td></tr>
                     </tbody>
                 </table>
@@ -474,9 +474,9 @@
                     <thead><tr><th>Path</th><th>Mechanism</th><th>Who</th></tr></thead>
                     <tbody>
                         <tr>
-                            <td><strong>1. UBX &rarr; KNEX Conversion</strong></td>
-                            <td>Protocol conversion module. UBX is absorbed, KNEX is released at <span class="redacted">the current epoch rate</span> (<code>K = U / E<sub>e</sub></code>)</td>
-                            <td>Any UBX holder</td>
+                            <td><strong>1. UMX &rarr; KNEX Conversion</strong></td>
+                            <td>Protocol conversion module. UMX is absorbed, KNEX is released at <span class="redacted">the current epoch rate</span> (<code>K = U / E<sub>e</sub></code>)</td>
+                            <td>Any UMX holder</td>
                         </tr>
                         <tr>
                             <td><strong>2. Validator Rewards</strong></td>
@@ -497,11 +497,11 @@
                     <li><strong>Authorized Pools:</strong> Protocol-governed liquidity pools where KNEX may be exchanged under controlled conditions.</li>
                 </ul>
 
-                <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">No dependency on centralized exchange listings. KNEX does not derive value from speculative trading volume. Its worth comes from: (1) validator bond requirements, (2) slashing collateral at risk, (3) conversion gravity absorbing UBX surplus, and (4) governance weight. When demand for KNEX exceeds release rate, scarcity emerges naturally from protocol utility &mdash; not artificial restriction.</p>
+                <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">No dependency on centralized exchange listings. KNEX does not derive value from speculative trading volume. Its worth comes from: (1) validator bond requirements, (2) slashing collateral at risk, (3) conversion gravity absorbing UMX surplus, and (4) governance weight. When demand for KNEX exceeds release rate, scarcity emerges naturally from protocol utility &mdash; not artificial restriction.</p>
             </div>
 
             <div class="warning">
-                <strong>KNEX Is Not a Speculative Token:</strong> There is no plan to list KNEX on centralized exchanges. The primary price signal comes from the UBX&rarr;KNEX conversion rate set by the &phi;-decay schedule. Attempting to create unauthorized secondary markets may undermine the ecosystem&rsquo;s stability model and is discouraged by protocol design.
+                <strong>KNEX Is Not a Speculative Token:</strong> There is no plan to list KNEX on centralized exchanges. The primary price signal comes from the UMX&rarr;KNEX conversion rate set by the &phi;-decay schedule. Attempting to create unauthorized secondary markets may undermine the ecosystem&rsquo;s stability model and is discouraged by protocol design.
             </div>
 
             <!-- Graduated KNEX Liberation -->
@@ -537,13 +537,13 @@
             <!-- φ-Decay Release -->
             <div class="card">
                 <h3>&phi;-Decay Distribution Model</h3>
-                <p>New UBX distribution follows a time-decay schedule based on the golden ratio. Early epochs distribute more UBX, creating adoption incentives while limiting long-term inflationary pressure.</p>
+                <p>New UMX distribution follows a time-decay schedule based on the golden ratio. Early epochs distribute more UMX, creating adoption incentives while limiting long-term inflationary pressure.</p>
             </div>
 
             <div class="code">
                 <div class="code-header">&phi;-Decay Formula</div>
 <pre>
-<span class="comment">// Golden ratio decay applied to UBX distribution</span>
+<span class="comment">// Golden ratio decay applied to UMX distribution</span>
 
 <span class="keyword">const</span> <span class="function">&phi;</span> = <span class="number">1.6180339887</span>    <span class="comment">// Golden ratio</span>
 
@@ -555,10 +555,10 @@
 <span class="comment">//   e   = epoch number (fixed time intervals)</span>
 <span class="comment">//   R<sub>e</sub>  = distribution rate at epoch e</span>
 
-<span class="comment">// Conversion factor per epoch (UBX per KNEX):</span>
+<span class="comment">// Conversion factor per epoch (UMX per KNEX):</span>
 <span class="type">E<sub>e</sub></span> = <span class="type">E<sub>0</sub></span> / <span class="function">&phi;</span><sup>e</sup>
 
-<span class="comment">// UBX → KNEX conversion:</span>
+<span class="comment">// UMX → KNEX conversion:</span>
 <span class="type">K</span> = <span class="type">U</span> / <span class="type">E<sub>e</sub></span>
 
 <span class="comment">// Inverse:</span>
@@ -599,15 +599,15 @@
             <div class="highlight">
                 <h4>Why &phi;-Decay?</h4>
                 <p>Traditional halving models create sharp supply shocks every N years. &phi;-decay provides <strong>smooth, continuous reduction</strong> following the golden ratio &mdash; a curve found in natural growth patterns. This eliminates supply cliff events while still rewarding early network participation.</p>
-                <p style="margin-top: 8px;"><strong>Canonical v5.1 requirement:</strong> UBX distribution is implemented as &phi;-decay multiplied by a stability multiplier (price-band throttling). Any earlier prototypes that used halving-based schedules are deprecated and must be treated as non-canonical.</p>
+                <p style="margin-top: 8px;"><strong>Canonical v5.1 requirement:</strong> UMX distribution is implemented as &phi;-decay multiplied by a stability multiplier (price-band throttling). Any earlier prototypes that used halving-based schedules are deprecated and must be treated as non-canonical.</p>
             </div>
 
             <!-- Hybrid Release Model -->
             <div class="highlight">
                 <h4>Hybrid Release Model (Canonical)</h4>
-                <p>UBX and KNEX use <strong>different release curves</strong>, each optimized for its economic role:</p>
+                <p>UMX and KNEX use <strong>different release curves</strong>, each optimized for its economic role:</p>
                 <ul>
-                    <li><strong>UBX:</strong> &phi;-decay + stability multiplier. Smooth, continuous reduction ideal for circulation incentives. <code>R<sub>UBX</sub>(e) = (R<sub>0</sub> / &phi;<sup>e</sup>) &times; M(P)</code></li>
+                    <li><strong>UMX:</strong> &phi;-decay + stability multiplier. Smooth, continuous reduction ideal for circulation incentives. <code>R<sub>UMX</sub>(e) = (R<sub>0</sub> / &phi;<sup>e</sup>) &times; M(P)</code></li>
                     <li><strong>KNEX:</strong> Linear release + NAI damping. Conservative, predictable, auditable schedule ideal for security budget. <code>R<sub>KNEX</sub>(t) = 4,500,000/year &times; NAI<sub>damping</sub></code></li>
                 </ul>
             </div>
@@ -681,24 +681,24 @@
                 <p>Validator rewards are funded from the 90M reserve during the primary program. After the program completes (or governance finalizes any remaining undistributed reserve), validator income transitions to protocol-level revenue sources (e.g., settlement service charges, streaming settlement rails, and other governed network services). <strong>No new KNEX minting is permitted.</strong></p>
             </div>
 
-            <!-- COP Anchor -->
+            <!-- VES Anchor -->
             <div class="card">
-                <h3>COP Reference Anchor</h3>
-                <p>UBX uses a <strong>target range model</strong> rather than a fixed peg. The protocol does not guarantee redemption at a fixed COP value. Instead, stability emerges from real economic demand, merchant acceptance, controlled distribution (&phi;-decay), and structural conversion toward KNEX.</p>
+                <h3>VES Reference Anchor</h3>
+                <p>UMX uses a <strong>target range model</strong> rather than a fixed peg. The protocol does not guarantee redemption at a fixed VES value. Instead, stability emerges from real economic demand, merchant acceptance, controlled distribution (&phi;-decay), and structural conversion toward KNEX.</p>
             </div>
 
             <div class="code">
-                <div class="code-header">COP Tolerance Band</div>
+                <div class="code-header">VES Tolerance Band</div>
 <pre>
 <span class="comment">// Target range (not a peg)</span>
-<span class="type">P<sub>target</sub></span> = <span class="number">1,000</span> COP
+<span class="type">P<sub>target</sub></span> = <span class="number">1,000</span> VES
 <span class="function">&epsilon;</span>       = <span class="number">0.20</span>         <span class="comment">// 20% acceptable deviation</span>
 
 <span class="comment">// Tolerance formula:</span>
-<span class="type">P<sub>target</sub></span>(1 &minus; <span class="function">&epsilon;</span>) &le; <span class="type">P<sub>UBX</sub></span> &le; <span class="type">P<sub>target</sub></span>(1 + <span class="function">&epsilon;</span>)
+<span class="type">P<sub>target</sub></span>(1 &minus; <span class="function">&epsilon;</span>) &le; <span class="type">P<sub>UMX</sub></span> &le; <span class="type">P<sub>target</sub></span>(1 + <span class="function">&epsilon;</span>)
 
 <span class="comment">// With &epsilon; = 20%:</span>
-<span class="number">800</span> &le; <span class="type">P<sub>UBX</sub></span> &le; <span class="number">1,200</span> COP
+<span class="number">800</span> &le; <span class="type">P<sub>UMX</sub></span> &le; <span class="number">1,200</span> VES
 
 <span class="comment">// Deviation metric:</span>
 <span class="function">&epsilon;</span> = (<span class="type">P<sub>market</sub></span> &minus; <span class="type">P<sub>target</sub></span>) / <span class="type">P<sub>target</sub></span>
@@ -706,10 +706,10 @@
 </pre>
             </div>
 
-            <!-- UBX Stability Module -->
+            <!-- UMX Stability Module -->
             <div class="card">
-                <h3>UBX Stability Module &mdash; Monetary Policy Engine</h3>
-                <p>The system does not guarantee a fixed peg. Instead, it maintains a <strong>managed floating band</strong> using automated and treasury-driven mechanisms. Three coordinated levers keep UBX within the operational band.</p>
+                <h3>UMX Stability Module &mdash; Monetary Policy Engine</h3>
+                <p>The system does not guarantee a fixed peg. Instead, it maintains a <strong>managed floating band</strong> using automated and treasury-driven mechanisms. Three coordinated levers keep UMX within the operational band.</p>
             </div>
 
             <!-- 2.1 Market Reference Price -->
@@ -717,11 +717,11 @@
                 <div class="code-header">2.1 &mdash; Market Reference Price (VWAP)</div>
 <pre>
 <span class="comment">// Volume-Weighted Average Price from multiple sources</span>
-<span class="type">P<sub>UBX</sub></span> = &Sigma;(<span class="type">Price<sub>i</sub></span> &times; <span class="type">Volume<sub>i</sub></span>) / &Sigma;(<span class="type">Volume<sub>i</sub></span>)
+<span class="type">P<sub>UMX</sub></span> = &Sigma;(<span class="type">Price<sub>i</sub></span> &times; <span class="type">Volume<sub>i</sub></span>) / &Sigma;(<span class="type">Volume<sub>i</sub></span>)
 
 <span class="comment">// Price sources:</span>
-<span class="comment">//   1. Stellar DEX trades (UBX/COP, UBX/USDC pairs)</span>
-<span class="comment">//   2. Merchant pricing data (UBX/COP posted prices)</span>
+<span class="comment">//   1. Stellar DEX trades (UMX/VES, UMX/USDC pairs)</span>
+<span class="comment">//   2. Merchant pricing data (UMX/VES posted prices)</span>
 <span class="comment">//   3. Payroll conversion rates</span>
 <span class="comment">//   4. Treasury operations</span>
 
@@ -736,9 +736,9 @@
                 <table class="data-table">
                     <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>P<sub>target</sub></strong></td><td>1,000 COP</td></tr>
-                        <tr><td><strong>Lower Band</strong></td><td>0.8 &times; P<sub>target</sub> = <strong>800 COP</strong></td></tr>
-                        <tr><td><strong>Upper Band</strong></td><td>1.2 &times; P<sub>target</sub> = <strong>1,200 COP</strong></td></tr>
+                        <tr><td><strong>P<sub>target</sub></strong></td><td>1,000 VES</td></tr>
+                        <tr><td><strong>Lower Band</strong></td><td>0.8 &times; P<sub>target</sub> = <strong>800 VES</strong></td></tr>
+                        <tr><td><strong>Upper Band</strong></td><td>1.2 &times; P<sub>target</sub> = <strong>1,200 VES</strong></td></tr>
                         <tr><td><strong>Tolerance (&epsilon;)</strong></td><td>&plusmn;20%</td></tr>
                     </tbody>
                 </table>
@@ -758,39 +758,39 @@
             <div class="code">
                 <div class="code-header">Treasury Intervention Logic</div>
 <pre>
-<span class="comment">// When UBX is BELOW the lower band:</span>
-<span class="keyword">if</span> <span class="type">P<sub>UBX</sub></span> &lt; <span class="type">Lower</span> {
-    <span class="comment">// Treasury places buy orders (UBX ← reserve assets)</span>
-    <span class="comment">// Removes UBX from circulation → upward price pressure</span>
+<span class="comment">// When UMX is BELOW the lower band:</span>
+<span class="keyword">if</span> <span class="type">P<sub>UMX</sub></span> &lt; <span class="type">Lower</span> {
+    <span class="comment">// Treasury places buy orders (UMX ← reserve assets)</span>
+    <span class="comment">// Removes UMX from circulation → upward price pressure</span>
     treasury.<span class="function">buy_ubx</span>(amount);
 }
 
-<span class="comment">// When UBX is ABOVE the upper band:</span>
-<span class="keyword">if</span> <span class="type">P<sub>UBX</sub></span> &gt; <span class="type">Upper</span> {
-    <span class="comment">// Treasury sells UBX from reserves</span>
+<span class="comment">// When UMX is ABOVE the upper band:</span>
+<span class="keyword">if</span> <span class="type">P<sub>UMX</sub></span> &gt; <span class="type">Upper</span> {
+    <span class="comment">// Treasury sells UMX from reserves</span>
     <span class="comment">// Increases circulating supply → downward price pressure</span>
     treasury.<span class="function">sell_ubx</span>(amount);
 }
 
 <span class="comment">// Daily intervention limit (prevents reserve depletion):</span>
-<span class="type">Max<sub>daily</sub></span> = <span class="function">&alpha;</span> &times; <span class="type">Treasury<sub>UBX</sub></span>
+<span class="type">Max<sub>daily</sub></span> = <span class="function">&alpha;</span> &times; <span class="type">Treasury<sub>UMX</sub></span>
 
 <span class="comment">// Where &alpha; = 0.5% to 2% (policy parameter)</span>
-<span class="comment">// At &alpha;=1%, a 100M UBX treasury can deploy 1M/day max</span>
+<span class="comment">// At &alpha;=1%, a 100M UMX treasury can deploy 1M/day max</span>
 </pre>
             </div>
 
             <!-- Lever 2: Distribution Throttling -->
             <div class="highlight">
                 <h4>Lever 2 &mdash; Distribution Throttling</h4>
-                <p>UBX distribution rate adjusts automatically based on price deviation from target. This creates <strong>supply elasticity</strong> without manual intervention. Tokens are released from the distribution pool, not minted.</p>
+                <p>UMX distribution rate adjusts automatically based on price deviation from target. This creates <strong>supply elasticity</strong> without manual intervention. Tokens are released from the distribution pool, not minted.</p>
             </div>
 
             <div class="code">
                 <div class="code-header">Distribution Multiplier</div>
 <pre>
 <span class="comment">// Price deviation from target:</span>
-<span class="type">D</span> = (<span class="type">P<sub>UBX</sub></span> &minus; <span class="type">P<sub>target</sub></span>) / <span class="type">P<sub>target</sub></span>
+<span class="type">D</span> = (<span class="type">P<sub>UMX</sub></span> &minus; <span class="type">P<sub>target</sub></span>) / <span class="type">P<sub>target</sub></span>
 
 <span class="comment">// Distribution multiplier:</span>
 <span class="type">M</span> = <span class="number">1</span> + <span class="function">&beta;</span> &times; <span class="type">D</span>
@@ -804,27 +804,27 @@
 <span class="comment">// Floor and ceiling (prevents extreme swings):</span>
 <span class="number">0.5</span> &le; <span class="type">M</span> &le; <span class="number">1.5</span>
 
-<span class="comment">// Example: UBX at 900 COP (D = -0.10)</span>
+<span class="comment">// Example: UMX at 900 VES (D = -0.10)</span>
 <span class="comment">//   M = 1 + 2(-0.10) = 0.80 → distribution cut 20%</span>
-<span class="comment">// Example: UBX at 1,100 COP (D = +0.10)</span>
+<span class="comment">// Example: UMX at 1,100 VES (D = +0.10)</span>
 <span class="comment">//   M = 1 + 2(+0.10) = 1.20 → distribution up 20%</span>
 </pre>
             </div>
 
             <!-- Lever 3: Conversion Sink -->
             <div class="highlight">
-                <h4>Lever 3 &mdash; Conversion Sink (UBX &rarr; KNEX)</h4>
-                <p>When UBX is weak, the conversion mechanism absorbs excess supply. Users convert UBX into KNEX &mdash; UBX is locked, KNEX released from reserve pool. This is the <strong>economic gravity</strong> engine.</p>
+                <h4>Lever 3 &mdash; Conversion Sink (UMX &rarr; KNEX)</h4>
+                <p>When UMX is weak, the conversion mechanism absorbs excess supply. Users convert UMX into KNEX &mdash; UMX is locked, KNEX released from reserve pool. This is the <strong>economic gravity</strong> engine.</p>
             </div>
 
             <div class="code">
                 <div class="code-header">Conversion Rate</div>
 <pre>
-<span class="comment">// UBX → KNEX conversion</span>
-<span class="type">KNEX<sub>out</sub></span> = (<span class="type">UBX<sub>in</sub></span> &times; <span class="type">P<sub>UBX</sub></span>) / <span class="type">P<sub>KNEX</sub></span>
+<span class="comment">// UMX → KNEX conversion</span>
+<span class="type">KNEX<sub>out</sub></span> = (<span class="type">UMX<sub>in</sub></span> &times; <span class="type">P<sub>UMX</sub></span>) / <span class="type">P<sub>KNEX</sub></span>
 
-<span class="comment">// Effect: excess UBX flows into scarce KNEX</span>
-<span class="comment">//   → UBX circulating supply decreases</span>
+<span class="comment">// Effect: excess UMX flows into scarce KNEX</span>
+<span class="comment">//   → UMX circulating supply decreases</span>
 <span class="comment">//   → KNEX demand increases</span>
 <span class="comment">//   → Both layers stabilize</span>
 </pre>
@@ -833,44 +833,44 @@
             <!-- 2.4 Merchant Price Anchor -->
             <div class="card">
                 <h3>2.4 &mdash; Merchant Price Anchor</h3>
-                <p>Merchants display dual pricing: COP price and UBX equivalent. This creates a <strong>real-economy feedback loop</strong> that anchors UBX to tangible goods and services.</p>
+                <p>Merchants display dual pricing: VES price and UMX equivalent. This creates a <strong>real-economy feedback loop</strong> that anchors UMX to tangible goods and services.</p>
             </div>
 
             <div class="code">
                 <div class="code-header">Merchant Pricing Rule</div>
 <pre>
-<span class="comment">// Merchants display both COP and UBX prices</span>
-<span class="type">UBX<sub>price</sub></span> = <span class="type">COP<sub>price</sub></span> / <span class="type">P<sub>UBX</sub></span>
+<span class="comment">// Merchants display both VES and UMX prices</span>
+<span class="type">UMX<sub>price</sub></span> = <span class="type">VES<sub>price</sub></span> / <span class="type">P<sub>UMX</sub></span>
 
-<span class="comment">// Example: Coffee = 5,000 COP</span>
-<span class="comment">//   At P_UBX = 1,000 COP → 5.0 UBX</span>
-<span class="comment">//   At P_UBX = 900 COP  → 5.6 UBX (merchant adjusts)</span>
-<span class="comment">//   At P_UBX = 1,100 COP → 4.5 UBX</span>
+<span class="comment">// Example: Coffee = 5,000 VES</span>
+<span class="comment">//   At P_UMX = 1,000 VES → 5.0 UMX</span>
+<span class="comment">//   At P_UMX = 900 VES  → 5.6 UMX (merchant adjusts)</span>
+<span class="comment">//   At P_UMX = 1,100 VES → 4.5 UMX</span>
 
 <span class="comment">// This creates price feedback:</span>
-<span class="comment">//   UBX drops → merchants adjust → demand increases → price stabilizes</span>
+<span class="comment">//   UMX drops → merchants adjust → demand increases → price stabilizes</span>
 </pre>
             </div>
 
             <!-- 2.5 Payroll Stabilizer -->
             <div class="card">
                 <h3>2.5 &mdash; Payroll Stabilizer</h3>
-                <p>Employer payroll creates <strong>predictable, recurring baseline demand</strong> for UBX independent of speculative activity.</p>
+                <p>Employer payroll creates <strong>predictable, recurring baseline demand</strong> for UMX independent of speculative activity.</p>
             </div>
 
             <div class="code">
                 <div class="code-header">Payroll Demand Formula</div>
 <pre>
-<span class="comment">// Employee receives partial salary in UBX</span>
-<span class="type">Salary<sub>COP</sub></span> = total COP salary
-<span class="function">r</span>           = UBX allocation (3% to 30%)
+<span class="comment">// Employee receives partial salary in UMX</span>
+<span class="type">Salary<sub>VES</sub></span> = total VES salary
+<span class="function">r</span>           = UMX allocation (3% to 30%)
 
-<span class="type">UBX<sub>issued</sub></span> = (<span class="type">Salary<sub>COP</sub></span> &times; <span class="function">r</span>) / <span class="type">P<sub>UBX</sub></span>
+<span class="type">UMX<sub>issued</sub></span> = (<span class="type">Salary<sub>VES</sub></span> &times; <span class="function">r</span>) / <span class="type">P<sub>UMX</sub></span>
 
-<span class="comment">// Example: 3,000,000 COP salary, r = 10%</span>
-<span class="comment">//   UBX_issued = (3,000,000 × 0.10) / 1,000 = 300 UBX</span>
+<span class="comment">// Example: 3,000,000 VES salary, r = 10%</span>
+<span class="comment">//   UMX_issued = (3,000,000 × 0.10) / 1,000 = 300 UMX</span>
 
-<span class="comment">// At 1,000 employees: 300,000 UBX/month recurring demand</span>
+<span class="comment">// At 1,000 employees: 300,000 UMX/month recurring demand</span>
 <span class="comment">// This is non-speculative, productivity-backed demand</span>
 </pre>
             </div>
@@ -881,11 +881,11 @@
                 <table class="data-table">
                     <thead><tr><th>Condition</th><th>Action</th></tr></thead>
                     <tbody>
-                        <tr><td>Price within band (800-1,200 COP)</td><td>No intervention</td></tr>
-                        <tr><td>Price near lower band (~800-850 COP)</td><td>Reduce distribution (Lever 2)</td></tr>
-                        <tr><td>Price below band (&lt;800 COP)</td><td>Treasury buys + conversion encouraged (Levers 1+3)</td></tr>
-                        <tr><td>Price near upper band (~1,150-1,200 COP)</td><td>Increase distribution (Lever 2)</td></tr>
-                        <tr><td>Price above band (&gt;1,200 COP)</td><td>Treasury sells UBX from reserves (Lever 1)</td></tr>
+                        <tr><td>Price within band (800-1,200 VES)</td><td>No intervention</td></tr>
+                        <tr><td>Price near lower band (~800-850 VES)</td><td>Reduce distribution (Lever 2)</td></tr>
+                        <tr><td>Price below band (&lt;800 VES)</td><td>Treasury buys + conversion encouraged (Levers 1+3)</td></tr>
+                        <tr><td>Price near upper band (~1,150-1,200 VES)</td><td>Increase distribution (Lever 2)</td></tr>
+                        <tr><td>Price above band (&gt;1,200 VES)</td><td>Treasury sells UMX from reserves (Lever 1)</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -893,13 +893,13 @@
             <!-- 2.7 Long-Term Behavior -->
             <div class="highlight">
                 <h4>2.7 &mdash; Long-Term Stability Convergence</h4>
-                <p>Over time, the system stabilizes through five reinforcing mechanisms: (1) continuous payroll demand, (2) merchant pricing anchors, (3) treasury market depth on DEX, (4) UBX&rarr;KNEX gravity conversion, and (5) controlled distribution elasticity. This avoids hard pegs, algorithmic death spirals, and purely speculative price discovery. Stellar DEX is a bootstrap market mechanism, not the economic source of truth.</p>
+                <p>Over time, the system stabilizes through five reinforcing mechanisms: (1) continuous payroll demand, (2) merchant pricing anchors, (3) treasury market depth on DEX, (4) UMX&rarr;KNEX gravity conversion, and (5) controlled distribution elasticity. This avoids hard pegs, algorithmic death spirals, and purely speculative price discovery. Stellar DEX is a bootstrap market mechanism, not the economic source of truth.</p>
             </div>
 
             <!-- Economic Gravity -->
             <div class="card">
                 <h3>Economic Gravity &mdash; Directional Value Flow</h3>
-                <p>The system creates a one-directional economic flow from high-velocity circulation (UBX) toward low-velocity reserves (KNEX). This structural dynamic is the engine that sustains both layers.</p>
+                <p>The system creates a one-directional economic flow from high-velocity circulation (UMX) toward low-velocity reserves (KNEX). This structural dynamic is the engine that sustains both layers.</p>
             </div>
 
             <div class="diagram">
@@ -914,8 +914,8 @@
                            │
                            ▼
     ┌─────────────────────────────────────────────────────┐
-    │              UBX CIRCULATION                         │
-    │   High velocity  ●  Bearer-like  ●  ~1,000 COP      │
+    │              UMX CIRCULATION                         │
+    │   High velocity  ●  Bearer-like  ●  ~1,000 VES      │
     │   Daily payments, NFC SmartBills, P2P transfers      │
     └──────────────────────┬──────────────────────────────┘
                            │
@@ -924,7 +924,7 @@
                            ▼
     ┌─────────────────────────────────────────────────────┐
     │              DEX CONVERSION                          │
-    │   Merchant treasury converts excess UBX → KNEX      │
+    │   Merchant treasury converts excess UMX → KNEX      │
     │   K = U / E<sub>e</sub>  (conversion rate decays with &phi;)       │
     └──────────────────────┬──────────────────────────────┘
                            │
@@ -935,18 +935,18 @@
     │   Validator bonds, reserves, deflation via locks     │
     └─────────────────────────────────────────────────────┘
 
-    Flow direction: UBX circulation → surplus → DEX → KNEX
+    Flow direction: UMX circulation → surplus → DEX → KNEX
     Value flows from high-velocity to low-velocity over time.
 </pre>
-                <div class="diagram-label">Economic Gravity &mdash; UBX to KNEX Directional Flow</div>
+                <div class="diagram-label">Economic Gravity &mdash; UMX to KNEX Directional Flow</div>
             </div>
 
             <div class="code">
                 <div class="code-header">Merchant Treasury Model</div>
 <pre>
 <span class="comment">// Merchant conversion variables</span>
-<span class="type">P</span> = UBX revenue received by merchant
-<span class="type">O</span> = UBX retained for operations
+<span class="type">P</span> = UMX revenue received by merchant
+<span class="type">O</span> = UMX retained for operations
 <span class="type">S</span> = surplus converted to KNEX
 
 <span class="comment">// Surplus calculation:</span>
@@ -957,7 +957,7 @@
 
 <span class="comment">// Aggregate economic gravity:</span>
 <span class="comment">// As more merchants convert surplus → KNEX:</span>
-<span class="comment">//   - UBX circulating supply stabilizes</span>
+<span class="comment">//   - UMX circulating supply stabilizes</span>
 <span class="comment">//   - KNEX liquid supply decreases</span>
 <span class="comment">//   - d(KNEX_accumulated)/dt > 0 → increasing scarcity</span>
 </pre>
@@ -978,7 +978,7 @@
                         </tr>
                         <tr>
                             <td><strong>Conversion Flow (C)</strong></td>
-                            <td>C = &Sigma;(UBX&rarr;KNEX) per period</td>
+                            <td>C = &Sigma;(UMX&rarr;KNEX) per period</td>
                             <td>C &gt; 0 (positive flow)</td>
                             <td>C &rarr; 0 &rarr; gravity collapse</td>
                         </tr>
@@ -989,7 +989,7 @@
                             <td>L<sub>buy</sub> &lt; Vol<sub>daily</sub> &rarr; thin market</td>
                         </tr>
                         <tr>
-                            <td><strong>COP Deviation (&epsilon;)</strong></td>
+                            <td><strong>VES Deviation (&epsilon;)</strong></td>
                             <td>&epsilon; = (P<sub>market</sub> &minus; P<sub>target</sub>) / P<sub>target</sub></td>
                             <td>|&epsilon;| &le; 0.20</td>
                             <td>|&epsilon;| &gt; 0.30 &rarr; anchor breach</td>
@@ -1007,11 +1007,11 @@
             <div class="code">
                 <div class="code-header">Health Monitoring</div>
 <pre>
-<span class="comment">// Monetary velocity (UBX must circulate, not accumulate)</span>
+<span class="comment">// Monetary velocity (UMX must circulate, not accumulate)</span>
 <span class="type">V</span> = <span class="type">T</span> / <span class="type">M</span>
-<span class="comment">//   T = total UBX transaction volume in period</span>
-<span class="comment">//   M = UBX in active circulation</span>
-<span class="comment">//   V &ge; 2 → healthy system (UBX is being used)</span>
+<span class="comment">//   T = total UMX transaction volume in period</span>
+<span class="comment">//   M = UMX in active circulation</span>
+<span class="comment">//   V &ge; 2 → healthy system (UMX is being used)</span>
 <span class="comment">//   V &lt; 2 → WARNING: velocity collapse risk</span>
 
 <span class="comment">// KNEX accumulation rate (must be positive for gravity)</span>
@@ -1022,21 +1022,21 @@
 <span class="comment">//   → economic gravity is functioning</span>
 
 <span class="comment">// Equilibrium condition</span>
-<span class="type">D</span> &ge; <span class="type">R<sub>UBX</sub></span>    <span class="comment">// Demand ≥ Distribution → price stability</span>
-<span class="type">R<sub>UBX</sub></span> &gt; <span class="type">D</span>    <span class="comment">// Distribution > Demand → downward pressure</span>
+<span class="type">D</span> &ge; <span class="type">R<sub>UMX</sub></span>    <span class="comment">// Demand ≥ Distribution → price stability</span>
+<span class="type">R<sub>UMX</sub></span> &gt; <span class="type">D</span>    <span class="comment">// Distribution > Demand → downward pressure</span>
 </pre>
             </div>
 
             <!-- Failure Conditions -->
             <div class="highlight warning">
                 <h4>Existential Risk: Liquidity Death Spiral</h4>
-                <p>The single greatest threat to this system is a <strong>liquidity death spiral</strong>. If UBX&rarr;KNEX conversion (C) approaches zero AND UBX velocity (V) drops below 2 simultaneously, the following cascade occurs:</p>
+                <p>The single greatest threat to this system is a <strong>liquidity death spiral</strong>. If UMX&rarr;KNEX conversion (C) approaches zero AND UMX velocity (V) drops below 2 simultaneously, the following cascade occurs:</p>
                 <ol>
-                    <li>Merchants cannot convert UBX surplus to KNEX (C &rarr; 0)</li>
+                    <li>Merchants cannot convert UMX surplus to KNEX (C &rarr; 0)</li>
                     <li>Economic gravity collapses &mdash; no structural demand for KNEX</li>
-                    <li>UBX velocity drops (V &lt; 2) &mdash; users stop spending</li>
-                    <li>COP anchor breaks &mdash; |&epsilon;| exceeds 30%</li>
-                    <li>Merchants exit &mdash; refuse to accept UBX at any reference price</li>
+                    <li>UMX velocity drops (V &lt; 2) &mdash; users stop spending</li>
+                    <li>VES anchor breaks &mdash; |&epsilon;| exceeds 30%</li>
+                    <li>Merchants exit &mdash; refuse to accept UMX at any reference price</li>
                     <li>Network value collapses for both layers</li>
                 </ol>
             </div>
@@ -1050,7 +1050,7 @@
                         <tr>
                             <td><strong>Velocity Alert</strong></td>
                             <td>V &lt; 2 for &gt; 7 days</td>
-                            <td>Increase UBX distribution incentives, merchant onboarding push</td>
+                            <td>Increase UMX distribution incentives, merchant onboarding push</td>
                         </tr>
                         <tr>
                             <td><strong>Conversion Halt</strong></td>
@@ -1060,7 +1060,7 @@
                         <tr>
                             <td><strong>Anchor Breach</strong></td>
                             <td>|&epsilon;| &gt; 0.30</td>
-                            <td>Treasury intervention: sell KNEX reserves for UBX buy pressure</td>
+                            <td>Treasury intervention: sell KNEX reserves for UMX buy pressure</td>
                         </tr>
                         <tr>
                             <td><strong>Liquidity Crisis</strong></td>
@@ -1075,11 +1075,11 @@
                 <h4>What Kills This System</h4>
                 <p>Failure is not theoretical. These are the concrete failure modes that the protocol team must monitor and defend against:</p>
                 <ul>
-                    <li><strong>Merchant abandonment:</strong> If fewer than ~50 active merchants remain, the COP anchor loses its real-economy basis. Price discovery becomes speculative</li>
-                    <li><strong>Velocity collapse:</strong> If UBX velocity drops below 2, the token is being hoarded or abandoned. Either case breaks the circulation model</li>
-                    <li><strong>One-sided DEX:</strong> If buy-side liquidity disappears (L<sub>buy</sub> &lt; Vol<sub>daily</sub>), holders cannot exit UBX positions. Panic selling ensues</li>
+                    <li><strong>Merchant abandonment:</strong> If fewer than ~50 active merchants remain, the VES anchor loses its real-economy basis. Price discovery becomes speculative</li>
+                    <li><strong>Velocity collapse:</strong> If UMX velocity drops below 2, the token is being hoarded or abandoned. Either case breaks the circulation model</li>
+                    <li><strong>One-sided DEX:</strong> If buy-side liquidity disappears (L<sub>buy</sub> &lt; Vol<sub>daily</sub>), holders cannot exit UMX positions. Panic selling ensues</li>
                     <li><strong>Conversion freeze:</strong> If C = 0 for extended periods, KNEX loses its demand engine. The reserve layer becomes inert</li>
-                    <li><strong>Overdistribution:</strong> If UBX distribution outpaces real economic demand (R<sub>UBX</sub> &gt;&gt; D), COP anchor erodes through dilution</li>
+                    <li><strong>Overdistribution:</strong> If UMX distribution outpaces real economic demand (R<sub>UMX</sub> &gt;&gt; D), VES anchor erodes through dilution</li>
                 </ul>
             </div>
 
@@ -1088,13 +1088,13 @@
                 <table class="data-table">
                     <thead><tr><th>Asset</th><th>Supply Behavior</th><th>Role</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>UBX</strong></td><td>Elastic / expanding</td><td>Circulation and liquidity</td></tr>
+                        <tr><td><strong>UMX</strong></td><td>Elastic / expanding</td><td>Circulation and liquidity</td></tr>
                         <tr><td><strong>KNEX</strong></td><td>Fixed / scarce (100M cap)</td><td>Reserve and settlement</td></tr>
-                        <tr><td><strong>Conversion</strong></td><td>Directional (UBX &rarr; KNEX)</td><td>Economic gravity engine</td></tr>
+                        <tr><td><strong>Conversion</strong></td><td>Directional (UMX &rarr; KNEX)</td><td>Economic gravity engine</td></tr>
                         <tr><td><strong>Distribution</strong></td><td>&phi;-Decay by epochs</td><td>Bootstrapping with natural decay</td></tr>
                     </tbody>
                 </table>
-                <p style="margin-top: 12px; font-size: 13px;">The complementary dynamics &mdash; elastic circulation against fixed reserves &mdash; create a self-reinforcing monetary system where increased economic activity in UBX structurally benefits KNEX holders through conversion gravity.</p>
+                <p style="margin-top: 12px; font-size: 13px;">The complementary dynamics &mdash; elastic circulation against fixed reserves &mdash; create a self-reinforcing monetary system where increased economic activity in UMX structurally benefits KNEX holders through conversion gravity.</p>
             </div>
 
         </section>
@@ -1131,7 +1131,7 @@
     <span class="function">balance</span>: <span class="type">u128</span>,            <span class="comment">// Account balance after block</span>
 
     <span class="comment">// Dual-token support (L1)</span>
-    <span class="function">token_type</span>: <span class="type">TokenType</span>,    <span class="comment">// UBX | KNEX — first-class on L1</span>
+    <span class="function">token_type</span>: <span class="type">TokenType</span>,    <span class="comment">// UMX | KNEX — first-class on L1</span>
 
     <span class="comment">// Block type specific</span>
     <span class="function">block_type</span>: <span class="type">BlockType</span>,    <span class="comment">// Send | Receive | Change | Bandwidth | StreamOpen | StreamSettle | StreamClose</span>
@@ -1149,7 +1149,7 @@
 }
 
 <span class="keyword">pub enum</span> <span class="type">TokenType</span> {
-    <span class="function">UBX</span>,   <span class="comment">// Elastic transactional layer (~1,000 COP)</span>
+    <span class="function">UMX</span>,   <span class="comment">// Elastic transactional layer (~1,000 VES)</span>
     <span class="function">KNEX</span>,  <span class="comment">// Fixed-supply reserve layer (100M cap)</span>
 }
 
@@ -1162,7 +1162,7 @@
 
             <div class="highlight">
                 <h4>Dual-Token on L1</h4>
-                <p>On the native L1 DAG, both <strong>UBX</strong> and <strong>KNEX</strong> are first-class token types. Each block explicitly declares its token type. An account can hold balances in both tokens simultaneously (separate balance fields or separate account-chains per token type). During the Stellar phase, this distinction is handled by Stellar asset codes; on L1, it becomes a native protocol field.</p>
+                <p>On the native L1 DAG, both <strong>UMX</strong> and <strong>KNEX</strong> are first-class token types. Each block explicitly declares its token type. An account can hold balances in both tokens simultaneously (separate balance fields or separate account-chains per token type). During the Stellar phase, this distinction is handled by Stellar asset codes; on L1, it becomes a native protocol field.</p>
             </div>
 
             <div class="highlight">
@@ -1172,7 +1172,7 @@
 
             <div class="diagram">
 <pre>
-         BLOCK-LATTICE STRUCTURE (UBX Example)
+         BLOCK-LATTICE STRUCTURE (UMX Example)
          ══════════════════════════════════════
 
   Alice's Chain          Bob's Chain           Carol's Chain
@@ -1180,32 +1180,32 @@
        │                     │                      │
   ┌────┴────┐                │                      │
   │ GENESIS │                │                      │
-  │ 1000 UBX│                │                      │
+  │ 1000 UMX│                │                      │
   └────┬────┘                │                      │
        │                ┌────┴────┐                 │
        │                │ GENESIS │                 │
-       │                │ 500 UBX │                 │
+       │                │ 500 UMX │                 │
        │                └────┬────┘                 │
   ┌────┴────┐                │                      │
   │  SEND   │────────────────┼──────────────┐       │
-  │ -100 UBX│                │              │       │
-  │ 900 UBX │                │              ▼       │
+  │ -100 UMX│                │              │       │
+  │ 900 UMX │                │              ▼       │
   └────┬────┘                │         ┌────┴────┐  │
        │                     │         │ RECEIVE │  │
-       │                     │         │ +100 UBX│  │
-       │                     │         │ 100 UBX │  │
+       │                     │         │ +100 UMX│  │
+       │                     │         │ 100 UMX │  │
        │                     │         └────┬────┘  │
        │                ┌────┴────┐         │       │
        │                │  SEND   │─────────┼───────┼──▶ Pending
-       │                │ -50 UBX │         │       │
-       │                │ 450 UBX │         │       │
+       │                │ -50 UMX │         │       │
+       │                │ 450 UMX │         │       │
        │                └────┬────┘         │       │
        ▼                     ▼              ▼       ▼
 
   Same structure applies to KNEX blocks (token_type = KNEX).
   Each account can maintain parallel chains for each token type.
 </pre>
-                <div class="diagram-label">Transaction Flow Across Account-Chains (UBX)</div>
+                <div class="diagram-label">Transaction Flow Across Account-Chains (UMX)</div>
             </div>
         </section>
 
@@ -1444,7 +1444,7 @@
                 <table class="data-table">
                     <thead><tr><th>Input</th><th>Weight</th><th>Source</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Transaction Volume</strong></td><td>40%</td><td>Total UBX + KNEX transaction volume in RAW</td></tr>
+                        <tr><td><strong>Transaction Volume</strong></td><td>40%</td><td>Total UMX + KNEX transaction volume in RAW</td></tr>
                         <tr><td><strong>Active Accounts</strong></td><td>20%</td><td>Unique accounts with &ge;1 transaction in the epoch</td></tr>
                         <tr><td><strong>Active Validators</strong></td><td>10%</td><td>Validators that submitted PoB proofs in the epoch</td></tr>
                         <tr><td><strong>DEX Volume</strong></td><td>30%</td><td>Volume between D-prefix DEX accounts (Stellar bootstrap + L1 pools)</td></tr>
@@ -1495,7 +1495,7 @@
                 <h3>Open Representative Voting (ORV) + Bandwidth-Primary Weight</h3>
                 <p>Adapted from Nano's ORV consensus. Voting weight is determined <strong>primarily by Bandwidth Score</strong>. Stake functions as a bond threshold with ramp-up, <span class="redacted">not a weight multiplier</span>.</p>
                 <ul>
-                    <li><strong>Representatives:</strong> Nodes that vote on transaction validity for both UBX and KNEX blocks</li>
+                    <li><strong>Representatives:</strong> Nodes that vote on transaction validity for both UMX and KNEX blocks</li>
                     <li><strong>Delegation:</strong> Users delegate voting weight to representatives</li>
                     <li><strong>Quorum:</strong> <span class="redacted">67% of online voting weight</span> confirms transactions</li>
                     <li><strong>Weight Formula:</strong> <span class="redacted">VotingWeight = BandwidthScore &times; min(1, Stake / MIN_STAKE)</span></li>
@@ -1621,19 +1621,19 @@
 
             <div class="card">
                 <h3>Asynchronous Send-Receive Model</h3>
-                <p>Both UBX and KNEX use the same asynchronous two-phase transaction model. The <code>token_type</code> field in each block <span class="redacted">determines which layer the transaction operates on</span>.</p>
+                <p>Both UMX and KNEX use the same asynchronous two-phase transaction model. The <code>token_type</code> field in each block <span class="redacted">determines which layer the transaction operates on</span>.</p>
                 <ul>
-                    <li><strong>Phase 1 (Send):</strong> Sender creates send block with token_type (UBX or KNEX), balance decreases immediately</li>
+                    <li><strong>Phase 1 (Send):</strong> Sender creates send block with token_type (UMX or KNEX), balance decreases immediately</li>
                     <li><strong>Phase 2 (Receive):</strong> Receiver creates receive block, balance increases</li>
                     <li><strong>Pending State:</strong> Funds exist as "pending" between phases</li>
                     <li><strong>Confirmation:</strong> Each block confirmed independently via ORV (bandwidth-weighted)</li>
                 </ul>
             </div>
 
-            <!-- UBX Transaction Flow -->
+            <!-- UMX Transaction Flow -->
             <div class="card">
-                <h3>Flow 1: UBX Daily Payments</h3>
-                <p>The primary transaction flow. UBX payments between merchants, consumers, and payroll systems. Feeless, sub-second, NFC-compatible.</p>
+                <h3>Flow 1: UMX Daily Payments</h3>
+                <p>The primary transaction flow. UMX payments between merchants, consumers, and payroll systems. Feeless, sub-second, NFC-compatible.</p>
             </div>
 
             <div class="table-wrap">
@@ -1657,7 +1657,7 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>UBX SEND block created (token_type: UBX)</td>
+                            <td>UMX SEND block created (token_type: UMX)</td>
                             <td>~0ms</td>
                             <td>N/A (Stellar tx)</td>
                             <td>Block signed locally</td>
@@ -1695,14 +1695,14 @@
             </div>
 
             <div class="highlight">
-                <h4>UBX Payment: &lt;1 second (L1) / 3-5 seconds (Stellar)</h4>
-                <p>Full UBX transaction confirmation with <strong>zero fees</strong>. On L1: sub-second via ORV with bandwidth-weighted voting. During Stellar phase: 3-5 seconds via Stellar consensus. Both paths are suitable for point-of-sale use. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable tap-to-pay at physical locations.</p>
+                <h4>UMX Payment: &lt;1 second (L1) / 3-5 seconds (Stellar)</h4>
+                <p>Full UMX transaction confirmation with <strong>zero fees</strong>. On L1: sub-second via ORV with bandwidth-weighted voting. During Stellar phase: 3-5 seconds via Stellar consensus. Both paths are suitable for point-of-sale use. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable tap-to-pay at physical locations.</p>
             </div>
 
             <!-- KNEX Settlement Flow -->
             <div class="card">
                 <h3>Flow 2: KNEX Settlement &amp; Conversion</h3>
-                <p>The secondary flow. Merchants converting UBX surplus to KNEX via DEX, validator bond deposits, and high-value settlement transfers.</p>
+                <p>The secondary flow. Merchants converting UMX surplus to KNEX via DEX, validator bond deposits, and high-value settlement transfers.</p>
             </div>
 
             <div class="table-wrap">
@@ -1718,13 +1718,13 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Merchant identifies UBX surplus (P &minus; O = S)</td>
+                            <td>Merchant identifies UMX surplus (P &minus; O = S)</td>
                             <td>Business logic</td>
                             <td>Surplus calculated</td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>UBX sell order placed on DEX (UBX/KNEX pair)</td>
+                            <td>UMX sell order placed on DEX (UMX/KNEX pair)</td>
                             <td>~1-3s</td>
                             <td>Order submitted</td>
                         </tr>
@@ -1755,12 +1755,12 @@
     DUAL-TOKEN TRANSACTION FLOWS
     ════════════════════════════
 
-    FLOW 1: UBX DAILY PAYMENT (feeless, sub-second)
+    FLOW 1: UMX DAILY PAYMENT (feeless, sub-second)
     ─────────────────────────────────────────────────
     Consumer                         Merchant
     ┌──────────┐                     ┌──────────┐
-    │  Wallet  │── UBX SEND ────────▶│  Wallet  │
-    │  (NFC/   │   token: UBX       │  (POS /  │
+    │  Wallet  │── UMX SEND ────────▶│  Wallet  │
+    │  (NFC/   │   token: UMX       │  (POS /  │
     │   App)   │   fee: 0           │   App)   │
     └──────────┘                     └──────────┘
          │              ORV                │
@@ -1771,7 +1771,7 @@
     ─────────────────────────────────────────
     Merchant                    DEX                  Reserve
     ┌──────────┐         ┌────────────┐         ┌──────────┐
-    │  UBX     │── Sell ▶│  UBX/KNEX  │── Buy ─▶│  KNEX    │
+    │  UMX     │── Sell ▶│  UMX/KNEX  │── Buy ─▶│  KNEX    │
     │  Surplus │         │  Order Book│         │  Treasury│
     └──────────┘         └────────────┘         └──────────┘
          │                     │                      │
@@ -1785,8 +1785,8 @@
                 <table class="data-table">
                     <thead><tr><th>Network</th><th>Confirmation</th><th>Fees</th><th>Finality</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>KnexCoin L1 (UBX)</strong></td><td>&lt;1 second</td><td>Zero</td><td>Immediate (ORV quorum)</td></tr>
-                        <tr><td><strong>KnexCoin Stellar (UBX)</strong></td><td>3-5 seconds</td><td>~0.00001 XLM</td><td>Immediate (SCP)</td></tr>
+                        <tr><td><strong>KnexCoin L1 (UMX)</strong></td><td>&lt;1 second</td><td>Zero</td><td>Immediate (ORV quorum)</td></tr>
+                        <tr><td><strong>KnexCoin Stellar (UMX)</strong></td><td>3-5 seconds</td><td>~0.00001 XLM</td><td>Immediate (SCP)</td></tr>
                         <tr><td>Nano</td><td>&lt;1 second</td><td>Zero</td><td>Immediate (ORV)</td></tr>
                         <tr><td>Solana</td><td>~400ms</td><td>~$0.00025</td><td>Probabilistic</td></tr>
                         <tr><td>Ethereum</td><td>~12 seconds</td><td>$0.50-50+</td><td>~15 minutes</td></tr>
@@ -1798,13 +1798,13 @@
             <!-- Streaming Payments -->
             <div class="card">
                 <h3>Streaming Payments (Off-Chain Payment Channels)</h3>
-                <p>UBX supports continuous, per-second payment streams via off-chain signed vouchers with periodic on-chain settlement. This enables payroll drip, bandwidth metering, service billing, and micro-commerce without chain spam.</p>
+                <p>UMX supports continuous, per-second payment streams via off-chain signed vouchers with periodic on-chain settlement. This enables payroll drip, bandwidth metering, service billing, and micro-commerce without chain spam.</p>
 
                 <h4>Streamability Rules</h4>
                 <table class="data-table">
                     <thead><tr><th>Token</th><th>Streamable?</th><th>Use Cases</th><th>Rationale</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>UBX</strong></td><td>&check; Yes</td><td>Payroll drip, service metering, bandwidth payments, micro-commerce</td><td>High-velocity layer designed for continuous flow</td></tr>
+                        <tr><td><strong>UMX</strong></td><td>&check; Yes</td><td>Payroll drip, service metering, bandwidth payments, micro-commerce</td><td>High-velocity layer designed for continuous flow</td></tr>
                         <tr><td><strong>KNEX (retail)</strong></td><td>&cross; No</td><td>&mdash;</td><td>Low velocity reserve asset; should not be continuously spent by retail users</td></tr>
                         <tr><td><strong>KNEX (protocol)</strong></td><td>&check; Yes</td><td>Validator rewards, treasury vesting, protocol distributions</td><td>Controlled release from reserves needs continuous scheduling</td></tr>
                     </tbody>
@@ -1818,7 +1818,7 @@
     <span class="function">session_id</span>: <span class="type">Hash</span>,             <span class="comment">// Unique channel ID (Blake2b of params)</span>
     <span class="function">sender</span>: <span class="type">PublicKey</span>,             <span class="comment">// Payer</span>
     <span class="function">receiver</span>: <span class="type">PublicKey</span>,           <span class="comment">// Payee</span>
-    <span class="function">token_type</span>: <span class="type">TokenType</span>,         <span class="comment">// UBX (retail) or KNEX (protocol-only)</span>
+    <span class="function">token_type</span>: <span class="type">TokenType</span>,         <span class="comment">// UMX (retail) or KNEX (protocol-only)</span>
     <span class="function">rate_raw_per_second</span>: <span class="type">u128</span>,    <span class="comment">// <span class="redacted">Continuous payment rate in RAW</span></span>
     <span class="function">max_total_raw</span>: <span class="type">u128</span>,          <span class="comment">// Spending cap for this session</span>
     <span class="function">settled_raw</span>: <span class="type">u128</span>,            <span class="comment">// Cumulative on-chain settlements</span>
@@ -1827,7 +1827,7 @@
 }
 
 <span class="comment">// Precision: 1.0000000 = 10,000,000 RAW (7 decimal places)</span>
-<span class="comment">// Example: Payroll stream of 400 UBX/month</span>
+<span class="comment">// Example: Payroll stream of 400 UMX/month</span>
 <span class="comment">//   <span class="redacted">rate = (400 × 10,000,000) / (30 × 86,400) = 1,543 RAW/second</span></span>
 <span class="comment">//   max_total = 400 × 10,000,000 = 4,000,000,000 RAW</span>
 
@@ -1887,9 +1887,9 @@
             <div class="highlight">
                 <h4>Streaming Use Cases</h4>
                 <ul>
-                    <li><strong>Payroll Drip:</strong> Employer streams UBX to employees per-second. <code>rate = monthly_salary / (30 &times; 86,400)</code>. Settles hourly on-chain. Employee can spend accrued UBX in real-time</li>
-                    <li><strong>Bandwidth Metering:</strong> Node streams UBX to bandwidth provider proportional to bytes transferred. Settlement on threshold (e.g., every 100MB). Creates direct bandwidth economy</li>
-                    <li><strong>Service Metering:</strong> SaaS/API billing in UBX per-request or per-second of compute usage. Pay-as-you-go without subscription friction</li>
+                    <li><strong>Payroll Drip:</strong> Employer streams UMX to employees per-second. <code>rate = monthly_salary / (30 &times; 86,400)</code>. Settles hourly on-chain. Employee can spend accrued UMX in real-time</li>
+                    <li><strong>Bandwidth Metering:</strong> Node streams UMX to bandwidth provider proportional to bytes transferred. Settlement on threshold (e.g., every 100MB). Creates direct bandwidth economy</li>
+                    <li><strong>Service Metering:</strong> SaaS/API billing in UMX per-request or per-second of compute usage. Pay-as-you-go without subscription friction</li>
                     <li><strong>Micro-Commerce:</strong> Pay-per-minute for coworking spaces, parking, EV charging, or content access. Sub-cent precision via 7-decimal RAW units</li>
                 </ul>
             </div>
@@ -1935,8 +1935,8 @@
             </div>
 
             <div class="highlight">
-                <h4>Colombia-First: Real Commerce Before Global Scale</h4>
-                <p>UBX launches as a local payment rail in <span class="redacted">Colombia before expanding regionally</span>. Price stability, merchant density, and payroll integration are achieved in a single market first &mdash; proving the economic model with real transaction volume before geographic expansion.</p>
+                <h4>Venezuela-First: Real Commerce Before Global Scale</h4>
+                <p>UMX launches as a local payment rail in <span class="redacted">Venezuela before expanding regionally</span>. Price stability, merchant density, and payroll integration are achieved in a single market first &mdash; proving the economic model with real transaction volume before geographic expansion.</p>
             </div>
 
             <!-- Five-Phase Adoption Model -->
@@ -1951,7 +1951,7 @@
                             <td><span class="redacted">50&ndash;100</span></td>
                             <td><span class="redacted">1,000&ndash;5,000</span></td>
                             <td><span class="redacted">$50K&ndash;$200K</span></td>
-                            <td><span class="redacted">Single city (Cali), prove unit economics</span></td>
+                            <td><span class="redacted">Single city (Caracas), prove unit economics</span></td>
                         </tr>
                         <tr>
                             <td><strong>2</strong></td>
@@ -1959,7 +1959,7 @@
                             <td>500&ndash;2,000</td>
                             <td>10,000&ndash;50,000</td>
                             <td>$500K&ndash;$2M</td>
-                            <td>3&ndash;5 cities (Bogot&aacute;, Medell&iacute;n, Cali, Barranquilla)</td>
+                            <td>3&ndash;5 cities (Maracaibo, Valencia, Caracas, Barquisimeto)</td>
                         </tr>
                         <tr>
                             <td><strong>3</strong></td>
@@ -1997,25 +1997,25 @@
 
     ┌──────────────┐         ┌──────────────┐
     │   Merchant   │────────▶│   Consumer   │
-    │   Accepts    │         │   Pays UBX   │
-    │     UBX      │         │              │
+    │   Accepts    │         │   Pays UMX   │
+    │     UMX      │         │              │
     └──────┬───────┘         └──────┬───────┘
            │                        │
            ▼                        ▼
     ┌──────────────┐         ┌──────────────┐
     │   Payroll    │◀────────│   Velocity   │
     │  Integration │         │   Increases  │
-    │  (COP→UBX)  │         │   (V ≥ 2)    │
+    │  (VES→UMX)  │         │   (V ≥ 2)    │
     └──────┬───────┘         └──────┬───────┘
            │                        │
            ▼                        ▼
     ┌──────────────┐         ┌──────────────┐
     │   Surplus    │────────▶│    KNEX      │
-    │   UBX Flow   │         │  Conversion  │
+    │   UMX Flow   │         │  Conversion  │
     │              │         │   Gravity    │
     └──────────────┘         └──────────────┘
 
-    Merchants accept UBX → Consumers spend UBX → Velocity rises →
+    Merchants accept UMX → Consumers spend UMX → Velocity rises →
     Payroll creates recurring demand → Surplus flows to KNEX →
     More merchants attracted by network density → Flywheel accelerates
 </pre>
@@ -2042,40 +2042,40 @@
             <!-- Payroll Integration -->
             <div class="card">
                 <h3>Payroll Integration (Phase 3+)</h3>
-                <p>Employers integrate via the Payroll API, allowing employees to receive a configurable percentage of their salary in UBX. This creates <strong>recurring, predictable demand</strong> that anchors UBX velocity.</p>
+                <p>Employers integrate via the Payroll API, allowing employees to receive a configurable percentage of their salary in UMX. This creates <strong>recurring, predictable demand</strong> that anchors UMX velocity.</p>
                 <div class="code">
                     <div class="code-header">Payroll Flow</div>
 <pre>
 <span class="comment">// Company → Payroll API → Split payout</span>
 
-<span class="comment">// Employee configures UBX percentage (<span class="redacted">r = 3% to 30%</span>)</span>
-<span class="type">UBX<sub>payout</sub></span> = (<span class="type">Salary<sub>COP</sub></span> &times; <span class="function">r</span>) / <span class="type">P<sub>UBX</sub></span>
-<span class="type">COP<sub>payout</sub></span> = <span class="type">Salary<sub>COP</sub></span> &times; (1 - <span class="function">r</span>)
+<span class="comment">// Employee configures UMX percentage (<span class="redacted">r = 3% to 30%</span>)</span>
+<span class="type">UMX<sub>payout</sub></span> = (<span class="type">Salary<sub>VES</sub></span> &times; <span class="function">r</span>) / <span class="type">P<sub>UMX</sub></span>
+<span class="type">VES<sub>payout</sub></span> = <span class="type">Salary<sub>VES</sub></span> &times; (1 - <span class="function">r</span>)
 
-<span class="comment">// <span class="redacted">Example: 4,000,000 COP salary, r = 10%, P_UBX = 1,000 COP</span></span>
-<span class="comment">//   UBX payout = (4,000,000 × 0.10) / 1,000 = 400 UBX</span>
-<span class="comment">//   COP payout = 4,000,000 × 0.90 = 3,600,000 COP (to bank)</span>
+<span class="comment">// <span class="redacted">Example: 4,000,000 VES salary, r = 10%, P_UMX = 1,000 VES</span></span>
+<span class="comment">//   UMX payout = (4,000,000 × 0.10) / 1,000 = 400 UMX</span>
+<span class="comment">//   VES payout = 4,000,000 × 0.90 = 3,600,000 VES (to bank)</span>
 
 <span class="comment">// Payroll creates:</span>
-<span class="comment">//   - Recurring UBX demand (buy pressure at each pay cycle)</span>
-<span class="comment">//   - Velocity floor (employees spend UBX at merchants)</span>
-<span class="comment">//   - Natural COP anchor reinforcement</span>
+<span class="comment">//   - Recurring UMX demand (buy pressure at each pay cycle)</span>
+<span class="comment">//   - Velocity floor (employees spend UMX at merchants)</span>
+<span class="comment">//   - Natural VES anchor reinforcement</span>
 </pre>
                 </div>
-                <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">UBX percentage is fully employee-configurable with no minimum mandate. Integration with existing accounting systems (SAP, Siigo) planned for Phase 3. Corporate treasury can also hold KNEX as a reserve asset. <strong>Streaming mode:</strong> Payroll can use the streaming payment channel (see &sect;06) for per-second UBX drip &mdash; employees accrue UBX in real time and can spend it before the pay period ends.</p>
+                <p style="margin-top: 12px; font-size: 13px; color: var(--text-dim);">UMX percentage is fully employee-configurable with no minimum mandate. Integration with existing accounting systems (SAP, Siigo) planned for Phase 3. Corporate treasury can also hold KNEX as a reserve asset. <strong>Streaming mode:</strong> Payroll can use the streaming payment channel (see &sect;06) for per-second UMX drip &mdash; employees accrue UMX in real time and can spend it before the pay period ends.</p>
             </div>
 
             <!-- Remittance Corridors -->
             <div class="card">
                 <h3>Remittance Corridors (Phase 5)</h3>
-                <p>Colombia receives <strong><span class="redacted">$9B+ in annual remittances</span></strong>, primarily from the United States. UBX/KNEX provides a settlement rail with sub-5-second finality and less than 0.1% transaction cost.</p>
+                <p>Venezuela receives <strong><span class="redacted">$9B+ in annual remittances</span></strong>, primarily from the United States. UMX/KNEX provides a settlement rail with sub-5-second finality and less than 0.1% transaction cost.</p>
                 <table class="data-table">
                     <thead><tr><th>Corridor</th><th>Volume Estimate</th><th>Infrastructure</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Colombia &harr; USA</strong></td><td><span class="redacted">$9B+/year (primary)</span></td><td>Stellar + local on-ramps</td></tr>
-                        <tr><td><strong>Colombia &harr; Spain</strong></td><td>Remittances + commerce</td><td>Stellar + EU partners</td></tr>
+                        <tr><td><strong>Venezuela &harr; USA</strong></td><td><span class="redacted">$9B+/year (primary)</span></td><td>Stellar + local on-ramps</td></tr>
+                        <tr><td><strong>Venezuela &harr; Spain</strong></td><td>Remittances + commerce</td><td>Stellar + EU partners</td></tr>
                         <tr><td><strong>LATAM Regional</strong></td><td>Bilateral trade</td><td>Regional node networks</td></tr>
-                        <tr><td><strong>Colombia &harr; Asia</strong></td><td>Imports</td><td>Stellar cross-border settlement</td></tr>
+                        <tr><td><strong>Venezuela &harr; Asia</strong></td><td>Imports</td><td>Stellar cross-border settlement</td></tr>
                     </tbody>
                 </table>
 
@@ -2083,8 +2083,8 @@
                 <table class="data-table">
                     <thead><tr><th>Route</th><th>Monthly Volume</th><th>Use Case</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Bogot&aacute; &harr; Medell&iacute;n</strong></td><td><span class="redacted">$1M&ndash;$5M</span></td><td>Inter-city commerce</td></tr>
-                        <tr><td><strong>Bogot&aacute; &harr; Cali</strong></td><td>$500K&ndash;$3M</td><td>Supply chain payments</td></tr>
+                        <tr><td><strong>Maracaibo &harr; Valencia</strong></td><td><span class="redacted">$1M&ndash;$5M</span></td><td>Inter-city commerce</td></tr>
+                        <tr><td><strong>Maracaibo &harr; Caracas</strong></td><td>$500K&ndash;$3M</td><td>Supply chain payments</td></tr>
                         <tr><td><strong>Venezuela Border</strong></td><td>$200K&ndash;$1M</td><td>Remittances + commerce</td></tr>
                         <tr><td><strong>Ecuador Border</strong></td><td>$100K&ndash;$500K</td><td>Bilateral trade</td></tr>
                     </tbody>
@@ -2098,9 +2098,9 @@
                     <thead><tr><th>Metric</th><th>Target</th><th>Why It Matters</th></tr></thead>
                     <tbody>
                         <tr><td><strong>WAU (Weekly Active Users)</strong></td><td><span class="redacted">&gt;500</span></td><td>Minimum network activity for meaningful data</td></tr>
-                        <tr><td><strong>UBX Velocity (V)</strong></td><td><span class="redacted">2&ndash;4&times; rotations/month</span></td><td>Below 2 = stagnation risk, above 4 = healthy commerce</td></tr>
+                        <tr><td><strong>UMX Velocity (V)</strong></td><td><span class="redacted">2&ndash;4&times; rotations/month</span></td><td>Below 2 = stagnation risk, above 4 = healthy commerce</td></tr>
                         <tr><td><strong>3-Month Retention</strong></td><td><span class="redacted">&gt;50%</span></td><td>Users must stay for flywheel to work</td></tr>
-                        <tr><td><strong>UBX&rarr;KNEX Conversion</strong></td><td><span class="redacted">&gt;20% of merchants</span></td><td>Proves KNEX gravity is active</td></tr>
+                        <tr><td><strong>UMX&rarr;KNEX Conversion</strong></td><td><span class="redacted">&gt;20% of merchants</span></td><td>Proves KNEX gravity is active</td></tr>
                         <tr><td><strong>NPS (Merchant)</strong></td><td>&gt;40</td><td>Merchant satisfaction drives word-of-mouth</td></tr>
                         <tr><td><strong>Settlement Time</strong></td><td>&lt;3 seconds</td><td>Must match or beat card network UX</td></tr>
                     </tbody>
@@ -2113,7 +2113,7 @@
                 <table class="data-table">
                     <thead><tr><th>Year</th><th>Milestone</th><th>Users</th><th>Key Deliverable</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>2026</strong></td><td>Launch &amp; Validation</td><td><span class="redacted">1K&ndash;5K</span></td><td><span class="redacted">Mainnet activation, pilot in Cali, 20&ndash;50 merchants</span></td></tr>
+                        <tr><td><strong>2026</strong></td><td>Launch &amp; Validation</td><td><span class="redacted">1K&ndash;5K</span></td><td><span class="redacted">Mainnet activation, pilot in Caracas, 20&ndash;50 merchants</span></td></tr>
                         <tr><td><strong>2027</strong></td><td>Local Expansion</td><td>20K&ndash;50K</td><td>Multiple urban zones, NFC card deployment at regional scale</td></tr>
                         <tr><td><strong>2028</strong></td><td>Enterprise Integration</td><td>100K&ndash;300K</td><td>SME integration, payroll API live, KNEX corporate treasury</td></tr>
                         <tr><td><strong>2029</strong></td><td>National Network</td><td>1M+</td><td>Multiple major cities, national merchant directory</td></tr>
@@ -2122,16 +2122,16 @@
                 </table>
             </div>
 
-            <!-- Post-Colombia Markets -->
+            <!-- Post-Venezuela Markets -->
             <div class="highlight">
-                <h4>Post-Colombia Expansion (Priority Order)</h4>
+                <h4>Post-Venezuela Expansion (Priority Order)</h4>
                 <ul>
                     <li><strong>Mexico:</strong> Largest remittance recipient in LATAM; mature fintech ecosystem</li>
                     <li><strong>Peru:</strong> Geographic proximity; partially dollarized economy</li>
                     <li><strong>Chile:</strong> Advanced financial infrastructure; active crypto market</li>
                     <li><strong>Argentina:</strong> High demand for alternatives to local monetary system</li>
                 </ul>
-                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">Minimum 6 months of stable Colombian operation required before international expansion. Each market requires a local partner for regulatory compliance.</p>
+                <p style="margin-top: 8px; font-size: 13px; color: var(--text-dim);">Minimum 6 months of stable Venezuelan operation required before international expansion. Each market requires a local partner for regulatory compliance.</p>
             </div>
         </section>
 
@@ -2144,7 +2144,7 @@
 
             <div class="highlight">
                 <h4>Dual-Layer Security Model</h4>
-                <p>Security spans both token layers: <strong>UBX supply integrity</strong> (distribution accuracy, conversion rate manipulation, COP anchor defense), <strong>KNEX lockup enforcement</strong> (validator bonds, slashing execution, reserve accounting), and <strong>conversion manipulation prevention</strong> (rate oracle attacks, front-running, sandwich attacks on the conversion module).</p>
+                <p>Security spans both token layers: <strong>UMX supply integrity</strong> (distribution accuracy, conversion rate manipulation, VES anchor defense), <strong>KNEX lockup enforcement</strong> (validator bonds, slashing execution, reserve accounting), and <strong>conversion manipulation prevention</strong> (rate oracle attacks, front-running, sandwich attacks on the conversion module).</p>
             </div>
 
             <!-- Slashing in KNEX -->
@@ -6107,6 +6107,7 @@ touch node/src/block.rs
         <footer class="footer">
             <p>KnexCoin Blueprint v5.1 // <a href="https://ubx.credit/papel_blanco.html">Read Full Papel Blanco</a></p>
             <p style="margin-top: 8px; color: #555;">Created by David Otero</p>
+            <p style="margin-top: 8px; color: #333; font-size: 0.7rem;">Operativo Novia Fea</p>
         </footer>
     </div>
 
