@@ -329,6 +329,12 @@
     letter-spacing: normal;
 }
 
+.spec-text {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .spec-text p {
     font-size: 0.9rem;
     line-height: 1.6;
