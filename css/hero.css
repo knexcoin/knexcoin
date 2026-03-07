@@ -56,6 +56,7 @@
     color: var(--neon);
     text-shadow: var(--glow-neon-intense);
     display: block;
+    font-size: 5em;
 }
 
 .hero-title .sub {
