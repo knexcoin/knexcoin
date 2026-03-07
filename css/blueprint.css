@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    BLUEPRINT - Blueprint Section Styles
+   Color Scheme: Red, White & Blue (predominantly blue)
    ═══════════════════════════════════════════════════════════════ */
 
 .blueprint {
@@ -16,14 +17,14 @@
 /* Blueprint Navigation */
 .bp-nav {
     background: rgba(10,10,10,0.8);
-    border: 1px solid rgba(0,255,0,0.2);
+    border: 1px solid rgba(0,136,255,0.2);
     padding: 16px 24px;
     margin-bottom: 40px;
     border-radius: 8px;
 }
 
 .bp-nav-title {
-    color: var(--neon-magenta);
+    color: #ff2244;
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -47,12 +48,12 @@
 }
 
 .bp-nav-list a:hover {
-    color: var(--neon);
+    color: #0088ff;
 }
 
 .bp-nav-list a::before {
     content: '> ';
-    color: var(--neon);
+    color: #0088ff;
 }
 
 /* Blueprint Sections */
@@ -70,28 +71,28 @@
 .bp-section-num {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--neon-magenta);
-    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff66;
+    color: #ff2244;
+    text-shadow: 0 0 10px #ff2244, 0 0 20px #ff224466;
     font-family: var(--font-display);
 }
 
 .bp-section h2 {
     font-size: 1.4rem;
-    color: var(--neon-cyan);
+    color: #ffffff;
     font-family: var(--font-display);
 }
 
 /* Blueprint Cards */
 .bp-card {
     background: #111;
-    border: 1px solid rgba(0,255,0,0.2);
+    border: 1px solid rgba(0,136,255,0.2);
     padding: 24px;
     margin-bottom: 20px;
     border-radius: 8px;
 }
 
 .bp-card h3 {
-    color: var(--neon);
+    color: #0088ff;
     font-size: 1rem;
     margin-bottom: 12px;
     display: flex;
@@ -102,7 +103,7 @@
 
 .bp-card h3::before {
     content: '//';
-    color: var(--neon-magenta);
+    color: #ff2244;
 }
 
 .bp-card p {
@@ -130,7 +131,7 @@
 
 .bp-card li::before {
     content: '- ';
-    color: var(--neon);
+    color: #0088ff;
 }
 
 .bp-card li strong {
@@ -140,7 +141,7 @@
 /* Blueprint Code Blocks */
 .bp-code {
     background: #0d1117;
-    border: 1px solid rgba(0,255,0,0.2);
+    border: 1px solid rgba(0,136,255,0.2);
     padding: 20px;
     border-radius: 8px;
     overflow-x: auto;
@@ -149,7 +150,7 @@
 }
 
 .bp-code-header {
-    color: var(--neon-magenta);
+    color: #ff2244;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     margin-bottom: 12px;
@@ -167,17 +168,17 @@
     word-wrap: normal;
 }
 
-.bp-code .comment { color: var(--neon-cyan); }
-.bp-code .keyword { color: var(--neon-magenta); }
-.bp-code .string { color: var(--neon-yellow); }
-.bp-code .function { color: var(--neon); }
-.bp-code .number { color: var(--neon-magenta); }
-.bp-code .type { color: #ff8800; }
+.bp-code .comment { color: #ffffff; }
+.bp-code .keyword { color: #ff2244; }
+.bp-code .string { color: #66bbff; }
+.bp-code .function { color: #0088ff; }
+.bp-code .number { color: #ff2244; }
+.bp-code .type { color: #99ccff; }
 
 /* Blueprint Diagrams */
 .bp-diagram {
     background: rgba(10,10,10,0.8);
-    border: 1px solid rgba(0,255,0,0.2);
+    border: 1px solid rgba(0,136,255,0.2);
     padding: 32px;
     margin: 24px 0;
     border-radius: 8px;
@@ -189,7 +190,7 @@
 .bp-diagram pre {
     font-family: var(--font-mono);
     font-size: 0.75rem;
-    color: var(--neon);
+    color: #0088ff;
     line-height: 1.4;
     display: inline-block;
     text-align: left;
@@ -198,7 +199,7 @@
 }
 
 .bp-diagram-label {
-    color: var(--neon-magenta);
+    color: #ff2244;
     font-size: 0.75rem;
     margin-top: 16px;
     letter-spacing: 0.1em;
@@ -207,8 +208,8 @@
 
 /* Blueprint Highlight Boxes */
 .bp-highlight {
-    background: linear-gradient(135deg, rgba(0,255,0,0.1), rgba(0,255,255,0.05));
-    border-left: 3px solid var(--neon);
+    background: linear-gradient(135deg, rgba(0,136,255,0.1), rgba(255,255,255,0.03));
+    border-left: 3px solid #0088ff;
     padding: 20px 24px;
     margin: 20px 0;
     border-radius: 0 8px 8px 0;
@@ -220,12 +221,12 @@
 }
 
 .bp-highlight.critical {
-    border-left-color: var(--neon-red);
-    background: linear-gradient(135deg, rgba(255,51,51,0.1), rgba(255,0,170,0.05));
+    border-left-color: #ff2244;
+    background: linear-gradient(135deg, rgba(255,34,68,0.1), rgba(255,0,0,0.05));
 }
 
 .bp-highlight h4 {
-    color: var(--neon);
+    color: #0088ff;
     margin-bottom: 8px;
     font-family: var(--font-display);
     font-size: 1rem;
@@ -236,7 +237,7 @@
 }
 
 .bp-highlight.critical h4 {
-    color: var(--neon-red);
+    color: #ff2244;
 }
 
 .bp-highlight p {
@@ -264,8 +265,8 @@
 .bp-table-wrap th {
     text-align: left;
     padding: 12px 16px;
-    color: var(--neon-cyan);
-    border-bottom: 2px solid rgba(0,255,0,0.2);
+    color: #ffffff;
+    border-bottom: 2px solid rgba(0,136,255,0.3);
     font-size: 0.85rem;
     font-family: var(--font-mono);
 }

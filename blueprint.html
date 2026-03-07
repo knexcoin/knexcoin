@@ -9,11 +9,11 @@
     <style>
         :root {
             --bg: #000; --bg-secondary: #0a0a0a; --bg-card: #111;
-            --neon: #00ff88; --cyan: #00ffff; --magenta: #ff00ff; --yellow: #ffff00; --red: #ff3333;
-            --text: #f0f0f0; --text-dim: #888; --border: rgba(0,255,136,0.2);
-            --glow-neon: 0 0 10px #00ff88, 0 0 20px #00ff8866;
-            --glow-cyan: 0 0 10px #00ffff, 0 0 20px #00ffff66;
-            --glow-magenta: 0 0 10px #ff00ff, 0 0 20px #ff00ff66;
+            --neon: #0088ff; --cyan: #ffffff; --magenta: #ff2244; --yellow: #ffff00; --red: #ff3333;
+            --text: #f0f0f0; --text-dim: #888; --border: rgba(0,136,255,0.2);
+            --glow-neon: 0 0 10px #0088ff, 0 0 20px #0088ff66;
+            --glow-cyan: 0 0 10px #ffffff, 0 0 20px #ffffff44;
+            --glow-magenta: 0 0 10px #ff2244, 0 0 20px #ff224466;
             --font: 'JetBrains Mono', monospace;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -57,10 +57,10 @@
         .code pre { font-family: var(--font); font-size: 0.85rem; line-height: 1.6; }
         .code .comment { color: var(--cyan); }
         .code .keyword { color: var(--magenta); }
-        .code .string { color: var(--yellow); }
+        .code .string { color: #66bbff; }
         .code .function { color: var(--neon); }
         .code .number { color: var(--magenta); }
-        .code .type { color: #ff8800; }
+        .code .type { color: #99ccff; }
 
         /* Diagram */
         .diagram { background: var(--bg-secondary); border: 1px solid var(--border); padding: 32px; margin: 24px 0; border-radius: 8px; text-align: center; }
@@ -68,7 +68,7 @@
         .diagram-label { color: var(--magenta); font-size: 0.75rem; margin-top: 16px; letter-spacing: 0.1em; }
 
         /* Highlight box */
-        .highlight { background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,255,255,0.05)); border-left: 3px solid var(--neon); padding: 20px 24px; margin: 20px 0; }
+        .highlight { background: linear-gradient(135deg, rgba(0,136,255,0.1), rgba(255,255,255,0.03)); border-left: 3px solid var(--neon); padding: 20px 24px; margin: 20px 0; }
         .highlight.warning { border-left-color: var(--yellow); background: linear-gradient(135deg, rgba(255,255,0,0.1), rgba(255,136,0,0.05)); }
         .highlight.critical { border-left-color: var(--red); background: linear-gradient(135deg, rgba(255,51,51,0.1), rgba(255,0,170,0.05)); }
         .highlight h4 { color: var(--neon); margin-bottom: 8px; }
@@ -105,7 +105,7 @@
 
         /* Difficulty badges */
         .difficulty { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-        .difficulty.easy { background: rgba(0,255,136,0.2); color: var(--neon); border: 1px solid var(--neon); }
+        .difficulty.easy { background: rgba(0,136,255,0.2); color: var(--neon); border: 1px solid var(--neon); }
         .difficulty.medium { background: rgba(255,255,0,0.2); color: var(--yellow); border: 1px solid var(--yellow); }
         .difficulty.hard { background: rgba(255,51,51,0.2); color: var(--red); border: 1px solid var(--red); }
         .difficulty::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
@@ -114,7 +114,7 @@
         .difficulty.hard::before { background: var(--red); box-shadow: 0 0 6px var(--red); }
 
         /* Timeframe badge */
-        .timeframe { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; background: rgba(0,255,255,0.1); color: var(--cyan); border: 1px solid rgba(0,255,255,0.3); }
+        .timeframe { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; background: rgba(0,136,255,0.1); color: var(--neon); border: 1px solid rgba(0,136,255,0.3); }
         .timeframe svg { width: 12px; height: 12px; }
 
         /* Phase meta row */
@@ -122,8 +122,8 @@
 
         /* Expandable prompt section */
         .prompt-section { margin-top: 16px; }
-        .prompt-toggle { display: flex; align-items: center; gap: 8px; background: rgba(255,0,255,0.1); border: 1px solid rgba(255,0,255,0.3); color: var(--magenta); padding: 10px 16px; font-family: var(--font); font-size: 0.8rem; cursor: pointer; border-radius: 6px; transition: all 0.2s; width: 100%; text-align: left; }
-        .prompt-toggle:hover { background: rgba(255,0,255,0.2); border-color: var(--magenta); }
+        .prompt-toggle { display: flex; align-items: center; gap: 8px; background: rgba(255,34,68,0.1); border: 1px solid rgba(255,34,68,0.3); color: var(--magenta); padding: 10px 16px; font-family: var(--font); font-size: 0.8rem; cursor: pointer; border-radius: 6px; transition: all 0.2s; width: 100%; text-align: left; }
+        .prompt-toggle:hover { background: rgba(255,34,68,0.2); border-color: var(--magenta); }
         .prompt-toggle svg { width: 16px; height: 16px; transition: transform 0.3s; }
         .prompt-toggle.active svg { transform: rotate(180deg); }
         .prompt-content { display: none; margin-top: 12px; background: #0a0a0a; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
@@ -134,14 +134,14 @@
         .prompt-box { position: relative; padding: 16px; background: #0d1117; }
         .prompt-box pre { font-family: var(--font); font-size: 0.8rem; line-height: 1.6; color: var(--text-dim); white-space: pre-wrap; word-wrap: break-word; margin: 0; }
         .prompt-label { font-size: 0.65rem; color: var(--magenta); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block; }
-        .copy-btn { position: absolute; top: 12px; right: 12px; background: rgba(0,255,136,0.1); border: 1px solid var(--neon); color: var(--neon); padding: 6px 12px; font-family: var(--font); font-size: 0.7rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+        .copy-btn { position: absolute; top: 12px; right: 12px; background: rgba(0,136,255,0.1); border: 1px solid var(--neon); color: var(--neon); padding: 6px 12px; font-family: var(--font); font-size: 0.7rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
         .copy-btn:hover { background: var(--neon); color: #000; }
         .copy-btn.copied { background: var(--neon); color: #000; }
         .copy-btn svg { width: 14px; height: 14px; }
 
         /* Test commands section */
-        .test-toggle { background: rgba(0,255,255,0.1); border: 1px solid rgba(0,255,255,0.3); color: var(--cyan); }
-        .test-toggle:hover { background: rgba(0,255,255,0.2); border-color: var(--cyan); }
+        .test-toggle { background: rgba(0,136,255,0.1); border: 1px solid rgba(0,136,255,0.3); color: var(--neon); }
+        .test-toggle:hover { background: rgba(0,136,255,0.2); border-color: var(--neon); }
 
         /* Button row */
         .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
