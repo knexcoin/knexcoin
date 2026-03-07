@@ -8,113 +8,126 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #000; --bg-secondary: #0a0a0a; --bg-card: #111;
-            --neon: #0088ff; --cyan: #ffffff; --magenta: #ff2244; --yellow: #ffff00; --red: #ff3333;
-            --text: #f0f0f0; --text-dim: #888; --border: rgba(0,136,255,0.2);
-            --glow-neon: 0 0 10px #0088ff, 0 0 20px #0088ff66;
-            --glow-cyan: 0 0 10px #ffffff, 0 0 20px #ffffff44;
+            --bg: #0037DA; --bg-secondary: #002baa; --bg-card: #003cee;
+            --neon: #ffffff; --cyan: #bbddff; --magenta: #ff2244; --yellow: #ffcc00; --red: #ff3333;
+            --text: #ffffff; --text-dim: #aaccee; --border: rgba(255,255,255,0.2);
+            --glow-neon: 0 0 10px rgba(255,255,255,0.3);
+            --glow-cyan: 0 0 10px rgba(187,221,255,0.3);
             --glow-magenta: 0 0 10px #ff2244, 0 0 20px #ff224466;
             --font: 'JetBrains Mono', monospace;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.7; font-size: 14px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 24px; position: relative; z-index: 1; }
 
         /* Header */
         .header { text-align: center; margin-bottom: 60px; padding: 40px 0; border-bottom: 1px solid var(--border); }
-        .header h1 { font-size: 2.5rem; color: var(--neon); text-shadow: var(--glow-neon); margin-bottom: 8px; letter-spacing: 0.1em; }
+        .header h1 { font-size: 2.5rem; color: var(--text); text-shadow: none; margin-bottom: 8px; letter-spacing: 0.1em; }
         .header .version { color: var(--cyan); font-size: 0.9rem; margin-bottom: 16px; }
         .header p { color: var(--text-dim); max-width: 600px; margin: 0 auto; }
 
+        /* BSOD sad face */
+        .bsod-face {
+            font-size: 6rem;
+            margin-bottom: 24px;
+            display: block;
+        }
+        .bsod-error {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+            margin-top: 12px;
+        }
+
         /* Navigation */
-        .nav { background: var(--bg-secondary); border: 1px solid var(--border); padding: 16px 24px; margin-bottom: 40px; border-radius: 8px; }
+        .nav { background: rgba(0,0,0,0.15); border: 1px solid var(--border); padding: 16px 24px; margin-bottom: 40px; border-radius: 8px; }
         .nav-title { color: var(--magenta); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 12px; }
         .nav-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
         .nav-list a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-        .nav-list a:hover { color: var(--neon); }
-        .nav-list a::before { content: '> '; color: var(--neon); }
+        .nav-list a:hover { color: var(--text); }
+        .nav-list a::before { content: '> '; color: var(--text); }
 
         /* Sections */
         .section { margin-bottom: 60px; }
         .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
         .section-num { font-size: 2rem; font-weight: 700; color: var(--magenta); text-shadow: var(--glow-magenta); }
-        .section h2 { font-size: 1.4rem; color: var(--cyan); }
+        .section h2 { font-size: 1.4rem; color: var(--text); }
 
         /* Cards */
-        .card { background: var(--bg-card); border: 1px solid var(--border); padding: 24px; margin-bottom: 20px; border-radius: 8px; }
-        .card h3 { color: var(--neon); font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .card { background: rgba(0,0,0,0.15); border: 1px solid var(--border); padding: 24px; margin-bottom: 20px; border-radius: 8px; }
+        .card h3 { color: var(--text); font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
         .card h3::before { content: '//'; color: var(--magenta); }
         .card p { color: var(--text-dim); margin-bottom: 12px; }
         .card ul { list-style: none; }
-        .card li { padding: 6px 0; color: var(--text-dim); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .card li { padding: 6px 0; color: var(--text-dim); border-bottom: 1px solid rgba(255,255,255,0.08); }
         .card li:last-child { border-bottom: none; }
-        .card li::before { content: '- '; color: var(--neon); }
+        .card li::before { content: '- '; color: var(--text); }
 
         /* Code blocks */
-        .code { background: #0d1117; border: 1px solid var(--border); padding: 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+        .code { background: rgba(0,0,0,0.3); border: 1px solid var(--border); padding: 20px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
         .code-header { color: var(--magenta); font-size: 0.75rem; letter-spacing: 0.1em; margin-bottom: 12px; text-transform: uppercase; }
         .code pre { font-family: var(--font); font-size: 0.85rem; line-height: 1.6; }
         .code .comment { color: var(--cyan); }
         .code .keyword { color: var(--magenta); }
-        .code .string { color: #66bbff; }
-        .code .function { color: var(--neon); }
+        .code .string { color: #ffcc00; }
+        .code .function { color: var(--text); }
         .code .number { color: var(--magenta); }
-        .code .type { color: #99ccff; }
+        .code .type { color: #bbddff; }
 
         /* Diagram */
-        .diagram { background: var(--bg-secondary); border: 1px solid var(--border); padding: 32px; margin: 24px 0; border-radius: 8px; text-align: center; }
-        .diagram pre { font-family: var(--font); font-size: 0.8rem; color: var(--neon); line-height: 1.4; display: inline-block; text-align: left; }
+        .diagram { background: rgba(0,0,0,0.2); border: 1px solid var(--border); padding: 32px; margin: 24px 0; border-radius: 8px; text-align: center; }
+        .diagram pre { font-family: var(--font); font-size: 0.8rem; color: var(--text); line-height: 1.4; display: inline-block; text-align: left; }
         .diagram-label { color: var(--magenta); font-size: 0.75rem; margin-top: 16px; letter-spacing: 0.1em; }
 
         /* Highlight box */
-        .highlight { background: linear-gradient(135deg, rgba(0,136,255,0.1), rgba(255,255,255,0.03)); border-left: 3px solid var(--neon); padding: 20px 24px; margin: 20px 0; }
-        .highlight.warning { border-left-color: var(--yellow); background: linear-gradient(135deg, rgba(255,255,0,0.1), rgba(255,136,0,0.05)); }
-        .highlight.critical { border-left-color: var(--red); background: linear-gradient(135deg, rgba(255,51,51,0.1), rgba(255,0,170,0.05)); }
-        .highlight h4 { color: var(--neon); margin-bottom: 8px; }
+        .highlight { background: rgba(0,0,0,0.15); border-left: 3px solid var(--text); padding: 20px 24px; margin: 20px 0; }
+        .highlight.warning { border-left-color: var(--yellow); background: rgba(255,204,0,0.08); }
+        .highlight.critical { border-left-color: var(--magenta); background: rgba(255,34,68,0.1); }
+        .highlight h4 { color: var(--text); margin-bottom: 8px; }
         .highlight.warning h4 { color: var(--yellow); }
-        .highlight.critical h4 { color: var(--red); }
+        .highlight.critical h4 { color: var(--magenta); }
 
         /* Table */
         .table-wrap { overflow-x: auto; margin: 20px 0; }
-        table { width: 100%; border-collapse: collapse; background: var(--bg-card); }
-        th { text-align: left; padding: 12px 16px; color: var(--cyan); border-bottom: 2px solid var(--border); font-size: 0.85rem; }
-        td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); font-size: 0.9rem; }
+        table { width: 100%; border-collapse: collapse; background: rgba(0,0,0,0.15); }
+        th { text-align: left; padding: 12px 16px; color: var(--text); border-bottom: 2px solid var(--border); font-size: 0.85rem; }
+        td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.08); color: var(--text-dim); font-size: 0.9rem; }
         td:first-child { color: var(--text); font-weight: 500; }
 
         /* Phase timeline */
         .timeline { position: relative; padding-left: 30px; }
         .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
         .phase { position: relative; margin-bottom: 32px; }
-        .phase::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; background: var(--neon); border-radius: 50%; box-shadow: var(--glow-neon); }
-        .phase.pending::before { background: var(--text-dim); box-shadow: none; }
+        .phase::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; background: var(--text); border-radius: 50%; box-shadow: var(--glow-neon); }
+        .phase.pending::before { background: var(--text-dim); box-shadow: none; opacity: 0.4; }
         .phase-header { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
         .phase-num { color: var(--magenta); font-weight: 600; }
-        .phase h4 { color: var(--neon); }
+        .phase h4 { color: var(--text); }
         .phase.pending h4 { color: var(--text-dim); }
         .phase p { color: var(--text-dim); font-size: 0.9rem; }
 
         /* Footer */
         .footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border); margin-top: 60px; }
         .footer p { color: var(--text-dim); font-size: 0.85rem; }
-        .footer a { color: var(--neon); text-decoration: none; }
+        .footer a { color: var(--text); text-decoration: none; }
 
         /* Back link */
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-dim); text-decoration: none; font-size: 0.85rem; margin-bottom: 24px; transition: color 0.2s; }
-        .back-link:hover { color: var(--neon); }
+        .back-link:hover { color: var(--text); }
 
         /* Difficulty badges */
         .difficulty { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
-        .difficulty.easy { background: rgba(0,136,255,0.2); color: var(--neon); border: 1px solid var(--neon); }
-        .difficulty.medium { background: rgba(255,255,0,0.2); color: var(--yellow); border: 1px solid var(--yellow); }
-        .difficulty.hard { background: rgba(255,51,51,0.2); color: var(--red); border: 1px solid var(--red); }
+        .difficulty.easy { background: rgba(255,255,255,0.15); color: var(--text); border: 1px solid rgba(255,255,255,0.4); }
+        .difficulty.medium { background: rgba(255,204,0,0.2); color: var(--yellow); border: 1px solid var(--yellow); }
+        .difficulty.hard { background: rgba(255,34,68,0.2); color: var(--magenta); border: 1px solid var(--magenta); }
         .difficulty::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
-        .difficulty.easy::before { background: var(--neon); box-shadow: 0 0 6px var(--neon); }
+        .difficulty.easy::before { background: var(--text); box-shadow: 0 0 6px rgba(255,255,255,0.5); }
         .difficulty.medium::before { background: var(--yellow); box-shadow: 0 0 6px var(--yellow); }
-        .difficulty.hard::before { background: var(--red); box-shadow: 0 0 6px var(--red); }
+        .difficulty.hard::before { background: var(--magenta); box-shadow: 0 0 6px var(--magenta); }
 
         /* Timeframe badge */
-        .timeframe { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; background: rgba(0,136,255,0.1); color: var(--neon); border: 1px solid rgba(0,136,255,0.3); }
+        .timeframe { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; background: rgba(255,255,255,0.1); color: var(--text); border: 1px solid rgba(255,255,255,0.3); }
         .timeframe svg { width: 12px; height: 12px; }
 
         /* Phase meta row */
@@ -126,36 +139,148 @@
         .prompt-toggle:hover { background: rgba(255,34,68,0.2); border-color: var(--magenta); }
         .prompt-toggle svg { width: 16px; height: 16px; transition: transform 0.3s; }
         .prompt-toggle.active svg { transform: rotate(180deg); }
-        .prompt-content { display: none; margin-top: 12px; background: #0a0a0a; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+        .prompt-content { display: none; margin-top: 12px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
         .prompt-content.show { display: block; animation: slideDown 0.3s ease; }
         @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Prompt box */
-        .prompt-box { position: relative; padding: 16px; background: #0d1117; }
+        .prompt-box { position: relative; padding: 16px; background: rgba(0,0,0,0.3); }
         .prompt-box pre { font-family: var(--font); font-size: 0.8rem; line-height: 1.6; color: var(--text-dim); white-space: pre-wrap; word-wrap: break-word; margin: 0; }
         .prompt-label { font-size: 0.65rem; color: var(--magenta); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: block; }
-        .copy-btn { position: absolute; top: 12px; right: 12px; background: rgba(0,136,255,0.1); border: 1px solid var(--neon); color: var(--neon); padding: 6px 12px; font-family: var(--font); font-size: 0.7rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
-        .copy-btn:hover { background: var(--neon); color: #000; }
-        .copy-btn.copied { background: var(--neon); color: #000; }
+        .copy-btn { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.4); color: var(--text); padding: 6px 12px; font-family: var(--font); font-size: 0.7rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; display: flex; align-items: center; gap: 6px; }
+        .copy-btn:hover { background: var(--text); color: var(--bg); }
+        .copy-btn.copied { background: var(--text); color: var(--bg); }
         .copy-btn svg { width: 14px; height: 14px; }
 
         /* Test commands section */
-        .test-toggle { background: rgba(0,136,255,0.1); border: 1px solid rgba(0,136,255,0.3); color: var(--neon); }
-        .test-toggle:hover { background: rgba(0,136,255,0.2); border-color: var(--neon); }
+        .test-toggle { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: var(--text); }
+        .test-toggle:hover { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.4); }
 
         /* Button row */
         .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+
+        /* Warning boxes (inline) */
+        .warning { background: rgba(255,34,68,0.1); border: 1px solid rgba(255,34,68,0.3); padding: 16px 20px; margin: 16px 0; border-radius: 6px; color: var(--text-dim); font-size: 0.9rem; }
+        .warning strong { color: var(--magenta); }
+        .warning a { color: var(--text); }
+
+        /* ── CLASSIFIED DOCUMENT EFFECTS ── */
+
+        /* Classified stamp watermark */
+        .classified-stamp {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            font-size: 8rem;
+            font-weight: 900;
+            color: rgba(255,34,68,0.06);
+            letter-spacing: 0.15em;
+            pointer-events: none;
+            z-index: 0;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        /* Classification header banner */
+        .classification-banner {
+            text-align: center;
+            padding: 8px 16px;
+            border: 2px solid var(--magenta);
+            color: var(--magenta);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .classification-banner::before {
+            content: '★';
+            margin-right: 12px;
+        }
+        .classification-banner::after {
+            content: '★';
+            margin-left: 12px;
+        }
+
+        /* Document control number */
+        .doc-control {
+            text-align: right;
+            font-size: 0.65rem;
+            color: rgba(255,34,68,0.6);
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        /* Redacted text overlay — RED highlight */
+        .redacted {
+            position: relative;
+            display: inline;
+        }
+        .redacted::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -3px;
+            right: -3px;
+            bottom: -1px;
+            background: rgba(255,34,68,0.9);
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        /* Full-line redaction for table cells */
+        .redacted-block {
+            position: relative;
+        }
+        .redacted-block::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,34,68,0.9);
+            pointer-events: none;
+            border-radius: 2px;
+        }
+
+        /* Section classification markings */
+        .section-classification {
+            font-size: 0.55rem;
+            color: rgba(255,34,68,0.7);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-left: auto;
+            border: 1px solid rgba(255,34,68,0.3);
+            padding: 2px 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .classified-stamp { font-size: 4rem; }
+            .classification-banner { font-size: 0.5rem; letter-spacing: 0.15em; }
+            .bsod-face { font-size: 4rem; }
+        }
     </style>
 </head>
 <body>
+    <div class="classified-stamp">CLASSIFIED</div>
+
     <div class="container">
+        <div class="classification-banner">TOP SECRET // KNEXCOIN INTERNAL // AUTHORIZED PERSONNEL ONLY</div>
+        <div class="doc-control">DOC-KC-BP-0051 // COPY <span class="redacted">3 OF 7</span> // DISTRIBUTION LIMITED</div>
+
         <a href="index.html" class="back-link">&larr; Back to KnexCoin</a>
 
         <header class="header">
+            <span class="bsod-face">:(</span>
             <h1>KNEXCOIN BLUEPRINT</h1>
             <div class="version">v5.1 // UBX + KNEX Dual-Layer Architecture</div>
-            <p>Technical specification for a dual-layer monetary system: <strong>UBX</strong> (elastic transactional layer, COP-reference band) and <strong>KNEX</strong> (fixed-supply reserve + settlement layer). Built on a Nano-inspired <strong>block-lattice DAG</strong> with <strong>Proof-of-Bandwidth (PoB)</strong> consensus and <strong>Open Representative Voting (ORV)</strong> finality.</p>
-            <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Bootstrap:</strong> Assets are currently issued on <strong>Stellar</strong> for distribution + liquidity rails. <strong>Target:</strong> Migration to a native L1 DAG where UBX and KNEX are first-class protocol assets.</p>
+            <div class="bsod-error">STOP CODE: CLASSIFIED_DOCUMENT_ACCESS // REF: 0xKNEX005100BA</div>
+            <p>Technical specification for a dual-layer monetary system: <strong>UBX</strong> (elastic transactional layer, COP-reference band) and <strong>KNEX</strong> (fixed-supply reserve + settlement layer). Built on a <span class="redacted">Nano-inspired</span> <strong>block-lattice DAG</strong> with <strong>Proof-of-Bandwidth (PoB)</strong> consensus and <strong>Open Representative Voting (ORV)</strong> finality.</p>
+            <p style="margin-top: 8px; font-size: 0.85rem;"><strong>Bootstrap:</strong> Assets are currently issued on <strong>Stellar</strong> for distribution + liquidity rails. <strong>Target:</strong> Migration to a native L1 DAG where UBX and KNEX are <span class="redacted">first-class protocol assets</span>.</p>
         </header>
 
         <div class="highlight" style="margin-bottom: 2rem;">
@@ -163,7 +288,7 @@
             <ul>
                 <li><strong>UBX:</strong> Feeless daily payments, payroll, merchant settlement, streaming retail flows</li>
                 <li><strong>KNEX:</strong> Validator bond + slashing collateral, reserve/settlement, protocol rewards, infrastructure incentives</li>
-                <li><strong>Stellar:</strong> Bootstrap-only distribution layer; sunset after L1 migration window completes</li>
+                <li><strong>Stellar:</strong> Bootstrap-only distribution layer; sunset after <span class="redacted">L1 migration window</span> completes</li>
             </ul>
         </div>
 
@@ -190,19 +315,20 @@
             <div class="section-header">
                 <span class="section-num">01</span>
                 <h2>Architecture Overview</h2>
+                <span class="section-classification">SECRET // NOFORN</span>
             </div>
 
             <div class="card">
                 <h3>Core Design Principles</h3>
                 <ul>
                     <li><strong>Dual-Layer Monetary System:</strong> UBX (elastic, bearer-like transactional layer) + KNEX (fixed-supply reserve and settlement layer)</li>
-                    <li><strong>Instant Finality Target:</strong> Sub-second confirmation on native L1. During Stellar bootstrap, typical settlement is ~3&ndash;5 seconds.</li>
-                    <li><strong>Feeless Transfers:</strong> UBX transfers are fee-less. Anti-spam uses client-side PoW per block (Nano model); no value is paid, burned, or collected.</li>
+                    <li><strong>Instant Finality Target:</strong> <span class="redacted">Sub-second confirmation</span> on native L1. During Stellar bootstrap, typical settlement is ~3&ndash;5 seconds.</li>
+                    <li><strong>Feeless Transfers:</strong> UBX transfers are fee-less. Anti-spam uses <span class="redacted">client-side PoW per block</span> (Nano model); no value is paid, burned, or collected.</li>
                     <li><strong>Bandwidth-Primary Consensus:</strong> Voting weight is determined by PoB infrastructure contribution. Stake is <strong>bond/eligibility only</strong>, not power.</li>
                     <li><strong>Asynchronous DAG:</strong> Each account maintains its own chain in a block-lattice. Parallel transaction processing enables horizontal scaling.</li>
-                    <li><strong>Commerce-Driven Stability:</strong> UBX stability emerges from real usage (merchant pricing + payroll demand + controlled distribution + treasury ops), not CEX-driven speculation.</li>
-                    <li><strong>Directional Value Flow:</strong> Value flows structurally from UBX (velocity) toward KNEX (reserve/settlement) through conversion + long-term holding.</li>
-                    <li><strong>Stellar Bootstrap:</strong> Stellar is used for early distribution and liquidity only; it is not the permanent settlement layer.</li>
+                    <li><strong>Commerce-Driven Stability:</strong> UBX stability emerges from real usage (<span class="redacted">merchant pricing + payroll demand</span> + controlled distribution + treasury ops), not CEX-driven speculation.</li>
+                    <li><strong>Directional Value Flow:</strong> Value flows structurally from UBX (velocity) toward KNEX (reserve/settlement) through <span class="redacted">conversion + long-term holding</span>.</li>
+                    <li><strong>Stellar Bootstrap:</strong> Stellar is used for <span class="redacted">early distribution and liquidity only</span>; it is not the permanent settlement layer.</li>
                 </ul>
             </div>
 
@@ -277,6 +403,7 @@
             <div class="section-header">
                 <span class="section-num">02</span>
                 <h2>The Monetary Engine</h2>
+                <span class="section-classification">TOP SECRET</span>
             </div>
 
             <div class="card">
@@ -293,9 +420,9 @@
                     <tbody>
                         <tr><td><strong>Role</strong></td><td>Elastic circulation currency</td><td>Daily payments, merchant settlement, payroll, NFC SmartBills</td></tr>
                         <tr><td><strong>Supply Model</strong></td><td>Elastic / policy-driven</td><td>No permanent hard cap. Supply expands/contracts via distribution throttling + treasury ops + conversion gravity.</td></tr>
-                        <tr><td><strong>Initial Authorized Distribution Program</strong></td><td>10,000,000,000 UBX</td><td>&ldquo;Program ceiling&rdquo; for early bootstrapping releases. Future authorization requires governance + health metrics.</td></tr>
+                        <tr><td><strong>Initial Authorized Distribution Program</strong></td><td><span class="redacted">10,000,000,000</span> UBX</td><td>&ldquo;Program ceiling&rdquo; for early bootstrapping releases. Future authorization requires <span class="redacted">governance + health metrics</span>.</td></tr>
                         <tr><td><strong>COP Reference</strong></td><td>1 UBX &asymp; 1,000 COP</td><td>Informational reference only &mdash; not a peg or guarantee</td></tr>
-                        <tr><td><strong>Tolerance Band</strong></td><td>&plusmn;20% (&epsilon; = 0.20)</td><td>800 &le; P<sub>UBX</sub> &le; 1,200 COP operational band</td></tr>
+                        <tr><td><strong>Tolerance Band</strong></td><td><span class="redacted">&plusmn;20% (&epsilon; = 0.20)</span></td><td><span class="redacted">800 &le; P<sub>UBX</sub> &le; 1,200 COP</span> operational band</td></tr>
                         <tr><td><strong>Distribution Model</strong></td><td>&phi;-decay &times; stability multiplier</td><td>Smooth release curve; automatically throttled by price deviation</td></tr>
                         <tr><td><strong>DEX Liquidity</strong></td><td>Bootstrap-only rails</td><td>Stellar DEX provides early liquidity rails; long-term anchoring comes from merchant pricing + payroll demand</td></tr>
                         <tr><td><strong>Supply Control</strong></td><td>Treasury ops + throttling + conversion sink</td><td>No per-transaction burns required</td></tr>
@@ -306,7 +433,7 @@
 
             <div class="highlight">
                 <h4>Bearer-Like Properties</h4>
-                <p>UBX functions as a <strong>digital bearer instrument</strong>. Possession equals ownership. No KYC required for peer-to-peer transfers. NFC SmartBills (NTAG 424 DNA) enable physical-to-digital value transfer without internet connectivity at point of sale. The combination of feeless transfers, COP-denominated pricing, and bearer-like portability makes UBX function like digital cash for the Colombian economy.</p>
+                <p>UBX functions as a <strong>digital bearer instrument</strong>. Possession equals ownership. <span class="redacted">No KYC required</span> for peer-to-peer transfers. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable physical-to-digital value transfer without internet connectivity at point of sale. The combination of feeless transfers, COP-denominated pricing, and bearer-like portability makes UBX function like digital cash for the <span class="redacted">Colombian economy</span>.</p>
             </div>
 
             <!-- KNEX Card -->
@@ -316,8 +443,8 @@
                     <thead><tr><th>Property</th><th>Value</th><th>Notes</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Role</strong></td><td>Fixed-supply reserve asset</td><td>Settlement, validator bonding, long-term accumulation</td></tr>
-                        <tr><td><strong>Maximum Supply</strong></td><td>100,000,000 KNEX</td><td>Absolute hard cap &mdash; no inflation possible</td></tr>
-                        <tr><td><strong>Deflation</strong></td><td>Staking locks + conversion absorption</td><td>Validator bonds and UBX&rarr;KNEX conversion continuously remove KNEX from active circulation</td></tr>
+                        <tr><td><strong>Maximum Supply</strong></td><td><span class="redacted">100,000,000</span> KNEX</td><td>Absolute hard cap &mdash; no inflation possible</td></tr>
+                        <tr><td><strong>Deflation</strong></td><td><span class="redacted">Staking locks + conversion absorption</span></td><td>Validator bonds and UBX&rarr;KNEX conversion continuously remove KNEX from active circulation</td></tr>
                         <tr><td><strong>Settlement Finality</strong></td><td>Irreversible, on-chain</td><td>KNEX transactions represent final settlement</td></tr>
                     </tbody>
                 </table>
@@ -328,9 +455,9 @@
                 <table class="data-table">
                     <thead><tr><th>Category</th><th>Amount</th><th>%</th><th>Purpose</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Network Release Reserve</strong></td><td>90,000,000</td><td>90%</td><td>Validator incentives and long-term network security via PoB</td></tr>
-                        <tr><td><strong>Treasury</strong></td><td>7,000,000</td><td>7%</td><td>Ecosystem development, liquidity support, infrastructure</td></tr>
-                        <tr><td><strong>Team</strong></td><td>3,000,000</td><td>3%</td><td>Development, operations, long-term maintenance</td></tr>
+                        <tr><td><strong>Network Release Reserve</strong></td><td><span class="redacted">90,000,000</span></td><td>90%</td><td>Validator incentives and <span class="redacted">long-term network security</span> via PoB</td></tr>
+                        <tr><td><strong>Treasury</strong></td><td><span class="redacted">7,000,000</span></td><td>7%</td><td>Ecosystem development, <span class="redacted">liquidity support</span>, infrastructure</td></tr>
+                        <tr><td><strong>Team</strong></td><td><span class="redacted">3,000,000</span></td><td><span class="redacted">3%</span></td><td>Development, operations, long-term maintenance</td></tr>
                         <tr><td><strong>Total (HARD CAP)</strong></td><td><strong>100,000,000</strong></td><td><strong>100%</strong></td><td>Absolute maximum &mdash; no additional minting possible</td></tr>
                     </tbody>
                 </table>
@@ -348,17 +475,17 @@
                     <tbody>
                         <tr>
                             <td><strong>1. UBX &rarr; KNEX Conversion</strong></td>
-                            <td>Protocol conversion module. UBX is absorbed, KNEX is released at the current epoch rate (<code>K = U / E<sub>e</sub></code>)</td>
+                            <td>Protocol conversion module. UBX is absorbed, KNEX is released at <span class="redacted">the current epoch rate</span> (<code>K = U / E<sub>e</sub></code>)</td>
                             <td>Any UBX holder</td>
                         </tr>
                         <tr>
                             <td><strong>2. Validator Rewards</strong></td>
-                            <td>Released from the 90M Network Reserve via PoB. Proportional to Bandwidth Score, subject to 3% cap and geographic multiplier</td>
+                            <td>Released from the 90M Network Reserve via PoB. Proportional to <span class="redacted">Bandwidth Score, subject to 3% cap</span> and geographic multiplier</td>
                             <td>Active validators</td>
                         </tr>
                         <tr>
                             <td><strong>3. Treasury Operations</strong></td>
-                            <td>Ecosystem grants, liquidity seeding, and strategic allocations governed by treasury policy</td>
+                            <td>Ecosystem grants, <span class="redacted">liquidity seeding, and strategic allocations</span> governed by treasury policy</td>
                             <td>Treasury (7M pool)</td>
                         </tr>
                     </tbody>
@@ -394,13 +521,13 @@
                             <td><strong>2. Maturation</strong></td>
                             <td>Years 2&ndash;4</td>
                             <td>Open authorized DEX pools with controlled depth. Community-governed liquidity pools (protocol approval required). No CEX.</td>
-                            <td>Validators &gt;100 AND Merchants &gt;2,000 AND V &gt;3</td>
+                            <td><span class="redacted">Validators &gt;100 AND Merchants &gt;2,000</span> AND V &gt;3</td>
                         </tr>
                         <tr>
                             <td><strong>3. Liberation</strong></td>
                             <td>Years 4+</td>
                             <td>Remove pool authorization requirement. DEX aggregator integration. CEX becomes protocol-neutral (not endorsed, not blocked).</td>
-                            <td>KNEX price stability &gt;1 year AND Merchants &gt;10,000 AND V &ge;4</td>
+                            <td><span class="redacted">KNEX price stability &gt;1 year AND Merchants &gt;10,000</span> AND V &ge;4</td>
                         </tr>
                     </tbody>
                 </table>
@@ -488,7 +615,7 @@
             <!-- KNEX Validator Releases -->
             <div class="card">
                 <h3>Network Release Schedule (KNEX)</h3>
-                <p>All 100,000,000 KNEX are created at genesis. The 90,000,000 KNEX <strong>Network Emission Reserve</strong> is locked and released over a 20-year program to fund validators and infrastructure participants via Proof-of-Bandwidth.</p>
+                <p>All <span class="redacted">100,000,000 KNEX</span> are created at genesis. The <span class="redacted">90,000,000 KNEX</span> <strong>Network Emission Reserve</strong> is locked and released over a <span class="redacted">20-year program</span> to fund validators and infrastructure participants via Proof-of-Bandwidth.</p>
                 <p style="margin-top: 8px;">This is a <strong>release schedule</strong>, not inflation. Total supply is fixed from genesis and can never exceed 100,000,000 KNEX.</p>
             </div>
 
