@@ -145,32 +145,21 @@
 }
 
 .feature-icon {
-    width: 72px;
-    height: 72px;
-    background: rgba(0,255,0,0.05);
-    border: 1px solid rgba(0,255,0,0.15);
+    width: 64px;
+    height: 64px;
+    background: #00cc00;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
-    border-radius: 50%;
+    border-radius: 14px;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0,204,0,0.3), 0 0 30px rgba(0,204,0,0.1);
 }
 
-.feature-icon::before {
-    content: '';
-    position: absolute;
-    inset: -4px;
-    border-radius: 50%;
-    border: 1px solid rgba(0,255,0,0.1);
-    pointer-events: none;
-}
-
-.feature-icon svg {
-    width: 44px;
-    height: 44px;
-    color: #00ff00;
-    filter: drop-shadow(0 0 6px rgba(0,255,0,0.4));
+.feature-icon i {
+    font-size: 28px;
+    color: #ffffff;
 }
 
 .feature-card h3 {

@@ -140,8 +140,9 @@
         width: 48px;
         height: 48px;
         margin-bottom: 16px;
+        border-radius: 10px;
     }
-    .feature-icon svg { width: 24px; height: 24px; }
+    .feature-icon i { font-size: 20px; }
     .feature-card h3 { font-size: 1rem; margin-bottom: 8px; }
     .feature-card p { font-size: 0.85rem; }
     .feature-number {
