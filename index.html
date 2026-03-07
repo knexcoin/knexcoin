@@ -308,15 +308,14 @@
         <div class="section-container">
             <div class="tech-grid">
                 <div class="tech-visual reveal">
-                    <div class="chip-diagram">
-                        <div class="chip-ring"></div>
-                        <div class="chip-ring"></div>
-                        <div class="chip-ring"></div>
-                        <div class="chip-core"><span>PoB v4.1</span></div>
-                        <div class="chip-data">VRF-SELECT</div>
-                        <div class="chip-data">EWMA-SMOOTH</div>
-                        <div class="chip-data">CHECKPOINT</div>
-                        <div class="chip-data">BS-SCORE</div>
+                    <div class="knexpay-card-wrapper" id="knexpayCard">
+                        <div class="knexpay-card">
+                            <img src="images/knexpay-card.png" alt="KnexPay Debit Card" class="card-img">
+                            <div class="card-hex-overlay">
+                                <span class="hex-number" data-slot="0">A7</span>-<span class="hex-number" data-slot="1">3F</span>-<span class="hex-number" data-slot="2">B2</span>-<span class="hex-number" data-slot="3">E9</span>-<span class="hex-number" data-slot="4">1C</span>
+                            </div>
+                            <canvas class="card-glitter" id="cardGlitter"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="tech-content reveal">
@@ -1135,5 +1134,6 @@ W_reputation  = <span class="number">0.15</span>  <span class="comment">// 15% w
     <script src="js/dag.js"></script>
     <script src="js/glitch.js"></script>
     <script src="js/console.js"></script>
+    <script src="js/knexpay-card.js"></script>
 </body>
 </html>
