@@ -41,6 +41,13 @@
    MOBILE RESPONSIVE (max-width: 768px)
    ======================================== */
 @media (max-width: 768px) {
+    /* Prevent horizontal scroll on all major containers */
+    .hero, .section, .stats-banner, .footer, .blueprint,
+    .cta-section, .quantum-proof {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
     /* Base typography adjustments */
     h1 { font-size: clamp(2rem, 10vw, 4rem); }
     h2 { font-size: clamp(1.5rem, 5vw, 2.5rem); }
@@ -302,6 +309,25 @@
     .bp-table-wrap { margin: 14px 0; }
     .bp-table-wrap th { padding: 10px 12px; font-size: 0.75rem; }
     .bp-table-wrap td { padding: 10px 12px; font-size: 0.8rem; }
+
+    /* Quantum Comparison - reduce padding to prevent overflow */
+    .quantum-comparison { padding: 16px; }
+    .quantum-comparison h3 { font-size: 1.1rem; margin-bottom: 20px; }
+    .comparison-row { grid-template-columns: 1fr; gap: 8px; padding: 12px 0; }
+    .comparison-row.highlight-row { margin: 0 -12px; padding: 12px; }
+
+    /* UMX inline grid - force stack on mobile */
+    [style*="grid-template-columns: 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* Inline padded boxes - reduce padding on mobile */
+    .highlight-box,
+    [style*="padding: 24px 32px"],
+    [style*="padding: 32px"] {
+        padding: 16px !important;
+    }
 }
 
 /* ========================================
