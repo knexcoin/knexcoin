@@ -1493,19 +1493,19 @@
 
             <div class="card">
                 <h3>Open Representative Voting (ORV) + Bandwidth-Primary Weight</h3>
-                <p>Adapted from Nano's ORV consensus. Voting weight is determined <strong>primarily by Bandwidth Score</strong>. Stake functions as a bond threshold with ramp-up, not a weight multiplier.</p>
+                <p>Adapted from Nano's ORV consensus. Voting weight is determined <strong>primarily by Bandwidth Score</strong>. Stake functions as a bond threshold with ramp-up, <span class="redacted">not a weight multiplier</span>.</p>
                 <ul>
                     <li><strong>Representatives:</strong> Nodes that vote on transaction validity for both UBX and KNEX blocks</li>
                     <li><strong>Delegation:</strong> Users delegate voting weight to representatives</li>
-                    <li><strong>Quorum:</strong> 67% of online voting weight confirms transactions</li>
-                    <li><strong>Weight Formula:</strong> VotingWeight = BandwidthScore &times; min(1, Stake / MIN_STAKE)</li>
-                    <li><strong>Minimum Stake:</strong> 10,000 KNEX bond required for eligibility</li>
+                    <li><strong>Quorum:</strong> <span class="redacted">67% of online voting weight</span> confirms transactions</li>
+                    <li><strong>Weight Formula:</strong> <span class="redacted">VotingWeight = BandwidthScore &times; min(1, Stake / MIN_STAKE)</span></li>
+                    <li><strong>Minimum Stake:</strong> <span class="redacted">10,000 KNEX bond required for eligibility</span></li>
                 </ul>
             </div>
 
             <div class="highlight">
                 <h4>Why Bond Threshold with Ramp-Up?</h4>
-                <p>The previous model (<code>sqrt(Stake) &times; BS</code>) still gave whales disproportionate power: 100&times; more stake = 10&times; more base weight before bandwidth. The new formula uses a <strong>bond threshold with linear ramp-up</strong> &mdash; below 10,000 KNEX you get proportional eligibility, at or above 10,000 KNEX you are fully eligible, but additional KNEX gives zero extra weight. Beyond the threshold, <strong>only bandwidth determines weight</strong>. A validator with 10,000 KNEX and excellent infrastructure has identical weight to one with 1,000,000 KNEX and the same infrastructure. Capital cannot buy consensus influence &mdash; only real infrastructure contribution matters.</p>
+                <p>The previous model (<code>sqrt(Stake) &times; BS</code>) still gave whales disproportionate power: 100&times; more stake = 10&times; more base weight before bandwidth. The new formula uses a <strong>bond threshold with linear ramp-up</strong> &mdash; below 10,000 KNEX you get proportional eligibility, at or above 10,000 KNEX you are fully eligible, but additional KNEX gives zero extra weight. Beyond the threshold, <strong>only bandwidth determines weight</strong>. A validator with 10,000 KNEX and excellent infrastructure has identical weight to one with 1,000,000 KNEX and the same infrastructure. <span class="redacted">Capital cannot buy consensus influence</span> &mdash; only real infrastructure contribution matters.</p>
             </div>
 
             <div class="code">
@@ -1597,11 +1597,11 @@
                     <thead><tr><th>Parameter</th><th>Value</th><th>Notes</th></tr></thead>
                     <tbody>
                         <tr><td><strong>Quorum threshold</strong></td><td>67% (2/3 + 1)</td><td>Of total online voting weight</td></tr>
-                        <tr><td><strong>Minimum stake</strong></td><td>10,000 KNEX</td><td>Bond threshold with linear ramp-up</td></tr>
+                        <tr><td><strong>Minimum stake</strong></td><td><span class="redacted">10,000 KNEX</span></td><td>Bond threshold with linear ramp-up</td></tr>
                         <tr><td><strong>Delegation</strong></td><td>Supported</td><td>Users delegate to representatives via Change blocks</td></tr>
-                        <tr><td><strong>Confirmation target</strong></td><td>&lt;1 second (L1)</td><td>3-5 seconds during Stellar phase</td></tr>
+                        <tr><td><strong>Confirmation target</strong></td><td><span class="redacted">&lt;1 second (L1)</span></td><td>3-5 seconds during Stellar phase</td></tr>
                         <tr><td><strong>Fork resolution</strong></td><td>Heaviest-weight branch</td><td>Branch with most bandwidth-weighted votes wins</td></tr>
-                        <tr><td><strong>Slashing</strong></td><td>KNEX bond at risk</td><td>Double-voting or provably malicious behavior</td></tr>
+                        <tr><td><strong>Slashing</strong></td><td><span class="redacted">KNEX bond at risk</span></td><td>Double-voting or provably malicious behavior</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1621,7 +1621,7 @@
 
             <div class="card">
                 <h3>Asynchronous Send-Receive Model</h3>
-                <p>Both UBX and KNEX use the same asynchronous two-phase transaction model. The <code>token_type</code> field in each block determines which layer the transaction operates on.</p>
+                <p>Both UBX and KNEX use the same asynchronous two-phase transaction model. The <code>token_type</code> field in each block <span class="redacted">determines which layer the transaction operates on</span>.</p>
                 <ul>
                     <li><strong>Phase 1 (Send):</strong> Sender creates send block with token_type (UBX or KNEX), balance decreases immediately</li>
                     <li><strong>Phase 2 (Receive):</strong> Receiver creates receive block, balance increases</li>
@@ -1672,7 +1672,7 @@
                         <tr>
                             <td>4</td>
                             <td>ORV quorum (67%) / Stellar consensus</td>
-                            <td>~200-500ms</td>
+                            <td><span class="redacted">~200-500ms</span></td>
                             <td>~3-5s</td>
                             <td>SEND confirmed</td>
                         </tr>
@@ -1696,7 +1696,7 @@
 
             <div class="highlight">
                 <h4>UBX Payment: &lt;1 second (L1) / 3-5 seconds (Stellar)</h4>
-                <p>Full UBX transaction confirmation with <strong>zero fees</strong>. On L1: sub-second via ORV with bandwidth-weighted voting. During Stellar phase: 3-5 seconds via Stellar consensus. Both paths are suitable for point-of-sale use. NFC SmartBills (NTAG 424 DNA) enable tap-to-pay at physical locations.</p>
+                <p>Full UBX transaction confirmation with <strong>zero fees</strong>. On L1: sub-second via ORV with bandwidth-weighted voting. During Stellar phase: 3-5 seconds via Stellar consensus. Both paths are suitable for point-of-sale use. NFC SmartBills (<span class="redacted">NTAG 424 DNA</span>) enable tap-to-pay at physical locations.</p>
             </div>
 
             <!-- KNEX Settlement Flow -->
@@ -1819,7 +1819,7 @@
     <span class="function">sender</span>: <span class="type">PublicKey</span>,             <span class="comment">// Payer</span>
     <span class="function">receiver</span>: <span class="type">PublicKey</span>,           <span class="comment">// Payee</span>
     <span class="function">token_type</span>: <span class="type">TokenType</span>,         <span class="comment">// UBX (retail) or KNEX (protocol-only)</span>
-    <span class="function">rate_raw_per_second</span>: <span class="type">u128</span>,    <span class="comment">// Continuous payment rate in RAW</span>
+    <span class="function">rate_raw_per_second</span>: <span class="type">u128</span>,    <span class="comment">// <span class="redacted">Continuous payment rate in RAW</span></span>
     <span class="function">max_total_raw</span>: <span class="type">u128</span>,          <span class="comment">// Spending cap for this session</span>
     <span class="function">settled_raw</span>: <span class="type">u128</span>,            <span class="comment">// Cumulative on-chain settlements</span>
     <span class="function">expiration</span>: <span class="type">u64</span>,              <span class="comment">// Unix timestamp auto-close</span>
@@ -1828,7 +1828,7 @@
 
 <span class="comment">// Precision: 1.0000000 = 10,000,000 RAW (7 decimal places)</span>
 <span class="comment">// Example: Payroll stream of 400 UBX/month</span>
-<span class="comment">//   rate = (400 × 10,000,000) / (30 × 86,400) = 1,543 RAW/second</span>
+<span class="comment">//   <span class="redacted">rate = (400 × 10,000,000) / (30 × 86,400) = 1,543 RAW/second</span></span>
 <span class="comment">//   max_total = 400 × 10,000,000 = 4,000,000,000 RAW</span>
 
 <span class="comment">// Rounding: all RAW calculations truncate toward zero (floor division)</span>
@@ -1853,7 +1853,7 @@
 <span class="comment">// Only the most recent voucher matters (cumulative design)</span>
 
 <span class="comment">// Settlement triggers (any one triggers on-chain block):</span>
-<span class="comment">//   1. Time interval: every N minutes (default 5 min)</span>
+<span class="comment">//   1. <span class="redacted">Time interval: every N minutes (default 5 min)</span></span>
 <span class="comment">//   2. Amount threshold: unsettled exceeds X RAW</span>
 <span class="comment">//   3. Session close: final settlement on expiry or manual close</span>
 <span class="comment">//   4. Dispute: receiver submits voucher if sender goes offline</span>
@@ -1876,9 +1876,9 @@
                 <table class="data-table">
                     <thead><tr><th>Parameter</th><th>Value</th><th>Purpose</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Min settlement interval</strong></td><td>60 seconds per session</td><td>Prevents rapid-fire on-chain blocks</td></tr>
-                        <tr><td><strong>Max concurrent sessions</strong></td><td>100 per account</td><td>Prevents account-level spam</td></tr>
-                        <tr><td><strong>Voucher expiry</strong></td><td>Session expiration + 24h grace</td><td>Receiver can always claim owed funds</td></tr>
+                        <tr><td><strong>Min settlement interval</strong></td><td><span class="redacted">60 seconds per session</span></td><td>Prevents rapid-fire on-chain blocks</td></tr>
+                        <tr><td><strong>Max concurrent sessions</strong></td><td><span class="redacted">100 per account</span></td><td>Prevents account-level spam</td></tr>
+                        <tr><td><strong>Voucher expiry</strong></td><td><span class="redacted">Session expiration + 24h grace</span></td><td>Receiver can always claim owed funds</td></tr>
                         <tr><td><strong>KNEX streaming guard</strong></td><td>Protocol-only (validator/treasury)</td><td>Retail KNEX streams are rejected at validation</td></tr>
                     </tbody>
                 </table>
@@ -1936,7 +1936,7 @@
 
             <div class="highlight">
                 <h4>Colombia-First: Real Commerce Before Global Scale</h4>
-                <p>UBX launches as a local payment rail in Colombia before expanding regionally. Price stability, merchant density, and payroll integration are achieved in a single market first &mdash; proving the economic model with real transaction volume before geographic expansion.</p>
+                <p>UBX launches as a local payment rail in <span class="redacted">Colombia before expanding regionally</span>. Price stability, merchant density, and payroll integration are achieved in a single market first &mdash; proving the economic model with real transaction volume before geographic expansion.</p>
             </div>
 
             <!-- Five-Phase Adoption Model -->
@@ -1948,10 +1948,10 @@
                         <tr>
                             <td><strong>1</strong></td>
                             <td>Pilot Local</td>
-                            <td>50&ndash;100</td>
-                            <td>1,000&ndash;5,000</td>
-                            <td>$50K&ndash;$200K</td>
-                            <td>Single city (Cali), prove unit economics</td>
+                            <td><span class="redacted">50&ndash;100</span></td>
+                            <td><span class="redacted">1,000&ndash;5,000</span></td>
+                            <td><span class="redacted">$50K&ndash;$200K</span></td>
+                            <td><span class="redacted">Single city (Cali), prove unit economics</span></td>
                         </tr>
                         <tr>
                             <td><strong>2</strong></td>
@@ -2029,9 +2029,9 @@
                 <table class="data-table">
                     <thead><tr><th>Feature</th><th>Specification</th><th>Purpose</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Chip</strong></td><td>NXP NTAG 424 DNA</td><td>Cryptographic authentication hardware</td></tr>
-                        <tr><td><strong>Authentication</strong></td><td>SUN (Signature Universal Naming)</td><td>Dynamic signature per tap &mdash; prevents cloning</td></tr>
-                        <tr><td><strong>Anti-Cloning</strong></td><td>Dynamic counter + CMAC verification</td><td>Each tap generates a unique response</td></tr>
+                        <tr><td><strong>Chip</strong></td><td><span class="redacted">NXP NTAG 424 DNA</span></td><td>Cryptographic authentication hardware</td></tr>
+                        <tr><td><strong>Authentication</strong></td><td><span class="redacted">SUN (Signature Universal Naming)</span></td><td>Dynamic signature per tap &mdash; prevents cloning</td></tr>
+                        <tr><td><strong>Anti-Cloning</strong></td><td><span class="redacted">Dynamic counter + CMAC verification</span></td><td>Each tap generates a unique response</td></tr>
                         <tr><td><strong>Wallet Binding</strong></td><td>Card &harr; Wallet address link</td><td>Physical card triggers wallet-level transactions</td></tr>
                         <tr><td><strong>Form Factor</strong></td><td>Card / SmartBill / sticker</td><td>Multiple deployment formats for merchant needs</td></tr>
                     </tbody>
@@ -2048,11 +2048,11 @@
 <pre>
 <span class="comment">// Company → Payroll API → Split payout</span>
 
-<span class="comment">// Employee configures UBX percentage (r = 3% to 30%)</span>
+<span class="comment">// Employee configures UBX percentage (<span class="redacted">r = 3% to 30%</span>)</span>
 <span class="type">UBX<sub>payout</sub></span> = (<span class="type">Salary<sub>COP</sub></span> &times; <span class="function">r</span>) / <span class="type">P<sub>UBX</sub></span>
 <span class="type">COP<sub>payout</sub></span> = <span class="type">Salary<sub>COP</sub></span> &times; (1 - <span class="function">r</span>)
 
-<span class="comment">// Example: 4,000,000 COP salary, r = 10%, P_UBX = 1,000 COP</span>
+<span class="comment">// <span class="redacted">Example: 4,000,000 COP salary, r = 10%, P_UBX = 1,000 COP</span></span>
 <span class="comment">//   UBX payout = (4,000,000 × 0.10) / 1,000 = 400 UBX</span>
 <span class="comment">//   COP payout = 4,000,000 × 0.90 = 3,600,000 COP (to bank)</span>
 
@@ -2068,11 +2068,11 @@
             <!-- Remittance Corridors -->
             <div class="card">
                 <h3>Remittance Corridors (Phase 5)</h3>
-                <p>Colombia receives <strong>$9B+ in annual remittances</strong>, primarily from the United States. UBX/KNEX provides a settlement rail with sub-5-second finality and less than 0.1% transaction cost.</p>
+                <p>Colombia receives <strong><span class="redacted">$9B+ in annual remittances</span></strong>, primarily from the United States. UBX/KNEX provides a settlement rail with sub-5-second finality and less than 0.1% transaction cost.</p>
                 <table class="data-table">
                     <thead><tr><th>Corridor</th><th>Volume Estimate</th><th>Infrastructure</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Colombia &harr; USA</strong></td><td>$9B+/year (primary)</td><td>Stellar + local on-ramps</td></tr>
+                        <tr><td><strong>Colombia &harr; USA</strong></td><td><span class="redacted">$9B+/year (primary)</span></td><td>Stellar + local on-ramps</td></tr>
                         <tr><td><strong>Colombia &harr; Spain</strong></td><td>Remittances + commerce</td><td>Stellar + EU partners</td></tr>
                         <tr><td><strong>LATAM Regional</strong></td><td>Bilateral trade</td><td>Regional node networks</td></tr>
                         <tr><td><strong>Colombia &harr; Asia</strong></td><td>Imports</td><td>Stellar cross-border settlement</td></tr>
@@ -2083,7 +2083,7 @@
                 <table class="data-table">
                     <thead><tr><th>Route</th><th>Monthly Volume</th><th>Use Case</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Bogot&aacute; &harr; Medell&iacute;n</strong></td><td>$1M&ndash;$5M</td><td>Inter-city commerce</td></tr>
+                        <tr><td><strong>Bogot&aacute; &harr; Medell&iacute;n</strong></td><td><span class="redacted">$1M&ndash;$5M</span></td><td>Inter-city commerce</td></tr>
                         <tr><td><strong>Bogot&aacute; &harr; Cali</strong></td><td>$500K&ndash;$3M</td><td>Supply chain payments</td></tr>
                         <tr><td><strong>Venezuela Border</strong></td><td>$200K&ndash;$1M</td><td>Remittances + commerce</td></tr>
                         <tr><td><strong>Ecuador Border</strong></td><td>$100K&ndash;$500K</td><td>Bilateral trade</td></tr>
@@ -2097,10 +2097,10 @@
                 <table class="data-table">
                     <thead><tr><th>Metric</th><th>Target</th><th>Why It Matters</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>WAU (Weekly Active Users)</strong></td><td>&gt;500</td><td>Minimum network activity for meaningful data</td></tr>
-                        <tr><td><strong>UBX Velocity (V)</strong></td><td>2&ndash;4&times; rotations/month</td><td>Below 2 = stagnation risk, above 4 = healthy commerce</td></tr>
-                        <tr><td><strong>3-Month Retention</strong></td><td>&gt;50%</td><td>Users must stay for flywheel to work</td></tr>
-                        <tr><td><strong>UBX&rarr;KNEX Conversion</strong></td><td>&gt;20% of merchants</td><td>Proves KNEX gravity is active</td></tr>
+                        <tr><td><strong>WAU (Weekly Active Users)</strong></td><td><span class="redacted">&gt;500</span></td><td>Minimum network activity for meaningful data</td></tr>
+                        <tr><td><strong>UBX Velocity (V)</strong></td><td><span class="redacted">2&ndash;4&times; rotations/month</span></td><td>Below 2 = stagnation risk, above 4 = healthy commerce</td></tr>
+                        <tr><td><strong>3-Month Retention</strong></td><td><span class="redacted">&gt;50%</span></td><td>Users must stay for flywheel to work</td></tr>
+                        <tr><td><strong>UBX&rarr;KNEX Conversion</strong></td><td><span class="redacted">&gt;20% of merchants</span></td><td>Proves KNEX gravity is active</td></tr>
                         <tr><td><strong>NPS (Merchant)</strong></td><td>&gt;40</td><td>Merchant satisfaction drives word-of-mouth</td></tr>
                         <tr><td><strong>Settlement Time</strong></td><td>&lt;3 seconds</td><td>Must match or beat card network UX</td></tr>
                     </tbody>
@@ -2113,11 +2113,11 @@
                 <table class="data-table">
                     <thead><tr><th>Year</th><th>Milestone</th><th>Users</th><th>Key Deliverable</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>2026</strong></td><td>Launch &amp; Validation</td><td>1K&ndash;5K</td><td>Mainnet activation, pilot in Cali, 20&ndash;50 merchants</td></tr>
+                        <tr><td><strong>2026</strong></td><td>Launch &amp; Validation</td><td><span class="redacted">1K&ndash;5K</span></td><td><span class="redacted">Mainnet activation, pilot in Cali, 20&ndash;50 merchants</span></td></tr>
                         <tr><td><strong>2027</strong></td><td>Local Expansion</td><td>20K&ndash;50K</td><td>Multiple urban zones, NFC card deployment at regional scale</td></tr>
                         <tr><td><strong>2028</strong></td><td>Enterprise Integration</td><td>100K&ndash;300K</td><td>SME integration, payroll API live, KNEX corporate treasury</td></tr>
                         <tr><td><strong>2029</strong></td><td>National Network</td><td>1M+</td><td>Multiple major cities, national merchant directory</td></tr>
-                        <tr><td><strong>2030</strong></td><td>International Expansion</td><td>3M+</td><td>Remittance corridors, 3+ LATAM countries, KNEX settlement layer</td></tr>
+                        <tr><td><strong>2030</strong></td><td>International Expansion</td><td><span class="redacted">3M+</span></td><td><span class="redacted">Remittance corridors, 3+ LATAM countries, KNEX settlement layer</span></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -2154,11 +2154,11 @@
                 <table class="data-table">
                     <thead><tr><th>Violation</th><th>Penalty</th><th>Detection</th><th>Recovery</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Double voting</strong></td><td>100% of bond (10,000 KNEX)</td><td>Cryptographic proof (conflicting signatures)</td><td>None &mdash; permanent ban from validator set</td></tr>
-                        <tr><td><strong>Bandwidth spoofing</strong></td><td>100% of bond</td><td>PoB cross-validation, latency triangulation</td><td>None</td></tr>
-                        <tr><td><strong>Attestation collusion</strong></td><td>75% of bond (7,500 KNEX)</td><td>Statistical analysis, repeated pairing detection</td><td>Re-bond after cooldown (90 days)</td></tr>
-                        <tr><td><strong>Attestation fraud</strong></td><td>50% of bond (5,000 KNEX)</td><td>Challenge-response verification failure</td><td>Re-bond after cooldown (30 days)</td></tr>
-                        <tr><td><strong>Extended downtime</strong></td><td>5% of bond per week</td><td>Missing PoB proofs for &gt;48 hours</td><td>Resume proofs to stop penalty</td></tr>
+                        <tr><td><strong>Double voting</strong></td><td><span class="redacted">100% of bond (10,000 KNEX)</span></td><td>Cryptographic proof (conflicting signatures)</td><td>None &mdash; permanent ban from validator set</td></tr>
+                        <tr><td><strong>Bandwidth spoofing</strong></td><td><span class="redacted">100% of bond</span></td><td>PoB cross-validation, latency triangulation</td><td>None</td></tr>
+                        <tr><td><strong>Attestation collusion</strong></td><td><span class="redacted">75% of bond (7,500 KNEX)</span></td><td>Statistical analysis, repeated pairing detection</td><td>Re-bond after cooldown (90 days)</td></tr>
+                        <tr><td><strong>Attestation fraud</strong></td><td><span class="redacted">50% of bond (5,000 KNEX)</span></td><td>Challenge-response verification failure</td><td>Re-bond after cooldown (30 days)</td></tr>
+                        <tr><td><strong>Extended downtime</strong></td><td><span class="redacted">5% of bond per week</span></td><td>Missing PoB proofs for &gt;48 hours</td><td>Resume proofs to stop penalty</td></tr>
                         <tr><td><strong>Stale proofs</strong></td><td>Reputation decay (no KNEX slash)</td><td>Proof age exceeds freshness window</td><td>Submit fresh PoB proofs</td></tr>
                     </tbody>
                 </table>
@@ -2172,11 +2172,11 @@
                 <table class="data-table">
                     <thead><tr><th>Layer</th><th>Domain</th><th>Key Measures</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>1</strong></td><td>Cryptographic</td><td>Ed25519 signatures, Blake2b hashing, deterministic key derivation</td></tr>
-                        <tr><td><strong>2</strong></td><td>Network</td><td>Peer authentication, encrypted transport (Noise protocol), eclipse resistance</td></tr>
+                        <tr><td><strong>1</strong></td><td>Cryptographic</td><td><span class="redacted">Ed25519 signatures, Blake2b hashing, deterministic key derivation</span></td></tr>
+                        <tr><td><strong>2</strong></td><td>Network</td><td><span class="redacted">Peer authentication, encrypted transport (Noise protocol), eclipse resistance</span></td></tr>
                         <tr><td><strong>3</strong></td><td>Consensus</td><td>ORV quorum (67%), bandwidth-weighted voting, fork resolution</td></tr>
                         <tr><td><strong>4</strong></td><td>Economic</td><td>KNEX bond slashing, PoB spoofing detection, conversion rate integrity</td></tr>
-                        <tr><td><strong>5</strong></td><td>Quantum</td><td>FALCON-512 post-quantum migration path, hybrid signature scheme</td></tr>
+                        <tr><td><strong>5</strong></td><td>Quantum</td><td><span class="redacted">FALCON-512 post-quantum migration path, hybrid signature scheme</span></td></tr>
                         <tr><td><strong>6</strong></td><td>Operational</td><td>Rate limiting, DoS mitigation, client-side PoW anti-spam</td></tr>
                     </tbody>
                 </table>
@@ -2195,7 +2195,7 @@
             </div>
 
             <div class="highlight">
-                <h4>Total Estimated Timeline: 34-42 Weeks</h4>
+                <h4>Total Estimated Timeline: <span class="redacted">34-42 Weeks</span></h4>
                 <p>Each phase includes difficulty rating, time estimate, AI prompts for development, and test commands for validation.</p>
             </div>
 
@@ -2208,7 +2208,7 @@
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty medium">Medium</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 6-8 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">6-8 Weeks</span></span>
                     </div>
                     <p>Build the block-lattice data structure, account-chain management, and basic transaction processing without consensus.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -2583,7 +2583,7 @@ QUALITY:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty hard">Hard</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 6-8 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">6-8 Weeks</span></span>
                     </div>
                     <p>Implement node discovery, block propagation, and peer communication using libp2p.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -2995,7 +2995,7 @@ QUALITY:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty hard">Hard</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 5-6 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">5-6 Weeks</span></span>
                     </div>
                     <p>Implement Open Representative Voting. For phased delivery, early testnets may use simplified weighting for stability testing. However, <strong>the canonical v5.1 protocol weight rule is PoB-first:</strong> <code>VotingWeight = BandwidthScore &times; min(1, Stake / MIN_STAKE)</code>. Stake is eligibility + slashing collateral only; it is not a power multiplier beyond the bond threshold.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -3338,7 +3338,7 @@ QUALITY:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty hard">Hard</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 8-10 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">8-10 Weeks</span></span>
                     </div>
                     <p>Implement bandwidth measurement, challenge-response system, VDF, and weight calculations.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -3793,7 +3793,7 @@ QUALITY:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty medium">Medium</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 4-5 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">4-5 Weeks</span></span>
                     </div>
                     <p>Deploy public testnet with faucet, explorer, and documentation.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -4304,7 +4304,7 @@ DOCUMENTATION:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty hard">Hard</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 4-6 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">4-6 Weeks</span></span>
                     </div>
                     <p>Comprehensive security review, attack simulations, and third-party audits.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -4663,17 +4663,17 @@ cargo tarpaulin --out Html --output-dir audit-package/coverage/
                             <span class="prompt-label">Bug Bounty Program Setup</span>
                             <button class="copy-btn" onclick="copyPrompt(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy</button>
 <pre># Bug bounty tiers
-CRITICAL (up to $100,000):
+<span class="redacted">CRITICAL (up to $100,000):
 - Remote code execution
 - Consensus manipulation
 - Fund theft
-- Total network disruption
+- Total network disruption</span>
 
-HIGH ($10,000 - $50,000):
+<span class="redacted">HIGH ($10,000 - $50,000):
 - Denial of service
 - Validator slashing bypass
 - Bandwidth proof forgery
-- Significant economic impact
+- Significant economic impact</span>
 
 MEDIUM ($1,000 - $10,000):
 - Information disclosure
@@ -4823,7 +4823,7 @@ DOCUMENTATION:
                     </div>
                     <div class="phase-meta">
                         <span class="difficulty medium">Medium</span>
-                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> 2-3 Weeks</span>
+                        <span class="timeframe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="redacted">2-3 Weeks</span></span>
                     </div>
                     <p>Production launch with full tokenomics, governance, and ecosystem activation.</p>
                     <div class="card" style="margin-top: 12px; margin-left: 0;">
@@ -5334,13 +5334,13 @@ ONGOING:
                     <tbody>
                         <tr>
                             <td>Core Node</td>
-                            <td>Rust</td>
-                            <td>Memory safety, performance, no GC pauses</td>
+                            <td><span class="redacted">Rust</span></td>
+                            <td><span class="redacted">Memory safety, performance, no GC pauses</span></td>
                         </tr>
                         <tr>
                             <td>Networking</td>
-                            <td>libp2p</td>
-                            <td>Battle-tested, modular, used by IPFS/Polkadot</td>
+                            <td><span class="redacted">libp2p</span></td>
+                            <td><span class="redacted">Battle-tested, modular, used by IPFS/Polkadot</span></td>
                         </tr>
                         <tr>
                             <td>Database</td>
@@ -5349,7 +5349,7 @@ ONGOING:
                         </tr>
                         <tr>
                             <td>Cryptography</td>
-                            <td>Ed25519 + Blake2b</td>
+                            <td><span class="redacted">Ed25519 + Blake2b</span></td>
                             <td>Fast signatures, secure hashing</td>
                         </tr>
                         <tr>
@@ -5412,15 +5412,15 @@ knexcoin/
 
             <div class="highlight">
                 <h4>Design Goal: Super Secure + Easy Entry</h4>
-                <p>Maximize security without raising barriers to entry. Anyone with decent internet can participate, but attacks become economically and technically infeasible. Target: 9.5/10 security score.</p>
+                <p>Maximize security without raising barriers to entry. Anyone with decent internet can participate, but attacks become economically and technically infeasible. Target: <span class="redacted">9.5/10 security score</span>.</p>
             </div>
 
             <div class="card">
                 <h3>Layer 1: Enhanced Sybil Resistance</h3>
                 <p>Multiple overlapping defenses make Sybil attacks cost-prohibitive:</p>
                 <ul>
-                    <li><strong>Progressive Stake Unlocking:</strong> New validators start with 25% voting power, reaching 100% over 90 days</li>
-                    <li><strong>Unique IP Requirement:</strong> One validator per /24 subnet (prevents data center farms)</li>
+                    <li><strong>Progressive Stake Unlocking:</strong> New validators start with <span class="redacted">25% voting power, reaching 100% over 90 days</span></li>
+                    <li><strong>Unique IP Requirement:</strong> <span class="redacted">One validator per /24 subnet</span> (prevents data center farms)</li>
                     <li><strong>Geographic Distribution Score:</strong> Bonus weight for validators in underrepresented regions</li>
                     <li><strong>Hardware Attestation:</strong> Optional TPM/SGX proof for additional trust score</li>
                     <li><strong>Social Proof Layer:</strong> GitHub/Discord verification for reputation bootstrapping</li>
@@ -5433,7 +5433,7 @@ knexcoin/
 <span class="keyword">pub struct</span> <span class="type">SybilResistance</span> {
     <span class="comment">// Progressive trust building</span>
     <span class="function">maturity_days</span>: <span class="type">u32</span>,              <span class="comment">// Days since registration (0-90)</span>
-    <span class="function">maturity_multiplier</span>: <span class="type">f64</span>,        <span class="comment">// 0.25 → 1.0 over 90 days</span>
+    <span class="function">maturity_multiplier</span>: <span class="type">f64</span>,        <span class="comment">// <span class="redacted">0.25 → 1.0 over 90 days</span></span>
 
     <span class="comment">// Network topology</span>
     <span class="function">ip_subnet</span>: [<span class="type">u8</span>; <span class="number">3</span>],              <span class="comment">// /24 subnet identifier</span>
@@ -5451,7 +5451,7 @@ knexcoin/
 
 <span class="keyword">impl</span> <span class="type">SybilResistance</span> {
     <span class="keyword">fn</span> <span class="function">calculate_trust_multiplier</span>(&self) -> <span class="type">f64</span> {
-        <span class="keyword">let</span> base = <span class="number">0.25</span> + (<span class="number">0.75</span> * (self.maturity_days <span class="keyword">as</span> <span class="type">f64</span> / <span class="number">90.0</span>).<span class="function">min</span>(<span class="number">1.0</span>));
+        <span class="redacted"><span class="keyword">let</span> base = <span class="number">0.25</span> + (<span class="number">0.75</span> * (self.maturity_days <span class="keyword">as</span> <span class="type">f64</span> / <span class="number">90.0</span>).<span class="function">min</span>(<span class="number">1.0</span>));</span>
         <span class="keyword">let</span> geo = self.geo_diversity_bonus;
         <span class="keyword">let</span> hw = self.hardware_trust_bonus;
         <span class="keyword">let</span> social = <span class="number">1.0</span> + (self.social_trust_score <span class="keyword">as</span> <span class="type">f64</span> * <span class="number">0.001</span>);
@@ -5468,7 +5468,7 @@ knexcoin/
                 <ul>
                     <li><strong>Cryptographic Timestamps:</strong> TSA (Time Stamping Authority) integration for tamper-proof timing</li>
                     <li><strong>Random Challenger Selection:</strong> Verifiable Random Function (VRF) picks challengers - no gaming</li>
-                    <li><strong>Multi-Path Verification:</strong> Minimum 5 challengers from different continents required</li>
+                    <li><strong>Multi-Path Verification:</strong> <span class="redacted">Minimum 5 challengers from different continents required</span></li>
                     <li><strong>Statistical Anomaly Detection:</strong> ML-based detection of suspicious patterns</li>
                     <li><strong>Merkle Proof Chains:</strong> Challenge data forms merkle tree, prevents selective response</li>
                 </ul>
@@ -5512,9 +5512,9 @@ knexcoin/
                 <h3>Layer 3: Slashing & Economic Deterrents</h3>
                 <p>Make attacks economically irrational with aggressive slashing:</p>
                 <ul>
-                    <li><strong>Bandwidth Spoofing:</strong> 100% stake slashed + permanent ban</li>
-                    <li><strong>Double Voting:</strong> 100% stake slashed + cryptographic proof published</li>
-                    <li><strong>Downtime Penalty:</strong> 1% stake per day below 95% uptime (gradual)</li>
+                    <li><strong>Bandwidth Spoofing:</strong> <span class="redacted">100% stake slashed + permanent ban</span></li>
+                    <li><strong>Double Voting:</strong> <span class="redacted">100% stake slashed + cryptographic proof published</span></li>
+                    <li><strong>Downtime Penalty:</strong> <span class="redacted">1% stake per day below 95% uptime</span> (gradual)</li>
                     <li><strong>Attestation Fraud:</strong> 50% stake slashed for false attestations</li>
                     <li><strong>Collusion Detection:</strong> 75% stake slashed for coordinated attacks</span></li>
                 </ul>
@@ -5572,11 +5572,11 @@ knexcoin/
                 <h3>Layer 4: Bootstrap Phase Protection</h3>
                 <p>First 90 days are most vulnerable. Special protections:</p>
                 <ul>
-                    <li><strong>Trusted Seed Validators:</strong> 10 foundation-operated nodes with 51% weight cap</li>
-                    <li><strong>Gradual Decentralization:</strong> Foundation weight decreases 1% daily after day 30</li>
+                    <li><strong>Trusted Seed Validators:</strong> <span class="redacted">10 foundation-operated nodes with 51% weight cap</span></li>
+                    <li><strong>Gradual Decentralization:</strong> <span class="redacted">Foundation weight decreases 1% daily after day 30</span></li>
                     <li><strong>Checkpoint System:</strong> Daily checkpoints signed by seed validators</li>
                     <li><strong>Emergency Pause:</strong> Circuit breaker if anomalies detected (governance vote to resume)</li>
-                    <li><strong>Bug Bounty:</strong> $1M equivalent bounty pool from genesis allocation</li>
+                    <li><strong>Bug Bounty:</strong> <span class="redacted">$1M equivalent bounty pool from genesis allocation</span></li>
                 </ul>
             </div>
 
@@ -5591,7 +5591,7 @@ knexcoin/
  ┌────────────────────────────────────────────────────────────┐
  │ FOUNDATION WEIGHT                                          │
  │ ███████████████████████▓▓▓▓▓▓▓▓░░░░░░░░░░░░░░░░░░░░░░░░░░ │
- │ 51%              ───▶  35%  ───▶  15%  ───▶  0%            │
+ │ <span class="redacted">51%              ───▶  35%  ───▶  15%  ───▶  0%</span>            │
  └────────────────────────────────────────────────────────────┘
 
  ┌────────────────────────────────────────────────────────────┐
@@ -5614,8 +5614,8 @@ knexcoin/
                 <p>Real-time monitoring with automatic response:</p>
                 <ul>
                     <li><strong>Eclipse Attack Detection:</strong> Peer diversity monitoring, alerts if node isolation detected</li>
-                    <li><strong>Long-Range Attack Prevention:</strong> Weak subjectivity checkpoints every 1000 blocks</li>
-                    <li><strong>51% Attack Resistance:</strong> Finality after 67% + 10 second delay (detect & respond window)</li>
+                    <li><strong>Long-Range Attack Prevention:</strong> <span class="redacted">Weak subjectivity checkpoints every 1000 blocks</span></li>
+                    <li><strong>51% Attack Resistance:</strong> Finality after <span class="redacted">67% + 10 second delay</span> (detect & respond window)</li>
                     <li><strong>Bandwidth Cliff Detection:</strong> Alert if network bandwidth drops >20% suddenly</li>
                     <li><strong>Reputation Waterfall:</strong> Rapid reputation decay for misbehaving nodes</li>
                 </ul>
@@ -5626,8 +5626,8 @@ knexcoin/
 <pre>
 <span class="keyword">pub struct</span> <span class="type">SecurityMonitor</span> {
     <span class="comment">// Eclipse attack detection</span>
-    <span class="function">peer_diversity_threshold</span>: <span class="type">f64</span>,     <span class="comment">// Min 0.7 diversity score</span>
-    <span class="function">min_unique_subnets</span>: <span class="type">u32</span>,           <span class="comment">// Must connect to 10+ /24s</span>
+    <span class="function">peer_diversity_threshold</span>: <span class="type">f64</span>,     <span class="comment">// <span class="redacted">Min 0.7 diversity score</span></span>
+    <span class="function">min_unique_subnets</span>: <span class="type">u32</span>,           <span class="comment">// <span class="redacted">Must connect to 10+ /24s</span></span>
     <span class="function">geographic_spread_min</span>: <span class="type">u32</span>,        <span class="comment">// Must have peers in 3+ continents</span>
 
     <span class="comment">// Long-range attack prevention</span>
@@ -5635,11 +5635,11 @@ knexcoin/
     <span class="function">weak_subjectivity_period</span>: <span class="type">u64</span>,    <span class="comment">// 30 days of checkpoints</span>
 
     <span class="comment">// 51% attack resistance</span>
-    <span class="function">finality_delay_ms</span>: <span class="type">u64</span>,           <span class="comment">// 10,000ms detection window</span>
+    <span class="function">finality_delay_ms</span>: <span class="type">u64</span>,           <span class="comment">// <span class="redacted">10,000ms detection window</span></span>
     <span class="function">quorum_threshold</span>: <span class="type">f64</span>,            <span class="comment">// 0.67 (67%)</span>
 
     <span class="comment">// Anomaly thresholds</span>
-    <span class="function">bandwidth_drop_alert</span>: <span class="type">f64</span>,        <span class="comment">// 0.20 (20% sudden drop)</span>
+    <span class="function">bandwidth_drop_alert</span>: <span class="type">f64</span>,        <span class="comment">// <span class="redacted">0.20 (20% sudden drop)</span></span>
     <span class="function">validator_churn_alert</span>: <span class="type">f64</span>,       <span class="comment">// 0.10 (10% leave in 1 hour)</span>
 }
 
@@ -5851,8 +5851,8 @@ knexcoin/
                         </tr>
                         <tr>
                             <td style="color: var(--neon);">FN-DSA-512 (FALCON)</td>
-                            <td>897 bytes</td>
-                            <td>666 bytes</td>
+                            <td><span class="redacted">897 bytes</span></td>
+                            <td><span class="redacted">666 bytes</span></td>
                             <td style="color: var(--neon);">✓ Best balance for DAG</td>
                         </tr>
                         <tr>
@@ -5920,7 +5920,7 @@ aes-gcm = <span class="string">"0.10"</span>                  <span class="comme
     <span class="keyword">use</span> sha3::{Sha3_256, Digest};
     <span class="keyword">let</span> hash = <span class="type">Sha3_256</span>::digest(pubkey);
     <span class="keyword">let</span> encoded = <span class="function">bs58::encode</span>(&hash[..<span class="number">32</span>]).into_string();
-    <span class="function">format!</span>(<span class="string">"knexq1{}"</span>, encoded)  <span class="comment">// "knexq" prefix = quantum-safe</span>
+    <span class="redacted"><span class="function">format!</span>(<span class="string">"knexq1{}"</span>, encoded)</span>  <span class="comment">// "knexq" prefix = quantum-safe</span>
 }
 </pre>
             </div>
@@ -6003,8 +6003,8 @@ aes-gcm = <span class="string">"0.10"</span>                  <span class="comme
                         <tr>
                             <td>Sybil Attack (1000 nodes)</td>
                             <td>~$100K (just stake)</td>
-                            <td>~$10M+ (stake + IPs + 90 days + regions)</td>
-                            <td>100x harder</td>
+                            <td><span class="redacted">~$10M+ (stake + IPs + 90 days + regions)</span></td>
+                            <td><span class="redacted">100x harder</span></td>
                         </tr>
                         <tr>
                             <td>Bandwidth Spoofing</td>
@@ -6045,9 +6045,9 @@ aes-gcm = <span class="string">"0.10"</span>                  <span class="comme
             <div class="card">
                 <h3>Live Ecosystem (Deployed)</h3>
                 <ul>
-                    <li><strong><a href="https://web3.knexpay.com" style="color: var(--neon);">KnexPay PWA</a></strong> — Mobile wallet with Ed25519 signatures, NFC card registration, quantum-resistant PIN</li>
-                    <li><strong><a href="https://nfc.serial.cash/auth" style="color: var(--neon);">KnexCard NFC</a></strong> — NTAG 424 DNA card verification with AES-CMAC and holographic display</li>
-                    <li><strong><a href="https://keys.knexcoin.com" style="color: var(--neon);">KnexKeys</a></strong> — Offline Ed25519 key generator with HD derivation and QR backup</li>
+                    <li><strong><a href="https://web3.knexpay.com" style="color: var(--neon);">KnexPay PWA</a></strong> — Mobile wallet with Ed25519 signatures, NFC card registration, <span class="redacted">quantum-resistant PIN</span></li>
+                    <li><strong><a href="https://nfc.serial.cash/auth" style="color: var(--neon);">KnexCard NFC</a></strong> — NTAG 424 DNA card verification with <span class="redacted">AES-CMAC and holographic display</span></li>
+                    <li><strong><a href="https://keys.knexcoin.com" style="color: var(--neon);">KnexKeys</a></strong> — Offline Ed25519 key generator with <span class="redacted">HD derivation and QR backup</span></li>
                     <li><strong><a href="https://faucet.knexcoin.com" style="color: var(--neon);">Testnet Faucet</a></strong> — Cloudflare Workers with Turnstile bot protection</li>
                     <li><strong><a href="https://knexmail.com" style="color: var(--neon);">KnexMail</a></strong> — Encrypted email with emoji handles on AWS Lambda</li>
                 </ul>
