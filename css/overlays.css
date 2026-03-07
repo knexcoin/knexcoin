@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════════════════════════
+   OVERLAYS - Background Overlays, Scanlines, Vignette, Grid
+   (from knexcoin.html)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* THREE.JS CANVAS */
+#webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* SCANLINES with CRT FLICKER */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 255, 0, 0.02) 2px,
+        rgba(0, 255, 0, 0.02) 4px
+    );
+}
+
+.overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 255, 0, 0.01);
+    animation: flicker 0.15s infinite;
+    pointer-events: none;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.97; }
+    50% { opacity: 1; }
+}
+
+/* SCANLINE EFFECT (index.html style) */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.1) 2px,
+        rgba(0,0,0,0.1) 4px
+    );
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* VIGNETTE */
+.vignette {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0,0,0,0.85) 100%);
+}
+
+/* GRID OVERLAY */
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(90deg, rgba(0,255,0,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(0,255,0,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.03;
+}
+
+/* Alternative grid using CSS vars (knexcoin.html style) */
+.grid-overlay--var {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.03;
+    background-image:
+        linear-gradient(var(--neon) 1px, transparent 1px),
+        linear-gradient(90deg, var(--neon) 1px, transparent 1px);
+    background-size: 50px 50px;
+}

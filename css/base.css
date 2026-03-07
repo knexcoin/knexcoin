@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════════════════════════
+   BASE - Reset, Body, Typography, Cursor, Glitch, Buttons,
+          Scroll Reveal, Print Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--white);
+    background: var(--pitch-black);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+}
+
+/* Selection Highlight */
+::selection {
+    background: #00ff00;
+    color: #000;
+}
+
+/* ── Custom Cursor ── */
+.cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon);
+    border-radius: 50%;
+    box-shadow: var(--glow-neon);
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s;
+}
+
+.cursor-trail {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--neon);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0.8;
+    box-shadow: 0 0 6px var(--neon);
+}
+
+body:hover .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+a:hover ~ .cursor .cursor-dot,
+button:hover ~ .cursor .cursor-dot {
+    transform: translate(-50%, -50%) scale(2);
+    background: transparent;
+    border: 2px solid var(--neon);
+}
+
+/* ── Canvas Background ── */
+#global-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+h1 { font-size: clamp(3rem, 12vw, 8rem); }
+h2 { font-size: clamp(2rem, 6vw, 4rem); }
+h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
+
+p {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    font-weight: 400;
+}
+
+/* ── Glitch Text Effect ── */
+.glitch {
+    position: relative;
+    animation: glitch-skew 4s infinite linear alternate-reverse;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    color: var(--neon);
+    animation: glitch-effect 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(-3px, 0);
+    opacity: 0.8;
+    text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon), 0 0 40px var(--neon);
+}
+
+.glitch::after {
+    color: #ffffff;
+    animation: glitch-effect 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+    transform: translate(3px, 0);
+    opacity: 0.8;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff88, 0 0 40px #ffffff44;
+}
+
+@keyframes glitch-effect {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(-3px, -3px); }
+    60% { transform: translate(3px, 3px); }
+    80% { transform: translate(3px, -3px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-skew {
+    0% { transform: skew(0deg); }
+    10% { transform: skew(-0.5deg); }
+    20% { transform: skew(0.5deg); }
+    30% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+}
+
+/* Per-character glitch spans */
+.glitch-char {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.05s, opacity 0.05s;
+}
+
+/* Whiteout flash overlay (triggered by JS) */
+.glitch-whiteout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.02s;
+}
+
+.glitch-whiteout.flash {
+    opacity: 0.7;
+}
+
+/* ── Neon Glow Pulse ── */
+.neon-pulse {
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% { text-shadow: var(--glow-neon-soft); }
+    50% { text-shadow: var(--glow-neon-intense); }
+}
+
+/* ── Buttons ── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 18px 36px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    color: var(--black);
+    background: var(--neon);
+    border: none;
+    box-shadow: var(--glow-neon-soft);
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover {
+    box-shadow: var(--glow-neon);
+    transform: translateY(-3px);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    color: var(--neon);
+    background: transparent;
+    border: 2px solid var(--neon);
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 15px, 100% 100%, 15px 100%, 0 calc(100% - 15px));
+}
+
+.btn-secondary:hover {
+    background: rgba(0,255,0,0.15);
+    box-shadow: var(--glow-neon-soft);
+    transform: translateY(-3px);
+}
+
+.btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ── Scroll Reveal Animation ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s var(--ease-out);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+
+/* ── Touch Device Cursor ── */
+@media (hover: none) and (pointer: coarse) {
+    body { cursor: auto; }
+    .cursor, .cursor-trail { display: none; }
+}
+
+/* ── Print Styles ── */
+@media print {
+    .nav, .mobile-menu, .cursor, .cursor-trail,
+    .grid-overlay, .scanlines, #global-canvas,
+    .scroll-indicator, .hero-dag {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+        cursor: auto;
+    }
+
+    .hero { min-height: auto; padding: 40px 20px; }
+    .section { padding: 40px 20px; }
+
+    h1, h2, h3, .section-label, .section-title .highlight,
+    .neon, .hero-tagline {
+        color: black !important;
+        text-shadow: none !important;
+    }
+
+    .btn {
+        border: 2px solid black;
+        background: white;
+        color: black;
+        box-shadow: none;
+    }
+
+    .feature-card, .token-card {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background: white;
+    }
+}

@@ -1,0 +1,48 @@
+/* ═══════════════════════════════════════════════════════════════
+   VARIABLES - CSS Custom Properties
+   KnexCoin Design System
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Base Colors */
+    --black: #000;
+    --pitch-black: #030303;
+    --dark: #0a0a0a;
+    --darker: #050505;
+    --white: #fff;
+    --gray: #888;
+    --light-gray: #ccc;
+
+    /* Neon Colors - PURE GREEN */
+    --neon: #00ff00;
+    --neon-bright: #00ff66;
+    --neon-glow: #00cc00;
+    --neon-dark: #00aa00;
+    --neon-magenta: #ff00ff;
+    --neon-yellow: #ffff00;
+    --neon-cyan: #00ffff;
+    --neon-red: #ff3333;
+    --neon-orange: #ff8800;
+    --neon-pink: #ff00aa;
+    --neon-electric: #17ff00;
+    --neon-plasma: #5aff00;
+    --neon-lime: #39ff14;
+
+    /* Glow Effects */
+    --glow-neon: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff0088;
+    --glow-neon-intense: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00, 0 0 120px #00ff0066;
+    --glow-neon-soft: 0 0 5px rgba(0,255,0,0.5), 0 0 15px rgba(0,255,0,0.3);
+    --glow-neon-text: 0 0 10px #00ff00, 0 0 20px #00ff0088, 0 0 40px #00ff0044;
+    --glow-magenta: 0 0 10px #ff00ff, 0 0 20px #ff00ff88, 0 0 40px #ff00ff44;
+    --glow-cyan: 0 0 10px #00ffff, 0 0 20px #00ffff88, 0 0 40px #00ffff44;
+    --glow-yellow: 0 0 10px #ffff00, 0 0 20px #ffff0088, 0 0 40px #ffff0044;
+
+    /* Typography */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'JetBrains Mono', monospace;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Easing */
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
