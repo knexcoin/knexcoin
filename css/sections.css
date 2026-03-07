@@ -256,7 +256,7 @@
 
 .card-hex-overlay {
     position: absolute;
-    bottom: 28%;
+    bottom: 10%;
     left: 8%;
     font-family: var(--font-mono);
     font-size: clamp(0.9rem, 2.5vw, 1.3rem);
