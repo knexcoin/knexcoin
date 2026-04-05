@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="State of the Art — A deep-dive into every production technology integrated into the KNEX settlement layer (Bitcoin-fork regenesis) and the UMX circulation layer (DAG payment rail).">
+    <meta name="keywords" content="KnexCoin, KNEX, UMX, ML-DSA-65, post-quantum, FIPS 204, Bitcoin fork, DAG, Proof-of-Bandwidth, technology, architecture">
+    <meta name="author" content="David Otero">
+    <link rel="canonical" href="https://knexcoin.com/state-of-the-art.html">
+    <title>State of the Art · KnexCoin Technology Stack</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://knexcoin.com/state-of-the-art.html">
+    <meta property="og:title" content="State of the Art · KnexCoin Technology Stack">
+    <meta property="og:description" content="Every production technology integrated into KNEX (post-quantum Bitcoin fork) and UMX (DAG payment rail).">
+    <meta property="og:site_name" content="KnexCoin">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/overlays.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           STATE-OF-THE-ART PAGE STYLES
+        ═══════════════════════════════════════════════════════════════ */
+        .soa-hero {
+            padding: 180px 24px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .soa-hero .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid var(--neon);
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            margin-bottom: 32px;
+        }
+        .soa-hero h1 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .soa-hero h1 .hl {
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .soa-hero .thesis {
+            max-width: 820px;
+            margin: 0 auto;
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--light-gray);
+        }
+        .soa-hero .thesis strong { color: var(--neon); text-shadow: var(--glow-neon-soft); }
+        .soa-hero .thesis em { color: var(--neon-cyan); font-style: italic; }
+
+        /* Table of Contents */
+        .soa-toc {
+            max-width: 1100px;
+            margin: 60px auto 120px;
+            padding: 40px;
+            border: 1px solid rgba(0,255,0,0.15);
+            border-radius: 8px;
+            background: rgba(0,255,0,0.02);
+        }
+        .soa-toc-title {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .soa-toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px 32px;
+        }
+        .soa-toc a {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            padding: 10px 14px;
+            border-left: 2px solid rgba(0,255,0,0.25);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .soa-toc a:hover {
+            color: var(--neon);
+            border-left-color: var(--neon);
+            background: rgba(0,255,0,0.05);
+            padding-left: 18px;
+        }
+        .soa-toc a .num {
+            color: var(--neon-cyan);
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        /* Content */
+        .soa-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px 120px;
+        }
+        .soa-section {
+            margin-bottom: 100px;
+            scroll-margin-top: 100px;
+        }
+        .soa-section-label {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 12px;
+            padding: 4px 12px;
+            border: 1px solid var(--neon-magenta);
+            border-radius: 4px;
+        }
+        .soa-section h2 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            line-height: 1.15;
+            margin-bottom: 32px;
+            color: var(--white);
+            letter-spacing: -0.01em;
+        }
+        .soa-section h2 .hl { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+        .soa-section h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            margin: 40px 0 16px;
+        }
+        .soa-section h4 {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--neon-cyan);
+            margin: 28px 0 12px;
+        }
+        .soa-section p {
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+        .soa-section p strong { color: var(--white); }
+        .soa-section ul, .soa-section ol {
+            list-style: none;
+            margin: 16px 0 24px;
+            padding-left: 0;
+        }
+        .soa-section ul li, .soa-section ol li {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--light-gray);
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+        .soa-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+        .soa-section ol { counter-reset: soa-ol; }
+        .soa-section ol li { counter-increment: soa-ol; }
+        .soa-section ol li::before {
+            content: counter(soa-ol) '.';
+            position: absolute;
+            left: 0;
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        /* Tables */
+        .soa-table-wrap {
+            overflow-x: auto;
+            margin: 24px 0 32px;
+            border: 1px solid rgba(0,255,0,0.15);
+            border-radius: 8px;
+        }
+        .soa-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+        .soa-table thead {
+            background: rgba(0,255,0,0.05);
+            border-bottom: 1px solid rgba(0,255,0,0.25);
+        }
+        .soa-table th {
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--neon);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+        .soa-table td {
+            padding: 12px 18px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--light-gray);
+            vertical-align: top;
+        }
+        .soa-table tr:hover td { background: rgba(0,255,0,0.02); }
+        .soa-table td strong { color: var(--white); }
+        .soa-table .yes { color: var(--neon); text-shadow: var(--glow-neon-soft); font-weight: 700; }
+        .soa-table .no { color: var(--neon-red); font-weight: 700; }
+        .soa-table .total {
+            background: rgba(0,255,255,0.04);
+            font-weight: 700;
+        }
+        .soa-table .total td { color: var(--neon-cyan); }
+
+        /* Code blocks */
+        .soa-code {
+            display: block;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(0,255,0,0.2);
+            border-left: 3px solid var(--neon);
+            border-radius: 4px;
+            padding: 18px 22px;
+            margin: 20px 0 28px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            line-height: 1.65;
+            color: #d0e0d0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        .soa-section p code, .soa-section li code, .soa-section td code {
+            background: rgba(0,255,0,0.08);
+            border: 1px solid rgba(0,255,0,0.2);
+            border-radius: 3px;
+            padding: 2px 7px;
+            font-size: 0.88em;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        /* Callout */
+        .soa-callout {
+            border: 1px solid var(--neon-cyan);
+            border-left: 4px solid var(--neon-cyan);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 28px 0;
+            background: rgba(0,255,255,0.04);
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--white);
+        }
+
+        /* ASCII flow diagram */
+        .soa-flow {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 4px;
+            padding: 24px;
+            margin: 24px 0;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--neon-cyan);
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Supply identity */
+        .soa-identity {
+            background: linear-gradient(135deg, rgba(0,255,0,0.08), rgba(0,255,255,0.08));
+            border: 1px solid var(--neon);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 28px 0;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* Phase list */
+        .soa-phase {
+            margin: 24px 0 36px;
+            padding-left: 24px;
+            border-left: 2px solid rgba(0,255,0,0.2);
+        }
+        .soa-phase h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+        .soa-phase-check li {
+            padding-left: 32px !important;
+        }
+        .soa-phase-check li::before {
+            content: '☐' !important;
+            color: var(--gray) !important;
+        }
+        .soa-phase-check li.done::before {
+            content: '☑' !important;
+            color: var(--neon) !important;
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        .soa-footer-note {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin: 60px 0 40px;
+            letter-spacing: 0.1em;
+        }
+
+        /* Back to index */
+        .soa-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray);
+            padding: 12px 18px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            margin-bottom: 40px;
+        }
+        .soa-back:hover {
+            color: var(--neon);
+            border-color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        @media (max-width: 768px) {
+            .soa-hero { padding: 140px 20px 60px; }
+            .soa-toc { padding: 24px; margin: 40px auto 80px; }
+            .soa-content { padding: 0 20px 80px; }
+            .soa-section { margin-bottom: 70px; }
+            .soa-table { font-size: 0.78rem; }
+            .soa-table th, .soa-table td { padding: 10px 12px; }
+            .soa-code, .soa-flow { font-size: 0.72rem; padding: 14px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay effects -->
+    <div class="scanline"></div>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-dot"></span>
+                <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="index.html#tech">Technology</a></li>
+                <li><a href="index.html#quantum">Quantum</a></li>
+                <li><a href="index.html#tokenomics">Tokenomics</a></li>
+                <li><a href="state-of-the-art.html" class="active" style="color: var(--neon); text-shadow: var(--glow-neon-soft);">Stack</a></li>
+            </ul>
+            <a href="whitepaper.html" class="nav-cta">Whitepaper</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="soa-hero">
+        <a href="index.html" class="soa-back">
+            <i class="fa-solid fa-arrow-left"></i> Back to KnexCoin
+        </a>
+        <div class="badge">Technology Deep-Dive · v1.0</div>
+        <h1>State of the <span class="hl">Art</span></h1>
+        <p class="thesis">
+            <strong>KNEX</strong> is a post-quantum Bitcoin fork — re-genesised from block zero with ML-DSA-65 (FIPS 204) signatures enforced at consensus. <strong>UMX</strong> is a DAG-based payment layer that wraps locked KNEX 1:1000 and settles in under a second. Together they form a <em>two-speed monetary system</em>: KNEX is gravity (100M fixed supply, 5-min blocks, immovable), UMX is velocity (elastic supply, sub-second finality, merchant-friendly). Value flows from circulation (UMX) back toward reserves (KNEX) through DEX conversion and merchant sweeps — what we call <em>economic gravity</em>.
+        </p>
+    </header>
+
+    <!-- Table of Contents -->
+    <div class="soa-toc">
+        <p class="soa-toc-title">◆ Index ◆</p>
+        <div class="soa-toc-grid">
+            <a href="#sec-1"><span class="num">01</span>Settlement Layer — Bitcoin Fork Regenesis</a>
+            <a href="#sec-2"><span class="num">02</span>Mining Infrastructure</a>
+            <a href="#sec-3"><span class="num">03</span>Claim System — BTC UTXO Snapshot</a>
+            <a href="#sec-4"><span class="num">04</span>Circulation Layer — DAG Payment Rail</a>
+            <a href="#sec-5"><span class="num">05</span>The Bridge — KNEX ↔ UMX</a>
+            <a href="#sec-6"><span class="num">06</span>Economic Gravity</a>
+            <a href="#sec-7"><span class="num">07</span>KnexPay — Consumer Wallet</a>
+            <a href="#sec-8"><span class="num">08</span>CLI Wallet</a>
+            <a href="#sec-9"><span class="num">09</span>Security Model</a>
+            <a href="#sec-10"><span class="num">10</span>Comparison Matrix</a>
+            <a href="#sec-11"><span class="num">11</span>Roadmap</a>
+            <a href="#sec-12"><span class="num">12</span>What Makes This Different</a>
+            <a href="#sec-13"><span class="num">13</span>References &amp; Standards</a>
+        </div>
+    </div>
+
+    <!-- Content -->
+    <main class="soa-content">
+
+        <!-- Section 1 -->
+        <section id="sec-1" class="soa-section">
+            <span class="soa-section-label">01 · Settlement Layer</span>
+            <h2>Settlement Layer (KNEX) — <span class="hl">Bitcoin Fork Regenesis</span></h2>
+
+            <h3>1.1 Base Inheritance</h3>
+            <p>KNEX is forked from Bitcoin Core but re-genesised — no shared UTXO history with Bitcoin. The Bitcoin Core lineage gives us battle-tested consensus code, P2P networking, block storage, mempool management, and wallet infrastructure. We replaced the cryptography layer and regenesised.</p>
+
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Inherited from Bitcoin Core</th><th>Replaced in KNEX</th></tr></thead>
+                    <tbody>
+                        <tr><td>Block validation pipeline</td><td>Genesis + chain parameters</td></tr>
+                        <tr><td>P2P protocol + mempool</td><td>Signature scheme (ECDSA → ML-DSA-65)</td></tr>
+                        <tr><td>LevelDB block/chainstate storage</td><td>Script execution path (added <code>OP_CHECKSIG_PQ</code>)</td></tr>
+                        <tr><td>Difficulty retarget algorithm</td><td>Retarget interval (2016 → 50 blocks)</td></tr>
+                        <tr><td>Block header format</td><td>Network magic, ports, address HRP</td></tr>
+                        <tr><td>RPC interface</td><td>Output type: added <code>WITNESS_V2_PQ</code></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>1.2 Post-Quantum Cryptography — ML-DSA-65 (FIPS 204)</h3>
+            <p>Every transaction signature on KNEX is produced by <strong>ML-DSA-65</strong> (Module-Lattice Digital Signature Algorithm), the NIST-standardised version of CRYSTALS-Dilithium at security level 3.</p>
+
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Property</th><th>ECDSA (Bitcoin)</th><th>ML-DSA-65 (KNEX)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Security basis</td><td>Elliptic-curve discrete log</td><td>Module-lattice (LWE + SIS)</td></tr>
+                        <tr><td>Quantum resistance</td><td class="no">No — broken by Shor</td><td class="yes">Yes — no known quantum attack</td></tr>
+                        <tr><td>Public key size</td><td>33 bytes</td><td>1,952 bytes</td></tr>
+                        <tr><td>Signature size</td><td>70 bytes (DER)</td><td>3,309 bytes</td></tr>
+                        <tr><td>Signing speed</td><td>~100 μs</td><td>~200 μs</td></tr>
+                        <tr><td>Verification speed</td><td>~500 μs</td><td>~70 μs</td></tr>
+                        <tr><td>NIST status</td><td>N/A</td><td>FIPS 204 (2024)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Address derivation pipeline:</h4>
+            <pre class="soa-code">seed (256-bit) → SHAKE-256 XOF → ML-DSA-65 keypair
+                                      ↓
+                               sha256(pk)  →  32-byte pubkey hash
+                                                     ↓
+                            bech32m(hrp="nex", witness=2, data=hash)
+                                                     ↓
+                                 nex1z...  (62-char address)</pre>
+            <p>Addresses start with <code>nex1z</code> because bech32m encodes witness version 2 as the character <code>z</code> in the fifth position.</p>
+
+            <h3>1.3 Output Script Type — <code>WITNESS_V2_PQ</code></h3>
+            <p>KNEX introduces a new standard output type. Every spendable UTXO on the chain uses this script format:</p>
+            <pre class="soa-code">scriptPubKey:  OP_2  &lt;32-byte pubkey hash&gt;
+hex:           52 20 &lt;32 bytes&gt;</pre>
+            <ul>
+                <li><code>OP_2</code> (0x52) signals witness version 2</li>
+                <li>32-byte push is <code>sha256(ml_dsa_65_public_key)</code> — single-hash, no RIPEMD-160</li>
+                <li>Spending witness: <code>[ sig (3,309-byte ML-DSA sig + sighash byte) | pubkey (1,952 bytes) ]</code></li>
+            </ul>
+
+            <h4>Verification flow at consensus:</h4>
+            <ol>
+                <li>Compute <code>sha256(witness[1])</code> — the pubkey</li>
+                <li>Compare against the 32 bytes in the output's scriptPubKey</li>
+                <li>If match: pass <code>sighash</code> + <code>sig</code> + <code>pubkey</code> to <code>pqclean_ml_dsa_65_ref_crypto_sign_verify()</code></li>
+                <li>Accept or reject block</li>
+            </ol>
+
+            <h3>1.4 Consensus Rule — PQ-Only Outputs</h3>
+            <p>A hard consensus rule in <code>src/consensus/tx_check.cpp</code> rejects any transaction that creates a non-PQ output:</p>
+            <pre class="soa-code">for (const auto&amp; txout : tx.vout) {
+    TxoutType t = Solver(txout.scriptPubKey, vSolutions);
+    if (t != TxoutType::WITNESS_V2_PQ &amp;&amp; t != TxoutType::NULL_DATA) {
+        return state.Invalid(..., "bad-txout-not-pq");
+    }
+}</pre>
+            <p>Allowed output types: only <code>WITNESS_V2_PQ</code> and <code>NULL_DATA</code> (OP_RETURN for witness commitments and data anchors). Every legacy Bitcoin script is rejected at the consensus layer:</p>
+            <ul>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2PK, P2PKH (ECDSA)</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2SH, bare multisig</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2WPKH, P2WSH (segwit v0)</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2TR (taproot / Schnorr)</li>
+            </ul>
+            <div class="soa-callout"><strong>KNEX is not a hybrid chain. It is 100% post-quantum, enforced by every node.</strong></div>
+
+            <h3>1.5 Emission Schedule — 8 Eras, 75M Mined</h3>
+            <p>Eras of 375,000 blocks each. Subsidy halves between eras 1→7, stays flat at era 8 as a tail:</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Era</th><th>Blocks</th><th>Subsidy</th><th>Era Mined</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>0 – 374,999</td><td>100 NEX</td><td>37,500,000</td></tr>
+                        <tr><td>2</td><td>375,000 – 749,999</td><td>50 NEX</td><td>18,750,000</td></tr>
+                        <tr><td>3</td><td>750,000 – 1,124,999</td><td>25 NEX</td><td>9,375,000</td></tr>
+                        <tr><td>4</td><td>1,125,000 – 1,499,999</td><td>12.5 NEX</td><td>4,687,500</td></tr>
+                        <tr><td>5</td><td>1,500,000 – 1,874,999</td><td>6.25 NEX</td><td>2,343,750</td></tr>
+                        <tr><td>6</td><td>1,875,000 – 2,249,999</td><td>3.125 NEX</td><td>1,171,875</td></tr>
+                        <tr><td>7</td><td>2,250,000 – 2,624,999</td><td>1.5625 NEX</td><td>585,937.5</td></tr>
+                        <tr><td>8</td><td>2,625,000 – 2,999,999</td><td>1.5625 NEX</td><td>585,937.5</td></tr>
+                        <tr class="total"><td colspan="3"><strong>Total mined</strong></td><td><strong>75,000,000</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>All eras divide to whole-satoshi integers — zero rounding loss. Mining ends at block 3,000,000 (~November 2054).</p>
+            <div class="soa-identity">
+                75,000,000 mined + 20,000,000 premine + 5,000,000 claim pool = <strong style="color:var(--neon-cyan);">100,000,000 NEX</strong>
+            </div>
+
+            <h3>1.6 Premine Delivery — Block 1 Coinbase Bonus</h3>
+            <p>Bitcoin Core's design makes the genesis-block coinbase unspendable. To deliver the 20M premine into the spendable UTXO set, KNEX adds a <strong>one-time bonus</strong> to block 1's subsidy via a consensus-level special case in <code>GetBlockSubsidy()</code>:</p>
+            <pre class="soa-code">if (nHeight == 1) return era1_subsidy + PREMINE;  // 100 + 20,000,000 NEX</pre>
+            <p>Block 1's coinbase pays <strong>20,000,100 NEX</strong> to whichever miner finds it — typically the solo pool's configured payout address. The 20M is then distributed on-chain across 9 founder accounts via normal transactions.</p>
+
+            <h3>1.7 Genesis Parameters (Mainnet)</h3>
+            <pre class="soa-code">Timestamp:   2026-04-05 00:00:00 UTC  (epoch 1775347200)
+Bits:        0x1d00ffff  (difficulty 1)
+Nonce:       3,741,185,684
+Hash:        00000000ca679662c87c40693490f00e297a2bd357e59cab6f7814d12145d66b
+Merkle root: 2c62d38151df668e842eb913e9dd0b872a0f1d6dbf5998b6803e0be382e75f68
+Network magic: 0x4e 0x45 0x58 0x02  ("NEX" + v2 PQ era byte)
+P2P port:    9333
+RPC port:    9332
+HRP:         nex (mainnet) / tnx (testnet)</pre>
+
+            <h3>1.8 Block &amp; Chain Parameters</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Parameter</th><th>Value</th><th>vs Bitcoin</th></tr></thead>
+                    <tbody>
+                        <tr><td>Target block time</td><td>300 sec (5 min)</td><td>2× faster</td></tr>
+                        <tr><td>Difficulty retarget</td><td>Every 50 blocks</td><td>40× faster than Bitcoin's 2016</td></tr>
+                        <tr><td>Max block weight</td><td>4,000,000 WU</td><td>Same</td></tr>
+                        <tr><td>Coinbase maturity</td><td>100 blocks (~8h20m)</td><td>Same</td></tr>
+                        <tr><td>Max supply</td><td>100,000,000 NEX</td><td>Different (vs 21M BTC)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Fast retarget + 5-min blocks = <strong>~50× quicker difficulty response</strong> to hashrate changes than Bitcoin.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="sec-2" class="soa-section">
+            <span class="soa-section-label">02 · Mining</span>
+            <h2>Mining <span class="hl">Infrastructure</span></h2>
+
+            <h3>2.1 PoW Algorithm — SHA-256d</h3>
+            <p>KNEX uses the same proof-of-work as Bitcoin: double-SHA-256 of the 80-byte block header. This means:</p>
+            <ul>
+                <li><strong>Any existing Bitcoin ASIC works immediately</strong> (Bitaxe, Antminer, Whatsminer)</li>
+                <li><strong>CPU/GPU miners work too</strong> (NMMiner, cpuminer, custom miners)</li>
+                <li><strong>No new hardware needed</strong> to participate in consensus</li>
+            </ul>
+            <p>We picked SHA-256d deliberately: Grover's algorithm gives only quadratic quantum speedup, so 256-bit hashes retain 128-bit post-quantum security. The <em>signature</em> scheme is what matters for quantum defense — and that's ML-DSA-65.</p>
+
+            <h3>2.2 Reference Stratum Pool (NEX Pool)</h3>
+            <p>A 711-line single-file Python asyncio pool ships with the project. It handles the PQ-aware coinbase construction that Bitcoin pools can't produce natively.</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Feature</th><th>Implementation</th></tr></thead>
+                    <tbody>
+                        <tr><td>Protocol</td><td>Stratum v1 over TCP</td></tr>
+                        <tr><td>ASICBoost</td><td>BIP310 version-rolling with 0x1fffe000 mask</td></tr>
+                        <tr><td>Vardiff</td><td>Per-miner, floor 0.001 for CPU, ceiling 1,000,000 for ASIC, 10-sec target</td></tr>
+                        <tr><td>Coinbase output</td><td>Custom <code>OP_2 &lt;32-byte hash&gt;</code> (PQ-compliant)</td></tr>
+                        <tr><td>Fresh work rotation</td><td>New <code>mining.notify</code> every 30s with updated ntime (prevents stale-work loops)</td></tr>
+                        <tr><td>Block confirmation</td><td>Custom <code>mining.block_found</code> notification to the submitting miner</td></tr>
+                        <tr><td>Share history</td><td>16-job cache for validating slightly-stale submits</td></tr>
+                        <tr><td>Zombie detection</td><td>3-min idle timeout disconnects dead TCP sessions</td></tr>
+                        <tr><td>Stats API</td><td>JSON on HTTP port 8081 for explorer/dashboard integration</td></tr>
+                        <tr><td>Dependencies</td><td>Python 3.8+ stdlib only (no pip install)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.3 Mining Clients Supported</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Client</th><th>Hardware</th><th>Typical Hashrate</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Bitaxe BM1368</strong></td><td>Standalone ASIC</td><td>3–4 TH/s</td></tr>
+                        <tr><td><strong>Mac Metal Miner</strong></td><td>Apple Silicon GPU (Metal API)</td><td>300–700 MH/s</td></tr>
+                        <tr><td><strong>NMMiner</strong></td><td>x86/ARM CPU (AVX2/NEON)</td><td>1–50 MH/s</td></tr>
+                        <tr><td><strong>cpuminer</strong></td><td>x86 CPU</td><td>10–400 MH/s</td></tr>
+                        <tr><td><strong>Antminer S19/S21</strong></td><td>Enterprise ASIC</td><td>100+ TH/s</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="sec-3" class="soa-section">
+            <span class="soa-section-label">03 · Claim System</span>
+            <h2>Claim System — <span class="hl">BTC UTXO Snapshot</span></h2>
+            <p>5M NEX is reserved for a <strong>Bitcoin holder claim</strong> — any address with a balance in Bitcoin at a specific block height can claim the equivalent NEX by presenting a merkle proof.</p>
+
+            <h3>3.1 Snapshot Flow</h3>
+            <pre class="soa-code">1. bitcoind dumptxoutset at BTC block 940,000
+   → produces ~8GB UTXO set binary file
+2. extract.py walks the UTXO set
+   → groups outputs by address, sums balances
+   → builds merkle tree of (address, balance) pairs
+3. Merkle root baked into NEX chainparams as FINAL_CLAIM_MERKLE_ROOT
+4. NEX node verifies claim transactions via merkle proof</pre>
+
+            <h3>3.2 Claim Transaction Format</h3>
+            <pre class="soa-code">Inputs:  [ special "claim marker" input with null prevout ]
+Witness: [ merkle proof  | BTC address  | BTC signature of NEX claim address ]
+Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address ]</pre>
+            <p>The BTC signature proves the claimant owns the original Bitcoin private key. The NEX claim address is signed with the BTC key, then the output on NEX locks to the new PQ key. Each address can claim at most once (enforced via claim index).</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="sec-4" class="soa-section">
+            <span class="soa-section-label">04 · Circulation Layer</span>
+            <h2>Circulation Layer (UMX) — <span class="hl">DAG Payment Rail</span></h2>
+
+            <h3>4.1 Architecture — Block-Lattice DAG</h3>
+            <p>UMX doesn't share KNEX's block structure. It runs on <strong>Lumero</strong>, a block-lattice DAG inspired by Nano but hardened for production commerce:</p>
+            <ul>
+                <li>Each account has its own chain</li>
+                <li>Transactions are pairs of blocks (send + receive)</li>
+                <li>Global ordering is NOT required — only per-account ordering</li>
+                <li>Consensus is 2/3 BFT vote-weight on conflicts (Open Representative Voting)</li>
+            </ul>
+
+            <h3>4.2 Transaction Types</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Type</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>send</code></td><td>Debit sender's chain, reference recipient address</td></tr>
+                        <tr><td><code>receive</code></td><td>Credit recipient's chain, reference sender's send-block hash</td></tr>
+                        <tr><td><code>change</code></td><td>Update delegated representative (voting)</td></tr>
+                        <tr><td><code>epoch</code></td><td>Protocol version marker (soft-fork activation)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.3 Consensus — Open Representative Voting</h3>
+            <ul>
+                <li>Nodes delegate voting weight to representatives</li>
+                <li>Representatives vote on conflicts (double-spends)</li>
+                <li><strong>Quorum:</strong> 67% of online voting weight confirms within 200-400ms</li>
+                <li><strong>Finality:</strong> deterministic, no block-waiting</li>
+            </ul>
+
+            <h3>4.4 Cryptography — Also Post-Quantum</h3>
+            <p>UMX uses the same ML-DSA-65 signatures as KNEX. This means the dual-currency system has <strong>one uniform cryptographic surface</strong>: a user's 24-word seed derives both their KNEX (witness v2) and UMX (Lumero account) keys deterministically. One backup phrase, two layers.</p>
+
+            <h3>4.5 Performance</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>Finality</td><td>200–400 ms (2/3 BFT quorum)</td></tr>
+                        <tr><td>Theoretical TPS</td><td>~100,000 (lattice parallelism)</td></tr>
+                        <tr><td>Transaction tax</td><td>0.50% (50 BPS) — accrues to validator pool</td></tr>
+                        <tr><td>P2P messaging</td><td>ML-DSA-65 signed (quantum-safe at the network layer)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="sec-5" class="soa-section">
+            <span class="soa-section-label">05 · Bridge</span>
+            <h2>The Bridge — <span class="hl">KNEX ↔ UMX</span></h2>
+            <p>The bridge is what makes this a true dual-currency system rather than two independent chains.</p>
+
+            <h3>5.1 Conversion Ratio — Fixed</h3>
+            <div class="soa-identity" style="font-size: 1.4rem;">
+                1 NEX ═══════ 1,000 UMX
+            </div>
+            <p>Not a market rate. A <strong>protocol-fixed</strong> ratio, enforced by the bridge contract.</p>
+
+            <h3>5.2 NEX → UMX (Wrap)</h3>
+            <pre class="soa-code">1. User locks N NEX to a published bridge address on KNEX chain
+2. Bridge observes 6 confirmations (~30 min)
+3. Bridge mints 1,000N UMX on Lumero, credits user's account
+4. User's KnexPay spend balance increases by 1,000N UMX</pre>
+
+            <h3>5.3 UMX → NEX (Unwrap)</h3>
+            <pre class="soa-code">1. User burns 1,000N UMX on Lumero
+2. Bridge observes finality (~1 sec)
+3. Bridge releases N NEX from reserve to user's KNEX address
+4. User's KnexPay reserve balance increases by N NEX</pre>
+
+            <h3>5.4 Reserve Invariant</h3>
+            <div class="soa-callout">
+                <strong>At any point in time, locked NEX in reserve must equal issued UMX / 1,000.</strong>
+            </div>
+            <p>This is non-negotiable. No fractional reserve. No lending. No leverage. The bridge publishes its reserve accounting on both chains for continuous audit:</p>
+            <ul>
+                <li>Lock addresses and balances on KNEX</li>
+                <li>Total UMX supply on Lumero</li>
+                <li>Every mint/burn event with timestamps</li>
+            </ul>
+
+            <h3>5.5 Bridge Controls</h3>
+            <ul>
+                <li>Multi-sig permissioned signer set (evolves toward decentralisation)</li>
+                <li>Delayed withdrawals above threshold (anti-flash-drain)</li>
+                <li>Rate limits per epoch</li>
+                <li>HSM-backed signing keys</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="sec-6" class="soa-section">
+            <span class="soa-section-label">06 · Economic Gravity</span>
+            <h2>Economic Gravity — <span class="hl">The Value Flow</span></h2>
+            <p>KNEX is gravity. UMX is motion. Value moves between them predictably:</p>
+            <pre class="soa-flow">Merchant accepts UMX ─► accumulates float ─► sweeps excess to KNEX
+                                                       │
+                                                       ▼
+                                            KNEX reserve grows
+                                                       │
+                                                       ▼
+                                            Settlement layer strengthens
+                                                       │
+                                                       ▼
+                                            UMX circulation supply drops
+                                                       │
+                                                       ▼
+                                            DEX arbitrage rebalances</pre>
+            <div class="soa-callout"><strong>UMX is a checking account. KNEX is a savings account.</strong> KnexPay orchestrates automatic flow between them based on user-defined thresholds.</div>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sec-7" class="soa-section">
+            <span class="soa-section-label">07 · KnexPay</span>
+            <h2>KnexPay — <span class="hl">Consumer Wallet</span></h2>
+
+            <h3>7.1 Architecture — iOS Native + WKWebView Hybrid</h3>
+            <ul>
+                <li>Swift shell, WebKit rendering engine</li>
+                <li>Native bridge locked to packaged app origin (no arbitrary URL loads)</li>
+                <li>Dual balance UI: Reserve (NEX) + Spend (UMX)</li>
+                <li>Real-time updates via WebSocket to node</li>
+            </ul>
+
+            <h3>7.2 Key Storage</h3>
+            <ul>
+                <li>Keys live only in iOS Keychain (biometric-protected, Secure Enclave on A13+)</li>
+                <li>AES-256-GCM encryption at rest</li>
+                <li>Never synced to iCloud</li>
+                <li>Never readable by JavaScript layer</li>
+            </ul>
+
+            <h3>7.3 Auto-Float Logic</h3>
+            <p>Users set three thresholds:</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Control</th><th>Behavior</th></tr></thead>
+                    <tbody>
+                        <tr><td>Min spend balance</td><td>Below this, auto-wrap from reserve</td></tr>
+                        <tr><td>Target spend balance</td><td>Auto-refill aims for this number</td></tr>
+                        <tr><td>Max spend float</td><td>Above this, auto-sweep back to reserve</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>This makes UMX behave like a tightly-managed checking account, with surplus flowing automatically to KNEX savings.</p>
+
+            <h3>7.4 NFC Tap-to-Pay</h3>
+            <ul>
+                <li>iPhone's NFC stack (Core NFC) reads SmartBills (NDEF bearer notes)</li>
+                <li>Each tap verifies a <strong>CMAC</strong> (Cipher-based MAC) signed with the bill's SUN/SDM key</li>
+                <li>Server-side validation prevents replay attacks</li>
+                <li>Supports both personal transfers and merchant point-of-sale</li>
+            </ul>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="sec-8" class="soa-section">
+            <span class="soa-section-label">08 · CLI Wallet</span>
+            <h2>CLI <span class="hl">Wallet</span></h2>
+            <p>Single-file Swift tool for power users. Zero dependencies beyond system Foundation + CryptoKit + PQClean.</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>create</code></td><td>Generate 24-word BIP-39 seed + derive ML-DSA-65 keypair</td></tr>
+                        <tr><td><code>restore</code></td><td>Rebuild from seed phrase</td></tr>
+                        <tr><td><code>address</code></td><td>Show bech32m <code>nex1z</code> receive address</td></tr>
+                        <tr><td><code>balance</code></td><td>Query UTXO set via node RPC</td></tr>
+                        <tr><td><code>send</code></td><td>Build + sign transaction locally, broadcast via RPC</td></tr>
+                        <tr><td><code>claim</code></td><td>Import BTC snapshot claim and broadcast</td></tr>
+                        <tr><td><code>backup</code></td><td>Reveal seed phrase (with confirmation)</td></tr>
+                        <tr><td><code>wipe</code></td><td>Destroy all keys (requires typing RESET)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Derivation is fully deterministic: same seed → same keys, forever. Restore works on any machine.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="sec-9" class="soa-section">
+            <span class="soa-section-label">09 · Security</span>
+            <h2>Security Model — <span class="hl">Defense in Depth</span></h2>
+
+            <h3>9.1 Layer 1 — Cryptography</h3>
+            <ul>
+                <li>ML-DSA-65 signatures (quantum-proof)</li>
+                <li>SHA-256d PoW (Grover-resistant at 256 bits)</li>
+                <li>BIP-39 seed entropy (256-bit root)</li>
+            </ul>
+
+            <h3>9.2 Layer 2 — Consensus</h3>
+            <ul>
+                <li>PQ-only output rule rejects ECDSA outputs at consensus</li>
+                <li>Block weight caps prevent DoS</li>
+                <li>BIP34 coinbase height enforcement</li>
+                <li>Segwit witness commitment required in coinbase</li>
+            </ul>
+
+            <h3>9.3 Layer 3 — Network</h3>
+            <ul>
+                <li>P2P connects over NEX magic bytes (prevents Bitcoin cross-contamination)</li>
+                <li>TLS-optional RPC binding (localhost default)</li>
+                <li>Mempool-size caps prevent flood</li>
+            </ul>
+
+            <h3>9.4 Layer 4 — Application</h3>
+            <ul>
+                <li>CLI wallet signs 100% locally — private keys never touch the node</li>
+                <li>KnexPay keys in iOS Keychain only</li>
+                <li>Bridge reserve invariant continuously published</li>
+            </ul>
+
+            <h3>9.5 Layer 5 — Operational</h3>
+            <ul>
+                <li>Multi-sig bridge signer</li>
+                <li>Delayed large withdrawals</li>
+                <li>Public reserve accounting</li>
+                <li>On-chain claim merkle root (immutable once set)</li>
+            </ul>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="sec-10" class="soa-section">
+            <span class="soa-section-label">10 · Comparison</span>
+            <h2>Comparison <span class="hl">Matrix</span></h2>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead>
+                        <tr>
+                            <th></th><th>Bitcoin</th><th>Ethereum</th><th>Solana</th>
+                            <th style="color:var(--neon-cyan);">KNEX (settlement)</th>
+                            <th style="color:var(--neon-cyan);">UMX (circulation)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Signature</td><td>ECDSA</td><td>ECDSA</td><td>Ed25519</td><td><strong>ML-DSA-65</strong></td><td><strong>ML-DSA-65</strong></td></tr>
+                        <tr><td>Quantum-safe</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+                        <tr><td>Consensus</td><td>PoW</td><td>PoS</td><td>PoH+PoS</td><td>PoW (SHA-256d)</td><td>2/3 BFT voting</td></tr>
+                        <tr><td>Block time</td><td>10 min</td><td>12 sec</td><td>400 ms</td><td>5 min</td><td>&lt;400 ms finality</td></tr>
+                        <tr><td>Finality</td><td>~60 min</td><td>~12 min</td><td>~400 ms</td><td>~30 min (6 conf)</td><td>~200-400 ms</td></tr>
+                        <tr><td>Max supply</td><td>21M BTC</td><td>unlimited</td><td>517M (inflation)</td><td><strong>100M NEX</strong></td><td>elastic (bridge-locked)</td></tr>
+                        <tr><td>Tx fees</td><td>$1-50</td><td>$1-100</td><td>&lt;$0.01</td><td>~free (mining funded)</td><td>0.50% tax</td></tr>
+                        <tr><td>TPS</td><td>~7</td><td>~30</td><td>~3000</td><td>~14</td><td>~100,000</td></tr>
+                        <tr><td>Hardware</td><td>ASIC</td><td>GPU/consumer</td><td>validators</td><td>any SHA-256 ASIC</td><td>standard node</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 11 -->
+        <section id="sec-11" class="soa-section">
+            <span class="soa-section-label">11 · Roadmap</span>
+            <h2>Roadmap</h2>
+
+            <div class="soa-phase">
+                <h3>Phase 1 — Foundation (2026-04-05)</h3>
+                <ul class="soa-phase-check">
+                    <li class="done">NEX mainnet genesis (2026-04-05, block 0)</li>
+                    <li class="done">PQ-only consensus rule enforced</li>
+                    <li class="done">Solo mining pool live with vardiff</li>
+                    <li class="done">Block explorer (untraceablex.com)</li>
+                    <li class="done">Reference CLI wallet</li>
+                </ul>
+            </div>
+
+            <div class="soa-phase">
+                <h3>Phase 2 — Distribution (in progress)</h3>
+                <ul class="soa-phase-check">
+                    <li>Block 1 premine mined → 9-account distribution</li>
+                    <li>BTC UTXO snapshot merkle root activated</li>
+                    <li>Public seed nodes + DNS peer discovery</li>
+                    <li>Multi-location validator nodes</li>
+                </ul>
+            </div>
+
+            <div class="soa-phase">
+                <h3>Phase 3 — Payment Layer</h3>
+                <ul class="soa-phase-check">
+                    <li>Lumero CORE testnet launch</li>
+                    <li>Manual NEX↔UMX bridge (convert-in/out)</li>
+                    <li>KnexPay dual-balance UI</li>
+                    <li>NFC tap-to-pay with SmartBills</li>
+                    <li>Merchant onboarding</li>
+                </ul>
+            </div>
+
+            <div class="soa-phase">
+                <h3>Phase 4 — Automation</h3>
+                <ul class="soa-phase-check">
+                    <li>Auto top-up (reserve → spend)</li>
+                    <li>Auto sweep (spend → reserve)</li>
+                    <li>Merchant settlement schedules</li>
+                    <li>Liquidity pools on Stellar DEX</li>
+                </ul>
+            </div>
+
+            <div class="soa-phase">
+                <h3>Phase 5 — Maturity</h3>
+                <ul class="soa-phase-check">
+                    <li>Treasury dashboards with on-chain proofs</li>
+                    <li>Public reserve attestations</li>
+                    <li>Governance contracts</li>
+                    <li>Bridge decentralisation milestones</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 12 -->
+        <section id="sec-12" class="soa-section">
+            <span class="soa-section-label">12 · Differentiation</span>
+            <h2>What Makes This <span class="hl">Different</span></h2>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Claim</th><th>Evidence</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>"100% post-quantum"</strong></td><td>Consensus rule rejects all ECDSA outputs. Verifiable in <code>src/consensus/tx_check.cpp</code>.</td></tr>
+                        <tr><td><strong>"Dual-currency"</strong></td><td>Two chains (KNEX PoW + UMX DAG) with protocol-fixed 1:1000 ratio and non-negotiable reserve invariant.</td></tr>
+                        <tr><td><strong>"Zero pool fees"</strong></td><td>Reference pool pays 100% of block subsidy to miner address.</td></tr>
+                        <tr><td><strong>"Fair launch"</strong></td><td>No pre-mine sales. 20M via block 1 to 9 founder addresses. 5M claim pool for Bitcoin holders. 75M mined via PoW over 28 years.</td></tr>
+                        <tr><td><strong>"Merchant-ready"</strong></td><td>KnexPay iOS wallet with NFC tap-to-pay, auto-sweep, dual balances.</td></tr>
+                        <tr><td><strong>"Feeless transactions"</strong></td><td>UMX uses 0.50% protocol tax (not per-tx fee). KNEX mining funded by subsidy, not fees.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 13 -->
+        <section id="sec-13" class="soa-section">
+            <span class="soa-section-label">13 · References</span>
+            <h2>References &amp; <span class="hl">Standards</span></h2>
+            <ul>
+                <li><strong>FIPS 203</strong> — ML-KEM (Module-Lattice Key Encapsulation)</li>
+                <li><strong>FIPS 204</strong> — ML-DSA (Module-Lattice Digital Signature Algorithm) ← used by KNEX + UMX</li>
+                <li><strong>FIPS 205</strong> — SLH-DSA (Stateless Hash-based DSA)</li>
+                <li><strong>FIPS 206</strong> — FN-DSA (FALCON)</li>
+                <li><strong>NIST SP 800-208</strong> — Stateful hash-based signatures</li>
+                <li><strong>BIP-39</strong> — Mnemonic seed generation</li>
+                <li><strong>BIP-173 / BIP-350</strong> — bech32 / bech32m address encoding</li>
+                <li><strong>BIP-310</strong> — Stratum v1 version-rolling (ASICBoost)</li>
+                <li><strong>BIP-141</strong> — Segregated Witness framework</li>
+            </ul>
+        </section>
+
+        <p class="soa-footer-note">▸ Document version 1.0 — compiled 2026-04-05 from the live mainnet deployment ◂</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <span class="nav-logo-dot"></span>
+                        <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
+                    </a>
+                    <p>The world's first Proof-of-Bandwidth DAG ledger. Bandwidth-backed, zero-fee, quantum-proof, truly decentralized.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Protocol</h4>
+                    <ul>
+                        <li><a href="whitepaper.html">Whitepaper</a></li>
+                        <li><a href="blueprint.html">Technical Blueprint</a></li>
+                        <li><a href="state-of-the-art.html">State of the Art</a></li>
+                        <li><a href="index.html#tokenomics">Tokenomics</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 KnexCoin · Created by David Otero</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile nav toggle
+    (function() {
+        const toggle = document.getElementById('navToggle');
+        if (!toggle) return;
+        const nav = document.getElementById('nav');
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('open');
+            nav.classList.toggle('menu-open');
+        });
+    })();
+
+    // Nav scroll effect
+    (function() {
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    })();
+    </script>
+</body>
+</html>
