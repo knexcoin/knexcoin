@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <meta name="description" content="State of the Art — A deep-dive into every production technology integrated into the KNEX settlement layer (Bitcoin-fork regenesis) and the UMX circulation layer (DAG payment rail).">
+    <meta name="description" content="KnexCoin — Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 signatures enforced at consensus, 100M fixed supply, 5-min blocks, 1:1000 bridge. Every production technology in the stack.">
     <meta name="keywords" content="KnexCoin, KNEX, UMX, ML-DSA-65, post-quantum, FIPS 204, Bitcoin fork, DAG, Proof-of-Bandwidth, technology, architecture">
     <meta name="author" content="David Otero">
-    <link rel="canonical" href="https://knexcoin.com/state-of-the-art.html">
-    <title>State of the Art · KnexCoin Technology Stack</title>
+    <link rel="canonical" href="https://knexcoin.com/">
+    <title>KnexCoin · Post-Quantum Bitcoin Fork + DAG Payment Rail · State of the Art</title>
 
     <!-- Open Graph -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://knexcoin.com/state-of-the-art.html">
-    <meta property="og:title" content="State of the Art · KnexCoin Technology Stack">
-    <meta property="og:description" content="Every production technology integrated into KNEX (post-quantum Bitcoin fork) and UMX (DAG payment rail).">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://knexcoin.com/">
+    <meta property="og:title" content="KnexCoin · State of the Art Technology Stack">
+    <meta property="og:description" content="Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 enforced at consensus. 100M fixed supply. 1:1000 bridge.">
     <meta property="og:site_name" content="KnexCoin">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5H8ZWJMSXQ');
+    </script>
 
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -381,6 +395,21 @@
             text-shadow: var(--glow-neon-soft);
         }
 
+        /* Mobile menu overrides (compact list style) */
+        .mobile-menu .mobile-menu-links a {
+            font-size: 1.1rem !important;
+            padding: 16px 0 !important;
+            font-family: var(--font-mono) !important;
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            color: var(--light-gray) !important;
+        }
+        .mobile-menu .mobile-menu-links a:hover {
+            color: var(--neon) !important;
+            padding-left: 16px !important;
+            text-shadow: var(--glow-neon-soft);
+        }
+
         @media (max-width: 768px) {
             .soa-hero { padding: 140px 20px 60px; }
             .soa-toc { padding: 24px; margin: 40px auto 80px; }
@@ -389,6 +418,11 @@
             .soa-table { font-size: 0.78rem; }
             .soa-table th, .soa-table td { padding: 10px 12px; }
             .soa-code, .soa-flow { font-size: 0.72rem; padding: 14px; }
+            .footer-top { grid-template-columns: 1fr 1fr !important; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+        @media (max-width: 560px) {
+            .footer-top { grid-template-columns: 1fr !important; }
         }
     </style>
 </head>
@@ -401,30 +435,47 @@
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="#top" class="nav-logo">
                 <span class="nav-logo-dot"></span>
                 <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
             </a>
             <ul class="nav-links">
-                <li><a href="index.html#features">Features</a></li>
-                <li><a href="index.html#tech">Technology</a></li>
-                <li><a href="index.html#quantum">Quantum</a></li>
-                <li><a href="index.html#tokenomics">Tokenomics</a></li>
-                <li><a href="state-of-the-art.html" class="active" style="color: var(--neon); text-shadow: var(--glow-neon-soft);">Stack</a></li>
+                <li><a href="#sec-1">Settlement</a></li>
+                <li><a href="#sec-2">Mining</a></li>
+                <li><a href="#sec-4">UMX</a></li>
+                <li><a href="#sec-5">Bridge</a></li>
+                <li><a href="#sec-9">Security</a></li>
+                <li><a href="#sec-11">Roadmap</a></li>
             </ul>
             <a href="whitepaper.html" class="nav-cta">Whitepaper</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu-links">
+            <li><a href="#sec-1">Settlement (KNEX)</a></li>
+            <li><a href="#sec-2">Mining</a></li>
+            <li><a href="#sec-3">BTC Claims</a></li>
+            <li><a href="#sec-4">Circulation (UMX)</a></li>
+            <li><a href="#sec-5">Bridge</a></li>
+            <li><a href="#sec-6">Economic Gravity</a></li>
+            <li><a href="#sec-7">KnexPay</a></li>
+            <li><a href="#sec-8">CLI Wallet</a></li>
+            <li><a href="#sec-9">Security</a></li>
+            <li><a href="#sec-10">Comparison</a></li>
+            <li><a href="#sec-11">Roadmap</a></li>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
+            <li><a href="blueprint.html">Technical Blueprint</a></li>
+        </ul>
+    </div>
+
     <!-- Hero -->
-    <header class="soa-hero">
-        <a href="index.html" class="soa-back">
-            <i class="fa-solid fa-arrow-left"></i> Back to KnexCoin
-        </a>
-        <div class="badge">Technology Deep-Dive · v1.0</div>
+    <header class="soa-hero" id="top">
+        <div class="badge">Post-Quantum · Dual-Currency · Live Mainnet</div>
         <h1>State of the <span class="hl">Art</span></h1>
         <p class="thesis">
             <strong>KNEX</strong> is a post-quantum Bitcoin fork — re-genesised from block zero with ML-DSA-65 (FIPS 204) signatures enforced at consensus. <strong>UMX</strong> is a DAG-based payment layer that wraps locked KNEX 1:1000 and settles in under a second. Together they form a <em>two-speed monetary system</em>: KNEX is gravity (100M fixed supply, 5-min blocks, immovable), UMX is velocity (elastic supply, sub-second finality, merchant-friendly). Value flows from circulation (UMX) back toward reserves (KNEX) through DEX conversion and merchant sweeps — what we call <em>economic gravity</em>.
@@ -1020,26 +1071,44 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-grid">
+            <div class="footer-top" style="display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.05);">
                 <div class="footer-brand">
-                    <a href="index.html" class="nav-logo">
+                    <a href="#top" class="nav-logo" style="margin-bottom:18px; display:inline-flex;">
                         <span class="nav-logo-dot"></span>
                         <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
                     </a>
-                    <p>The world's first Proof-of-Bandwidth DAG ledger. Bandwidth-backed, zero-fee, quantum-proof, truly decentralized.</p>
+                    <p style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray); line-height:1.7; max-width:340px; margin-top:14px;">Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 signatures enforced at consensus. 100M fixed supply. Zero fees. Live mainnet.</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Protocol</h4>
-                    <ul>
-                        <li><a href="whitepaper.html">Whitepaper</a></li>
-                        <li><a href="blueprint.html">Technical Blueprint</a></li>
-                        <li><a href="state-of-the-art.html">State of the Art</a></li>
-                        <li><a href="index.html#tokenomics">Tokenomics</a></li>
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Protocol</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="whitepaper.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Whitepaper</a></li>
+                        <li style="padding:5px 0;"><a href="blueprint.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Technical Blueprint</a></li>
+                        <li style="padding:5px 0;"><a href="https://umx.credit" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">UMX Protocol</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-1" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Tokenomics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Technology</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="#sec-1" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Settlement (KNEX)</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-4" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Circulation (UMX)</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-5" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Bridge</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-10" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Comparison</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Legal</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="privacy.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Privacy Policy</a></li>
+                        <li style="padding:5px 0;"><a href="terms.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Terms of Use</a></li>
+                        <li style="padding:5px 0;"><a href="cookies.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="padding-top:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-family:var(--font-mono); font-size:11px; color:var(--gray);">
                 <p>© 2026 KnexCoin · Created by David Otero</p>
+                <p>Mainnet <span style="color:var(--neon)">●</span> 2026-04-05 · Block 0 <span style="color:var(--gray)">·</span> <span style="color:var(--neon-cyan)">Post-Quantum</span></p>
             </div>
         </div>
     </footer>
@@ -1047,18 +1116,28 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
     <script>
     // Mobile nav toggle
     (function() {
-        const toggle = document.getElementById('navToggle');
-        if (!toggle) return;
-        const nav = document.getElementById('nav');
+        const toggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('mobileMenu');
+        if (!toggle || !menu) return;
         toggle.addEventListener('click', () => {
-            toggle.classList.toggle('open');
-            nav.classList.toggle('menu-open');
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        });
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     })();
 
     // Nav scroll effect
     (function() {
         const nav = document.getElementById('nav');
+        if (!nav) return;
         window.addEventListener('scroll', () => {
             if (window.scrollY > 40) {
                 nav.classList.add('scrolled');
@@ -1066,6 +1145,27 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
                 nav.classList.remove('scrolled');
             }
         }, { passive: true });
+    })();
+
+    // Smooth scroll for anchor links
+    (function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#top') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
     })();
     </script>
 </body>

@@ -2,61 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0a0a0a">
-    <meta name="description" content="KnexCoin - The World's First Proof-of-Bandwidth DAG Ledger. Decentralized, scalable, and bandwidth-backed cryptocurrency.">
-    <meta name="keywords" content="KnexCoin, KNEX, cryptocurrency, blockchain, DAG, Proof-of-Bandwidth, PoB, decentralized, digital currency, DeFi">
-    <meta name="author" content="KnexCoin">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://knexcoin.com">
-    <title>KnexCoin | Proof-of-Bandwidth DAG Ledger</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="KnexCoin — Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 signatures enforced at consensus, 100M fixed supply, 5-min blocks, 1:1000 bridge. Every production technology in the stack.">
+    <meta name="keywords" content="KnexCoin, KNEX, UMX, ML-DSA-65, post-quantum, FIPS 204, Bitcoin fork, DAG, Proof-of-Bandwidth, technology, architecture">
+    <meta name="author" content="David Otero">
+    <link rel="canonical" href="https://knexcoin.com/">
+    <title>KnexCoin · Post-Quantum Bitcoin Fork + DAG Payment Rail · State of the Art</title>
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://knexcoin.com">
-    <meta property="og:title" content="KnexCoin | Proof-of-Bandwidth DAG Ledger">
-    <meta property="og:description" content="The World's First Proof-of-Bandwidth DAG Ledger. Decentralized, scalable, and bandwidth-backed cryptocurrency with unlimited TPS.">
-    <meta property="og:image" content="https://knexcoin.com/images/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://knexcoin.com/">
+    <meta property="og:title" content="KnexCoin · State of the Art Technology Stack">
+    <meta property="og:description" content="Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 enforced at consensus. 100M fixed supply. 1:1000 bridge.">
     <meta property="og:site_name" content="KnexCoin">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://knexcoin.com">
-    <meta name="twitter:title" content="KnexCoin | Proof-of-Bandwidth DAG Ledger">
-    <meta name="twitter:description" content="The World's First Proof-of-Bandwidth DAG Ledger. Decentralized, scalable, and bandwidth-backed cryptocurrency with unlimited TPS.">
-    <meta name="twitter:image" content="https://knexcoin.com/images/og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="manifest" href="images/site.webmanifest">
-
-    <!-- Apple Web App -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="KnexCoin">
-
-    <!-- Structured Data for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "KnexCoin",
-      "url": "https://knexcoin.com",
-      "logo": "https://knexcoin.com/images/android-chrome-512x512.png",
-      "description": "The World's First Proof-of-Bandwidth DAG Ledger.",
-      "sameAs": [
-        "https://twitter.com/knexcoin",
-        "https://github.com/knexcoin"
-      ]
-    }
-    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
@@ -67,73 +26,429 @@
       gtag('config', 'G-5H8ZWJMSXQ');
     </script>
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="images/site.webmanifest">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <!-- CSS Modules -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/overlays.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/hero.css?v=2">
     <link rel="stylesheet" href="css/sections.css">
-    <link rel="stylesheet" href="css/blueprint.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* ═══════════════════════════════════════════════════════════════
+           STATE-OF-THE-ART PAGE STYLES
+        ═══════════════════════════════════════════════════════════════ */
+        .soa-hero {
+            padding: 180px 24px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .soa-hero .badge {
+            display: inline-block;
+            padding: 8px 18px;
+            border: 1px solid var(--neon);
+            border-radius: 100px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            margin-bottom: 32px;
+        }
+        .soa-hero h1 {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -0.01em;
+        }
+        .soa-hero h1 .hl {
+            color: var(--neon-cyan);
+            text-shadow: var(--glow-cyan);
+        }
+        .soa-hero .thesis {
+            max-width: 820px;
+            margin: 0 auto;
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--light-gray);
+        }
+        .soa-hero .thesis strong { color: var(--neon); text-shadow: var(--glow-neon-soft); }
+        .soa-hero .thesis em { color: var(--neon-cyan); font-style: italic; }
+
+        /* Table of Contents */
+        .soa-toc {
+            max-width: 1100px;
+            margin: 60px auto 120px;
+            padding: 40px;
+            border: 1px solid rgba(0,255,0,0.15);
+            border-radius: 8px;
+            background: rgba(0,255,0,0.02);
+        }
+        .soa-toc-title {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .soa-toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px 32px;
+        }
+        .soa-toc a {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            padding: 10px 14px;
+            border-left: 2px solid rgba(0,255,0,0.25);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+        .soa-toc a:hover {
+            color: var(--neon);
+            border-left-color: var(--neon);
+            background: rgba(0,255,0,0.05);
+            padding-left: 18px;
+        }
+        .soa-toc a .num {
+            color: var(--neon-cyan);
+            margin-right: 10px;
+            font-weight: 700;
+        }
+
+        /* Content */
+        .soa-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px 120px;
+        }
+        .soa-section {
+            margin-bottom: 100px;
+            scroll-margin-top: 100px;
+        }
+        .soa-section-label {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--neon-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 12px;
+            padding: 4px 12px;
+            border: 1px solid var(--neon-magenta);
+            border-radius: 4px;
+        }
+        .soa-section h2 {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            line-height: 1.15;
+            margin-bottom: 32px;
+            color: var(--white);
+            letter-spacing: -0.01em;
+        }
+        .soa-section h2 .hl { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+        .soa-section h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            margin: 40px 0 16px;
+        }
+        .soa-section h4 {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--neon-cyan);
+            margin: 28px 0 12px;
+        }
+        .soa-section p {
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+        .soa-section p strong { color: var(--white); }
+        .soa-section ul, .soa-section ol {
+            list-style: none;
+            margin: 16px 0 24px;
+            padding-left: 0;
+        }
+        .soa-section ul li, .soa-section ol li {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--light-gray);
+            padding: 6px 0 6px 24px;
+            position: relative;
+        }
+        .soa-section ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+        .soa-section ol { counter-reset: soa-ol; }
+        .soa-section ol li { counter-increment: soa-ol; }
+        .soa-section ol li::before {
+            content: counter(soa-ol) '.';
+            position: absolute;
+            left: 0;
+            color: var(--neon-cyan);
+            font-weight: 700;
+        }
+
+        /* Tables */
+        .soa-table-wrap {
+            overflow-x: auto;
+            margin: 24px 0 32px;
+            border: 1px solid rgba(0,255,0,0.15);
+            border-radius: 8px;
+        }
+        .soa-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+        .soa-table thead {
+            background: rgba(0,255,0,0.05);
+            border-bottom: 1px solid rgba(0,255,0,0.25);
+        }
+        .soa-table th {
+            padding: 14px 18px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--neon);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+        }
+        .soa-table td {
+            padding: 12px 18px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--light-gray);
+            vertical-align: top;
+        }
+        .soa-table tr:hover td { background: rgba(0,255,0,0.02); }
+        .soa-table td strong { color: var(--white); }
+        .soa-table .yes { color: var(--neon); text-shadow: var(--glow-neon-soft); font-weight: 700; }
+        .soa-table .no { color: var(--neon-red); font-weight: 700; }
+        .soa-table .total {
+            background: rgba(0,255,255,0.04);
+            font-weight: 700;
+        }
+        .soa-table .total td { color: var(--neon-cyan); }
+
+        /* Code blocks */
+        .soa-code {
+            display: block;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(0,255,0,0.2);
+            border-left: 3px solid var(--neon);
+            border-radius: 4px;
+            padding: 18px 22px;
+            margin: 20px 0 28px;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            line-height: 1.65;
+            color: #d0e0d0;
+            overflow-x: auto;
+            white-space: pre;
+        }
+        .soa-section p code, .soa-section li code, .soa-section td code {
+            background: rgba(0,255,0,0.08);
+            border: 1px solid rgba(0,255,0,0.2);
+            border-radius: 3px;
+            padding: 2px 7px;
+            font-size: 0.88em;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        /* Callout */
+        .soa-callout {
+            border: 1px solid var(--neon-cyan);
+            border-left: 4px solid var(--neon-cyan);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 28px 0;
+            background: rgba(0,255,255,0.04);
+            font-family: var(--font-mono);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            color: var(--white);
+        }
+
+        /* ASCII flow diagram */
+        .soa-flow {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(0,255,255,0.2);
+            border-radius: 4px;
+            padding: 24px;
+            margin: 24px 0;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--neon-cyan);
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        /* Supply identity */
+        .soa-identity {
+            background: linear-gradient(135deg, rgba(0,255,0,0.08), rgba(0,255,255,0.08));
+            border: 1px solid var(--neon);
+            border-radius: 8px;
+            padding: 24px;
+            margin: 28px 0;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: var(--white);
+            letter-spacing: 0.05em;
+        }
+
+        /* Phase list */
+        .soa-phase {
+            margin: 24px 0 36px;
+            padding-left: 24px;
+            border-left: 2px solid rgba(0,255,0,0.2);
+        }
+        .soa-phase h3 {
+            margin-top: 0;
+            margin-bottom: 14px;
+        }
+        .soa-phase-check li {
+            padding-left: 32px !important;
+        }
+        .soa-phase-check li::before {
+            content: '☐' !important;
+            color: var(--gray) !important;
+        }
+        .soa-phase-check li.done::before {
+            content: '☑' !important;
+            color: var(--neon) !important;
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        .soa-footer-note {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--gray);
+            margin: 60px 0 40px;
+            letter-spacing: 0.1em;
+        }
+
+        /* Back to index */
+        .soa-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gray);
+            padding: 12px 18px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            margin-bottom: 40px;
+        }
+        .soa-back:hover {
+            color: var(--neon);
+            border-color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        /* Mobile menu overrides (compact list style) */
+        .mobile-menu .mobile-menu-links a {
+            font-size: 1.1rem !important;
+            padding: 16px 0 !important;
+            font-family: var(--font-mono) !important;
+            text-transform: none !important;
+            letter-spacing: 0.05em !important;
+            color: var(--light-gray) !important;
+        }
+        .mobile-menu .mobile-menu-links a:hover {
+            color: var(--neon) !important;
+            padding-left: 16px !important;
+            text-shadow: var(--glow-neon-soft);
+        }
+
+        @media (max-width: 768px) {
+            .soa-hero { padding: 140px 20px 60px; }
+            .soa-toc { padding: 24px; margin: 40px auto 80px; }
+            .soa-content { padding: 0 20px 80px; }
+            .soa-section { margin-bottom: 70px; }
+            .soa-table { font-size: 0.78rem; }
+            .soa-table th, .soa-table td { padding: 10px 12px; }
+            .soa-code, .soa-flow { font-size: 0.72rem; padding: 14px; }
+            .footer-top { grid-template-columns: 1fr 1fr !important; }
+            .footer-brand { grid-column: 1 / -1; }
+        }
+        @media (max-width: 560px) {
+            .footer-top { grid-template-columns: 1fr !important; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Background Layers (from knexcoin.html) -->
-    <canvas id="webgl"></canvas>
-    <div class="overlay"></div>
-    <div class="grid-overlay"></div>
+    <!-- Overlay effects -->
+    <div class="scanline"></div>
+    <div class="noise"></div>
     <div class="vignette"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"><div class="cursor-dot"></div></div>
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
         <div class="nav-container">
-            <a href="#" class="nav-logo">KNEX<span>COIN</span></a>
+            <a href="#top" class="nav-logo">
+                <span class="nav-logo-dot"></span>
+                <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
+            </a>
             <ul class="nav-links">
-                <li class="nav-dropdown">
-                    <a href="#">Protocol</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="#features">Features</a>
-                        <a href="#tech">Technology</a>
-                        <a href="#stack" style="color: var(--neon);">State of the Art</a>
-                        <a href="#blueprint">Blueprint</a>
-                        <a href="#quantum">Quantum-Proof</a>
-                        <a href="#tokenomics">Tokenomics</a>
-                    </div>
-                </li>
-                <li><a href="#umx" style="color: var(--neon-cyan);">UMX</a></li>
-                <li class="nav-dropdown">
-                    <a href="#">Build</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a>
-                        <a href="blueprint.html">Technical Blueprint</a>
-                        <a href="#">API Reference</a>
-                        <a href="#">GitHub</a>
-                    </div>
-                </li>
-                <li class="nav-dropdown">
-                    <a href="#">Legal</a>
-                    <div class="nav-dropdown-menu">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Use</a>
-                        <a href="cookies.html">Cookie Policy</a>
-                    </div>
-                </li>
+                <li><a href="#sec-1">Settlement</a></li>
+                <li><a href="#sec-2">Mining</a></li>
+                <li><a href="#sec-4">UMX</a></li>
+                <li><a href="#sec-5">Bridge</a></li>
+                <li><a href="#sec-9">Security</a></li>
+                <li><a href="#sec-11">Roadmap</a></li>
             </ul>
-            <button class="nav-cta" onclick="window.location.href='whitepaper.html'">Whitepaper</button>
-            <button class="menu-toggle" id="menuToggle">
+            <a href="whitepaper.html" class="nav-cta">Whitepaper</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -142,1081 +457,716 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul class="mobile-menu-links">
-            <li style="border-bottom: none; padding-bottom: 0;"><span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--neon-magenta); letter-spacing: 3px; text-transform: uppercase;">PROTOCOL</span></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#tech">Technology</a></li>
-            <li><a href="#stack" style="color: var(--neon);">State of the Art</a></li>
-            <li><a href="#blueprint">Blueprint</a></li>
-            <li><a href="#quantum">Quantum-Proof</a></li>
-            <li><a href="#tokenomics">Tokenomics</a></li>
-            <li><a href="#umx" style="color: var(--neon-cyan);">UMX Protocol</a></li>
-            <li style="border-bottom: none; padding-top: 16px; padding-bottom: 0;"><span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--neon-magenta); letter-spacing: 3px; text-transform: uppercase;">BUILD</span></li>
-            <li><a href="whitepaper.html" target="_blank" rel="noopener">Whitepaper</a></li>
+            <li><a href="#sec-1">Settlement (KNEX)</a></li>
+            <li><a href="#sec-2">Mining</a></li>
+            <li><a href="#sec-3">BTC Claims</a></li>
+            <li><a href="#sec-4">Circulation (UMX)</a></li>
+            <li><a href="#sec-5">Bridge</a></li>
+            <li><a href="#sec-6">Economic Gravity</a></li>
+            <li><a href="#sec-7">KnexPay</a></li>
+            <li><a href="#sec-8">CLI Wallet</a></li>
+            <li><a href="#sec-9">Security</a></li>
+            <li><a href="#sec-10">Comparison</a></li>
+            <li><a href="#sec-11">Roadmap</a></li>
+            <li><a href="whitepaper.html">Whitepaper</a></li>
             <li><a href="blueprint.html">Technical Blueprint</a></li>
-            <li style="border-bottom: none; padding-top: 16px; padding-bottom: 0;"><span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--neon-magenta); letter-spacing: 3px; text-transform: uppercase;">LEGAL</span></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Use</a></li>
-            <li><a href="cookies.html">Cookie Policy</a></li>
         </ul>
-        <button class="mobile-menu-cta" onclick="window.location.href='whitepaper.html'">Read the Whitepaper</button>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-badge">
-            <span>Main Net Launch</span>
-        </div>
-        <h1 class="hero-title">
-            <span class="neon glitch" data-text="APRIL 22"><span class="glitch-char">A</span><span class="glitch-char">P</span><span class="glitch-char">R</span><span class="glitch-char">I</span><span class="glitch-char">L</span><span class="glitch-char"> </span><span class="glitch-char">2</span><span class="glitch-char">2</span></span>
-            <span class="sub">Proof-of-Bandwidth (PoB)</span>
-        </h1>
-        <p class="hero-tagline neon-pulse">&lt;/Bandwidth-Backed Digital Currency&gt;</p>
-        <p class="hero-desc">The world's first DAG-based ledger that rewards real network infrastructure. KnexCoin uses Proof-of-Bandwidth (PoB) with VRF-selected challengers, checkpointed Bandwidth Scores, and deterministic finality to create a truly decentralized, scalable, and auditable cryptocurrency. KNEX is the settlement layer (100M fixed supply). UMX is the transactional layer — an elastic bearer instrument built on top.</p>
-        <div class="hero-cta">
-            <a href="whitepaper.html" target="_blank" rel="noopener" class="btn btn-primary">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                Read Whitepaper
-            </a>
-            <a href="#features" class="btn btn-secondary">Learn More</a>
-        </div>
+    <!-- Hero -->
+    <header class="soa-hero" id="top">
+        <div class="badge">Post-Quantum · Dual-Currency · Live Mainnet</div>
+        <h1>State of the <span class="hl">Art</span></h1>
+        <p class="thesis">
+            <strong>KNEX</strong> is a post-quantum Bitcoin fork — re-genesised from block zero with ML-DSA-65 (FIPS 204) signatures enforced at consensus. <strong>UMX</strong> is a DAG-based payment layer that wraps locked KNEX 1:1000 and settles in under a second. Together they form a <em>two-speed monetary system</em>: KNEX is gravity (100M fixed supply, 5-min blocks, immovable), UMX is velocity (elastic supply, sub-second finality, merchant-friendly). Value flows from circulation (UMX) back toward reserves (KNEX) through DEX conversion and merchant sweeps — what we call <em>economic gravity</em>.
+        </p>
+    </header>
 
-        <div class="hero-dag">
-            <div class="dag-canvas-container">
-                <canvas id="dag-canvas"></canvas>
-                <div class="dag-label">Block-Lattice Structure</div>
-            </div>
-            <div class="dag-explanation">
-                <div class="dag-explanation-title">Transaction Flow</div>
-                <div class="dag-step" id="dagStep1">
-                    <div class="dag-step-header">
-                        <span class="dag-step-num">1</span>
-                        <span class="dag-step-label">Send Block Created</span>
-                    </div>
-                    <div class="dag-step-desc">Account <code>A</code> creates a <code>send</code> block, debiting balance and referencing recipient <code>B</code>.</div>
-                </div>
-                <div class="dag-step" id="dagStep2">
-                    <div class="dag-step-header">
-                        <span class="dag-step-num">2</span>
-                        <span class="dag-step-label">Receive Block Created</span>
-                    </div>
-                    <div class="dag-step-desc">Account <code>B</code> creates a <code>receive</code> block, crediting balance by referencing <code>A</code>'s send block hash.</div>
-                </div>
-                <div class="dag-step" id="dagStep3">
-                    <div class="dag-step-header">
-                        <span class="dag-step-num">3</span>
-                        <span class="dag-step-label">Cross-Chain Link</span>
-                    </div>
-                    <div class="dag-step-desc">The dashed line represents the cryptographic link between chains—no global consensus needed.</div>
-                </div>
-                <div class="dag-step" id="dagStep4">
-                    <div class="dag-step-header">
-                        <span class="dag-step-num">4</span>
-                        <span class="dag-step-label">Async Finality</span>
-                    </div>
-                    <div class="dag-step-desc">Each account-chain confirms independently. Transactions settle in <code>O(1)</code> time without waiting for network-wide blocks.</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="scroll-indicator" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Stats Banner -->
-    <div class="stats-banner">
-        <div class="stat reveal">
-            <div class="stat-value">100M</div>
-            <div class="stat-label">Max Supply</div>
-        </div>
-        <div class="stat reveal reveal-delay-1">
-            <div class="stat-value">&infin;</div>
-            <div class="stat-label">TPS Capacity</div>
-        </div>
-        <div class="stat reveal reveal-delay-2">
-            <div class="stat-value">9.5</div>
-            <div class="stat-label">Security Score</div>
-        </div>
-        <div class="stat reveal reveal-delay-3">
-            <div class="stat-value">0</div>
-            <div class="stat-label">Transaction Fees</div>
+    <!-- Table of Contents -->
+    <div class="soa-toc">
+        <p class="soa-toc-title">◆ Index ◆</p>
+        <div class="soa-toc-grid">
+            <a href="#sec-1"><span class="num">01</span>Settlement Layer — Bitcoin Fork Regenesis</a>
+            <a href="#sec-2"><span class="num">02</span>Mining Infrastructure</a>
+            <a href="#sec-3"><span class="num">03</span>Claim System — BTC UTXO Snapshot</a>
+            <a href="#sec-4"><span class="num">04</span>Circulation Layer — DAG Payment Rail</a>
+            <a href="#sec-5"><span class="num">05</span>The Bridge — KNEX ↔ UMX</a>
+            <a href="#sec-6"><span class="num">06</span>Economic Gravity</a>
+            <a href="#sec-7"><span class="num">07</span>KnexPay — Consumer Wallet</a>
+            <a href="#sec-8"><span class="num">08</span>CLI Wallet</a>
+            <a href="#sec-9"><span class="num">09</span>Security Model</a>
+            <a href="#sec-10"><span class="num">10</span>Comparison Matrix</a>
+            <a href="#sec-11"><span class="num">11</span>Roadmap</a>
+            <a href="#sec-12"><span class="num">12</span>What Makes This Different</a>
+            <a href="#sec-13"><span class="num">13</span>References &amp; Standards</a>
         </div>
     </div>
 
-    <!-- Features Section -->
-    <section class="section features" id="features">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">Features</p>
-                <h2 class="section-title">Built for the<br><span class="highlight">Next Generation</span></h2>
-                <p>KnexCoin reimagines blockchain from the ground up, combining bandwidth verification with economic incentives to create a truly decentralized network.</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card reveal reveal-delay-1">
-                    <div class="feature-number">01</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/bandwidth.svg" alt="Bandwidth">
-                    </div>
-                    <h3>Proof-of-Bandwidth</h3>
-                    <p>Validators are rewarded based on actual network throughput. No wasted energy, no plutocracy—just real infrastructure contributions.</p>
-                </div>
-                <div class="feature-card reveal reveal-delay-2">
-                    <div class="feature-number">02</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/ok-hand.svg" alt="Zero Fees">
-                    </div>
-                    <h3>Zero Transaction Fees</h3>
-                    <p>Bandwidth subsidization eliminates fees entirely. Microtransactions and IoT payments become economically viable at any scale.</p>
-                </div>
-                <div class="feature-card reveal reveal-delay-3">
-                    <div class="feature-number">03</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/security.svg" alt="Security">
-                    </div>
-                    <h3>9.5/10 Security Score</h3>
-                    <p>6-layer security: Sybil resistance, VRF challenger selection, 100% slashing for spoofing/double-voting, diversity constraints, checkpoint determinism, and real-time anomaly detection.</p>
-                </div>
-                <div class="feature-card reveal reveal-delay-4">
-                    <div class="feature-number">04</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/speed.svg" alt="Speed">
-                    </div>
-                    <h3>Unlimited TPS</h3>
-                    <p>DAG block-lattice architecture enables unlimited horizontal scaling - each account processes transactions independently.</p>
-                </div>
-                <div class="feature-card reveal reveal-delay-5">
-                    <div class="feature-number">05</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/vote.svg" alt="Governance">
-                    </div>
-                    <h3>Quadratic Governance</h3>
-                    <p>Time-weighted voting prevents whale dominance. Every participant has a meaningful voice in protocol decisions.</p>
-                </div>
-                <div class="feature-card reveal reveal-delay-6">
-                    <div class="feature-number">06</div>
-                    <div class="feature-icon">
-                        <img src="images/icons/dev-settings.svg" alt="Developer">
-                    </div>
-                    <h3>Developer Friendly</h3>
-                    <p>REST and gRPC APIs, comprehensive documentation, and testnet faucets make building on KnexCoin straightforward.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Content -->
+    <main class="soa-content">
 
-    <!-- Tech Specs Section -->
-    <section class="section tech-specs" id="tech">
-        <div class="section-container">
-            <div class="tech-grid">
-                <div class="tech-visual reveal">
-                    <div class="knexpay-card-wrapper" id="knexpayCard">
-                        <div class="knexpay-card">
-                            <img src="images/knexpay-card.png" alt="KnexPay Debit Card" class="card-img">
-                            <div class="card-hex-overlay">
-                                <span class="hex-number" data-slot="0">A7</span>-<span class="hex-number" data-slot="1">3F</span>-<span class="hex-number" data-slot="2">B2</span>-<span class="hex-number" data-slot="3">E9</span>-<span class="hex-number" data-slot="4">1C</span>
-                            </div>
-                            <canvas class="card-glitter" id="cardGlitter"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="tech-content reveal">
-                    <p class="section-label">Technology</p>
-                    <h2 class="section-title">Powered by <span class="highlight">Proof-of-Bandwidth</span></h2>
-                    <p>A revolutionary incentive mechanism that rewards actual network infrastructure rather than energy consumption or capital concentration.</p>
-                    <ul class="spec-list">
-                        <li class="spec-item">
-                            <div class="spec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                                </svg>
-                            </div>
-                            <div class="spec-text">
-                                <h4>DAG + Checkpoint Architecture</h4>
-                                <p>Continuous DAG ledger with 5-minute checkpoint intervals. Deterministic finality with Merkle-anchored BS snapshots.</p>
-                            </div>
-                        </li>
-                        <li class="spec-item">
-                            <div class="spec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                                </svg>
-                            </div>
-                            <div class="spec-text">
-                                <h4>VRF Multi-Path Verification</h4>
-                                <p>k=7 challengers (default) from diverse geographic/AS locations verify bandwidth using VRF selection—impossible to game or spoof.</p>
-                            </div>
-                        </li>
-                        <li class="spec-item">
-                            <div class="spec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                                </svg>
-                            </div>
-                            <div class="spec-text">
-                                <h4>Bandwidth Score (BS) Formula</h4>
-                                <p>BS(v) = BS_scale &times; F_T(v) &times; U(v) &times; S(v) &times; D(v) — throughput, uptime, stability, and diversity factors with EWMA smoothing.</p>
-                            </div>
-                        </li>
-                        <li class="spec-item">
-                            <div class="spec-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                            </div>
-                            <div class="spec-text">
-                                <h4>100% Slashing for Fraud</h4>
-                                <p>Bandwidth spoofing or double voting = entire stake slashed + permanent ban. Attacks are economically irrational.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Section 1 -->
+        <section id="sec-1" class="soa-section">
+            <span class="soa-section-label">01 · Settlement Layer</span>
+            <h2>Settlement Layer (KNEX) — <span class="hl">Bitcoin Fork Regenesis</span></h2>
 
-    <!-- Blueprint Section -->
-    <section class="section blueprint" id="blueprint">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">Technical Blueprint</p>
-                <h2 class="section-title">DAG + PoB<br><span class="highlight">Architecture</span></h2>
+            <h3>1.1 Base Inheritance</h3>
+            <p>KNEX is forked from Bitcoin Core but re-genesised — no shared UTXO history with Bitcoin. The Bitcoin Core lineage gives us battle-tested consensus code, P2P networking, block storage, mempool management, and wallet infrastructure. We replaced the cryptography layer and regenesised.</p>
+
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Inherited from Bitcoin Core</th><th>Replaced in KNEX</th></tr></thead>
+                    <tbody>
+                        <tr><td>Block validation pipeline</td><td>Genesis + chain parameters</td></tr>
+                        <tr><td>P2P protocol + mempool</td><td>Signature scheme (ECDSA → ML-DSA-65)</td></tr>
+                        <tr><td>LevelDB block/chainstate storage</td><td>Script execution path (added <code>OP_CHECKSIG_PQ</code>)</td></tr>
+                        <tr><td>Difficulty retarget algorithm</td><td>Retarget interval (2016 → 50 blocks)</td></tr>
+                        <tr><td>Block header format</td><td>Network magic, ports, address HRP</td></tr>
+                        <tr><td>RPC interface</td><td>Output type: added <code>WITNESS_V2_PQ</code></td></tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!-- Blueprint Navigation -->
-            <nav class="bp-nav reveal">
-                <div class="bp-nav-title">Blueprint Contents</div>
-                <ul class="bp-nav-list">
-                    <li><a href="#bp-overview">Architecture Overview</a></li>
-                    <li><a href="#bp-dag">DAG Structure</a></li>
-                    <li><a href="#bp-pob">Proof-of-Bandwidth</a></li>
-                    <li><a href="#bp-consensus">Consensus</a></li>
-                    <li><a href="#bp-transactions">Transaction Flow</a></li>
+            <h3>1.2 Post-Quantum Cryptography — ML-DSA-65 (FIPS 204)</h3>
+            <p>Every transaction signature on KNEX is produced by <strong>ML-DSA-65</strong> (Module-Lattice Digital Signature Algorithm), the NIST-standardised version of CRYSTALS-Dilithium at security level 3.</p>
+
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Property</th><th>ECDSA (Bitcoin)</th><th>ML-DSA-65 (KNEX)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Security basis</td><td>Elliptic-curve discrete log</td><td>Module-lattice (LWE + SIS)</td></tr>
+                        <tr><td>Quantum resistance</td><td class="no">No — broken by Shor</td><td class="yes">Yes — no known quantum attack</td></tr>
+                        <tr><td>Public key size</td><td>33 bytes</td><td>1,952 bytes</td></tr>
+                        <tr><td>Signature size</td><td>70 bytes (DER)</td><td>3,309 bytes</td></tr>
+                        <tr><td>Signing speed</td><td>~100 μs</td><td>~200 μs</td></tr>
+                        <tr><td>Verification speed</td><td>~500 μs</td><td>~70 μs</td></tr>
+                        <tr><td>NIST status</td><td>N/A</td><td>FIPS 204 (2024)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Address derivation pipeline:</h4>
+            <pre class="soa-code">seed (256-bit) → SHAKE-256 XOF → ML-DSA-65 keypair
+                                      ↓
+                               sha256(pk)  →  32-byte pubkey hash
+                                                     ↓
+                            bech32m(hrp="nex", witness=2, data=hash)
+                                                     ↓
+                                 nex1z...  (62-char address)</pre>
+            <p>Addresses start with <code>nex1z</code> because bech32m encodes witness version 2 as the character <code>z</code> in the fifth position.</p>
+
+            <h3>1.3 Output Script Type — <code>WITNESS_V2_PQ</code></h3>
+            <p>KNEX introduces a new standard output type. Every spendable UTXO on the chain uses this script format:</p>
+            <pre class="soa-code">scriptPubKey:  OP_2  &lt;32-byte pubkey hash&gt;
+hex:           52 20 &lt;32 bytes&gt;</pre>
+            <ul>
+                <li><code>OP_2</code> (0x52) signals witness version 2</li>
+                <li>32-byte push is <code>sha256(ml_dsa_65_public_key)</code> — single-hash, no RIPEMD-160</li>
+                <li>Spending witness: <code>[ sig (3,309-byte ML-DSA sig + sighash byte) | pubkey (1,952 bytes) ]</code></li>
+            </ul>
+
+            <h4>Verification flow at consensus:</h4>
+            <ol>
+                <li>Compute <code>sha256(witness[1])</code> — the pubkey</li>
+                <li>Compare against the 32 bytes in the output's scriptPubKey</li>
+                <li>If match: pass <code>sighash</code> + <code>sig</code> + <code>pubkey</code> to <code>pqclean_ml_dsa_65_ref_crypto_sign_verify()</code></li>
+                <li>Accept or reject block</li>
+            </ol>
+
+            <h3>1.4 Consensus Rule — PQ-Only Outputs</h3>
+            <p>A hard consensus rule in <code>src/consensus/tx_check.cpp</code> rejects any transaction that creates a non-PQ output:</p>
+            <pre class="soa-code">for (const auto&amp; txout : tx.vout) {
+    TxoutType t = Solver(txout.scriptPubKey, vSolutions);
+    if (t != TxoutType::WITNESS_V2_PQ &amp;&amp; t != TxoutType::NULL_DATA) {
+        return state.Invalid(..., "bad-txout-not-pq");
+    }
+}</pre>
+            <p>Allowed output types: only <code>WITNESS_V2_PQ</code> and <code>NULL_DATA</code> (OP_RETURN for witness commitments and data anchors). Every legacy Bitcoin script is rejected at the consensus layer:</p>
+            <ul>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2PK, P2PKH (ECDSA)</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2SH, bare multisig</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2WPKH, P2WSH (segwit v0)</li>
+                <li><span style="color:var(--neon-red)">Rejected:</span> P2TR (taproot / Schnorr)</li>
+            </ul>
+            <div class="soa-callout"><strong>KNEX is not a hybrid chain. It is 100% post-quantum, enforced by every node.</strong></div>
+
+            <h3>1.5 Emission Schedule — 8 Eras, 75M Mined</h3>
+            <p>Eras of 375,000 blocks each. Subsidy halves between eras 1→7, stays flat at era 8 as a tail:</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Era</th><th>Blocks</th><th>Subsidy</th><th>Era Mined</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>0 – 374,999</td><td>100 NEX</td><td>37,500,000</td></tr>
+                        <tr><td>2</td><td>375,000 – 749,999</td><td>50 NEX</td><td>18,750,000</td></tr>
+                        <tr><td>3</td><td>750,000 – 1,124,999</td><td>25 NEX</td><td>9,375,000</td></tr>
+                        <tr><td>4</td><td>1,125,000 – 1,499,999</td><td>12.5 NEX</td><td>4,687,500</td></tr>
+                        <tr><td>5</td><td>1,500,000 – 1,874,999</td><td>6.25 NEX</td><td>2,343,750</td></tr>
+                        <tr><td>6</td><td>1,875,000 – 2,249,999</td><td>3.125 NEX</td><td>1,171,875</td></tr>
+                        <tr><td>7</td><td>2,250,000 – 2,624,999</td><td>1.5625 NEX</td><td>585,937.5</td></tr>
+                        <tr><td>8</td><td>2,625,000 – 2,999,999</td><td>1.5625 NEX</td><td>585,937.5</td></tr>
+                        <tr class="total"><td colspan="3"><strong>Total mined</strong></td><td><strong>75,000,000</strong></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>All eras divide to whole-satoshi integers — zero rounding loss. Mining ends at block 3,000,000 (~November 2054).</p>
+            <div class="soa-identity">
+                75,000,000 mined + 20,000,000 premine + 5,000,000 claim pool = <strong style="color:var(--neon-cyan);">100,000,000 NEX</strong>
+            </div>
+
+            <h3>1.6 Premine Delivery — Block 1 Coinbase Bonus</h3>
+            <p>Bitcoin Core's design makes the genesis-block coinbase unspendable. To deliver the 20M premine into the spendable UTXO set, KNEX adds a <strong>one-time bonus</strong> to block 1's subsidy via a consensus-level special case in <code>GetBlockSubsidy()</code>:</p>
+            <pre class="soa-code">if (nHeight == 1) return era1_subsidy + PREMINE;  // 100 + 20,000,000 NEX</pre>
+            <p>Block 1's coinbase pays <strong>20,000,100 NEX</strong> to whichever miner finds it — typically the solo pool's configured payout address. The 20M is then distributed on-chain across 9 founder accounts via normal transactions.</p>
+
+            <h3>1.7 Genesis Parameters (Mainnet)</h3>
+            <pre class="soa-code">Timestamp:   2026-04-05 00:00:00 UTC  (epoch 1775347200)
+Bits:        0x1d00ffff  (difficulty 1)
+Nonce:       3,741,185,684
+Hash:        00000000ca679662c87c40693490f00e297a2bd357e59cab6f7814d12145d66b
+Merkle root: 2c62d38151df668e842eb913e9dd0b872a0f1d6dbf5998b6803e0be382e75f68
+Network magic: 0x4e 0x45 0x58 0x02  ("NEX" + v2 PQ era byte)
+P2P port:    9333
+RPC port:    9332
+HRP:         nex (mainnet) / tnx (testnet)</pre>
+
+            <h3>1.8 Block &amp; Chain Parameters</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Parameter</th><th>Value</th><th>vs Bitcoin</th></tr></thead>
+                    <tbody>
+                        <tr><td>Target block time</td><td>300 sec (5 min)</td><td>2× faster</td></tr>
+                        <tr><td>Difficulty retarget</td><td>Every 50 blocks</td><td>40× faster than Bitcoin's 2016</td></tr>
+                        <tr><td>Max block weight</td><td>4,000,000 WU</td><td>Same</td></tr>
+                        <tr><td>Coinbase maturity</td><td>100 blocks (~8h20m)</td><td>Same</td></tr>
+                        <tr><td>Max supply</td><td>100,000,000 NEX</td><td>Different (vs 21M BTC)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Fast retarget + 5-min blocks = <strong>~50× quicker difficulty response</strong> to hashrate changes than Bitcoin.</p>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="sec-2" class="soa-section">
+            <span class="soa-section-label">02 · Mining</span>
+            <h2>Mining <span class="hl">Infrastructure</span></h2>
+
+            <h3>2.1 PoW Algorithm — SHA-256d</h3>
+            <p>KNEX uses the same proof-of-work as Bitcoin: double-SHA-256 of the 80-byte block header. This means:</p>
+            <ul>
+                <li><strong>Any existing Bitcoin ASIC works immediately</strong> (Bitaxe, Antminer, Whatsminer)</li>
+                <li><strong>CPU/GPU miners work too</strong> (NMMiner, cpuminer, custom miners)</li>
+                <li><strong>No new hardware needed</strong> to participate in consensus</li>
+            </ul>
+            <p>We picked SHA-256d deliberately: Grover's algorithm gives only quadratic quantum speedup, so 256-bit hashes retain 128-bit post-quantum security. The <em>signature</em> scheme is what matters for quantum defense — and that's ML-DSA-65.</p>
+
+            <h3>2.2 Reference Stratum Pool (NEX Pool)</h3>
+            <p>A 711-line single-file Python asyncio pool ships with the project. It handles the PQ-aware coinbase construction that Bitcoin pools can't produce natively.</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Feature</th><th>Implementation</th></tr></thead>
+                    <tbody>
+                        <tr><td>Protocol</td><td>Stratum v1 over TCP</td></tr>
+                        <tr><td>ASICBoost</td><td>BIP310 version-rolling with 0x1fffe000 mask</td></tr>
+                        <tr><td>Vardiff</td><td>Per-miner, floor 0.001 for CPU, ceiling 1,000,000 for ASIC, 10-sec target</td></tr>
+                        <tr><td>Coinbase output</td><td>Custom <code>OP_2 &lt;32-byte hash&gt;</code> (PQ-compliant)</td></tr>
+                        <tr><td>Fresh work rotation</td><td>New <code>mining.notify</code> every 30s with updated ntime (prevents stale-work loops)</td></tr>
+                        <tr><td>Block confirmation</td><td>Custom <code>mining.block_found</code> notification to the submitting miner</td></tr>
+                        <tr><td>Share history</td><td>16-job cache for validating slightly-stale submits</td></tr>
+                        <tr><td>Zombie detection</td><td>3-min idle timeout disconnects dead TCP sessions</td></tr>
+                        <tr><td>Stats API</td><td>JSON on HTTP port 8081 for explorer/dashboard integration</td></tr>
+                        <tr><td>Dependencies</td><td>Python 3.8+ stdlib only (no pip install)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>2.3 Mining Clients Supported</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Client</th><th>Hardware</th><th>Typical Hashrate</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Bitaxe BM1368</strong></td><td>Standalone ASIC</td><td>3–4 TH/s</td></tr>
+                        <tr><td><strong>Mac Metal Miner</strong></td><td>Apple Silicon GPU (Metal API)</td><td>300–700 MH/s</td></tr>
+                        <tr><td><strong>NMMiner</strong></td><td>x86/ARM CPU (AVX2/NEON)</td><td>1–50 MH/s</td></tr>
+                        <tr><td><strong>cpuminer</strong></td><td>x86 CPU</td><td>10–400 MH/s</td></tr>
+                        <tr><td><strong>Antminer S19/S21</strong></td><td>Enterprise ASIC</td><td>100+ TH/s</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="sec-3" class="soa-section">
+            <span class="soa-section-label">03 · Claim System</span>
+            <h2>Claim System — <span class="hl">BTC UTXO Snapshot</span></h2>
+            <p>5M NEX is reserved for a <strong>Bitcoin holder claim</strong> — any address with a balance in Bitcoin at a specific block height can claim the equivalent NEX by presenting a merkle proof.</p>
+
+            <h3>3.1 Snapshot Flow</h3>
+            <pre class="soa-code">1. bitcoind dumptxoutset at BTC block 940,000
+   → produces ~8GB UTXO set binary file
+2. extract.py walks the UTXO set
+   → groups outputs by address, sums balances
+   → builds merkle tree of (address, balance) pairs
+3. Merkle root baked into NEX chainparams as FINAL_CLAIM_MERKLE_ROOT
+4. NEX node verifies claim transactions via merkle proof</pre>
+
+            <h3>3.2 Claim Transaction Format</h3>
+            <pre class="soa-code">Inputs:  [ special "claim marker" input with null prevout ]
+Witness: [ merkle proof  | BTC address  | BTC signature of NEX claim address ]
+Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address ]</pre>
+            <p>The BTC signature proves the claimant owns the original Bitcoin private key. The NEX claim address is signed with the BTC key, then the output on NEX locks to the new PQ key. Each address can claim at most once (enforced via claim index).</p>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="sec-4" class="soa-section">
+            <span class="soa-section-label">04 · Circulation Layer</span>
+            <h2>Circulation Layer (UMX) — <span class="hl">DAG Payment Rail</span></h2>
+
+            <h3>4.1 Architecture — Block-Lattice DAG</h3>
+            <p>UMX doesn't share KNEX's block structure. It runs on <strong>Lumero</strong>, a block-lattice DAG inspired by Nano but hardened for production commerce:</p>
+            <ul>
+                <li>Each account has its own chain</li>
+                <li>Transactions are pairs of blocks (send + receive)</li>
+                <li>Global ordering is NOT required — only per-account ordering</li>
+                <li>Consensus is 2/3 BFT vote-weight on conflicts (Open Representative Voting)</li>
+            </ul>
+
+            <h3>4.2 Transaction Types</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Type</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>send</code></td><td>Debit sender's chain, reference recipient address</td></tr>
+                        <tr><td><code>receive</code></td><td>Credit recipient's chain, reference sender's send-block hash</td></tr>
+                        <tr><td><code>change</code></td><td>Update delegated representative (voting)</td></tr>
+                        <tr><td><code>epoch</code></td><td>Protocol version marker (soft-fork activation)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>4.3 Consensus — Open Representative Voting</h3>
+            <ul>
+                <li>Nodes delegate voting weight to representatives</li>
+                <li>Representatives vote on conflicts (double-spends)</li>
+                <li><strong>Quorum:</strong> 67% of online voting weight confirms within 200-400ms</li>
+                <li><strong>Finality:</strong> deterministic, no block-waiting</li>
+            </ul>
+
+            <h3>4.4 Cryptography — Also Post-Quantum</h3>
+            <p>UMX uses the same ML-DSA-65 signatures as KNEX. This means the dual-currency system has <strong>one uniform cryptographic surface</strong>: a user's 24-word seed derives both their KNEX (witness v2) and UMX (Lumero account) keys deterministically. One backup phrase, two layers.</p>
+
+            <h3>4.5 Performance</h3>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Metric</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>Finality</td><td>200–400 ms (2/3 BFT quorum)</td></tr>
+                        <tr><td>Theoretical TPS</td><td>~100,000 (lattice parallelism)</td></tr>
+                        <tr><td>Transaction tax</td><td>0.50% (50 BPS) — accrues to validator pool</td></tr>
+                        <tr><td>P2P messaging</td><td>ML-DSA-65 signed (quantum-safe at the network layer)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section id="sec-5" class="soa-section">
+            <span class="soa-section-label">05 · Bridge</span>
+            <h2>The Bridge — <span class="hl">KNEX ↔ UMX</span></h2>
+            <p>The bridge is what makes this a true dual-currency system rather than two independent chains.</p>
+
+            <h3>5.1 Conversion Ratio — Fixed</h3>
+            <div class="soa-identity" style="font-size: 1.4rem;">
+                1 NEX ═══════ 1,000 UMX
+            </div>
+            <p>Not a market rate. A <strong>protocol-fixed</strong> ratio, enforced by the bridge contract.</p>
+
+            <h3>5.2 NEX → UMX (Wrap)</h3>
+            <pre class="soa-code">1. User locks N NEX to a published bridge address on KNEX chain
+2. Bridge observes 6 confirmations (~30 min)
+3. Bridge mints 1,000N UMX on Lumero, credits user's account
+4. User's KnexPay spend balance increases by 1,000N UMX</pre>
+
+            <h3>5.3 UMX → NEX (Unwrap)</h3>
+            <pre class="soa-code">1. User burns 1,000N UMX on Lumero
+2. Bridge observes finality (~1 sec)
+3. Bridge releases N NEX from reserve to user's KNEX address
+4. User's KnexPay reserve balance increases by N NEX</pre>
+
+            <h3>5.4 Reserve Invariant</h3>
+            <div class="soa-callout">
+                <strong>At any point in time, locked NEX in reserve must equal issued UMX / 1,000.</strong>
+            </div>
+            <p>This is non-negotiable. No fractional reserve. No lending. No leverage. The bridge publishes its reserve accounting on both chains for continuous audit:</p>
+            <ul>
+                <li>Lock addresses and balances on KNEX</li>
+                <li>Total UMX supply on Lumero</li>
+                <li>Every mint/burn event with timestamps</li>
+            </ul>
+
+            <h3>5.5 Bridge Controls</h3>
+            <ul>
+                <li>Multi-sig permissioned signer set (evolves toward decentralisation)</li>
+                <li>Delayed withdrawals above threshold (anti-flash-drain)</li>
+                <li>Rate limits per epoch</li>
+                <li>HSM-backed signing keys</li>
+            </ul>
+        </section>
+
+        <!-- Section 6 -->
+        <section id="sec-6" class="soa-section">
+            <span class="soa-section-label">06 · Economic Gravity</span>
+            <h2>Economic Gravity — <span class="hl">The Value Flow</span></h2>
+            <p>KNEX is gravity. UMX is motion. Value moves between them predictably:</p>
+            <pre class="soa-flow">Merchant accepts UMX ─► accumulates float ─► sweeps excess to KNEX
+                                                       │
+                                                       ▼
+                                            KNEX reserve grows
+                                                       │
+                                                       ▼
+                                            Settlement layer strengthens
+                                                       │
+                                                       ▼
+                                            UMX circulation supply drops
+                                                       │
+                                                       ▼
+                                            DEX arbitrage rebalances</pre>
+            <div class="soa-callout"><strong>UMX is a checking account. KNEX is a savings account.</strong> KnexPay orchestrates automatic flow between them based on user-defined thresholds.</div>
+        </section>
+
+        <!-- Section 7 -->
+        <section id="sec-7" class="soa-section">
+            <span class="soa-section-label">07 · KnexPay</span>
+            <h2>KnexPay — <span class="hl">Consumer Wallet</span></h2>
+
+            <h3>7.1 Architecture — iOS Native + WKWebView Hybrid</h3>
+            <ul>
+                <li>Swift shell, WebKit rendering engine</li>
+                <li>Native bridge locked to packaged app origin (no arbitrary URL loads)</li>
+                <li>Dual balance UI: Reserve (NEX) + Spend (UMX)</li>
+                <li>Real-time updates via WebSocket to node</li>
+            </ul>
+
+            <h3>7.2 Key Storage</h3>
+            <ul>
+                <li>Keys live only in iOS Keychain (biometric-protected, Secure Enclave on A13+)</li>
+                <li>AES-256-GCM encryption at rest</li>
+                <li>Never synced to iCloud</li>
+                <li>Never readable by JavaScript layer</li>
+            </ul>
+
+            <h3>7.3 Auto-Float Logic</h3>
+            <p>Users set three thresholds:</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Control</th><th>Behavior</th></tr></thead>
+                    <tbody>
+                        <tr><td>Min spend balance</td><td>Below this, auto-wrap from reserve</td></tr>
+                        <tr><td>Target spend balance</td><td>Auto-refill aims for this number</td></tr>
+                        <tr><td>Max spend float</td><td>Above this, auto-sweep back to reserve</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>This makes UMX behave like a tightly-managed checking account, with surplus flowing automatically to KNEX savings.</p>
+
+            <h3>7.4 NFC Tap-to-Pay</h3>
+            <ul>
+                <li>iPhone's NFC stack (Core NFC) reads SmartBills (NDEF bearer notes)</li>
+                <li>Each tap verifies a <strong>CMAC</strong> (Cipher-based MAC) signed with the bill's SUN/SDM key</li>
+                <li>Server-side validation prevents replay attacks</li>
+                <li>Supports both personal transfers and merchant point-of-sale</li>
+            </ul>
+        </section>
+
+        <!-- Section 8 -->
+        <section id="sec-8" class="soa-section">
+            <span class="soa-section-label">08 · CLI Wallet</span>
+            <h2>CLI <span class="hl">Wallet</span></h2>
+            <p>Single-file Swift tool for power users. Zero dependencies beyond system Foundation + CryptoKit + PQClean.</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Command</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>create</code></td><td>Generate 24-word BIP-39 seed + derive ML-DSA-65 keypair</td></tr>
+                        <tr><td><code>restore</code></td><td>Rebuild from seed phrase</td></tr>
+                        <tr><td><code>address</code></td><td>Show bech32m <code>nex1z</code> receive address</td></tr>
+                        <tr><td><code>balance</code></td><td>Query UTXO set via node RPC</td></tr>
+                        <tr><td><code>send</code></td><td>Build + sign transaction locally, broadcast via RPC</td></tr>
+                        <tr><td><code>claim</code></td><td>Import BTC snapshot claim and broadcast</td></tr>
+                        <tr><td><code>backup</code></td><td>Reveal seed phrase (with confirmation)</td></tr>
+                        <tr><td><code>wipe</code></td><td>Destroy all keys (requires typing RESET)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Derivation is fully deterministic: same seed → same keys, forever. Restore works on any machine.</p>
+        </section>
+
+        <!-- Section 9 -->
+        <section id="sec-9" class="soa-section">
+            <span class="soa-section-label">09 · Security</span>
+            <h2>Security Model — <span class="hl">Defense in Depth</span></h2>
+
+            <h3>9.1 Layer 1 — Cryptography</h3>
+            <ul>
+                <li>ML-DSA-65 signatures (quantum-proof)</li>
+                <li>SHA-256d PoW (Grover-resistant at 256 bits)</li>
+                <li>BIP-39 seed entropy (256-bit root)</li>
+            </ul>
+
+            <h3>9.2 Layer 2 — Consensus</h3>
+            <ul>
+                <li>PQ-only output rule rejects ECDSA outputs at consensus</li>
+                <li>Block weight caps prevent DoS</li>
+                <li>BIP34 coinbase height enforcement</li>
+                <li>Segwit witness commitment required in coinbase</li>
+            </ul>
+
+            <h3>9.3 Layer 3 — Network</h3>
+            <ul>
+                <li>P2P connects over NEX magic bytes (prevents Bitcoin cross-contamination)</li>
+                <li>TLS-optional RPC binding (localhost default)</li>
+                <li>Mempool-size caps prevent flood</li>
+            </ul>
+
+            <h3>9.4 Layer 4 — Application</h3>
+            <ul>
+                <li>CLI wallet signs 100% locally — private keys never touch the node</li>
+                <li>KnexPay keys in iOS Keychain only</li>
+                <li>Bridge reserve invariant continuously published</li>
+            </ul>
+
+            <h3>9.5 Layer 5 — Operational</h3>
+            <ul>
+                <li>Multi-sig bridge signer</li>
+                <li>Delayed large withdrawals</li>
+                <li>Public reserve accounting</li>
+                <li>On-chain claim merkle root (immutable once set)</li>
+            </ul>
+        </section>
+
+        <!-- Section 10 -->
+        <section id="sec-10" class="soa-section">
+            <span class="soa-section-label">10 · Comparison</span>
+            <h2>Comparison <span class="hl">Matrix</span></h2>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead>
+                        <tr>
+                            <th></th><th>Bitcoin</th><th>Ethereum</th><th>Solana</th>
+                            <th style="color:var(--neon-cyan);">KNEX (settlement)</th>
+                            <th style="color:var(--neon-cyan);">UMX (circulation)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Signature</td><td>ECDSA</td><td>ECDSA</td><td>Ed25519</td><td><strong>ML-DSA-65</strong></td><td><strong>ML-DSA-65</strong></td></tr>
+                        <tr><td>Quantum-safe</td><td class="no">No</td><td class="no">No</td><td class="no">No</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+                        <tr><td>Consensus</td><td>PoW</td><td>PoS</td><td>PoH+PoS</td><td>PoW (SHA-256d)</td><td>2/3 BFT voting</td></tr>
+                        <tr><td>Block time</td><td>10 min</td><td>12 sec</td><td>400 ms</td><td>5 min</td><td>&lt;400 ms finality</td></tr>
+                        <tr><td>Finality</td><td>~60 min</td><td>~12 min</td><td>~400 ms</td><td>~30 min (6 conf)</td><td>~200-400 ms</td></tr>
+                        <tr><td>Max supply</td><td>21M BTC</td><td>unlimited</td><td>517M (inflation)</td><td><strong>100M NEX</strong></td><td>elastic (bridge-locked)</td></tr>
+                        <tr><td>Tx fees</td><td>$1-50</td><td>$1-100</td><td>&lt;$0.01</td><td>~free (mining funded)</td><td>0.50% tax</td></tr>
+                        <tr><td>TPS</td><td>~7</td><td>~30</td><td>~3000</td><td>~14</td><td>~100,000</td></tr>
+                        <tr><td>Hardware</td><td>ASIC</td><td>GPU/consumer</td><td>validators</td><td>any SHA-256 ASIC</td><td>standard node</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 11 -->
+        <section id="sec-11" class="soa-section">
+            <span class="soa-section-label">11 · Roadmap</span>
+            <h2>Roadmap</h2>
+
+            <div class="soa-phase">
+                <h3>Phase 1 — Foundation (2026-04-05)</h3>
+                <ul class="soa-phase-check">
+                    <li class="done">NEX mainnet genesis (2026-04-05, block 0)</li>
+                    <li class="done">PQ-only consensus rule enforced</li>
+                    <li class="done">Solo mining pool live with vardiff</li>
+                    <li class="done">Block explorer (untraceablex.com)</li>
+                    <li class="done">Reference CLI wallet</li>
                 </ul>
-            </nav>
-
-            <!-- Section 1: Architecture Overview -->
-            <div class="bp-section reveal" id="bp-overview">
-                <div class="bp-section-header">
-                    <span class="bp-section-num">01</span>
-                    <h2>Architecture Overview</h2>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Core Design Principles</h3>
-                    <ul>
-                        <li><strong>Instant Finality:</strong> Sub-second transaction confirmation (no block time)</li>
-                        <li><strong>Feeless Transfers:</strong> No transaction fees - PoB replaces fee economics</li>
-                        <li><strong>True Decentralization:</strong> No mining pools, no stake concentration</li>
-                        <li><strong>Bandwidth-Backed:</strong> Network value tied to real infrastructure</li>
-                        <li><strong>Asynchronous:</strong> Each account operates independently</li>
-                    </ul>
-                </div>
-
-                <div class="bp-highlight">
-                    <h4>Why DAG over Traditional Blockchain?</h4>
-                    <p>Traditional blockchains serialize all transactions into sequential blocks, creating bottlenecks. A DAG allows parallel transaction processing - each account maintains its own chain, enabling unlimited horizontal scaling.</p>
-                </div>
-
-                <div class="bp-diagram">
-<pre>
-    BLOCKCHAIN (Sequential)          DAG / BLOCK-LATTICE (Parallel)
-    ─────────────────────           ────────────────────────────────
-
-    ┌───┐   ┌───┐   ┌───┐           Account A: ●──●──●──●──●
-    │ 1 │──▶│ 2 │──▶│ 3 │           Account B:    ●──●──●──●──●
-    └───┘   └───┘   └───┘           Account C:       ●──●──●
-         ▼                          Account D: ●──●──●──●
-    All txns wait                              ↑  ↑  ↑
-    for blocks                            Independent chains
-                                          Parallel processing
-</pre>
-                    <div class="bp-diagram-label">Block-Lattice vs Traditional Blockchain</div>
-                </div>
             </div>
 
-            <!-- Section 2: DAG Structure -->
-            <div class="bp-section reveal" id="bp-dag">
-                <div class="bp-section-header">
-                    <span class="bp-section-num">02</span>
-                    <h2>DAG Structure (Block-Lattice)</h2>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Account-Chain Model</h3>
-                    <p>Inspired by Nano's block-lattice architecture. Each account has its own chain (account-chain) in the DAG. Transactions only touch the sender and receiver chains.</p>
-                    <ul>
-                        <li><strong>Send Block:</strong> Debits sender's account, creates pending receivable</li>
-                        <li><strong>Receive Block:</strong> Credits receiver's account, claims pending</li>
-                        <li><strong>Change Block:</strong> Updates representative (for voting)</li>
-                        <li><strong>Bandwidth Block:</strong> Records PoB proof (KnexCoin innovation)</li>
-                    </ul>
-                </div>
-
-                <div class="bp-code">
-                    <div class="bp-code-header">Block Structure (Rust)</div>
-<pre>
-<span class="keyword">pub struct</span> <span class="type">Block</span> {
-    <span class="comment">// Block identification</span>
-    <span class="function">hash</span>: [<span class="type">u8</span>; <span class="number">32</span>],           <span class="comment">// Blake2b hash of block</span>
-    <span class="function">previous</span>: [<span class="type">u8</span>; <span class="number">32</span>],       <span class="comment">// Previous block in account-chain</span>
-
-    <span class="comment">// Account info</span>
-    <span class="function">account</span>: [<span class="type">u8</span>; <span class="number">32</span>],        <span class="comment">// Account public key</span>
-    <span class="function">representative</span>: [<span class="type">u8</span>; <span class="number">32</span>], <span class="comment">// Voting representative</span>
-    <span class="function">balance</span>: <span class="type">u128</span>,            <span class="comment">// Account balance after block</span>
-
-    <span class="comment">// Block type specific</span>
-    <span class="function">block_type</span>: <span class="type">BlockType</span>,    <span class="comment">// Send | Receive | Change | Bandwidth</span>
-    <span class="function">link</span>: [<span class="type">u8</span>; <span class="number">32</span>],           <span class="comment">// Destination or source block hash</span>
-
-    <span class="comment">// Proof-of-Bandwidth (KnexCoin specific)</span>
-    <span class="function">bandwidth_proof</span>: <span class="type">Option</span>&lt;<span class="type">BandwidthProof</span>&gt;,
-
-    <span class="comment">// Signature</span>
-    <span class="function">signature</span>: [<span class="type">u8</span>; <span class="number">64</span>],      <span class="comment">// Ed25519 signature</span>
-    <span class="function">work</span>: <span class="type">u64</span>,                <span class="comment">// Anti-spam PoW (minimal)</span>
-}
-</pre>
-                </div>
-
-                <div class="bp-diagram">
-<pre>
-         BLOCK-LATTICE STRUCTURE
-         ═══════════════════════
-
-  Alice's Chain          Bob's Chain           Carol's Chain
-  ────────────          ───────────           ─────────────
-       │                     │                      │
-  ┌────┴────┐                │                      │
-  │ GENESIS │                │                      │
-  │ 1000 K  │                │                      │
-  └────┬────┘                │                      │
-       │                ┌────┴────┐                 │
-       │                │ GENESIS │                 │
-       │                │ 500 K   │                 │
-       │                └────┬────┘                 │
-  ┌────┴────┐                │                      │
-  │  SEND   │────────────────┼──────────────┐       │
-  │ -100 K  │                │              │       │
-  │ 900 K   │                │              ▼       │
-  └────┬────┘                │         ┌────┴────┐  │
-       │                     │         │ RECEIVE │  │
-       │                     │         │ +100 K  │  │
-       │                     │         │ 100 K   │  │
-       │                     │         └────┬────┘  │
-       │                ┌────┴────┐         │       │
-       │                │  SEND   │─────────┼───────┼──▶ Pending
-       │                │ -50 K   │         │       │
-       │                │ 450 K   │         │       │
-       │                └────┬────┘         │       │
-       ▼                     ▼              ▼       ▼
-</pre>
-                    <div class="bp-diagram-label">Transaction Flow Across Account-Chains</div>
-                </div>
+            <div class="soa-phase">
+                <h3>Phase 2 — Distribution (in progress)</h3>
+                <ul class="soa-phase-check">
+                    <li>Block 1 premine mined → 9-account distribution</li>
+                    <li>BTC UTXO snapshot merkle root activated</li>
+                    <li>Public seed nodes + DNS peer discovery</li>
+                    <li>Multi-location validator nodes</li>
+                </ul>
             </div>
 
-            <!-- Section 3: Proof-of-Bandwidth -->
-            <div class="bp-section reveal" id="bp-pob">
-                <div class="bp-section-header">
-                    <span class="bp-section-num">03</span>
-                    <h2>Proof-of-Bandwidth Design</h2>
-                </div>
-
-                <div class="bp-highlight critical">
-                    <h4>The Hard Problem</h4>
-                    <p>Bandwidth is difficult to prove trustlessly. Unlike PoW (verifiable computation) or PoS (verifiable stake), bandwidth proofs can be spoofed, colocated, or gamed. Our solution uses multiple verification vectors.</p>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Multi-Vector Bandwidth Verification</h3>
-                    <ul>
-                        <li><strong>Challenge-Response Proofs:</strong> Random data challenges from multiple peers</li>
-                        <li><strong>Latency Triangulation:</strong> Cross-reference timing from geographically distributed nodes</li>
-                        <li><strong>Throughput Windows:</strong> Measure sustained bandwidth over time periods</li>
-                        <li><strong>Peer Attestations:</strong> Reputation-weighted confirmations from other validators</li>
-                        <li><strong>VDF Commitments:</strong> Verifiable Delay Functions to prevent pre-computation</li>
-                    </ul>
-                </div>
-
-                <div class="bp-code">
-                    <div class="bp-code-header">Bandwidth Proof Structure</div>
-<pre>
-<span class="keyword">pub struct</span> <span class="type">BandwidthProof</span> {
-    <span class="comment">// Challenge data</span>
-    <span class="function">challenge_hash</span>: [<span class="type">u8</span>; <span class="number">32</span>],     <span class="comment">// Hash of random challenge data</span>
-    <span class="function">challenge_size</span>: <span class="type">u64</span>,          <span class="comment">// Size of data transferred (bytes)</span>
-    <span class="function">timestamp_start</span>: <span class="type">u64</span>,         <span class="comment">// Challenge initiated (ms)</span>
-    <span class="function">timestamp_end</span>: <span class="type">u64</span>,           <span class="comment">// Challenge completed (ms)</span>
-
-    <span class="comment">// Verification</span>
-    <span class="function">challenger_nodes</span>: <span class="type">Vec</span>&lt;[<span class="type">u8</span>; <span class="number">32</span>]&gt;, <span class="comment">// Nodes that issued challenge</span>
-    <span class="function">attestations</span>: <span class="type">Vec</span>&lt;<span class="type">Attestation</span>&gt;,  <span class="comment">// Peer confirmations</span>
-
-    <span class="comment">// Computed metrics</span>
-    <span class="function">measured_bandwidth</span>: <span class="type">u64</span>,       <span class="comment">// Calculated Mbps</span>
-    <span class="function">latency_avg</span>: <span class="type">u32</span>,             <span class="comment">// Average latency (ms)</span>
-
-    <span class="comment">// VDF commitment (prevents pre-computation)</span>
-    <span class="function">vdf_output</span>: [<span class="type">u8</span>; <span class="number">32</span>],
-    <span class="function">vdf_proof</span>: [<span class="type">u8</span>; <span class="number">64</span>],
-}
-</pre>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Bandwidth Score Calculation</h3>
-                    <p>Validators earn a Bandwidth Score (BS) that determines their voting weight and rewards eligibility:</p>
-                </div>
-
-                <div class="bp-code">
-                    <div class="bp-code-header">Bandwidth Score Formula</div>
-<pre>
-<span class="comment">// Bandwidth Score (BS) combines multiple factors</span>
-
-BS = (BW_measured &times; W_throughput) +
-     (1/Latency &times; W_latency) +
-     (Uptime &times; W_uptime) +
-     (Attestations &times; W_reputation)
-
-<span class="comment">// Where:</span>
-<span class="comment">// BW_measured    = Verified bandwidth in Mbps (capped at 10 Gbps)</span>
-<span class="comment">// Latency        = Average response time in ms</span>
-<span class="comment">// Uptime         = Percentage online over rolling 30 days</span>
-<span class="comment">// Attestations   = Weighted peer reputation score</span>
-
-<span class="comment">// Weights (tunable via governance):</span>
-W_throughput  = <span class="number">0.40</span>  <span class="comment">// 40% weight on raw bandwidth</span>
-W_latency     = <span class="number">0.25</span>  <span class="comment">// 25% weight on low latency</span>
-W_uptime      = <span class="number">0.20</span>  <span class="comment">// 20% weight on reliability</span>
-W_reputation  = <span class="number">0.15</span>  <span class="comment">// 15% weight on peer attestations</span>
-</pre>
-                </div>
+            <div class="soa-phase">
+                <h3>Phase 3 — Payment Layer</h3>
+                <ul class="soa-phase-check">
+                    <li>Lumero CORE testnet launch</li>
+                    <li>Manual NEX↔UMX bridge (convert-in/out)</li>
+                    <li>KnexPay dual-balance UI</li>
+                    <li>NFC tap-to-pay with SmartBills</li>
+                    <li>Merchant onboarding</li>
+                </ul>
             </div>
 
-            <!-- Section 4: Consensus -->
-            <div class="bp-section reveal" id="bp-consensus">
-                <div class="bp-section-header">
-                    <span class="bp-section-num">04</span>
-                    <h2>Consensus Mechanism</h2>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Open Representative Voting (ORV) + Bandwidth Weight</h3>
-                    <p>Adapted from Nano's ORV consensus, but voting weight is determined by Bandwidth Score instead of stake alone:</p>
-                    <ul>
-                        <li><strong>Representatives:</strong> Nodes that vote on transaction validity</li>
-                        <li><strong>Delegation:</strong> Users delegate voting weight to representatives</li>
-                        <li><strong>Quorum:</strong> 67% of online voting weight confirms transactions</li>
-                        <li><strong>Weight Formula:</strong> VotingWeight = sqrt(Stake) &times; BandwidthScore</li>
-                    </ul>
-                </div>
-
-                <div class="bp-highlight">
-                    <h4>Why sqrt(Stake)?</h4>
-                    <p>Square root of stake prevents whale domination while still requiring skin-in-the-game. A node with 100x more stake only gets 10x more base weight, which must still be multiplied by their bandwidth contribution.</p>
-                </div>
-
-                <div class="bp-diagram">
-<pre>
-                    CONSENSUS FLOW
-                    ══════════════
-
-   1. BROADCAST          2. VOTE              3. CONFIRM
-   ───────────          ──────               ─────────
-
-   ┌─────────┐      ┌───────────────┐      ┌──────────┐
-   │  User   │      │ Representatives│      │  Quorum  │
-   │ creates │─────▶│ receive &amp; vote │─────▶│ reached  │
-   │  block  │      │ based on weight│      │  (67%)   │
-   └─────────┘      └───────────────┘      └──────────┘
-        │                   │                    │
-        │           ┌───────┴───────┐            │
-        │           │               │            │
-        │       ┌───┴───┐       ┌───┴───┐        │
-        │       │Rep A  │       │Rep B  │        │
-        │       │W: 150 │       │W: 200 │        │
-        │       │Vote:✓ │       │Vote:✓ │        ▼
-        │       └───────┘       └───────┘   ┌─────────┐
-        │                                   │CONFIRMED│
-        │       ┌───────┐       ┌───────┐   │  &lt;1 sec │
-        │       │Rep C  │       │Rep D  │   └─────────┘
-        │       │W: 100 │       │W: 180 │
-        │       │Vote:✓ │       │Vote:✓ │
-        │       └───────┘       └───────┘
-        │
-   Weight = sqrt(Stake) &times; BandwidthScore
-</pre>
-                    <div class="bp-diagram-label">ORV Consensus with Bandwidth-Weighted Voting</div>
-                </div>
-
-                <div class="bp-code">
-                    <div class="bp-code-header">Voting Weight Calculation</div>
-<pre>
-<span class="keyword">fn</span> <span class="function">calculate_voting_weight</span>(validator: &amp;<span class="type">Validator</span>) -&gt; <span class="type">u128</span> {
-    <span class="comment">// Get stake (minimum 10,000 KNEX required)</span>
-    <span class="keyword">let</span> stake = validator.staked_amount;
-    <span class="keyword">if</span> stake &lt; MIN_STAKE { <span class="keyword">return</span> <span class="number">0</span>; }
-
-    <span class="comment">// Square root of stake (prevents whale domination)</span>
-    <span class="keyword">let</span> stake_factor = (stake <span class="keyword">as</span> <span class="type">f64</span>).<span class="function">sqrt</span>();
-
-    <span class="comment">// Bandwidth score (0-1000 range)</span>
-    <span class="keyword">let</span> bandwidth_score = validator.bandwidth_score;
-
-    <span class="comment">// Combined weight</span>
-    <span class="keyword">let</span> weight = stake_factor &times; (bandwidth_score <span class="keyword">as</span> <span class="type">f64</span>);
-
-    weight <span class="keyword">as</span> <span class="type">u128</span>
-}
-
-<span class="comment">// Example:</span>
-<span class="comment">// Whale:  1,000,000 KNEX stake, 500 BS → sqrt(1M) &times; 500 = 500,000</span>
-<span class="comment">// Normal:    10,000 KNEX stake, 800 BS → sqrt(10K) &times; 800 =  80,000</span>
-<span class="comment">// Ratio: 6.25x (not 100x like pure stake would give)</span>
-</pre>
-                </div>
+            <div class="soa-phase">
+                <h3>Phase 4 — Automation</h3>
+                <ul class="soa-phase-check">
+                    <li>Auto top-up (reserve → spend)</li>
+                    <li>Auto sweep (spend → reserve)</li>
+                    <li>Merchant settlement schedules</li>
+                    <li>Liquidity pools on Stellar DEX</li>
+                </ul>
             </div>
 
-            <!-- Section 5: Transaction Flow -->
-            <div class="bp-section reveal" id="bp-transactions">
-                <div class="bp-section-header">
-                    <span class="bp-section-num">05</span>
-                    <h2>Transaction Flow</h2>
-                </div>
-
-                <div class="bp-card">
-                    <h3>Send-Receive Model</h3>
-                    <p>Unlike single-transaction systems, KnexCoin uses an asynchronous two-phase model:</p>
-                    <ul>
-                        <li><strong>Phase 1 (Send):</strong> Sender creates send block, balance decreases immediately</li>
-                        <li><strong>Phase 2 (Receive):</strong> Receiver creates receive block, balance increases</li>
-                        <li><strong>Pending State:</strong> Funds exist as "pending" between phases</li>
-                        <li><strong>Confirmation:</strong> Each block confirmed independently via ORV</li>
-                    </ul>
-                </div>
-
-                <div class="bp-table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Step</th>
-                                <th>Action</th>
-                                <th>Time</th>
-                                <th>State</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Alice creates SEND block</td>
-                                <td>~0ms</td>
-                                <td>Block created locally</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Block broadcast to network</td>
-                                <td>~50ms</td>
-                                <td>Propagating</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Representatives vote</td>
-                                <td>~100-300ms</td>
-                                <td>Voting</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Quorum reached (67%)</td>
-                                <td>~200-500ms</td>
-                                <td>SEND confirmed</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Bob creates RECEIVE block</td>
-                                <td>~0ms</td>
-                                <td>Block created locally</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>RECEIVE confirmed</td>
-                                <td>~200-500ms</td>
-                                <td>Transaction complete</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="bp-highlight">
-                    <h4>Total Time: &lt;1 second</h4>
-                    <p>Full transaction confirmation (send + receive) completes in under 1 second with no fees. Compare to Bitcoin (~60 min), Ethereum (~15 min), or even Solana (~400ms for single tx).</p>
-                </div>
+            <div class="soa-phase">
+                <h3>Phase 5 — Maturity</h3>
+                <ul class="soa-phase-check">
+                    <li>Treasury dashboards with on-chain proofs</li>
+                    <li>Public reserve attestations</li>
+                    <li>Governance contracts</li>
+                    <li>Bridge decentralisation milestones</li>
+                </ul>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-    <!-- Quantum-Proof Section -->
-    <section class="section quantum-proof" id="quantum">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">Security</p>
-                <h2 class="section-title">Quantum-Proof<br><span class="highlight">From Day One</span></h2>
-                <p>KnexCoin is the first DAG ledger built with NIST-standardized post-quantum cryptography from Genesis. No migration needed—your assets are protected against quantum attacks from the moment you create your wallet.</p>
+        <!-- Section 12 -->
+        <section id="sec-12" class="soa-section">
+            <span class="soa-section-label">12 · Differentiation</span>
+            <h2>What Makes This <span class="hl">Different</span></h2>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Claim</th><th>Evidence</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>"100% post-quantum"</strong></td><td>Consensus rule rejects all ECDSA outputs. Verifiable in <code>src/consensus/tx_check.cpp</code>.</td></tr>
+                        <tr><td><strong>"Dual-currency"</strong></td><td>Two chains (KNEX PoW + UMX DAG) with protocol-fixed 1:1000 ratio and non-negotiable reserve invariant.</td></tr>
+                        <tr><td><strong>"Zero pool fees"</strong></td><td>Reference pool pays 100% of block subsidy to miner address.</td></tr>
+                        <tr><td><strong>"Fair launch"</strong></td><td>No pre-mine sales. 20M via block 1 to 9 founder addresses. 5M claim pool for Bitcoin holders. 75M mined via PoW over 28 years.</td></tr>
+                        <tr><td><strong>"Merchant-ready"</strong></td><td>KnexPay iOS wallet with NFC tap-to-pay, auto-sweep, dual balances.</td></tr>
+                        <tr><td><strong>"Feeless transactions"</strong></td><td>UMX uses 0.50% protocol tax (not per-tx fee). KNEX mining funded by subsidy, not fees.</td></tr>
+                    </tbody>
+                </table>
             </div>
+        </section>
 
-            <div class="quantum-grid">
-                <div class="quantum-card reveal reveal-delay-1">
-                    <div class="quantum-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <path d="M12 8v4"/>
-                            <circle cx="12" cy="16" r="1"/>
-                        </svg>
-                    </div>
-                    <div class="quantum-label">Primary Signatures</div>
-                    <h3>FN-DSA-512</h3>
-                    <p class="quantum-standard">FIPS 206 (FALCON)</p>
-                    <p>Lattice-based signatures with smallest post-quantum footprint. 897-byte public keys, 666-byte signatures.</p>
-                </div>
+        <!-- Section 13 -->
+        <section id="sec-13" class="soa-section">
+            <span class="soa-section-label">13 · References</span>
+            <h2>References &amp; <span class="hl">Standards</span></h2>
+            <ul>
+                <li><strong>FIPS 203</strong> — ML-KEM (Module-Lattice Key Encapsulation)</li>
+                <li><strong>FIPS 204</strong> — ML-DSA (Module-Lattice Digital Signature Algorithm) ← used by KNEX + UMX</li>
+                <li><strong>FIPS 205</strong> — SLH-DSA (Stateless Hash-based DSA)</li>
+                <li><strong>FIPS 206</strong> — FN-DSA (FALCON)</li>
+                <li><strong>NIST SP 800-208</strong> — Stateful hash-based signatures</li>
+                <li><strong>BIP-39</strong> — Mnemonic seed generation</li>
+                <li><strong>BIP-173 / BIP-350</strong> — bech32 / bech32m address encoding</li>
+                <li><strong>BIP-310</strong> — Stratum v1 version-rolling (ASICBoost)</li>
+                <li><strong>BIP-141</strong> — Segregated Witness framework</li>
+            </ul>
+        </section>
 
-                <div class="quantum-card reveal reveal-delay-2">
-                    <div class="quantum-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                        </svg>
-                    </div>
-                    <div class="quantum-label">Key Encapsulation</div>
-                    <h3>ML-KEM-768</h3>
-                    <p class="quantum-standard">FIPS 203 (Kyber)</p>
-                    <p>Quantum-safe key exchange for encrypted node-to-node communication across the network.</p>
-                </div>
-
-                <div class="quantum-card reveal reveal-delay-3">
-                    <div class="quantum-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </div>
-                    <div class="quantum-label">Backup Signatures</div>
-                    <h3>ML-DSA-65</h3>
-                    <p class="quantum-standard">FIPS 204 (Dilithium)</p>
-                    <p>Governance-switchable fallback using different lattice structure for defense in depth.</p>
-                </div>
-
-                <div class="quantum-card reveal reveal-delay-4">
-                    <div class="quantum-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="3"/>
-                            <path d="M12 1v4"/>
-                            <path d="M12 19v4"/>
-                            <path d="M1 12h4"/>
-                            <path d="M19 12h4"/>
-                            <path d="M4.22 4.22l2.83 2.83"/>
-                            <path d="M16.95 16.95l2.83 2.83"/>
-                            <path d="M4.22 19.78l2.83-2.83"/>
-                            <path d="M16.95 7.05l2.83-2.83"/>
-                        </svg>
-                    </div>
-                    <div class="quantum-label">Hashing</div>
-                    <h3>SHA3-256</h3>
-                    <p class="quantum-standard">FIPS 202</p>
-                    <p>Quantum-resistant hashing for addresses and Merkle trees. Unaffected by Grover's algorithm.</p>
-                </div>
-            </div>
-
-            <div class="quantum-comparison reveal">
-                <h3>Why Quantum-Proof Matters</h3>
-                <div class="comparison-table">
-                    <div class="comparison-row header">
-                        <div class="comparison-cell">Network</div>
-                        <div class="comparison-cell">Cryptography</div>
-                        <div class="comparison-cell">Quantum Status</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell">Bitcoin</div>
-                        <div class="comparison-cell">ECDSA (secp256k1)</div>
-                        <div class="comparison-cell vulnerable">Vulnerable</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell">Ethereum</div>
-                        <div class="comparison-cell">ECDSA (secp256k1)</div>
-                        <div class="comparison-cell vulnerable">Vulnerable</div>
-                    </div>
-                    <div class="comparison-row">
-                        <div class="comparison-cell">Solana</div>
-                        <div class="comparison-cell">Ed25519</div>
-                        <div class="comparison-cell vulnerable">Vulnerable</div>
-                    </div>
-                    <div class="comparison-row highlight-row">
-                        <div class="comparison-cell">KnexCoin</div>
-                        <div class="comparison-cell">FN-DSA + ML-KEM</div>
-                        <div class="comparison-cell safe">Quantum-Proof</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quantum-timeline reveal">
-                <h3>Quantum Threat Timeline</h3>
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-year">2024</div>
-                        <div class="timeline-content">
-                            <strong>NIST Finalizes Standards</strong>
-                            <p>FIPS 203, 204, 205 published</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-year">2025</div>
-                        <div class="timeline-content">
-                            <strong>FALCON Standardized</strong>
-                            <p>FIPS 206 + HQC finalized</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item active">
-                        <div class="timeline-year">2026</div>
-                        <div class="timeline-content">
-                            <strong>KnexCoin Launch</strong>
-                            <p>PQC from day one</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item future">
-                        <div class="timeline-year">2030+</div>
-                        <div class="timeline-content">
-                            <strong>Quantum Computers Arrive</strong>
-                            <p>Legacy chains vulnerable</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="quantum-cta reveal">
-                <div class="quantum-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <polyline points="9 12 11 14 15 10"/>
-                    </svg>
-                    <span>NIST FIPS Certified</span>
-                </div>
-                <p>All KnexCoin addresses begin with <code>knexq1</code> indicating quantum-safe cryptography. Your funds are protected against harvest-now-decrypt-later attacks from the moment of Genesis.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="section how-it-works" id="how">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">How It Works</p>
-                <h2 class="section-title">Become a<br><span class="highlight">Network Validator</span></h2>
-            </div>
-            <div class="steps-container">
-                <div class="step reveal">
-                    <div class="step-number">01</div>
-                    <div class="step-content">
-                        <h3>Stake Your KNEX</h3>
-                        <p>Acquire a minimum of 10,000 KNEX and stake them to the network. Your stake represents your economic commitment and determines your base selection probability.</p>
-                    </div>
-                </div>
-                <div class="step reveal">
-                    <div class="step-number">02</div>
-                    <div class="step-content">
-                        <h3>Provision Bandwidth</h3>
-                        <p>Connect your validator node with at least 100 Mbps sustained bandwidth. VRF-selected challengers measure your throughput, latency, and stability each epoch to compute your Bandwidth Score (BS).</p>
-                    </div>
-                </div>
-                <div class="step reveal">
-                    <div class="step-number">03</div>
-                    <div class="step-content">
-                        <h3>Validate & Earn</h3>
-                        <p>Your reward weight is W_r(v) = BS(v) / &Sigma; BS(u). Rewards decay smoothly via BDC formula: R_tx = (1 - S/Cap)^BDC. No halving shocks—predictable economics as you strengthen the network.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics Section -->
-    <section class="section tokenomics" id="tokenomics">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">Tokenomics</p>
-                <h2 class="section-title">Fixed Supply, <span class="highlight">Fair Distribution</span></h2>
-                <p>100,000,000 KNEX — fixed supply, zero inflation. No burns, ever. Dual-layer system with UMX transactional currency.</p>
-            </div>
-            <div class="tokenomics-grid">
-                <div class="token-card reveal reveal-delay-1">
-                    <div class="token-card-name">Network Emission Reserve</div>
-                    <div class="token-amount">90M<span> KNEX</span></div>
-                    <p class="token-desc">Validator rewards &amp; network security (90%)</p>
-                    <ul class="token-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Validator Incentives</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Long-term Network Security</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> &phi;-Decay Distribution</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Performance-based Allocation</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multi-decade Emission</li>
-                    </ul>
-                    <a href="whitepaper.html#s48" class="btn btn-secondary token-btn">View Allocation</a>
-                </div>
-                <div class="token-card featured reveal reveal-delay-2">
-                    <div class="token-badge">Hard Cap</div>
-                    <div class="token-card-name">Max Supply</div>
-                    <div class="token-amount">100M<span> KNEX</span></div>
-                    <p class="token-desc">Fixed supply — zero inflation</p>
-                    <ul class="token-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 8 Decimal Places</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Zero Burns — Ever</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Zero Transaction Fees</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Immutable Cap</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Dual-Layer System (+ UMX)</li>
-                    </ul>
-                    <a href="whitepaper.html#s47" class="btn btn-primary token-btn">Learn More</a>
-                </div>
-                <div class="token-card reveal reveal-delay-3">
-                    <div class="token-card-name">Treasury &amp; Team</div>
-                    <div class="token-amount">10M<span> KNEX</span></div>
-                    <p class="token-desc">Ecosystem development &amp; operations (10%)</p>
-                    <ul class="token-features">
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Treasury: 7M (7%)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Team: 3M (3%)</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Multi-year Vesting</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Ecosystem Development</li>
-                        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Transparent Governance</li>
-                    </ul>
-                    <a href="whitepaper.html#s47" class="btn btn-secondary token-btn">View Details</a>
-                </div>
-            </div>
-            <!-- Price Discovery Section -->
-            <div class="highlight-box reveal" style="margin-top: 40px; background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(0,255,255,0.05)); border-left: 4px solid var(--neon-cyan); padding: 24px 32px; border-radius: 8px; position: relative;">
-                <h3 style="color: var(--neon-cyan); margin-bottom: 12px; font-size: 1.2rem;">Stellar DEX + Merchant Commerce</h3>
-                <p style="color: var(--text-secondary); margin-bottom: 16px;"><strong style="color: var(--neon-green);">KNEX and UMX are live on the Stellar DEX.</strong> Price discovery happens through real commerce and DEX trading: KNEX/XLM and KNEX/USDC pairs provide liquidity, while merchant adoption drives organic demand through the UMX transactional layer.</p>
-                <div style="display: flex; gap: 24px; flex-wrap: wrap; color: var(--text-secondary); align-items: center; justify-content: space-between;">
-                    <div style="display: flex; gap: 24px; flex-wrap: wrap;">
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2" width="16" height="16" style="vertical-align: middle; margin-right: 6px;"><polyline points="20 6 9 17 4 12"/></svg>Stellar DEX liquidity</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2" width="16" height="16" style="vertical-align: middle; margin-right: 6px;"><polyline points="20 6 9 17 4 12"/></svg>Commerce-backed value</span>
-                        <span><svg viewBox="0 0 24 24" fill="none" stroke="var(--neon-green)" stroke-width="2" width="16" height="16" style="vertical-align: middle; margin-right: 6px;"><polyline points="20 6 9 17 4 12"/></svg>Early merchant advantage</span>
-                    </div>
-                    <button class="nav-cta" onclick="window.location.href='https://web3.knexpay.com'" style="margin-top: 8px;">KnexPay Wallet</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- UMX Dual Currency Section -->
-    <section class="section" id="umx" style="padding: 80px 0;">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">Dual Currency System</p>
-                <h2 class="section-title">KNEX Settlement. <span class="highlight">UMX Circulation.</span></h2>
-                <p>Two layers, one network. KNEX handles settlement and reserve — fixed supply, long-term value storage. UMX handles daily transactions — elastic supply, local currency reference. Economic gravity flows value upward from circulation to reserves.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;" class="reveal reveal-delay-1">
-                <!-- KNEX Card -->
-                <div style="background: rgba(0,255,136,0.03); border: 1px solid rgba(0,255,136,0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--neon), transparent); opacity: 0.5;"></div>
-                    <div style="font-family: var(--font-body); font-size: 11px; letter-spacing: 3px; color: var(--neon); text-transform: uppercase; margin-bottom: 12px;">Settlement Layer</div>
-                    <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 8px;">KNEX</div>
-                    <p style="color: var(--gray); font-size: 14px; margin-bottom: 20px;">Reserve asset and settlement backbone. Fixed supply enforces long-term scarcity and monetary discipline.</p>
-                    <ul style="list-style: none; padding: 0; font-size: 13px; color: var(--light-gray); line-height: 2.2;">
-                        <li><span style="color: var(--neon); margin-right: 8px;">&#9656;</span> Fixed supply: 100,000,000</li>
-                        <li><span style="color: var(--neon); margin-right: 8px;">&#9656;</span> Validator staking &amp; rewards</li>
-                        <li><span style="color: var(--neon); margin-right: 8px;">&#9656;</span> Treasury reserves</li>
-                        <li><span style="color: var(--neon); margin-right: 8px;">&#9656;</span> Long-term value storage</li>
-                        <li><span style="color: var(--neon); margin-right: 8px;">&#9656;</span> Cross-border settlement</li>
-                    </ul>
-                </div>
-                <!-- UMX Card -->
-                <div style="background: rgba(0,255,255,0.03); border: 1px solid rgba(0,255,255,0.15); border-radius: 12px; padding: 32px; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent); opacity: 0.5;"></div>
-                    <div style="font-family: var(--font-body); font-size: 11px; letter-spacing: 3px; color: var(--neon-cyan); text-transform: uppercase; margin-bottom: 12px;">Circulation Layer</div>
-                    <div style="font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 8px;">UMX</div>
-                    <p style="color: var(--gray); font-size: 14px; margin-bottom: 20px;">Elastic bearer instrument for daily transactions. Supply adjusts with demand. Local currency reference for real-world commerce.</p>
-                    <ul style="list-style: none; padding: 0; font-size: 13px; color: var(--light-gray); line-height: 2.2;">
-                        <li><span style="color: var(--neon-cyan); margin-right: 8px;">&#9656;</span> Elastic supply (&phi;-Decay distribution)</li>
-                        <li><span style="color: var(--neon-cyan); margin-right: 8px;">&#9656;</span> Reference: 1 UMX &asymp; 1,000 VES</li>
-                        <li><span style="color: var(--neon-cyan); margin-right: 8px;">&#9656;</span> Daily payments &amp; merchant settlement</li>
-                        <li><span style="color: var(--neon-cyan); margin-right: 8px;">&#9656;</span> SmartBills NFC bearer notes</li>
-                        <li><span style="color: var(--neon-cyan); margin-right: 8px;">&#9656;</span> Backed 1:1 by locked KNEX</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Economic Gravity -->
-            <div class="reveal reveal-delay-2" style="background: linear-gradient(135deg, rgba(255,0,255,0.06), rgba(0,255,255,0.04)); border: 1px solid rgba(255,0,255,0.15); border-left: 4px solid var(--neon-magenta); border-radius: 8px; padding: 24px 32px; margin-bottom: 32px;">
-                <h3 style="color: var(--neon-magenta); margin-bottom: 8px; font-size: 1.1rem; font-family: var(--font-display);">Economic Gravity</h3>
-                <p style="color: var(--light-gray); font-size: 14px; margin-bottom: 12px;">Value flows from high-velocity circulation (UMX) toward low-velocity reserves (KNEX). As merchants accumulate UMX and convert surplus to KNEX, effective UMX circulation decreases while KNEX concentration strengthens the settlement layer.</p>
-                <div style="font-family: var(--font-mono); font-size: 13px; color: var(--neon-cyan); text-align: center; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 6px;">
-                    UMX Circulation &rarr; DEX Conversion Demand &rarr; KNEX Absorption &rarr; Settlement Layer Strengthening
-                </div>
-            </div>
-
-            <!-- UMX CTA -->
-            <div class="reveal reveal-delay-3" style="text-align: center;">
-                <a href="https://umx.credit" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M6 12h12"/></svg>
-                    Explore UMX Protocol
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Stack Section -->
-    <section class="section" id="stack" style="padding: 120px 24px;">
-        <div class="section-container">
-            <div class="section-header reveal">
-                <p class="section-label">◆ Complete Architecture ◆</p>
-                <h2 class="section-title">State of the <span class="highlight">Art</span></h2>
-                <p style="max-width: 760px; margin: 0 auto; color: var(--light-gray); font-family: var(--font-mono); font-size: 0.95rem; line-height: 1.75;">
-                    Every production technology integrated into the <strong style="color: var(--neon);">KNEX</strong> settlement layer (post-quantum Bitcoin fork) and the <strong style="color: var(--neon-cyan);">UMX</strong> circulation layer (DAG payment rail). Thirteen sections covering cryptography, consensus, emission, mining, bridges, wallets, security — with code references, comparison matrices, and on-chain evidence.
-                </p>
-            </div>
-
-            <!-- Tech Pillars Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 60px;">
-                <!-- Pillar 1: Cryptography -->
-                <div class="reveal" style="padding: 28px; border: 1px solid rgba(0,255,0,0.15); border-radius: 8px; background: rgba(0,255,0,0.02); transition: all 0.3s ease;">
-                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon); letter-spacing: 0.2em; margin-bottom: 14px;">01 · CRYPTO</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 10px;">ML-DSA-65</h3>
-                    <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-gray); line-height: 1.65;">FIPS 204 post-quantum signatures. 1,952-byte pubkeys, 3,309-byte signatures. Quantum-safe from block zero.</p>
-                </div>
-                <!-- Pillar 2: Consensus -->
-                <div class="reveal reveal-delay-1" style="padding: 28px; border: 1px solid rgba(0,255,255,0.15); border-radius: 8px; background: rgba(0,255,255,0.02); transition: all 0.3s ease;">
-                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-cyan); letter-spacing: 0.2em; margin-bottom: 14px;">02 · CONSENSUS</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 10px;">PQ-Only Rule</h3>
-                    <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-gray); line-height: 1.65;">Hard consensus rule rejects every ECDSA output. Only <code style="color: var(--neon); font-size: 0.88em;">WITNESS_V2_PQ</code> accepted. 100%, enforced.</p>
-                </div>
-                <!-- Pillar 3: Emission -->
-                <div class="reveal reveal-delay-2" style="padding: 28px; border: 1px solid rgba(255,0,255,0.15); border-radius: 8px; background: rgba(255,0,255,0.02); transition: all 0.3s ease;">
-                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-magenta); letter-spacing: 0.2em; margin-bottom: 14px;">03 · EMISSION</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 10px;">8 Eras · 75M</h3>
-                    <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-gray); line-height: 1.65;">100 NEX → 1.5625 NEX tail. 375K blocks each. Zero rounding loss. Ends ~Nov 2054 at block 3,000,000.</p>
-                </div>
-                <!-- Pillar 4: Bridge -->
-                <div class="reveal reveal-delay-3" style="padding: 28px; border: 1px solid rgba(255,255,0,0.15); border-radius: 8px; background: rgba(255,255,0,0.02); transition: all 0.3s ease;">
-                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-yellow); letter-spacing: 0.2em; margin-bottom: 14px;">04 · BRIDGE</div>
-                    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 10px;">1 : 1000</h3>
-                    <p style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--light-gray); line-height: 1.65;">Protocol-fixed NEX↔UMX ratio. Non-negotiable reserve invariant. No fractional reserve. No leverage.</p>
-                </div>
-            </div>
-
-            <!-- Stats Row -->
-            <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: rgba(0,255,0,0.1); border: 1px solid rgba(0,255,0,0.15); border-radius: 8px; overflow: hidden; margin-bottom: 60px;">
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon); text-shadow: var(--glow-neon-soft);">100M</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">Fixed Supply</div>
-                </div>
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon-cyan); text-shadow: var(--glow-cyan);">5 min</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">Block Time</div>
-                </div>
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon-magenta); text-shadow: var(--glow-magenta);">50</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">Retarget Blocks</div>
-                </div>
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon); text-shadow: var(--glow-neon-soft);">SHA-256d</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">PoW</div>
-                </div>
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon-cyan); text-shadow: var(--glow-cyan);">200ms</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">UMX Finality</div>
-                </div>
-                <div style="background: var(--darker); padding: 28px 20px; text-align: center;">
-                    <div style="font-family: var(--font-display); font-size: clamp(1.4rem,3vw,2rem); font-weight: 900; color: var(--neon-magenta); text-shadow: var(--glow-magenta);">13</div>
-                    <div style="font-family: var(--font-mono); font-size: 0.68rem; color: var(--gray); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 6px;">Doc Sections</div>
-                </div>
-            </div>
-
-            <!-- Deep-dive CTA -->
-            <div class="reveal" style="text-align: center;">
-                <a href="state-of-the-art.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 12px;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-                    Read the Full Deep-Dive
-                </a>
-                <p style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--gray); margin-top: 18px; letter-spacing: 0.12em;">
-                    Cryptography · Consensus · Emission · Mining · Claims · DAG · Bridge · Gravity · KnexPay · CLI · Security · Comparison · Roadmap
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-        <div class="section-container reveal">
-            <p class="section-label">Join the Network</p>
-            <h2 class="section-title">Ready to Build the <span class="highlight">Future?</span></h2>
-            <p>The KnexCoin mainnet launches April 22, 2026. Read the whitepaper with complete PoB specification, explore the UMX dual-currency protocol, run a validator, and become part of the bandwidth-backed economy.</p>
-            <div class="cta-buttons">
-                <a href="whitepaper.html" class="btn btn-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                    KNEX Whitepaper
-                </a>
-                <a href="https://umx.credit" target="_blank" rel="noopener" class="btn btn-secondary">UMX Papel Blanco</a>
-            </div>
-        </div>
-    </section>
+        <p class="soa-footer-note">▸ Document version 1.0 — compiled 2026-04-05 from the live mainnet deployment ◂</p>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-top">
+            <div class="footer-top" style="display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:48px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.05);">
                 <div class="footer-brand">
-                    <div class="footer-logo">KNEXCOIN</div>
-                    <p>The world's first Proof-of-Bandwidth DAG ledger. Bandwidth-backed, zero-fee, truly decentralized.</p>
-                    <div class="footer-social">
-                        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
-                        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
-                        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-                        <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-                    </div>
+                    <a href="#top" class="nav-logo" style="margin-bottom:18px; display:inline-flex;">
+                        <span class="nav-logo-dot"></span>
+                        <span class="nav-logo-text">KNEX<span style="color: var(--neon)">COIN</span></span>
+                    </a>
+                    <p style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray); line-height:1.7; max-width:340px; margin-top:14px;">Post-quantum Bitcoin fork (KNEX) + DAG payment rail (UMX). ML-DSA-65 signatures enforced at consensus. 100M fixed supply. Zero fees. Live mainnet.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Protocol</h4>
-                    <ul>
-                        <li><a href="whitepaper.html">Whitepaper</a></li>
-                        <li><a href="https://umx.credit" target="_blank" rel="noopener">UMX Protocol</a></li>
-                        <li><a href="blueprint.html">Technical Blueprint</a></li>
-                        <li><a href="state-of-the-art.html">State of the Art</a></li>
-                        <li><a href="whitepaper.html#s47">Tokenomics</a></li>
+                <div class="footer-col">
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Protocol</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="whitepaper.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Whitepaper</a></li>
+                        <li style="padding:5px 0;"><a href="blueprint.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Technical Blueprint</a></li>
+                        <li style="padding:5px 0;"><a href="https://umx.credit" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">UMX Protocol</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-1" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Tokenomics</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Developers</h4>
-                    <ul>
-                        <li><a href="whitepaper.html">Testnet Guide</a></li>
-                        <li><a href="whitepaper.html">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">GitHub</a></li>
+                <div class="footer-col">
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Technology</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="#sec-1" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Settlement (KNEX)</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-4" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Circulation (UMX)</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-5" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Bridge</a></li>
+                        <li style="padding:5px 0;"><a href="#sec-10" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Comparison</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Community</h4>
-                    <ul>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">Telegram</a></li>
-                        <li><a href="#">Forum</a></li>
-                        <li><a href="#">Blog</a></li>
+                <div class="footer-col">
+                    <h4 style="font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--neon); margin-bottom:18px;">Legal</h4>
+                    <ul style="list-style:none; padding:0;">
+                        <li style="padding:5px 0;"><a href="privacy.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Privacy Policy</a></li>
+                        <li style="padding:5px 0;"><a href="terms.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Terms of Use</a></li>
+                        <li style="padding:5px 0;"><a href="cookies.html" style="font-family:var(--font-mono); font-size:13px; color:var(--light-gray);">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 <a href="#">KnexCoin</a>. Created by David Otero.</p>
-                <p>Powered by <span style="color:var(--neon)">Proof-of-Bandwidth v4.1</span></p>
+            <div class="footer-bottom" style="padding-top:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-family:var(--font-mono); font-size:11px; color:var(--gray);">
+                <p>© 2026 KnexCoin · Created by David Otero</p>
+                <p>Mainnet <span style="color:var(--neon)">●</span> 2026-04-05 · Block 0 <span style="color:var(--gray)">·</span> <span style="color:var(--neon-cyan)">Post-Quantum</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- JS Modules -->
-    <script src="js/three-bg.js"></script>
-    <script src="js/cursor.js"></script>
-    <script src="js/nav.js"></script>
-    <script src="js/dag.js"></script>
-    <script src="js/glitch.js"></script>
-    <script src="js/console.js"></script>
-    <script src="js/knexpay-card.js"></script>
+    <script>
+    // Mobile nav toggle
+    (function() {
+        const toggle = document.getElementById('menuToggle');
+        const menu = document.getElementById('mobileMenu');
+        if (!toggle || !menu) return;
+        toggle.addEventListener('click', () => {
+            toggle.classList.toggle('active');
+            menu.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+        });
+        // Close menu when clicking a link
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                toggle.classList.remove('active');
+                menu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    })();
+
+    // Nav scroll effect
+    (function() {
+        const nav = document.getElementById('nav');
+        if (!nav) return;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }, { passive: true });
+    })();
+
+    // Smooth scroll for anchor links
+    (function() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#' || targetId === '#top') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
