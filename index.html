@@ -1824,7 +1824,10 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
          ═══════════════════════════════════════════════════════════════ -->
     <script src="https://cdn.jsdelivr.net/npm/@stellar/stellar-sdk@12.3.0/dist/stellar-sdk.min.js"></script>
     <script type="module">
-        import * as freighterApi from 'https://esm.sh/@stellar/freighter-api@3.0.0';
+        // freighter-api only exports `default` (an object with all methods),
+        // so use default import — `import * as` would wrap it in {default: ...}
+        // and every call would hit "is not a function".
+        import freighterApi from 'https://esm.sh/@stellar/freighter-api@3.0.0';
 
         // ─── Config constants (mainnet only — knexcoin.com is a production page) ───
         const HORIZON_URL       = 'https://horizon.stellar.org';
