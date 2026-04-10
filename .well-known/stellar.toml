@@ -1,0 +1,45 @@
+# ══════════════════════════════════════════════════════════════════════
+# Knexcoin (NEX) has post-quantum cryptography. It is a fork of Bitcoin.
+# ══════════════════════════════════════════════════════════════════════
+
+ACCOUNTS = [
+    "GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI",
+    "GBYJSBRPMWLEQK7UVSSAU5PNNTTUZJHNEXVCFW6CUB4JP7LHEFKTRUST"
+]
+VERSION = "2.0.0"
+NETWORK_PASSPHRASE = "Public Global Stellar Network ; September 2015"
+
+HORIZON_URL = "https://horizon.stellar.org"
+
+[DOCUMENTATION]
+ORG_NAME = "KnexCoin"
+ORG_DBA = "Distributed Ledger Technologies"
+ORG_URL = "https://knexcoin.com"
+ORG_LOGO = "https://knexcoin.com/images/bitcoin-nex.svg"
+ORG_DESCRIPTION = "KnexCoin is a Bitcoin-derived layer 1 blockchain. NEX on Stellar is the wrapped representation of native NEX, backed 1:1 by native NEX held in a publicly auditable custody wallet."
+ORG_OFFICIAL_EMAIL = "admin@knexcoin.com"
+ORG_TWITTER = "newbitcoinfork"
+ORG_GITHUB = "SystemThreat"
+ORG_SUPPORT_EMAIL = "support@knexcoin.com"
+
+[[PRINCIPALS]]
+name = "David Otero"
+email = "admin@knexcoin.com"
+twitter = "newbitcoinfork"
+telegram = "oterodavid"
+
+[[CURRENCIES]]
+code = "NEX"
+issuer = "GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI"
+display_decimals = 7
+name = "KnexCoin"
+desc = "Wrapped KnexCoin (NEX) on Stellar. Backed 1:1 by native NEX on the KnexCoin blockchain. Redeemable for native NEX at bridge.knexcoin.com."
+conditions = "1:1 backed by native NEX in a public custody wallet. Proof of reserves published at https://www.untraceablex.com"
+image = "https://knexcoin.com/images/bitcoin-nex.svg"
+is_asset_anchored = true
+anchor_asset_type = "crypto"
+anchor_asset = "NEX"
+status = "live"
+regulated = false
+redemption_instructions = "Send wrapped NEX to the issuer account with the MEMO_ID generated at https://bridge.knexcoin.com to redeem for native NEX on the KnexCoin chain."
+
