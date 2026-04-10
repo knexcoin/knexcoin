@@ -666,6 +666,168 @@
             background: linear-gradient(to right, transparent, rgba(0,255,0,0.25), transparent);
         }
 
+        /* ═══════════════════════════════════════════════════════════════
+           IEO WALLET CARD — Freighter connect + trustlines + bridge CTA
+           ═══════════════════════════════════════════════════════════════ */
+        .ieo-wallet-card {
+            max-width: 780px;
+            margin: 0 auto 30px;
+            padding: 28px 32px;
+            border: 1px solid rgba(0,255,255,0.25);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(0,255,0,0.04), rgba(0,255,255,0.04));
+            text-align: left;
+        }
+        .ieo-wallet-label {
+            display: block;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--neon-magenta);
+            text-shadow: var(--glow-magenta);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .ieo-wallet-title {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .ieo-wallet-title .hl { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+        .ieo-wallet-connect-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+        .ieo-wallet-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 14px;
+        }
+        .ieo-wallet-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px 22px;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: 1px solid var(--neon-cyan);
+            background: transparent;
+            color: var(--neon-cyan);
+        }
+        .ieo-wallet-btn:hover:not(:disabled) {
+            background: rgba(0,255,255,0.08);
+            text-shadow: var(--glow-cyan);
+        }
+        .ieo-wallet-btn.primary {
+            background: var(--neon);
+            color: #000;
+            border-color: var(--neon);
+            box-shadow: 0 0 14px rgba(0,255,0,0.35), 0 0 28px rgba(0,255,0,0.15);
+        }
+        .ieo-wallet-btn.primary:hover:not(:disabled) {
+            background: transparent;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+        }
+        .ieo-wallet-btn.done {
+            color: var(--neon);
+            border-color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            cursor: default;
+        }
+        .ieo-wallet-btn:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+        }
+        .ieo-wallet-btn .spinner {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 2px solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: ieo-spin 0.7s linear infinite;
+        }
+        @keyframes ieo-spin { to { transform: rotate(360deg); } }
+        .ieo-wallet-pubkey {
+            display: none;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--neon);
+            text-shadow: var(--glow-neon-soft);
+            margin-bottom: 18px;
+            word-break: break-all;
+        }
+        .ieo-wallet-pubkey.show { display: block; }
+        .ieo-wallet-status {
+            min-height: 18px;
+            margin-top: 12px;
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            line-height: 1.5;
+            color: var(--light-gray);
+        }
+        .ieo-wallet-status.error { color: var(--neon-red); }
+        .ieo-wallet-status.success { color: var(--neon); text-shadow: var(--glow-neon-soft); }
+        .ieo-wallet-status a { color: var(--neon-cyan); border-bottom: 1px dashed rgba(0,255,255,0.4); text-decoration: none; }
+        .ieo-wallet-status a:hover { color: var(--neon); border-bottom-color: var(--neon); }
+
+        /* Bridge Portal promoted CTA — bigger, own card */
+        .ieo-bridge-banner {
+            max-width: 980px;
+            margin: 8px auto 30px;
+            padding: 22px 28px;
+            border: 1px solid var(--neon);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(0,255,0,0.06), rgba(0,255,0,0.01));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        .ieo-bridge-banner h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin: 0 0 4px;
+        }
+        .ieo-bridge-banner h4 .hl { color: var(--neon-cyan); text-shadow: var(--glow-cyan); }
+        .ieo-bridge-banner p {
+            margin: 0;
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            color: var(--light-gray);
+            max-width: 560px;
+        }
+        .ieo-bridge-banner .ieo-btn {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .ieo-wallet-card { padding: 20px 22px; }
+            .ieo-wallet-btn { padding: 11px 18px; font-size: 0.72rem; }
+            .ieo-bridge-banner { flex-direction: column; align-items: flex-start; }
+            .ieo-bridge-banner .ieo-btn { width: 100%; justify-content: center; }
+        }
+
         @media (max-width: 768px) {
             .ieo-hero { padding: 120px 20px 30px; }
             .ieo-steps { grid-template-columns: 1fr; }
@@ -751,8 +913,46 @@
 
         <div class="ieo-ctas">
             <a class="ieo-btn primary"   href="https://www.stellarx.com/markets/NEX:GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI/USDC:GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN" target="_blank" rel="noopener">▸ Buy NEX on StellarX</a>
-            <a class="ieo-btn secondary" href="https://bridge.knexcoin.com" target="_blank" rel="noopener">Bridge Portal</a>
             <a class="ieo-btn ghost"     href="https://stellar.expert/explorer/public/asset/NEX-GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI" target="_blank" rel="noopener">View on stellar.expert</a>
+        </div>
+
+        <!-- ═════════════════════════════════════════════════
+             Freighter wallet connect + one-click trustlines
+             ═════════════════════════════════════════════════ -->
+        <div class="ieo-wallet-card" id="ieoWalletCard">
+            <span class="ieo-wallet-label">◆ Connect Wallet ◆</span>
+            <div class="ieo-wallet-title">Get ready to buy <span class="hl">NEX</span> in one click</div>
+
+            <div class="ieo-wallet-pubkey" id="ieoWalletPubkey"></div>
+
+            <div class="ieo-wallet-connect-row" id="ieoConnectRow">
+                <button class="ieo-wallet-btn primary" id="ieoConnectBtn" type="button">
+                    <i class="fas fa-wallet"></i> Connect Freighter
+                </button>
+            </div>
+
+            <div class="ieo-wallet-row" id="ieoTrustlineRow" style="display: none;">
+                <button class="ieo-wallet-btn" id="ieoAddNexBtn" type="button">
+                    ✚ Add NEX Trustline
+                </button>
+                <button class="ieo-wallet-btn" id="ieoAddUsdcBtn" type="button">
+                    ✚ Add USDC Trustline
+                </button>
+                <a class="ieo-wallet-btn primary" id="ieoBuyBtn" href="https://www.stellarx.com/markets/NEX:GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI/USDC:GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN" target="_blank" rel="noopener">▸ Buy on StellarX</a>
+            </div>
+
+            <div class="ieo-wallet-status" id="ieoWalletStatus"></div>
+        </div>
+
+        <!-- ═════════════════════════════════════════════════
+             Bridge Portal banner — redemption / deposit path
+             ═════════════════════════════════════════════════ -->
+        <div class="ieo-bridge-banner">
+            <div>
+                <h4>Hold native NEX? Use the <span class="hl">Bridge Portal</span></h4>
+                <p>Send native NEX from your KnexCoin wallet, get wrapped NEX on Stellar in ~15 minutes. Redemptions work the other way — burn wrapped NEX with a memo ID and receive native NEX back, paid from the publicly auditable reserve.</p>
+            </div>
+            <a class="ieo-btn primary" href="https://bridge.knexcoin.com" target="_blank" rel="noopener">Open Bridge Portal ▸</a>
         </div>
     </header>
 
@@ -1617,6 +1817,206 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
             });
         });
     })();
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         IEO wallet integration (Freighter + Stellar SDK)
+         ═══════════════════════════════════════════════════════════════ -->
+    <script src="https://cdn.jsdelivr.net/npm/@stellar/stellar-sdk@12.3.0/dist/stellar-sdk.min.js"></script>
+    <script type="module">
+        import * as freighterApi from 'https://esm.sh/@stellar/freighter-api@3.0.0';
+
+        // ─── Config constants (mainnet only — knexcoin.com is a production page) ───
+        const HORIZON_URL       = 'https://horizon.stellar.org';
+        const NETWORK_PASSPHRASE = StellarSdk.Networks.PUBLIC;
+        const EXPECTED_NETWORK   = 'PUBLIC';
+
+        const NEX_CODE   = 'NEX';
+        const NEX_ISSUER = 'GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI';
+
+        const USDC_CODE   = 'USDC';
+        const USDC_ISSUER = 'GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN';
+
+        const FEE = StellarSdk.BASE_FEE; // 100 stroops
+
+        const server   = new StellarSdk.Horizon.Server(HORIZON_URL);
+        const nexAsset  = new StellarSdk.Asset(NEX_CODE,  NEX_ISSUER);
+        const usdcAsset = new StellarSdk.Asset(USDC_CODE, USDC_ISSUER);
+
+        // ─── DOM ───
+        const pubkeyEl       = document.getElementById('ieoWalletPubkey');
+        const connectRow     = document.getElementById('ieoConnectRow');
+        const connectBtn     = document.getElementById('ieoConnectBtn');
+        const trustlineRow   = document.getElementById('ieoTrustlineRow');
+        const addNexBtn      = document.getElementById('ieoAddNexBtn');
+        const addUsdcBtn     = document.getElementById('ieoAddUsdcBtn');
+        const statusEl       = document.getElementById('ieoWalletStatus');
+
+        let userPublicKey = null;
+
+        // ─── Status helpers ───
+        function setStatus(msg, kind = '') {
+            statusEl.textContent = '';
+            if (typeof msg === 'string') {
+                statusEl.textContent = msg;
+            } else {
+                statusEl.appendChild(msg);
+            }
+            statusEl.className = 'ieo-wallet-status' + (kind ? ' ' + kind : '');
+        }
+        function setStatusHTML(html, kind = '') {
+            statusEl.innerHTML = html;
+            statusEl.className = 'ieo-wallet-status' + (kind ? ' ' + kind : '');
+        }
+        function truncateKey(k) {
+            return k.slice(0, 6) + '…' + k.slice(-6);
+        }
+        function explorerTxLink(hash) {
+            return `https://stellar.expert/explorer/public/tx/${hash}`;
+        }
+
+        // ─── Connect flow ───
+        connectBtn.addEventListener('click', async () => {
+            setStatus('Checking Freighter…');
+            connectBtn.disabled = true;
+            try {
+                const connected = await freighterApi.isConnected();
+                if (!connected.isConnected) {
+                    setStatusHTML(
+                        '⚠ Freighter not detected. <a href="https://www.freighter.app/" target="_blank" rel="noopener">Install Freighter →</a> and reload this page.',
+                        'error'
+                    );
+                    connectBtn.disabled = false;
+                    return;
+                }
+
+                const access = await freighterApi.requestAccess();
+                if (access.error) {
+                    setStatus('Freighter access denied: ' + access.error, 'error');
+                    connectBtn.disabled = false;
+                    return;
+                }
+                userPublicKey = access.address;
+
+                // Verify network is PUBLIC (this page is not for testnet)
+                const net = await freighterApi.getNetwork();
+                const freighterNet = net.network || net.networkDetails?.network;
+                if (freighterNet !== EXPECTED_NETWORK) {
+                    setStatus(
+                        'Freighter is on ' + freighterNet + ' but knexcoin.com is mainnet (PUBLIC). Open Freighter → Settings → Network and switch to Mainnet, then reload.',
+                        'error'
+                    );
+                    connectBtn.disabled = false;
+                    return;
+                }
+
+                // Connected successfully — swap UI
+                pubkeyEl.textContent = '✓ ' + truncateKey(userPublicKey);
+                pubkeyEl.classList.add('show');
+                connectRow.style.display = 'none';
+                trustlineRow.style.display = 'flex';
+
+                // Check existing trustlines so buttons reflect reality
+                await refreshTrustlines();
+            } catch (err) {
+                console.error(err);
+                setStatus('Connection failed: ' + (err.message || err), 'error');
+                connectBtn.disabled = false;
+            }
+        });
+
+        // ─── Trustline state ───
+        async function refreshTrustlines() {
+            if (!userPublicKey) return;
+            try {
+                const account = await server.loadAccount(userPublicKey);
+                const hasNex  = account.balances.some(b => b.asset_code === NEX_CODE  && b.asset_issuer === NEX_ISSUER);
+                const hasUsdc = account.balances.some(b => b.asset_code === USDC_CODE && b.asset_issuer === USDC_ISSUER);
+
+                if (hasNex) {
+                    addNexBtn.textContent = '✓ NEX Trustline Added';
+                    addNexBtn.classList.add('done');
+                    addNexBtn.disabled = true;
+                }
+                if (hasUsdc) {
+                    addUsdcBtn.textContent = '✓ USDC Trustline Added';
+                    addUsdcBtn.classList.add('done');
+                    addUsdcBtn.disabled = true;
+                }
+                if (hasNex && hasUsdc) {
+                    setStatusHTML(
+                        '✓ You\'re ready to buy NEX — open <a href="https://www.stellarx.com/markets/NEX:GALAXYZPJO6T22MRBPXAKGAW5IHXF4LK6W6HA775MNECUZEUABBIJSVI/USDC:GA5ZSEJYB37JRC5AVCIA5MOP4RHTM335X2KGX3IHOJAPP5RE34K4KZVN" target="_blank" rel="noopener">StellarX NEX/USDC</a>.',
+                        'success'
+                    );
+                } else {
+                    setStatus('Connected. Add a trustline to NEX (and USDC if you plan to buy with it).');
+                }
+            } catch (err) {
+                if (err?.response?.status === 404) {
+                    setStatus('⚠ Your Stellar account isn\'t funded yet. Send at least 2 XLM to it first (from Coinbase, Kraken, Lobstr, etc.), then reload.', 'error');
+                } else {
+                    console.error(err);
+                    setStatus('Could not load account: ' + (err.message || err), 'error');
+                }
+            }
+        }
+
+        // ─── Generic changeTrust submitter ───
+        async function addTrustline(asset, btn, label) {
+            const originalText = btn.textContent;
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Signing ' + label + '…';
+            setStatus('Building ' + label + ' trustline transaction…');
+
+            try {
+                const account = await server.loadAccount(userPublicKey);
+                const tx = new StellarSdk.TransactionBuilder(account, {
+                    fee: FEE,
+                    networkPassphrase: NETWORK_PASSPHRASE,
+                })
+                    .addOperation(StellarSdk.Operation.changeTrust({ asset }))
+                    .setTimeout(180)
+                    .build();
+
+                setStatus('Waiting for Freighter signature…');
+                const xdr = tx.toXDR();
+                const signResult = await freighterApi.signTransaction(xdr, {
+                    networkPassphrase: NETWORK_PASSPHRASE,
+                    accountToSign: userPublicKey,
+                });
+                if (signResult.error) {
+                    throw new Error(signResult.error);
+                }
+                const signedXdr = signResult.signedTxXdr || signResult.signedTransactionXdr || signResult;
+                if (typeof signedXdr !== 'string') {
+                    throw new Error('Freighter returned unexpected signature format');
+                }
+
+                setStatus('Submitting to Stellar network…');
+                const signedTx = StellarSdk.TransactionBuilder.fromXDR(signedXdr, NETWORK_PASSPHRASE);
+                const result = await server.submitTransaction(signedTx);
+
+                btn.innerHTML = '✓ ' + label + ' Trustline Added';
+                btn.classList.add('done');
+                setStatusHTML(
+                    '✓ ' + label + ' trustline added. <a href="' + explorerTxLink(result.hash) + '" target="_blank" rel="noopener">View tx</a>',
+                    'success'
+                );
+
+                // Refresh to check if both are now done
+                await refreshTrustlines();
+            } catch (err) {
+                console.error(err);
+                const codes = err?.response?.data?.extras?.result_codes;
+                const msg = codes ? JSON.stringify(codes) : (err.message || err);
+                setStatus('✗ ' + label + ' trustline failed: ' + msg, 'error');
+                btn.disabled = false;
+                btn.textContent = originalText;
+            }
+        }
+
+        addNexBtn .addEventListener('click', () => addTrustline(nexAsset,  addNexBtn,  'NEX'));
+        addUsdcBtn.addEventListener('click', () => addTrustline(usdcAsset, addUsdcBtn, 'USDC'));
     </script>
 </body>
 </html>
