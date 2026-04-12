@@ -1838,8 +1838,10 @@
         
         function updateOnlineStatus() {
             isOnline = navigator.onLine;
-            document.getElementById('offlineBanner').classList.toggle('visible', !isOnline);
-            document.getElementById('verifyCard').classList.toggle('offline-mode', !isOnline);
+            const banner = document.getElementById('offlineBanner');
+            const card = document.getElementById('verifyCard');
+            if (banner) banner.classList.toggle('visible', !isOnline);
+            if (card) card.classList.toggle('offline-mode', !isOnline);
         }
         
         window.addEventListener('online', updateOnlineStatus);
@@ -1948,168 +1950,13 @@
         }, 4000 + Math.random() * 5000);
 
         // ============================================
-        // BUY FORM
+        // BUY FORM (removed — IEO is live on StellarX)
+        // Users buy directly via the DEX link in the card.
         // ============================================
-        const buyAmount = document.getElementById('buyAmount');
-        const buyCost = document.getElementById('buyCost');
-        const buyBtn = document.getElementById('buyBtn');
-        const depositOutput = document.getElementById('depositOutput');
-        let activeNet = 'solana';
-
-        function syncCost() {
-            const amt = parseFloat(buyAmount.value) || 0;
-            buyCost.textContent = '$' + fmt(amt);
-        }
-        buyAmount.addEventListener('input', syncCost);
-        syncCost();
-
-        document.querySelectorAll('.net-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.net-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                activeNet = btn.getAttribute('data-net');
-                termLog('Network set: ' + activeNet.toUpperCase(), 'success');
-            });
-        });
-
-        buyBtn.addEventListener('click', () => {
-            const amt = parseInt(buyAmount.value, 10) || 0;
-            if (amt < 1) {
-                termLog('ERR: Minimum purchase is 1 NEX', 'error');
-                buyAmount.focus();
-                return;
-            }
-
-            termLog('Generating deposit address...');
-            setTimeout(() => {
-                termLog('Network: ' + activeNet.toUpperCase(), 'success');
-                termLog('Amount: ' + fmt(amt) + ' USDC', 'success');
-                termLog('Address ready · awaiting on-chain transfer', 'success');
-
-                const networkLabel = activeNet.charAt(0).toUpperCase() + activeNet.slice(1);
-                depositOutput.innerHTML =
-                    '<div class="deposit-head">› DEPOSIT_READY</div>' +
-                    '<div class="deposit-amount">Send <strong>' + fmt(amt) + ' USDC</strong> via <strong>' + networkLabel + '</strong> network. NEX delivered in &lt;5 min after on-chain confirmation.</div>' +
-                    '<div class="deposit-addr"><span class="addr">' + CONFIG.depositAddresses[activeNet] + '</span><button class="copy-btn" id="copyBtn">COPY</button></div>' +
-                    '<div class="deposit-warn">⚠ SEND ONLY USDC ON ' + networkLabel.toUpperCase() + ' · Wrong network = lost funds · We cannot recover them</div>';
-                depositOutput.classList.add('active');
-
-                document.getElementById('copyBtn').addEventListener('click', async (e) => {
-                    try {
-                        await navigator.clipboard.writeText(CONFIG.depositAddresses[activeNet]);
-                        e.target.textContent = 'COPIED';
-                        e.target.classList.add('copied');
-                        setTimeout(() => { e.target.textContent = 'COPY'; e.target.classList.remove('copied'); }, 1800);
-                    } catch { e.target.textContent = 'MANUAL COPY'; }
-                });
-            }, 800);
-        });
 
         // ============================================
-        // LIVE NETWORK STATS (real explorer + simulated drift)
+        // LIVE NETWORK STATS (static — no fake data)
         // ============================================
-        function daysSince(iso) { return Math.max(0, (Date.now() - new Date(iso).getTime()) / 86400000); }
-        let currentMiners = 12438 + Math.floor(daysSince('2026-01-01T00:00:00Z') * 14);
-        let currentHeight = 487213 + Math.floor(daysSince('2026-01-01T00:00:00Z') * 288);
-        let currentHashrate = 2.7;
-
-        function paintStats() {
-            const m = document.getElementById('liveMiners');
-            const h = document.getElementById('liveHeight');
-            const r = document.getElementById('liveHashrate');
-            const mc = document.getElementById('minersCount');
-            if (m) m.textContent = fmt(currentMiners);
-            if (h) h.textContent = fmt(currentHeight);
-            if (r) r.textContent = currentHashrate.toFixed(1);
-            if (mc) mc.textContent = fmt(currentMiners);
-        }
-        paintStats();
-
-        async function tryExplorer() {
-            if (!CONFIG.explorerApi) return;
-            try {
-                const resp = await fetch(CONFIG.explorerApi, { headers: { 'Accept': 'application/json' } });
-                if (!resp.ok) throw new Error('http ' + resp.status);
-                const data = await resp.json();
-                if (data.miners) currentMiners = data.miners;
-                if (data.blockHeight) currentHeight = data.blockHeight;
-                if (data.hashrate) currentHashrate = data.hashrate;
-                paintStats();
-            } catch (err) {
-                console.info('Explorer API unavailable, using simulated data.');
-            }
-        }
-        tryExplorer();
-        setInterval(tryExplorer, 60000);
-
-        setInterval(() => {
-            if (Math.random() < 0.7) currentMiners += 1;
-            if (Math.random() < 0.3) currentHashrate += (Math.random() - 0.5) * 0.05;
-            paintStats();
-        }, 6000);
-        setInterval(() => { currentHeight += 1; paintStats(); }, 12000 + Math.random() * 18000);
-
-        // ============================================
-        // ACTIVITY STREAMS — miners + purchases
-        // ============================================
-        const minersFeed = document.getElementById('minersFeed');
-        const purchasesFeed = document.getElementById('purchasesFeed');
-        const LOCATIONS = ['Singapore','Berlin','Lagos','Tokyo','Dubai','São Paulo','London','Seoul','Toronto','Mumbai','Istanbul','Lisbon','Amsterdam','Bangkok','Warsaw','Stockholm','Cape Town','Vancouver','Manila','Tel Aviv'];
-        const NETWORKS = ['SOLANA','ETHEREUM','STELLAR'];
-        const AMOUNTS = [50,100,250,500,1000,2500,5000,10000,25000];
-
-        function shortHash(prefix) {
-            const hex = '0123456789abcdef';
-            let s = prefix || '0x';
-            for (let i = 0; i < 4; i++) s += hex[Math.floor(Math.random()*16)];
-            s += '…';
-            for (let i = 0; i < 4; i++) s += hex[Math.floor(Math.random()*16)];
-            return s;
-        }
-        function timeAgoStr(s) { return s < 60 ? s+'s ago' : Math.floor(s/60)+'m ago'; }
-
-        function addMiner(isNew) {
-            if (!minersFeed) return;
-            const div = document.createElement('div');
-            div.className = 'terminal-line miner' + (isNew ? ' flash' : '');
-            const loc = LOCATIONS[Math.floor(Math.random()*LOCATIONS.length)];
-            const id = shortHash('miner_');
-            const ago = isNew ? 'just now' : Math.floor(Math.random()*9+1)+'m ago';
-            div.innerHTML = '<strong>' + id + '</strong> joined from ' + loc + '<span class="meta">node sync started · <span class="ago">' + ago + '</span></span>';
-            minersFeed.insertBefore(div, minersFeed.firstChild);
-            while (minersFeed.children.length > 8) minersFeed.removeChild(minersFeed.lastChild);
-        }
-        function addPurchase(isNew) {
-            if (!purchasesFeed) return;
-            const div = document.createElement('div');
-            div.className = 'terminal-line purchase' + (isNew ? ' flash' : '');
-            const amount = AMOUNTS[Math.floor(Math.random()*AMOUNTS.length)];
-            const network = NETWORKS[Math.floor(Math.random()*NETWORKS.length)];
-            const wallet = shortHash('0x');
-            const ago = isNew ? 'just now' : Math.floor(Math.random()*9+1)+'m ago';
-            div.innerHTML = 'Wallet <strong>' + wallet + '</strong> bought <strong>' + fmt(amount) + ' NEX</strong><span class="meta">$' + fmt(amount) + ' USDC via ' + network + ' · <span class="ago">' + ago + '</span></span>';
-            purchasesFeed.insertBefore(div, purchasesFeed.firstChild);
-            while (purchasesFeed.children.length > 8) purchasesFeed.removeChild(purchasesFeed.lastChild);
-        }
-        // Seed
-        for (let i = 0; i < 7; i++) addMiner(false);
-        for (let i = 0; i < 7; i++) addPurchase(false);
-
-        function loopMiner() {
-            addMiner(true);
-            currentMiners += 1;
-            paintStats();
-            setTimeout(loopMiner, 7000 + Math.random() * 10000);
-        }
-        function loopPurchase() {
-            addPurchase(true);
-            const amt = AMOUNTS[Math.floor(Math.random()*AMOUNTS.length)];
-            soldToday = Math.min(soldToday + Math.floor(amt / 10), CONFIG.dailyMint);
-            paintBatch();
-            setTimeout(loopPurchase, 5000 + Math.random() * 9000);
-        }
-        setTimeout(loopMiner, 4500);
-        setTimeout(loopPurchase, 2500);
 
         // ============================================
         // FAQ ACCORDION
