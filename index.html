@@ -988,6 +988,19 @@
             </div>
             <a class="ieo-btn secondary" href="https://www.knexpay.com" target="_blank" rel="noopener">Open KnexPay ▸</a>
         </div>
+
+        <!-- Mine NEX banner -->
+        <div class="ieo-bridge-banner" style="border-color: var(--neon-magenta); background: linear-gradient(135deg, rgba(255,0,128,0.06), rgba(255,0,128,0.01));">
+            <div>
+                <h4 style="margin-bottom: 10px;"><span style="color: var(--neon-magenta); text-shadow: var(--glow-magenta);">Mine</span> KnexCoin with your ASIC</h4>
+                <p>SHA-256d proof-of-work — any Bitcoin ASIC works. Solo mine with 0% pool fee. Every 100 NEX block reward goes directly to your address.</p>
+                <div style="margin-top: 12px; padding: 10px 14px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,0,128,0.25); border-radius: 4px; font-family: var(--font-mono); font-size: 0.82rem;">
+                    <span style="color: var(--neon-magenta); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 6px;">Stratum endpoint</span>
+                    <code style="color: var(--neon); font-size: 0.9rem; word-break: break-all;">stratum+tcp://98.80.98.17:3333</code>
+                </div>
+            </div>
+            <a class="ieo-btn ghost" href="#sec-2" style="border-color: var(--neon-magenta); color: var(--neon-magenta); flex-shrink: 0;">Mining Guide ▾</a>
+        </div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -1375,6 +1388,36 @@ HRP:         nex (mainnet) / tnx (testnet)</pre>
                         <tr><td><strong>Antminer S19/S21</strong></td><td>Enterprise ASIC</td><td>100+ TH/s</td></tr>
                     </tbody>
                 </table>
+            </div>
+
+            <h3>2.4 How to Solo Mine (ASIC)</h3>
+            <p>Point any SHA-256 ASIC directly at the NEX solo mining pool. <strong>0% fee</strong> — you keep 100% of every block reward.</p>
+
+            <div class="soa-callout">
+                <strong style="color: var(--neon);">Block reward: 100 NEX per block</strong> · ~5 minute block target · No pool fee — every satoshi goes to your address.
+            </div>
+
+            <h4>Step 1 — Get a NEX address</h4>
+            <p>You need a post-quantum <code>nex1z...</code> address to receive your mining rewards. Generate one using the <a href="https://www.knexpay.com" target="_blank" rel="noopener" style="color: var(--neon-cyan);">KnexPay wallet</a> or the CLI wallet.</p>
+
+            <h4>Step 2 — Configure your ASIC</h4>
+            <p>In your miner's web interface (or config file), set:</p>
+            <div class="soa-table-wrap">
+                <table class="soa-table">
+                    <thead><tr><th>Setting</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Pool URL</strong></td><td><code>stratum+tcp://98.80.98.17:3333</code></td></tr>
+                        <tr><td><strong>Worker name</strong></td><td>Your <code>nex1z...</code> address (this is where rewards go)</td></tr>
+                        <tr><td><strong>Password</strong></td><td><code>x</code> (or anything — not used)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h4>Step 3 — Start mining</h4>
+            <p>Power on your ASIC. It will connect to the stratum endpoint, receive work, and submit shares. When your miner finds a block, the full <strong>100 NEX reward</strong> is paid directly to your <code>nex1z...</code> address in the coinbase transaction — no pool operator, no fees, no middleman.</p>
+
+            <div class="soa-callout">
+                <strong style="color: var(--neon-cyan);">Compatible hardware:</strong> Any Bitcoin SHA-256 ASIC — Bitaxe, Antminer S9/S19/S21, Whatsminer M30/M50, AvalonMiner, or even a Raspberry Pi running cpuminer for CPU mining. If it can mine Bitcoin, it can mine NEX.
             </div>
         </section>
 
