@@ -410,17 +410,27 @@
             text-shadow: var(--glow-neon-soft);
         }
 
-        /* ── Restore native cursor ──
+        /* ── CURSOR FIX (nuclear) ──
            base.css sets cursor:none for a custom JS cursor that was
-           never properly wired (cursor-dot has no position:fixed so
-           left/top from cursor.js had no effect). Override here to
-           bring back the native cursor. The neon trail dots from
-           cursor.js still animate as a decorative background effect. */
-        body, body * { cursor: auto !important; }
+           never wired into the DOM. Additionally, several full-viewport
+           overlay divs (.scanline, .noise, .vignette, #webgl,
+           #global-canvas, .cursor-trail) may intercept pointer events
+           if they don't have pointer-events:none. Force everything. */
+        body { cursor: auto !important; }
         a, button, [role="button"], .ieo-btn, .ieo-wallet-btn,
-        .ieo-copy-btn, .nav-cta, .nav-links a, .copy-btn,
-        input, select, textarea { cursor: pointer !important; }
+        .ieo-copy-btn, .nav-cta, .nav-links a, .copy-btn, .menu-toggle,
+        .tab-btn, .action-btn, .connect-btn, .soa-toc a,
+        input, select, textarea, label { cursor: pointer !important; }
         input[type="text"], input[type="number"], textarea { cursor: text !important; }
+
+        /* Kill pointer-events on EVERY overlay / decorative layer
+           so nothing eats mouse events meant for the real content */
+        .scanline, .scanlines, .noise, .vignette, .overlay,
+        .grid-overlay, .cursor, .cursor-dot, .cursor-trail,
+        #global-canvas, #webgl, canvas {
+            pointer-events: none !important;
+            cursor: none !important;
+        }
 
         /* ═══════════════════════════════════════════════════════════════
            IEO HERO — "NEX on Stellar — Live IEO"
