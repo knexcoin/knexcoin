@@ -410,6 +410,23 @@
             text-shadow: var(--glow-neon-soft);
         }
 
+        /* ── Custom cursor fix for IEO buttons ──
+           The neon green cursor dot is invisible against neon green
+           button backgrounds. Override to black on primary buttons. */
+        .ieo-btn.primary:hover ~ .cursor .cursor-dot,
+        .ieo-wallet-btn.primary:hover ~ .cursor .cursor-dot {
+            background: #000 !important;
+            border-color: #000 !important;
+        }
+        /* Broader fix: any element with cursor:pointer should show
+           the pointer-expand animation on the custom cursor */
+        .ieo-btn:hover,
+        .ieo-wallet-btn:hover,
+        .ieo-copy-btn:hover,
+        .ieo-step p a:hover {
+            cursor: none;  /* keep native cursor hidden even on clickables */
+        }
+
         /* ═══════════════════════════════════════════════════════════════
            IEO HERO — "NEX on Stellar — Live IEO"
            Loads before the soa-hero, reuses the same CSS variables.
@@ -852,6 +869,9 @@
     </style>
 </head>
 <body>
+    <!-- Custom cursor (neon dot + trail) -->
+    <div class="cursor"><div class="cursor-dot"></div></div>
+
     <!-- Overlay effects -->
     <div class="scanline"></div>
     <div class="noise"></div>
