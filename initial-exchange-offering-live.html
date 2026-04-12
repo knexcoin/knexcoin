@@ -1912,14 +1912,6 @@
             const subEl = document.querySelector('.status-section .status-sub');
             if (titleEl) titleEl.textContent = 'LIVE ON STELLAR';
             if (subEl) subEl.textContent = 'Trading now on the Stellar DEX';
-            // No daily reset needed — the IEO is continuous
-                if (h === 0 && m === 0 && s < 3 && soldToday > 1000) {
-                    soldToday = 0;
-                    raisedTotal += CONFIG.dailyMint;
-                    paintBatch();
-                    termLog('NEW_BATCH_MINTED · 1,000,000 NEX available', 'success');
-                }
-            }
         }
         setInterval(updateCountdown, 1000);
         updateCountdown();
