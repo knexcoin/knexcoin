@@ -409,7 +409,7 @@
         }
 
         .hero-title .gradient::before {
-            content: '.SALE';
+            content: '.NEX';
             position: absolute;
             left: 0;
             top: 0;
@@ -1432,7 +1432,7 @@
                 <div class="logo-symbol"></div>
                 <div class="logo-text">
                     <span class="logo-text-main">KNEXCOIN</span>
-                    <span class="logo-text-sub">NEX Daily Presale</span>
+                    <span class="logo-text-sub">NEX on Stellar — Live IEO</span>
                 </div>
             </a>
             <ul class="nav-links">
@@ -1534,7 +1534,7 @@
                         </div>
                     </div>
 
-                    <!-- Live presale terminal -->
+                    <!-- Live status terminal -->
                     <div class="terminal">
                         <div class="terminal-header">
                             <div class="terminal-dots">
@@ -1542,7 +1542,7 @@
                                 <div class="terminal-dot"></div>
                                 <div class="terminal-dot"></div>
                             </div>
-                            <span class="terminal-title">presale.log</span>
+                            <span class="terminal-title">ieo.log</span>
                             <span class="terminal-time" id="terminalTime">00:00:00</span>
                         </div>
                         <div id="terminalOutput"></div>
@@ -1889,64 +1889,21 @@
         };
 
         // ============================================
-        // ICO LAUNCH COUNTDOWN + DAILY BATCH
-        // ICO starts May 1, 2026 00:00 UTC. Before then, the countdown
-        // shows "ICO LAUNCH IN xD HH:MM:SS". After launch, it switches to
-        // the daily-batch reset countdown (next 00:00 UTC).
+        // IEO STATUS (live — no countdown needed)
         // ============================================
-        const ICO_START = new Date('2026-05-01T00:00:00Z').getTime();
         function pad2(n) { return String(n).padStart(2, '0'); }
         function fmt(n) { return Number(n).toLocaleString('en-US'); }
-        function isPreLaunch() { return Date.now() < ICO_START; }
 
-        function secondsIntoDay() {
-            const d = new Date();
-            return d.getUTCHours() * 3600 + d.getUTCMinutes() * 60 + d.getUTCSeconds();
-        }
-        function getInitialSold() {
-            // Pre-launch: show 0 sold (waitlist mode)
-            if (isPreLaunch()) return 0;
-            // Post-launch: ramp through the day
-            const pct = secondsIntoDay() / 86400;
-            return Math.floor(CONFIG.dailyMint * Math.min(0.985, pct * 0.9 + 0.05));
-        }
-        let soldToday = getInitialSold();
-        let raisedTotal = soldToday;
+        let soldToday = 0;
+        let raisedTotal = 0;
 
         function updateCountdown() {
-            const el = document.getElementById('resetTimer');
-            const subEl = document.querySelector('.status-section .status-sub');
+            // IEO is live — no countdown, just show current status
             const titleEl = document.querySelector('.status-section .status-text');
-
-            if (isPreLaunch()) {
-                // Counting down to ICO launch (May 1, 2026)
-                const diff = Math.floor((ICO_START - Date.now()) / 1000);
-                const days = Math.floor(diff / 86400);
-                const h = Math.floor((diff % 86400) / 3600);
-                const m = Math.floor((diff % 3600) / 60);
-                const s = diff % 60;
-                if (el) el.textContent = days + 'D ' + pad2(h) + ':' + pad2(m) + ':' + pad2(s);
-                if (titleEl) titleEl.textContent = 'ICO LAUNCH';
-                if (subEl && !subEl.dataset.preset) {
-                    subEl.innerHTML = 'May 1, 2026 · in <span id="resetTimer">' + days + 'D ' + pad2(h) + ':' + pad2(m) + ':' + pad2(s) + '</span>';
-                    subEl.dataset.preset = '1';
-                }
-            } else {
-                // Post-launch: daily batch countdown to next 00:00 UTC
-                const now = new Date();
-                const tomorrow = new Date(now);
-                tomorrow.setUTCHours(24, 0, 0, 0);
-                const diff = Math.floor((tomorrow - now) / 1000);
-                const h = Math.floor(diff / 3600);
-                const m = Math.floor((diff % 3600) / 60);
-                const s = diff % 60;
-                if (el) el.textContent = pad2(h) + ':' + pad2(m) + ':' + pad2(s);
-                if (titleEl) titleEl.textContent = "TODAY'S BATCH";
-                if (subEl && subEl.dataset.preset !== '2') {
-                    subEl.innerHTML = 'Next mint in <span id="resetTimer">' + pad2(h) + ':' + pad2(m) + ':' + pad2(s) + '</span>';
-                    subEl.dataset.preset = '2';
-                }
-                // Daily reset at midnight UTC
+            const subEl = document.querySelector('.status-section .status-sub');
+            if (titleEl) titleEl.textContent = 'LIVE ON STELLAR';
+            if (subEl) subEl.textContent = 'Trading now on the Stellar DEX';
+            // No daily reset needed — the IEO is continuous
                 if (h === 0 && m === 0 && s < 3 && soldToday > 1000) {
                     soldToday = 0;
                     raisedTotal += CONFIG.dailyMint;
@@ -2177,10 +2134,10 @@
         document.addEventListener('DOMContentLoaded', async () => {
             try { await openDB(); } catch {}
             updateOnlineStatus();
-            setTimeout(() => termLog('Initializing presale interface...'), 100);
+            setTimeout(() => termLog('Initializing IEO interface...'), 100);
             setTimeout(() => termLog('Connecting to NEX network...'), 600);
             setTimeout(() => termLog('Network status: ONLINE', 'success'), 1100);
-            setTimeout(() => termLog('Daily batch loaded · 1,000,000 NEX', 'success'), 1700);
+            setTimeout(() => termLog('IEO live · 1,000,000 NEX on Stellar DEX', 'success'), 1700);
             setTimeout(() => termLog('Awaiting purchase command...'), 2300);
         });
         
