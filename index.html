@@ -979,6 +979,15 @@
             </div>
             <a class="ieo-btn primary" href="https://bridge.knexcoin.com" target="_blank" rel="noopener">Open Bridge Portal ▸</a>
         </div>
+
+        <!-- KnexPay PWA banner -->
+        <div class="ieo-bridge-banner" style="border-color: var(--neon-cyan);">
+            <div>
+                <h4><span class="hl">KnexPay</span> — Secure PWA Wallet</h4>
+                <p>A progressive web app that runs on any browser or smartphone. Send, receive, and manage your NEX with biometric-protected key storage, dual-balance UI (reserve + spend), and real-time transaction tracking. No app store download required — install directly from the web.</p>
+            </div>
+            <a class="ieo-btn secondary" href="https://www.knexpay.com" target="_blank" rel="noopener">Open KnexPay ▸</a>
+        </div>
     </header>
 
     <!-- ═══════════════════════════════════════════════════════════════
@@ -1511,22 +1520,28 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
         <!-- Section 7 -->
         <section id="sec-7" class="soa-section">
             <span class="soa-section-label">07 · KnexPay</span>
-            <h2>KnexPay — <span class="hl">Consumer Wallet</span></h2>
+            <h2>KnexPay — <span class="hl">Secure PWA Wallet</span></h2>
 
-            <h3>7.1 Architecture — iOS Native + WKWebView Hybrid</h3>
+            <div class="soa-callout" style="margin-bottom: 28px;">
+                <strong style="color: var(--neon-cyan);">Try it now:</strong> <a href="https://www.knexpay.com" target="_blank" rel="noopener" style="color: var(--neon);">www.knexpay.com</a> — runs on any web browser or smartphone. No app store download required.
+            </div>
+
+            <h3>7.1 Architecture — Progressive Web App</h3>
+            <p>KnexPay is a secure PWA (Progressive Web App) that runs natively in any modern browser — Chrome, Safari, Firefox, Edge — on desktop or mobile. Users can install it to their home screen for an app-like experience without going through an app store.</p>
             <ul>
-                <li>Swift shell, WebKit rendering engine</li>
-                <li>Native bridge locked to packaged app origin (no arbitrary URL loads)</li>
-                <li>Dual balance UI: Reserve (NEX) + Spend (UMX)</li>
-                <li>Real-time updates via WebSocket to node</li>
+                <li><strong>Cross-platform</strong> — works on iOS, Android, macOS, Windows, Linux</li>
+                <li><strong>No download required</strong> — open the URL, optionally install to home screen</li>
+                <li><strong>Offline-capable</strong> — service worker caches critical assets for offline use</li>
+                <li><strong>Dual balance UI</strong> — Reserve (NEX) + Spend (UMX) in one interface</li>
+                <li><strong>Real-time updates</strong> — WebSocket connection to node for live transaction tracking</li>
             </ul>
 
             <h3>7.2 Key Storage</h3>
             <ul>
-                <li>Keys live only in iOS Keychain (biometric-protected, Secure Enclave on A13+)</li>
+                <li>Biometric-protected key storage (Face ID / Touch ID / device PIN)</li>
                 <li>AES-256-GCM encryption at rest</li>
-                <li>Never synced to iCloud</li>
-                <li>Never readable by JavaScript layer</li>
+                <li>Keys never leave the device</li>
+                <li>No server-side custody — you hold your own keys</li>
             </ul>
 
             <h3>7.3 Auto-Float Logic</h3>
@@ -1545,7 +1560,7 @@ Outputs: [ WITNESS_V2_PQ paying ratio × BTC_balance to claimant's nex1z address
 
             <h3>7.4 NFC Tap-to-Pay</h3>
             <ul>
-                <li>iPhone's NFC stack (Core NFC) reads SmartBills (NDEF bearer notes)</li>
+                <li>NFC stack reads SmartBills (NDEF bearer notes)</li>
                 <li>Each tap verifies a <strong>CMAC</strong> (Cipher-based MAC) signed with the bill's SUN/SDM key</li>
                 <li>Server-side validation prevents replay attacks</li>
                 <li>Supports both personal transfers and merchant point-of-sale</li>
