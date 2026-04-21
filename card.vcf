@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Otero;David;;;
+FN:David Otero
+ORG:Distributed Ledger Technologies
+TITLE:System Architect
+TEL;TYPE=mobile:+12016677226
+EMAIL;TYPE=work:david@knexmail.com
+URL;TYPE=work:https://www.distributedledgertechnologies.com
+URL;TYPE=work:https://www.knexcoin.com
+URL;TYPE=work:https://www.untraceablex.com
+URL;TYPE=work:https://www.nexcurrency.com
+URL;TYPE=github:https://www.github.com/systemthreat
+END:VCARD
