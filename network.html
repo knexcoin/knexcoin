@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnexCoin Network: Testnet, Mining Pools, Hardware</title>
+<meta name="description" content="KnexCoin testnet running SHA-256d Proof-of-Work since 2026 Q1. Four regional mining pools (Virginia, Mumbai, California, São Paulo). PPLNS and solo, every SHA-256 ASIC.">
+<link rel="canonical" href="https://www.knexcoin.com/network">
+<meta property="og:title" content="KnexCoin Network: Testnet, Mining Pools, Hardware">
+<meta property="og:url" content="https://www.knexcoin.com/network">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="KnexCoin testnet running SHA-256d Proof-of-Work since 2026 Q1. Four regional mining pools (Virginia, Mumbai, California, São Paulo). PPLNS and solo, every SHA-256 ASIC.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KnexCoin Network: Testnet, Mining Pools, Hardware">
+<meta name="twitter:description" content="KnexCoin testnet running SHA-256d Proof-of-Work since 2026 Q1. Four regional mining pools (Virginia, Mumbai, California, São Paulo). PPLNS and solo, every SHA-256 ASIC.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:var(--hairline) solid var(--rule)}
+.stats .stat{padding:48px 24px;border-right:var(--hairline) solid var(--rule);min-height:200px;position:relative}
+.stats .stat:last-child{border-right:0}
+.stats .stat .k{font-size:11px;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px}
+.stats .stat .v{font-size:48px;font-weight:800;letter-spacing:-0.03em;line-height:1;font-feature-settings:"tnum"}
+.stats .stat .v small{font-size:18px;font-weight:600;color:var(--ink-soft);letter-spacing:0;margin-left:4px}
+.stats .stat .pulse{position:absolute;top:24px;right:24px;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.stats .stat .pulse .dot{width:8px;height:8px;border-radius:999px;background:var(--blue);animation:p 1.6s ease-in-out infinite}
+@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}
+.stats .stat .footnote{margin-top:14px;font-size:12px;color:var(--muted)}
+
+.tiers{padding:80px 0;border-top:var(--hairline) solid var(--rule)}
+.tiers .head{padding:0 24px 40px}
+.tiers .head h2{font-size:40px;font-weight:700;letter-spacing:-0.02em}
+.tiers .head p{margin-top:14px;color:var(--ink-soft);font-size:15px;max-width:560px;line-height:1.55}
+.tiers table{width:100%;border-collapse:collapse;font-feature-settings:"tnum"}
+.tiers th,.tiers td{padding:18px 24px;text-align:left;font-size:14px;border-top:var(--hairline) solid var(--rule)}
+.tiers th{font-size:11px;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.08em;background:rgba(0,0,0,0.02)}
+.tiers td.tier{font-size:18px;font-weight:800;letter-spacing:-0.01em;color:var(--ink)}
+.tiers td.mult{color:var(--blue);font-weight:700}
+.tiers tr:last-child td{border-bottom:var(--hairline) solid var(--rule)}
+
+.run{padding:120px 24px;border-top:var(--hairline) solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.run h2{font-size:54px;font-weight:800;letter-spacing:-0.03em;line-height:1.0}
+.run h2 em{font-style:normal;color:var(--blue)}
+.run .req{font-size:11px;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.run ul{list-style:none;display:grid;gap:14px;border-top:var(--hairline) solid var(--rule);padding-top:24px}
+.run li{display:grid;grid-template-columns:140px 1fr;gap:24px;font-size:14px;color:var(--ink-soft);line-height:1.5;padding-bottom:14px;border-bottom:var(--hairline) solid var(--rule)}
+.run li b{color:var(--ink);font-weight:700}
+
+@media (max-width:900px){
+  .stats{grid-template-columns:1fr 1fr}
+  .stats .stat{border-right:0;border-bottom:var(--hairline) solid var(--rule);padding:32px 16px;min-height:auto}
+  .stats .stat:nth-child(odd){border-right:var(--hairline) solid var(--rule)}
+  .stats .stat .v{font-size:36px}
+  .tiers{padding:60px 0}
+  .tiers .head{padding:0 16px 32px}
+  .tiers th,.tiers td{padding:14px 16px;font-size:13px}
+  .run{grid-template-columns:1fr;padding:80px 16px}
+  .run h2{font-size:38px}
+  .run li{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link" href="architecture.html">Architecture</a>
+        <a class="nav-link" href="roadmap.html">Roadmap</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link active" href="network.html">Network</a>
+        <a class="nav-link" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Network &middot; Testnet</div>
+    <h1 class="reveal">Live, since <em>2026</em> Q1.</h1>
+    <p class="lede reveal">Public testnet running SHA-256d Proof-of-Work, ML-DSA-65 post-quantum signatures, and four regional mining pools. Open to every SHA-256 ASIC.</p>
+  </header>
+
+  <section class="stats">
+    <div class="stat reveal">
+      <div class="pulse"><span class="dot"></span>Live</div>
+      <div class="k">Block height</div>
+      <div class="v">14,256</div>
+      <div class="footnote">5-minute target</div>
+    </div>
+    <div class="stat reveal">
+      <div class="k">Network hashrate</div>
+      <div class="v">1.4<small>PH/s</small></div>
+      <div class="footnote">7-day rolling</div>
+    </div>
+    <div class="stat reveal">
+      <div class="k">Block reward</div>
+      <div class="v">100<small> NEX</small></div>
+      <div class="footnote">Era 1, halving on Bitcoin's discipline</div>
+    </div>
+    <div class="stat reveal">
+      <div class="k">Mining pools</div>
+      <div class="v">4</div>
+      <div class="footnote">Virginia, Mumbai, California, S&atilde;o Paulo</div>
+    </div>
+  </section>
+
+  <section class="tiers">
+    <div class="head reveal">
+      <h2>Mining pools.</h2>
+      <p>Four regional stratum endpoints, two reward models. PPLNS smooths variance for steady payouts; solo gives the full block reward when you find one. Pick the closest pool by latency.</p>
+    </div>
+    <table>
+      <thead>
+        <tr><th>Region</th><th>Stratum host</th><th>PPLNS</th><th>Solo</th></tr>
+      </thead>
+      <tbody class="reveal">
+        <tr><td class="tier">Virginia</td><td>us-east.pool.knexcoin.com</td><td class="mult">:3333</td><td>:7777</td></tr>
+        <tr><td class="tier">California</td><td>us-west.pool.knexcoin.com</td><td class="mult">:3333</td><td>:7777</td></tr>
+        <tr><td class="tier">Mumbai</td><td>asia.pool.knexcoin.com</td><td class="mult">:3333</td><td>:7777</td></tr>
+        <tr><td class="tier">S&atilde;o Paulo</td><td>sa.pool.knexcoin.com</td><td class="mult">:3333</td><td>:7777</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slab"><span class="reveal">Real cost.<br>Real hardware.</span></section>
+
+  <section class="run">
+    <div class="reveal">
+      <h2>Run a <em>miner</em>.</h2>
+      <p style="margin-top:20px;color:var(--ink-soft);font-size:15px;line-height:1.55;max-width:380px">Every standard SHA-256 ASIC works. From a $200 Bitaxe on a kitchen counter to a multi-petahash farm. Same protocol, same rewards per unit of work, no permissioning.</p>
+    </div>
+    <div class="reveal">
+      <div class="req">Compatible hardware</div>
+      <ul>
+        <li><b>Bitaxe</b><span>Single-chip BM1366/BM1368 home miner</span></li>
+        <li><b>NerdMiner</b><span>ESP32-based educational miner</span></li>
+        <li><b>MacMetalMiner</b><span>Native Apple Silicon GPU mining</span></li>
+        <li><b>Antminer</b><span>S19, S21, S23 series and equivalents</span></li>
+        <li><b>Whatsminer</b><span>M50, M60 series and equivalents</span></li>
+        <li><b>Stratum</b><span>v1 protocol, port 3333 (PPLNS) or 7777 (solo)</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <a class="cta-block" href="docs.html"><div class="label">Step-by-step.</div><div class="body"><span>Mining Guide</span><span class="arrow">&rarr;</span></div></a>
+  <a class="cta-block" href="https://github.com/SystemThreat/NEX"><div class="label">Source code.</div><div class="body"><span>GitHub</span><span class="arrow">&rarr;</span></div></a>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

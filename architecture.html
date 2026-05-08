@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnexCoin Architecture: SHA-256d PoW + ML-DSA-65</title>
+<meta name="description" content="KnexCoin (NEX) — a Bitcoin-style monetary foundation restructured for post-quantum security. SHA-256d Proof-of-Work, hybrid witness v2 with ML-DSA-65, 100M cap.">
+<link rel="canonical" href="https://www.knexcoin.com/architecture">
+<meta property="og:title" content="KnexCoin Architecture: SHA-256d PoW + ML-DSA-65">
+<meta property="og:url" content="https://www.knexcoin.com/architecture">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="KnexCoin (NEX) — a Bitcoin-style monetary foundation restructured for post-quantum security. SHA-256d Proof-of-Work, hybrid witness v2 with ML-DSA-65, 100M cap.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KnexCoin Architecture: SHA-256d PoW + ML-DSA-65">
+<meta name="twitter:description" content="KnexCoin (NEX) — a Bitcoin-style monetary foundation restructured for post-quantum security. SHA-256d Proof-of-Work, hybrid witness v2 with ML-DSA-65, 100M cap.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.layers{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:var(--hairline) solid var(--rule)}
+.layers .layer{padding:48px 24px;border-right:var(--hairline) solid var(--rule);min-height:340px}
+.layers .layer:last-child{border-right:0}
+.layers .tag{font-size:11px;color:var(--blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.layers .layer h3{font-size:48px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin-bottom:8px}
+.layers .layer .ticker{font-size:14px;color:var(--ink-soft);font-weight:600;margin-bottom:24px}
+.layers .layer .role{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:14px}
+.layers .layer p{font-size:15px;color:var(--ink-soft);line-height:1.55;max-width:420px}
+
+.facts{padding:80px 0;border-top:var(--hairline) solid var(--rule)}
+.facts .head{padding:0 24px 40px}
+.facts .head h2{font-size:40px;font-weight:700;letter-spacing:-0.02em}
+.facts .head p{margin-top:14px;color:var(--ink-soft);font-size:15px;max-width:560px;line-height:1.55}
+.facts .row{display:grid;grid-template-columns:240px 1fr;gap:32px;border-top:var(--hairline) solid var(--rule);padding:36px 24px;align-items:start}
+.facts .row .k{font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+.facts .row .v p{font-size:15px;color:var(--ink-soft);line-height:1.55;max-width:560px}
+.facts .row .v p+p{margin-top:10px}
+.facts .row .v ul{list-style:none;margin-top:14px}
+.facts .row .v li{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-left:18px;position:relative;margin-bottom:6px}
+.facts .row .v li::before{content:"\2192";position:absolute;left:0;color:var(--blue)}
+
+@media (max-width:900px){
+  .layers{grid-template-columns:1fr}
+  .layers .layer{border-right:0;border-bottom:var(--hairline) solid var(--rule);padding:32px 16px;min-height:auto}
+  .layers .layer h3{font-size:36px}
+  .facts{padding:60px 0}
+  .facts .head{padding:0 16px 32px}
+  .facts .row{grid-template-columns:1fr;padding:24px 16px;gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link active" href="architecture.html">Architecture</a>
+        <a class="nav-link" href="roadmap.html">Roadmap</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link" href="network.html">Network</a>
+        <a class="nav-link" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Architecture</div>
+    <h1 class="reveal">Two layers.<br>One <em>system</em>.</h1>
+    <p class="lede reveal">KnexCoin holds value. Lumero moves it. Two assets, two jobs, designed to work together.</p>
+  </header>
+
+  <section class="layers">
+    <div class="layer reveal">
+      <div class="tag">Layer 01</div>
+      <h3>KnexCoin</h3>
+      <div class="ticker">NEX &middot; The reserve</div>
+      <div class="role">Gravity</div>
+      <p>Scarce, mineable, post-quantum. Audited and designed for long-term value preservation. NEX is what you hold &mdash; the asset that doesn't move much because it doesn't need to.</p>
+    </div>
+    <div class="layer reveal">
+      <div class="tag">Layer 02</div>
+      <h3>Lumero</h3>
+      <div class="ticker">UMX &middot; The settlement layer</div>
+      <div class="role">Velocity</div>
+      <p>Fast, mobile-first, backed by NEX in the reserve pool at 1.5&times; coverage. Built for remittances, merchants, payroll, and infrastructure finance. UMX is what moves &mdash; in seconds, anywhere, for very little.</p>
+    </div>
+  </section>
+
+  <section class="facts">
+    <div class="head reveal">
+      <h2>How NEX actually works.</h2>
+      <p>Four design decisions that make NEX a credible long-duration reserve asset.</p>
+    </div>
+    <div class="row reveal">
+      <div class="k">SHA-256d Proof-of-Work</div>
+      <div class="v">
+        <p>The same primitive Bitcoin pioneered: real cost, real hardware, real time. Honest mining keeps reserve assets honest. There is no shortcut from compute spent to coins issued.</p>
+        <p>5-minute block target. 100 NEX block reward in Era 1, halving on Bitcoin's discipline.</p>
+      </div>
+    </div>
+    <div class="row reveal">
+      <div class="k">LWMA v2 difficulty</div>
+      <div class="v">
+        <p>Linear Weighted Moving Average difficulty adjustment with a 25-block window and 2&times; clamp. Activated at block 1322. Smart Emergency Difficulty Adjustment fires when block solve time exceeds 600s &mdash; the chain refuses to stall.</p>
+      </div>
+    </div>
+    <div class="row reveal">
+      <div class="k">Hybrid witness v2 + ML-DSA-65</div>
+      <div class="v">
+        <p>NEX uses a hybrid witness v2 address format with ML-DSA-65 (FIPS 204) post-quantum signatures. New addresses default to post-quantum-only.</p>
+        <ul>
+          <li>ECDSA accepted for legacy UTXOs during transition</li>
+          <li>nex1z address prefix (Bech32m encoding)</li>
+          <li>Forward security: PQ-only addresses stay safe even if ECDSA breaks</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row reveal">
+      <div class="k">Open mining hardware</div>
+      <div class="v">
+        <p>Every standard SHA-256 ASIC works: Bitaxe, NerdMiner, MacMetalMiner (native Apple Silicon GPU), Antminer, Whatsminer. Four regional pools (Virginia, Mumbai, California, S&atilde;o Paulo) support PPLNS (port 3333) and solo (port 7777).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab"><span class="reveal">Real cost.<br>Real hardware.</span></section>
+
+  <section class="facts">
+    <div class="head reveal">
+      <h2>Why every NEX is scarce.</h2>
+      <p>Bitcoin's monetary discipline, post-quantum security. No discretionary issuance, no foundation drift.</p>
+    </div>
+    <div class="row reveal">
+      <div class="k">100,000,000 cap</div>
+      <div class="v">
+        <p>Hard maximum supply, no mechanism to exceed. New NEX is created only by miners solving valid blocks &mdash; same primitive Bitcoin proved over fifteen years.</p>
+      </div>
+    </div>
+    <div class="row reveal">
+      <div class="k">20M genesis<br>9 published allocations</div>
+      <div class="v">
+        <p>Genesis allocation of 20,000,000 NEX is split across nine published, source-traceable allocations. No hidden tranche, no foundation discretion, no premine drift.</p>
+      </div>
+    </div>
+    <div class="row reveal">
+      <div class="k">Reserve gravity</div>
+      <div class="v">
+        <p>NEX backs every UMX in the system at a 1.5&times; coverage ratio enforced at the bridge. The reserve is the gravity well: every UMX in circulation is anchored to scarce, mined NEX in protocol custody.</p>
+      </div>
+    </div>
+  </section>
+
+  <a class="cta-block" href="roadmap.html"><div class="label">When does this ship?</div><div class="body"><span>See the Roadmap</span><span class="arrow">&rarr;</span></div></a>
+  <a class="cta-block" href="docs.html"><div class="label">Go deeper.</div><div class="body"><span>Read the Docs</span><span class="arrow">&rarr;</span></div></a>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latest — KnexCoin News, Deep Dives, Mining Updates</title>
+<meta name="description" content="News, deep dives, and progress updates from the KnexCoin team. Mining notes, audit results, monetary policy, and how the NEX/UMX bridge works in practice.">
+<link rel="canonical" href="https://www.knexcoin.com/latest">
+<meta property="og:title" content="Latest — KnexCoin News, Deep Dives, Mining Updates">
+<meta property="og:url" content="https://www.knexcoin.com/latest">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="News, deep dives, and progress updates from the KnexCoin team. Mining notes, audit results, monetary policy, and how the NEX/UMX bridge works in practice.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Latest — KnexCoin News, Deep Dives, Mining Updates">
+<meta name="twitter:description" content="News, deep dives, and progress updates from the KnexCoin team. Mining notes, audit results, monetary policy, and how the NEX/UMX bridge works in practice.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.posts{border-top:var(--hairline) solid var(--rule)}
+.post{display:grid;grid-template-columns:200px 1fr 140px;gap:32px;padding:36px 24px;border-bottom:var(--hairline) solid var(--rule);align-items:start;position:relative;transition:background .2s}
+.post:hover{background:#fff}
+.post .meta{font-size:13px;color:var(--ink-soft);font-feature-settings:"tnum"}
+.post .meta .cat{display:inline-block;margin-top:8px;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;border:1px solid var(--rule-strong);color:var(--ink-soft)}
+.post .meta .cat.tech{border-color:var(--blue);color:var(--blue)}
+.post .meta .cat.update{border-color:var(--ink);color:var(--ink)}
+.post .body h3{font-size:28px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:10px;transition:color .2s}
+.post:hover .body h3{color:var(--blue)}
+.post .body p{font-size:15px;color:var(--ink-soft);line-height:1.55;max-width:560px}
+.post .read{text-align:right;font-size:13px;color:var(--ink-soft);font-weight:500}
+.post .read .arrow{display:inline-block;margin-left:6px;transition:transform .2s}
+.post:hover .read .arrow{transform:translateX(4px);color:var(--blue)}
+
+.subscribe{padding:80px 24px;border-top:var(--hairline) solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end}
+.subscribe h2{font-size:48px;font-weight:800;letter-spacing:-0.03em;line-height:1}
+.subscribe form{display:flex;gap:0;border:1px solid var(--rule-strong);border-radius:999px;background:#fff;overflow:hidden;max-width:480px}
+.subscribe input{flex:1;padding:16px 22px;border:0;background:transparent;font:inherit;color:var(--ink);font-size:14px;outline:none}
+.subscribe button{padding:16px 28px;background:var(--ink);color:#fff;border-radius:0 999px 999px 0;font-weight:600;font-size:14px}
+.subscribe .small{margin-top:14px;font-size:12px;color:var(--muted)}
+
+@media (max-width:900px){
+  .post{grid-template-columns:1fr;gap:14px;padding:28px 16px}
+  .post .body h3{font-size:22px}
+  .post .read{text-align:left}
+  .subscribe{grid-template-columns:1fr;padding:60px 16px;gap:24px}
+  .subscribe h2{font-size:32px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link" href="architecture.html">Architecture</a>
+        <a class="nav-link" href="roadmap.html">Roadmap</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link" href="network.html">Network</a>
+        <a class="nav-link active" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Latest</div>
+    <h1 class="reveal">News from<br>the <em>team</em>.</h1>
+    <p class="lede reveal">Deep dives, design notes, and progress updates. We publish what we ship and what we're still working on.</p>
+  </header>
+
+  <section class="posts">
+
+    <a class="post reveal" href="#">
+      <div class="meta">May 2026<span class="cat update">Update</span></div>
+      <div class="body">
+        <h3>Mainnet hardening: where we are.</h3>
+        <p>Twelve weeks into the audit. Most findings are mitigations, not redesigns. Here's what changed under the hood and why it doesn't change the published spec.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">May 2026<span class="cat">Strategy</span></div>
+      <div class="body">
+        <h3>Why Colombia first.</h3>
+        <p>We could have gone anywhere. Colombia is where the friction is real, the diaspora corridor is concentrated, and merchants are ready to test something better than what they have now.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">Apr 2026<span class="cat tech">Technical</span></div>
+      <div class="body">
+        <h3>What Proof-of-Bandwidth actually proves.</h3>
+        <p>Stake-only consensus rewards capital. PoB rewards capacity. We walk through the six-step anti-spoofing pipeline and the failure modes it catches before they ever reach the chain.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">Apr 2026<span class="cat">Economics</span></div>
+      <div class="body">
+        <h3>How NEX backs every Lumero.</h3>
+        <p>Algorithmic stables die in correlated drawdowns. Hard-backed instruments don't. The 1.5&times; coverage rule, where it's enforced in the protocol, and what would have to break for it to fail.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">Mar 2026<span class="cat tech">Technical</span></div>
+      <div class="body">
+        <h3>Sub-second finality, under the hood.</h3>
+        <p>Block-lattice + stake-weighted quorum BFT. Why finality is bounded by network round-trip, not block time, and what that means for merchants at point-of-sale.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">Mar 2026<span class="cat">Concept</span></div>
+      <div class="body">
+        <h3>Single-asset money does two jobs at once. It does neither well.</h3>
+        <p>Why Bitcoin is a great reserve and a bad payment rail. Why USDC is a great payment rail and a bad reserve. Why splitting them is the only way to get both.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+    <a class="post reveal" href="#">
+      <div class="meta">Feb 2026<span class="cat update">Update</span></div>
+      <div class="body">
+        <h3>Devnet retired. Testnet live.</h3>
+        <p>Devnet served its purpose. Testnet runs the full PoB pipeline with public validators. Faucet, explorer, status page, and docs are open today.</p>
+      </div>
+      <div class="read">Read <span class="arrow">&rarr;</span></div>
+    </a>
+
+  </section>
+
+  <section class="subscribe">
+    <div class="reveal">
+      <h2>Get updates,<br>not noise.</h2>
+    </div>
+    <div class="reveal">
+      <form action="https://formsubmit.co/david@knexmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New newsletter signup from knexcoin.com">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://www.knexcoin.com/latest.html?subscribed=1">
+        <input type="text" name="_honey" style="display:none">
+        <input type="email" name="email" placeholder="you@email.com" required>
+        <button type="submit">Subscribe &rarr;</button>
+      </form>
+      <div class="small">One email when something ships. No threads, no airdrops.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

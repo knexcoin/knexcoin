@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cookie Controls — KnexCoin · Storage and Opt-Out</title>
+<meta name="description" content="What knexcoin.com stores in your browser, why we store it, and how to turn off optional analytics. Privacy-respecting by default.">
+<link rel="canonical" href="https://www.knexcoin.com/cookies">
+<meta property="og:title" content="Cookie Controls — KnexCoin · Storage and Opt-Out">
+<meta property="og:url" content="https://www.knexcoin.com/cookies">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="What knexcoin.com stores in your browser, why we store it, and how to turn off optional analytics. Privacy-respecting by default.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cookie Controls — KnexCoin · Storage and Opt-Out">
+<meta name="twitter:description" content="What knexcoin.com stores in your browser, why we store it, and how to turn off optional analytics. Privacy-respecting by default.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.cookie-table{margin:24px 0 32px;width:100%;border-collapse:collapse;font-feature-settings:"tnum"}
+.cookie-table th,.cookie-table td{text-align:left;padding:14px 16px;border-bottom:var(--hairline) solid var(--rule);font-size:14px;vertical-align:top}
+.cookie-table th{font-size:11px;color:var(--ink-soft);font-weight:700;text-transform:uppercase;letter-spacing:.06em;background:rgba(0,0,0,0.02);border-bottom:var(--hairline) solid var(--rule-strong)}
+.cookie-table td.name{font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--blue);white-space:nowrap}
+.cookie-table td p{font-size:13px;color:var(--ink-soft);line-height:1.5;margin:0}
+
+.toggle{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--rule-strong);color:var(--ink-soft)}
+.toggle.req{border-color:var(--ink);color:var(--ink)}
+.toggle.opt{border-color:var(--blue);color:var(--blue)}
+
+@media (max-width:600px){
+  .cookie-table th,.cookie-table td{padding:10px 8px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link" href="architecture.html">Architecture</a>
+        <a class="nav-link" href="roadmap.html">Roadmap</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link" href="network.html">Network</a>
+        <a class="nav-link" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Legal</div>
+    <h1 class="reveal">Cookie <em>Controls</em>.</h1>
+    <p class="lede reveal">What we store in your browser, why, and how to turn it off. Last updated May 2026.</p>
+  </header>
+
+  <article class="prose reveal">
+    <p class="meta">Effective: 1 May 2026 &middot; Operator: Distributed Ledger Technologies</p>
+
+    <h2>The short version</h2>
+    <p>We use as few cookies as we can. We do not use advertising or cross-site tracking pixels. Most cookies you'll see here are first-party and exist to make the site work or to count traffic in aggregate.</p>
+
+    <h2>What we use</h2>
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Name</th><th>Purpose</th><th>Lifetime</th><th>Type</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">lumero_session</td>
+          <td><p>Anonymous session identifier. Lets the site distinguish your visit from others without identifying you personally.</p></td>
+          <td>Session</td>
+          <td><span class="toggle req">Required</span></td>
+        </tr>
+        <tr>
+          <td class="name">lumero_consent</td>
+          <td><p>Remembers your cookie preferences so we don't ask again on every page.</p></td>
+          <td>12 months</td>
+          <td><span class="toggle req">Required</span></td>
+        </tr>
+        <tr>
+          <td class="name">_pa_*</td>
+          <td><p>Privacy-respecting page analytics &mdash; aggregate page views, country-level region, device class. No cross-site tracking.</p></td>
+          <td>30 days</td>
+          <td><span class="toggle opt">Optional</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>What we do not use</h2>
+    <ul>
+      <li>Advertising cookies of any kind.</li>
+      <li>Cross-site tracking pixels (Meta, X, Google Ads, etc.).</li>
+      <li>Session replay or behavioral recording.</li>
+      <li>Fingerprinting libraries.</li>
+    </ul>
+
+    <h2>Turn it off</h2>
+    <p>You can block or delete cookies in your browser settings at any time. Required cookies are needed for the site to function &mdash; if you block them, some features will break.</p>
+    <p>To opt out of analytics specifically, use your browser's <strong>Do Not Track</strong> or <strong>Global Privacy Control</strong> setting. We honor both.</p>
+    <p>To clear what's already stored:</p>
+    <ul>
+      <li><strong>Chrome:</strong> Settings &rarr; Privacy and security &rarr; Clear browsing data.</li>
+      <li><strong>Safari:</strong> Settings &rarr; Privacy &rarr; Manage Website Data.</li>
+      <li><strong>Firefox:</strong> Settings &rarr; Privacy &amp; Security &rarr; Cookies and Site Data.</li>
+    </ul>
+
+    <h2>Changes</h2>
+    <p>If we add a new cookie or change what an existing one does, we'll update this page and the date at the top.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about cookies or tracking go to <a href="mailto:hello@knexmail.com">hello@knexmail.com</a>.</p>
+  </article>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnexCoin Docs: Protocol Spec, Mining, API, Wallets</title>
+<meta name="description" content="Specs, guides, and references for miners, builders, and operators. Quick start, protocol spec, mining, API reference, hybrid signatures, and the NEX/UMX bridge.">
+<link rel="canonical" href="https://www.knexcoin.com/docs">
+<meta property="og:title" content="KnexCoin Docs: Protocol Spec, Mining, API, Wallets">
+<meta property="og:url" content="https://www.knexcoin.com/docs">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="Specs, guides, and references for miners, builders, and operators. Quick start, protocol spec, mining, API reference, hybrid signatures, and the NEX/UMX bridge.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KnexCoin Docs: Protocol Spec, Mining, API, Wallets">
+<meta name="twitter:description" content="Specs, guides, and references for miners, builders, and operators. Quick start, protocol spec, mining, API reference, hybrid signatures, and the NEX/UMX bridge.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.docs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:var(--hairline) solid var(--rule)}
+.docs-grid .card{padding:36px 24px;border-right:var(--hairline) solid var(--rule);border-bottom:var(--hairline) solid var(--rule);min-height:200px;position:relative;display:block;transition:background .2s}
+.docs-grid .card:nth-child(2n){border-right:0}
+.docs-grid .card:hover{background:#fff}
+.docs-grid .card .num{font-size:11px;color:var(--muted);font-weight:700;letter-spacing:.08em;font-feature-settings:"tnum";margin-bottom:14px}
+.docs-grid .card h3{font-size:24px;font-weight:800;letter-spacing:-0.02em;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.docs-grid .card h3 .arrow{font-size:18px;color:var(--ink-soft);transition:transform .2s,color .2s}
+.docs-grid .card:hover h3 .arrow{color:var(--blue);transform:translateX(4px)}
+.docs-grid .card p{font-size:14px;color:var(--ink-soft);line-height:1.5;max-width:380px}
+
+@media (max-width:900px){
+  .docs-grid{grid-template-columns:1fr}
+  .docs-grid .card{border-right:0;padding:28px 16px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link" href="architecture.html">Architecture</a>
+        <a class="nav-link" href="roadmap.html">Roadmap</a>
+        <a class="nav-link active" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link" href="network.html">Network</a>
+        <a class="nav-link" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Documentation</div>
+    <h1 class="reveal">Read the <em>rules</em>.</h1>
+    <p class="lede reveal">Everything you need to mine, integrate, or just understand how KnexCoin works. Specs are the source of truth.</p>
+  </header>
+
+  <section class="docs-grid">
+    <a class="card reveal" href="#"><div class="num">01</div><h3>Quick start <span class="arrow">&rarr;</span></h3><p>From zero to your first NEX wallet in ten minutes. Mine, send, receive, verify.</p></a>
+    <a class="card reveal" href="#"><div class="num">02</div><h3>Concepts <span class="arrow">&rarr;</span></h3><p>UTXOs, hybrid witnesses, address formats, halvings, difficulty &mdash; in plain language, with diagrams.</p></a>
+    <a class="card reveal" href="#"><div class="num">03</div><h3>Protocol spec <span class="arrow">&rarr;</span></h3><p>Normative description of consensus, blocks, signatures, and reserve rules. The contract everyone follows.</p></a>
+    <a class="card reveal" href="#"><div class="num">04</div><h3>Proof-of-Work <span class="arrow">&rarr;</span></h3><p>SHA-256d, LWMA v2 difficulty adjustment, and Smart Emergency Difficulty Adjustment for chain-stall recovery.</p></a>
+    <a class="card reveal" href="#"><div class="num">05</div><h3>Mining <span class="arrow">&rarr;</span></h3><p>Stratum endpoints, hardware compatibility (Bitaxe to ASIC), PPLNS &amp; solo, payout schedules.</p></a>
+    <a class="card reveal" href="#"><div class="num">06</div><h3>Wallets &amp; SDK <span class="arrow">&rarr;</span></h3><p>KnexPay wallet, transaction construction, hybrid signing, and integration patterns.</p></a>
+    <a class="card reveal" href="#"><div class="num">07</div><h3>API reference <span class="arrow">&rarr;</span></h3><p>JSON-RPC and REST endpoints. Read state, submit transactions, stream blocks.</p></a>
+    <a class="card reveal" href="#"><div class="num">08</div><h3>Bridge &amp; reserve <span class="arrow">&rarr;</span></h3><p>How NEX is escrowed for UMX issuance. Coverage-ratio invariants, treasury custody, redemption modes.</p></a>
+    <a class="card reveal" href="#"><div class="num">09</div><h3>Post-quantum <span class="arrow">&rarr;</span></h3><p>ML-DSA-65 (FIPS 204) signature scheme, hybrid witness v2 format, address derivation, ECDSA legacy migration.</p></a>
+    <a class="card reveal" href="#"><div class="num">10</div><h3>Glossary <span class="arrow">&rarr;</span></h3><p>Every term we use, defined once. LWMA, witness v2, halving, hybrid signing, reserve pool.</p></a>
+  </section>
+
+  <a class="cta-block" href="https://github.com/SystemThreat/NEX"><div class="label">Source of truth.</div><div class="body"><span>GitHub</span><span class="arrow">&rarr;</span></div></a>
+  <a class="cta-block" href="contact.html"><div class="label">Stuck somewhere?</div><div class="body"><span>Talk to the team</span><span class="arrow">&rarr;</span></div></a>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

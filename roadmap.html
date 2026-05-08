@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KnexCoin Roadmap: 12 Months from Audit to Mainnet</title>
+<meta name="description" content="Twelve months, four phases. NEX mainnet hardening, KnexPay launch, a Colombia corridor pilot, then exchange and OTC distribution. Public roadmap, public progress.">
+<link rel="canonical" href="https://www.knexcoin.com/roadmap">
+<meta property="og:title" content="KnexCoin Roadmap: 12 Months from Audit to Mainnet">
+<meta property="og:url" content="https://www.knexcoin.com/roadmap">
+<meta name="author" content="David Otero">
+<meta name="publisher" content="Distributed Ledger Technologies, Inc.">
+<meta name="copyright" content="Distributed Ledger Technologies, Inc.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KnexCoin">
+<meta property="og:locale" content="en_US">
+<meta property="og:description" content="Twelve months, four phases. NEX mainnet hardening, KnexPay launch, a Colombia corridor pilot, then exchange and OTC distribution. Public roadmap, public progress.">
+<meta property="og:image" content="https://www.knexcoin.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KnexCoin Roadmap: 12 Months from Audit to Mainnet">
+<meta name="twitter:description" content="Twelve months, four phases. NEX mainnet hardening, KnexPay launch, a Colombia corridor pilot, then exchange and OTC distribution. Public roadmap, public progress.">
+<meta name="twitter:image" content="https://www.knexcoin.com/og-image.png">
+<meta name="twitter:image:alt" content="KnexCoin — Gravity for the post-quantum economy.">
+<link rel="icon" type="image/svg+xml" href="/knex-coin.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"KnexCoin","alternateName":"Distributed Ledger Technologies, Inc.","url":"https://www.knexcoin.com","logo":"https://www.knexcoin.com/knex-coin.svg","founder":{"@type":"Person","name":"David Otero"},"publisher":{"@type":"Organization","name":"Distributed Ledger Technologies, Inc."},"sameAs":["https://github.com/SystemThreat/NEX"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap">
+<!-- Google tag (gtag.js) — Consent Mode v2: analytics denied by default until banner accept -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5H8ZWJMSXQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-5H8ZWJMSXQ', {'anonymize_ip':true});
+</script>
+<link rel="stylesheet" href="styles.css">
+<style>
+.phase{display:grid;grid-template-columns:160px 1fr 160px;gap:0;border-top:var(--hairline) solid var(--rule);padding:48px 24px;align-items:start}
+.phase .when{font-size:13px;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:.06em}
+.phase .body h3{font-size:36px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;margin-bottom:8px}
+.phase .body .sub{font-size:18px;color:var(--ink);max-width:560px;line-height:1.4;margin-bottom:18px;font-weight:600}
+.phase .body ul{list-style:none;display:grid;gap:8px;max-width:580px}
+.phase .body li{font-size:14px;color:var(--ink-soft);line-height:1.5;padding-left:18px;position:relative}
+.phase .body li::before{content:"\2192";position:absolute;left:0;color:var(--blue)}
+.phase .badge{display:inline-block;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.06em;border-radius:999px;border:1px solid var(--rule-strong);color:var(--ink-soft);text-transform:uppercase}
+.phase .badge.live{border-color:var(--blue);color:var(--blue)}
+.phase .badge.next{border-color:var(--rule-strong);color:var(--ink-soft)}
+.phase .end{text-align:right}
+
+.beachhead{padding:120px 24px;border-top:var(--hairline) solid var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.beachhead h2{font-size:54px;font-weight:800;letter-spacing:-0.03em;line-height:1.0}
+.beachhead h2 em{font-style:normal;color:var(--blue)}
+.beachhead p{font-size:16px;color:var(--ink-soft);line-height:1.55;max-width:480px}
+.beachhead p + p{margin-top:14px}
+
+@media (max-width:900px){
+  .phase{grid-template-columns:1fr;gap:14px;padding:32px 16px}
+  .phase .end{text-align:left}
+  .phase .body h3{font-size:26px}
+  .phase .body .sub{font-size:16px}
+  .beachhead{grid-template-columns:1fr;padding:80px 16px;gap:24px}
+  .beachhead h2{font-size:38px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+    <!-- Testnet status bar -->
+  <div class="top-bar">
+    <div class="top-bar__inner">
+      <span class="status"><span class="dot"></span>Testnet live</span>
+      <a href="https://untraceablex.com" target="_blank" rel="noopener">Explorer <span class="arrow">&#x2197;</span></a>
+      <a href="https://app.knexpay.com" target="_blank" rel="noopener">App <span class="arrow">&#x2197;</span></a>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="grid">
+      <div class="cell"><a class="brand" href="index.html"><span class="brand-mark"></span><span>KnexCoin</span></a></div>
+      <div class="cell"></div>
+      <div class="cell">
+        <a class="nav-link" href="architecture.html">Architecture</a>
+        <a class="nav-link active" href="roadmap.html">Roadmap</a>
+        <a class="nav-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="nav-link" href="network.html">Network</a>
+        <a class="nav-link" href="latest.html">Latest</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="eyebrow reveal"><span class="dot"></span> Roadmap &middot; May 2026</div>
+    <h1 class="reveal">Twelve months.<br>Four <em>phases</em>.</h1>
+    <p class="lede reveal">Make money safer to hold. Faster to move. Cheaper to send. We earn each phase before starting the next.</p>
+  </header>
+
+  <section style="padding:0 0 0;">
+
+    <div class="phase reveal">
+      <div class="when">Months 1&ndash;3</div>
+      <div class="body">
+        <h3>Trust the base.</h3>
+        <p class="sub">Before anything else, NEX has to be credible.</p>
+        <ul>
+          <li>Finish the security audit and publish the results.</li>
+          <li>Ship the explorer, status page, wallet download, and mining page.</li>
+          <li>Publish monetary policy and risk language in plain English.</li>
+        </ul>
+      </div>
+      <div class="end"><span class="badge live">In progress</span></div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="when">Months 4&ndash;6</div>
+      <div class="body">
+        <h3>Ship the wallet.</h3>
+        <p class="sub">Move from protocol to product. Build what people will actually touch.</p>
+        <ul>
+          <li>Polish KnexPay for everyday users.</li>
+          <li>Finish the Lumero spec and the bridge rules that bind it to NEX collateral.</li>
+          <li>Build a private USA &rarr; Colombia send-money demo.</li>
+          <li>Start the legal and compliance review.</li>
+        </ul>
+      </div>
+      <div class="end"><span class="badge next">Next</span></div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="when">Months 7&ndash;9</div>
+      <div class="body">
+        <h3>Prove one corridor.</h3>
+        <p class="sub">A small group of real users, in one country, doing real things.</p>
+        <ul>
+          <li>Onboard 10&ndash;50 families and merchants in Colombia.</li>
+          <li>Run real remittances, merchant payments, and redemptions.</li>
+          <li>Publish what we learn &mdash; the good and the rough edges.</li>
+        </ul>
+      </div>
+      <div class="end"><span class="badge next">Planned</span></div>
+    </div>
+
+    <div class="phase reveal">
+      <div class="when">Months 10&ndash;12</div>
+      <div class="body">
+        <h3>Open the playbook.</h3>
+        <p class="sub">Turn one working corridor into a repeatable one.</p>
+        <ul>
+          <li>Investor and partner materials.</li>
+          <li>Start exchange and OTC distribution.</li>
+          <li>Pick the first African corridor.</li>
+          <li>Translate everything &mdash; Spanish and English, regulators included.</li>
+        </ul>
+      </div>
+      <div class="end"><span class="badge next">Planned</span></div>
+    </div>
+  </section>
+
+  <section class="slab"><span class="reveal">First Colombia.<br>Then everywhere.</span></section>
+
+  <section class="beachhead">
+    <div class="reveal">
+      <h2>Why <em>Colombia</em>&nbsp;first.</h2>
+    </div>
+    <div class="reveal">
+      <p>People in Colombia already know what bad money rails feel like &mdash; high remittance fees, slow transfers, currency stress. NEX is the gravity layer that backs the spend-side instrument (UMX) people will actually touch.</p>
+      <p>Someone in the United States sends value home. The recipient receives it in seconds. A local merchant accepts it &mdash; or the recipient redeems it through a partner. That's the test.</p>
+      <p>No promises of returns. No claims of guaranteed stability. Just speed, cost, and reliability we can publish openly.</p>
+    </div>
+  </section>
+
+  <a class="cta-block" href="contact.html"><div class="label">Build with us.</div><div class="body"><span>Talk to the team</span><span class="arrow">&rarr;</span></div></a>
+
+  <footer class="footer">
+    <div class="grid">
+      <div class="cell"><span class="brand-mark"></span></div>
+      <div class="cell">
+        <a class="col-link" href="privacy.html">Privacy Policy</a>
+        <a class="col-link" href="terms.html">Terms of Service</a>
+        <a class="col-link" href="cookies.html">Cookie Controls</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="architecture.html">Architecture</a>
+        <a class="col-link" href="roadmap.html">Roadmap</a>
+        <a class="col-link" href="docs.html">Docs</a>
+      </div>
+      <div class="cell">
+        <a class="col-link" href="network.html">Network</a>
+        <a class="col-link" href="latest.html">Latest</a>
+        <a class="col-link" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Distributed Ledger Technologies, Inc. &middot; <a href="https://www.knexcoin.com" class="footer-link">knexcoin.com</a></span></div>
+  </footer>
+
+</div>
+<script>
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('is-in'); });
+}, {rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="/cookies-banner.js" defer></script>
+</body>
+</html>

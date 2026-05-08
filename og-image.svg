@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#000000"/>
+
+  <!-- Subtle grid lines -->
+  <line x1="300" y1="0" x2="300" y2="630" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="630" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Top label band -->
+  <text x="80" y="100" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#8b94a0" letter-spacing="2">NEX · KNEXCOIN.COM</text>
+
+  <!-- Big ₿ mark -->
+  <text x="80" y="470" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="440" fill="#0000ff" letter-spacing="-12">₿</text>
+
+  <!-- Brand wordmark + tag -->
+  <text x="380" y="280" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="120" fill="#ffffff" letter-spacing="-5">KnexCoin</text>
+  <text x="380" y="360" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="38" fill="#8b94a0">Gravity for the</text>
+  <text x="380" y="410" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="38" fill="#8b94a0">post-quantum economy.</text>
+
+  <!-- Footer URL -->
+  <text x="380" y="540" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="26" fill="#0000ff">knexcoin.com</text>
+
+  <!-- Right side: blue accent rule -->
+  <rect x="1100" y="0" width="4" height="630" fill="#0000ff"/>
+</svg>
